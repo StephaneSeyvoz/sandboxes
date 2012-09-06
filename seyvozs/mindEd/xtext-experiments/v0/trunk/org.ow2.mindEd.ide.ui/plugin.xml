@@ -477,7 +477,7 @@
       <page
             class="org.ow2.mindEd.ide.ui.preferences.MindcPreferencePage"
             id="org.ow2.mindEd.ide.ui.preferences.MindcPreferencePage"
-            name="Mindc Location">
+            name="Mindc Preferences">
       </page>
    </extension>
    <extension
