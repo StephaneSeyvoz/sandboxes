@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.naming.IQualifiedNameConverter;
 import org.eclipse.xtext.scoping.impl.ImportNormalizer;
 import org.eclipse.xtext.scoping.impl.ImportedNamespaceAwareLocalScopeProvider;
-import org.ow2.mindEd.adl.textual.fractal.CompositeDefinition;
+import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import com.google.inject.Inject;
 
 public class FractalImportedNamespaceAwareLocalScopeProvider extends
@@ -28,14 +28,14 @@ ImportedNamespaceAwareLocalScopeProvider {
 
 	@Inject IQualifiedNameConverter qualifiedNameConverter;
 
-	@Override
+	//@Override
 	protected List<ImportNormalizer> internalGetImportedNamespaceResolvers(
 			EObject context, boolean ignoreCase) {
 
 		List<ImportNormalizer> result = new ArrayList<ImportNormalizer>();
 		result.addAll(super.internalGetImportedNamespaceResolvers(context, ignoreCase));
 
-		if (context instanceof CompositeDefinition) {
+		if (context instanceof ArchitectureDefinition) {
 			result.add(createImportedNamespaceResolver(
 					qualifiedNameConverter.toString(
 							getQualifiedNameProvider().getFullyQualifiedName(context).skipLast(1)) 
