@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL;
 
@@ -17,6 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface TypeDefinition extends EObject
-{
+public interface TypeDefinition extends EObject {
 } // TypeDefinition

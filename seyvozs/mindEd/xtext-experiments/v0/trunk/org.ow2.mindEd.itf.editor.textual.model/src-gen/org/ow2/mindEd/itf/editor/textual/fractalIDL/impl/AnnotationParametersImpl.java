@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -33,66 +30,61 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
  *
  * @generated
  */
-public class AnnotationParametersImpl extends MinimalEObjectImpl.Container implements AnnotationParameters
-{
-  /**
+public class AnnotationParametersImpl extends MinimalEObjectImpl.Container implements AnnotationParameters {
+	/**
 	 * The cached value of the '{@link #getValuePair() <em>Value Pair</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getValuePair()
 	 * @generated
 	 * @ordered
 	 */
-  protected AnnotationValuePairs valuePair;
+	protected AnnotationValuePairs valuePair;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-  protected AnnotationValue value;
+	protected AnnotationValue value;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected AnnotationParametersImpl()
-  {
+	protected AnnotationParametersImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.ANNOTATION_PARAMETERS;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AnnotationValuePairs getValuePair()
-  {
+	public AnnotationValuePairs getValuePair() {
 		return valuePair;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetValuePair(AnnotationValuePairs newValuePair, NotificationChain msgs)
-  {
+	public NotificationChain basicSetValuePair(AnnotationValuePairs newValuePair, NotificationChain msgs) {
 		AnnotationValuePairs oldValuePair = valuePair;
 		valuePair = newValuePair;
 		if (eNotificationRequired()) {
@@ -102,13 +94,12 @@ public class AnnotationParametersImpl extends MinimalEObjectImpl.Container imple
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setValuePair(AnnotationValuePairs newValuePair)
-  {
+	public void setValuePair(AnnotationValuePairs newValuePair) {
 		if (newValuePair != valuePair) {
 			NotificationChain msgs = null;
 			if (valuePair != null)
@@ -122,23 +113,21 @@ public class AnnotationParametersImpl extends MinimalEObjectImpl.Container imple
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ANNOTATION_PARAMETERS__VALUE_PAIR, newValuePair, newValuePair));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AnnotationValue getValue()
-  {
+	public AnnotationValue getValue() {
 		return value;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetValue(AnnotationValue newValue, NotificationChain msgs)
-  {
+	public NotificationChain basicSetValue(AnnotationValue newValue, NotificationChain msgs) {
 		AnnotationValue oldValue = value;
 		value = newValue;
 		if (eNotificationRequired()) {
@@ -148,13 +137,12 @@ public class AnnotationParametersImpl extends MinimalEObjectImpl.Container imple
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setValue(AnnotationValue newValue)
-  {
+	public void setValue(AnnotationValue newValue) {
 		if (newValue != value) {
 			NotificationChain msgs = null;
 			if (value != null)
@@ -168,14 +156,13 @@ public class AnnotationParametersImpl extends MinimalEObjectImpl.Container imple
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ANNOTATION_PARAMETERS__VALUE, newValue, newValue));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION_PARAMETERS__VALUE_PAIR:
 				return basicSetValuePair(null, msgs);
@@ -185,14 +172,13 @@ public class AnnotationParametersImpl extends MinimalEObjectImpl.Container imple
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION_PARAMETERS__VALUE_PAIR:
 				return getValuePair();
@@ -202,14 +188,13 @@ public class AnnotationParametersImpl extends MinimalEObjectImpl.Container imple
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION_PARAMETERS__VALUE_PAIR:
 				setValuePair((AnnotationValuePairs)newValue);
@@ -221,14 +206,13 @@ public class AnnotationParametersImpl extends MinimalEObjectImpl.Container imple
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION_PARAMETERS__VALUE_PAIR:
 				setValuePair((AnnotationValuePairs)null);
@@ -240,14 +224,13 @@ public class AnnotationParametersImpl extends MinimalEObjectImpl.Container imple
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION_PARAMETERS__VALUE_PAIR:
 				return valuePair != null;

@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -21,26 +18,23 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
  *
  * @generated
  */
-public class AnnotationValueImpl extends MinimalEObjectImpl.Container implements AnnotationValue
-{
-  /**
+public class AnnotationValueImpl extends MinimalEObjectImpl.Container implements AnnotationValue {
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected AnnotationValueImpl()
-  {
+	protected AnnotationValueImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.ANNOTATION_VALUE;
 	}
 

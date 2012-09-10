@@ -62,140 +62,140 @@ Ce faisant, et avec l’appui des financements publics pour supporter le surcoû
          id="org.ow2.mindEd.doc.user"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.adl.editor.graphic.ui"
          download-size="0"
          install-size="0"
-         version="0.2.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.adl.model"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.adl.edit"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.ide"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.ide.model"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.ide.ui"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mind.fractal-adl-bundle"
          download-size="0"
          install-size="0"
-         version="0.2.3.SNAPSHOT"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.ide.edit"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.adl.editor.textual.ui"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.adl.textual.ui"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.idt.editor.textual.model"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.idt.editor.textual.model.ui"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.itf.editor.textual.model"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.itf.editor.textual.model.ui"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.adl.validation"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.adl.editor.tree"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.adl.textual"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.adl.util"
          download-size="0"
          install-size="0"
-         version="1.0.0.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin
          id="org.ow2.mindEd.ide.editor"
          download-size="0"
          install-size="0"
-         version="0.2.1.qualifier"
+         version="0.0.0"
          unpack="false"/>
 
 </feature>

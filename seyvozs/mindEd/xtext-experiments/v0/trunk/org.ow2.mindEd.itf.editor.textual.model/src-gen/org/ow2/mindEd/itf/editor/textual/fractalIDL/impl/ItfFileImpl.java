@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -44,125 +41,117 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.TypeDefinition;
  *
  * @generated
  */
-public class ItfFileImpl extends MinimalEObjectImpl.Container implements ItfFile
-{
-  /**
+public class ItfFileImpl extends MinimalEObjectImpl.Container implements ItfFile {
+	/**
 	 * The cached value of the '{@link #getIncludes() <em>Includes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getIncludes()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<IncludeDirective> includes;
+	protected EList<IncludeDirective> includes;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getConstant() <em>Constant</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getConstant()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<ConstantDefinition> constant;
+	protected EList<ConstantDefinition> constant;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<TypeDefinition> type;
+	protected EList<TypeDefinition> type;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getInterface() <em>Interface</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getInterface()
 	 * @generated
 	 * @ordered
 	 */
-  protected InterfaceDefinition interface_;
+	protected InterfaceDefinition interface_;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected ItfFileImpl()
-  {
+	protected ItfFileImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.ITF_FILE;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<IncludeDirective> getIncludes()
-  {
+	public EList<IncludeDirective> getIncludes() {
 		if (includes == null) {
 			includes = new EObjectContainmentEList<IncludeDirective>(IncludeDirective.class, this, FractalIDLPackage.ITF_FILE__INCLUDES);
 		}
 		return includes;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<ConstantDefinition> getConstant()
-  {
+	public EList<ConstantDefinition> getConstant() {
 		if (constant == null) {
 			constant = new EObjectContainmentEList<ConstantDefinition>(ConstantDefinition.class, this, FractalIDLPackage.ITF_FILE__CONSTANT);
 		}
 		return constant;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<TypeDefinition> getType()
-  {
+	public EList<TypeDefinition> getType() {
 		if (type == null) {
 			type = new EObjectContainmentEList<TypeDefinition>(TypeDefinition.class, this, FractalIDLPackage.ITF_FILE__TYPE);
 		}
 		return type;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public InterfaceDefinition getInterface()
-  {
+	public InterfaceDefinition getInterface() {
 		return interface_;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetInterface(InterfaceDefinition newInterface, NotificationChain msgs)
-  {
+	public NotificationChain basicSetInterface(InterfaceDefinition newInterface, NotificationChain msgs) {
 		InterfaceDefinition oldInterface = interface_;
 		interface_ = newInterface;
 		if (eNotificationRequired()) {
@@ -172,13 +161,12 @@ public class ItfFileImpl extends MinimalEObjectImpl.Container implements ItfFile
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setInterface(InterfaceDefinition newInterface)
-  {
+	public void setInterface(InterfaceDefinition newInterface) {
 		if (newInterface != interface_) {
 			NotificationChain msgs = null;
 			if (interface_ != null)
@@ -192,14 +180,13 @@ public class ItfFileImpl extends MinimalEObjectImpl.Container implements ItfFile
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ITF_FILE__INTERFACE, newInterface, newInterface));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.ITF_FILE__INCLUDES:
 				return ((InternalEList<?>)getIncludes()).basicRemove(otherEnd, msgs);
@@ -213,14 +200,13 @@ public class ItfFileImpl extends MinimalEObjectImpl.Container implements ItfFile
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.ITF_FILE__INCLUDES:
 				return getIncludes();
@@ -234,15 +220,14 @@ public class ItfFileImpl extends MinimalEObjectImpl.Container implements ItfFile
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.ITF_FILE__INCLUDES:
 				getIncludes().clear();
@@ -263,14 +248,13 @@ public class ItfFileImpl extends MinimalEObjectImpl.Container implements ItfFile
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ITF_FILE__INCLUDES:
 				getIncludes().clear();
@@ -288,14 +272,13 @@ public class ItfFileImpl extends MinimalEObjectImpl.Container implements ItfFile
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ITF_FILE__INCLUDES:
 				return includes != null && !includes.isEmpty();

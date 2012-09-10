@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -33,86 +30,81 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.MulExpression;
  *
  * @generated
  */
-public class MulExpressionImpl extends MinimalEObjectImpl.Container implements MulExpression
-{
-  /**
+public class MulExpressionImpl extends MinimalEObjectImpl.Container implements MulExpression {
+	/**
 	 * The cached value of the '{@link #getLeftExpr() <em>Left Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getLeftExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected CastExpression leftExpr;
+	protected CastExpression leftExpr;
 
-  /**
+	/**
 	 * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getOp()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String OP_EDEFAULT = null;
+	protected static final String OP_EDEFAULT = null;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getOp()
 	 * @generated
 	 * @ordered
 	 */
-  protected String op = OP_EDEFAULT;
+	protected String op = OP_EDEFAULT;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getRightExpr() <em>Right Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getRightExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected MulExpression rightExpr;
+	protected MulExpression rightExpr;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected MulExpressionImpl()
-  {
+	protected MulExpressionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.MUL_EXPRESSION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public CastExpression getLeftExpr()
-  {
+	public CastExpression getLeftExpr() {
 		return leftExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetLeftExpr(CastExpression newLeftExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetLeftExpr(CastExpression newLeftExpr, NotificationChain msgs) {
 		CastExpression oldLeftExpr = leftExpr;
 		leftExpr = newLeftExpr;
 		if (eNotificationRequired()) {
@@ -122,13 +114,12 @@ public class MulExpressionImpl extends MinimalEObjectImpl.Container implements M
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setLeftExpr(CastExpression newLeftExpr)
-  {
+	public void setLeftExpr(CastExpression newLeftExpr) {
 		if (newLeftExpr != leftExpr) {
 			NotificationChain msgs = null;
 			if (leftExpr != null)
@@ -142,46 +133,42 @@ public class MulExpressionImpl extends MinimalEObjectImpl.Container implements M
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.MUL_EXPRESSION__LEFT_EXPR, newLeftExpr, newLeftExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getOp()
-  {
+	public String getOp() {
 		return op;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setOp(String newOp)
-  {
+	public void setOp(String newOp) {
 		String oldOp = op;
 		op = newOp;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.MUL_EXPRESSION__OP, oldOp, op));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public MulExpression getRightExpr()
-  {
+	public MulExpression getRightExpr() {
 		return rightExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetRightExpr(MulExpression newRightExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetRightExpr(MulExpression newRightExpr, NotificationChain msgs) {
 		MulExpression oldRightExpr = rightExpr;
 		rightExpr = newRightExpr;
 		if (eNotificationRequired()) {
@@ -191,13 +178,12 @@ public class MulExpressionImpl extends MinimalEObjectImpl.Container implements M
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setRightExpr(MulExpression newRightExpr)
-  {
+	public void setRightExpr(MulExpression newRightExpr) {
 		if (newRightExpr != rightExpr) {
 			NotificationChain msgs = null;
 			if (rightExpr != null)
@@ -211,14 +197,13 @@ public class MulExpressionImpl extends MinimalEObjectImpl.Container implements M
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.MUL_EXPRESSION__RIGHT_EXPR, newRightExpr, newRightExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.MUL_EXPRESSION__LEFT_EXPR:
 				return basicSetLeftExpr(null, msgs);
@@ -228,14 +213,13 @@ public class MulExpressionImpl extends MinimalEObjectImpl.Container implements M
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.MUL_EXPRESSION__LEFT_EXPR:
 				return getLeftExpr();
@@ -247,14 +231,13 @@ public class MulExpressionImpl extends MinimalEObjectImpl.Container implements M
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.MUL_EXPRESSION__LEFT_EXPR:
 				setLeftExpr((CastExpression)newValue);
@@ -269,14 +252,13 @@ public class MulExpressionImpl extends MinimalEObjectImpl.Container implements M
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.MUL_EXPRESSION__LEFT_EXPR:
 				setLeftExpr((CastExpression)null);
@@ -291,14 +273,13 @@ public class MulExpressionImpl extends MinimalEObjectImpl.Container implements M
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.MUL_EXPRESSION__LEFT_EXPR:
 				return leftExpr != null;
@@ -310,14 +291,13 @@ public class MulExpressionImpl extends MinimalEObjectImpl.Container implements M
 		return super.eIsSet(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL;
 
@@ -20,86 +17,84 @@ import org.eclipse.emf.common.util.Enumerator;
  * @model
  * @generated
  */
-public enum ParameterQualifier implements Enumerator
-{
-  /**
+public enum ParameterQualifier implements Enumerator {
+	/**
 	 * The '<em><b>In</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #IN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-  IN(0, "in", "in"),
+	IN(0, "in", "in"),
 
-  /**
+	/**
 	 * The '<em><b>Out</b></em>' literal object.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #OUT_VALUE
 	 * @generated
 	 * @ordered
 	 */
-  OUT(1, "out", "out");
+	OUT(1, "out", "out");
 
-  /**
+	/**
 	 * The '<em><b>In</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of '<em><b>In</b></em>' literal object isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>In</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @see #IN
 	 * @model name="in"
 	 * @generated
 	 * @ordered
 	 */
-  public static final int IN_VALUE = 0;
+	public static final int IN_VALUE = 0;
 
-  /**
+	/**
 	 * The '<em><b>Out</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of '<em><b>Out</b></em>' literal object isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Out</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @see #OUT
 	 * @model name="out"
 	 * @generated
 	 * @ordered
 	 */
-  public static final int OUT_VALUE = 1;
+	public static final int OUT_VALUE = 1;
 
-  /**
+	/**
 	 * An array of all the '<em><b>Parameter Qualifier</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private static final ParameterQualifier[] VALUES_ARRAY =
-    new ParameterQualifier[] {
+	private static final ParameterQualifier[] VALUES_ARRAY =
+		new ParameterQualifier[] {
 			IN,
 			OUT,
 		};
 
-  /**
+	/**
 	 * A public read-only list of all the '<em><b>Parameter Qualifier</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static final List<ParameterQualifier> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<ParameterQualifier> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
-  /**
+	/**
 	 * Returns the '<em><b>Parameter Qualifier</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static ParameterQualifier get(String literal)
-  {
+	public static ParameterQualifier get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ParameterQualifier result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
@@ -109,14 +104,13 @@ public enum ParameterQualifier implements Enumerator
 		return null;
 	}
 
-  /**
+	/**
 	 * Returns the '<em><b>Parameter Qualifier</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static ParameterQualifier getByName(String name)
-  {
+	public static ParameterQualifier getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
 			ParameterQualifier result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
@@ -126,14 +120,13 @@ public enum ParameterQualifier implements Enumerator
 		return null;
 	}
 
-  /**
+	/**
 	 * Returns the '<em><b>Parameter Qualifier</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static ParameterQualifier get(int value)
-  {
+	public static ParameterQualifier get(int value) {
 		switch (value) {
 			case IN_VALUE: return IN;
 			case OUT_VALUE: return OUT;
@@ -141,80 +134,75 @@ public enum ParameterQualifier implements Enumerator
 		return null;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private final int value;
+	private final int value;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private final String name;
+	private final String name;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private final String literal;
+	private final String literal;
 
-  /**
+	/**
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  private ParameterQualifier(int value, String name, String literal)
-  {
+	private ParameterQualifier(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public int getValue()
-  {
+	public int getValue() {
 	  return value;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getName()
-  {
+	public String getName() {
 	  return name;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getLiteral()
-  {
+	public String getLiteral() {
 	  return literal;
 	}
 
-  /**
+	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		return literal;
 	}
-  
+	
 } //ParameterQualifier

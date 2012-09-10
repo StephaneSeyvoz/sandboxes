@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -22,16 +19,14 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.*;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFactory
-{
-  /**
+public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFactory {
+	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public static FractalIDLFactory init()
-  {
+	public static FractalIDLFactory init() {
 		try {
 			FractalIDLFactory theFractalIDLFactory = (FractalIDLFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.ow2.org/mindEd/itf/"); 
 			if (theFractalIDLFactory != null) {
@@ -44,25 +39,23 @@ public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFac
 		return new FractalIDLFactoryImpl();
 	}
 
-  /**
+	/**
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public FractalIDLFactoryImpl()
-  {
+	public FractalIDLFactoryImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public EObject create(EClass eClass)
-  {
+	@Override
+	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case FractalIDLPackage.ITF_FILE: return createItfFile();
 			case FractalIDLPackage.TYPE_DEFINITION: return createTypeDefinition();
@@ -117,14 +110,13 @@ public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFac
 		}
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
-  {
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
 			case FractalIDLPackage.TYPE_QUALIFIER:
 				return createTypeQualifierFromString(eDataType, initialValue);
@@ -137,14 +129,13 @@ public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFac
 		}
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
-  {
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
 			case FractalIDLPackage.TYPE_QUALIFIER:
 				return convertTypeQualifierToString(eDataType, instanceValue);
@@ -157,619 +148,563 @@ public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFac
 		}
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ItfFile createItfFile()
-  {
+	public ItfFile createItfFile() {
 		ItfFileImpl itfFile = new ItfFileImpl();
 		return itfFile;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public TypeDefinition createTypeDefinition()
-  {
+	public TypeDefinition createTypeDefinition() {
 		TypeDefinitionImpl typeDefinition = new TypeDefinitionImpl();
 		return typeDefinition;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public TypedefSpecification createTypedefSpecification()
-  {
+	public TypedefSpecification createTypedefSpecification() {
 		TypedefSpecificationImpl typedefSpecification = new TypedefSpecificationImpl();
 		return typedefSpecification;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public QualifiedTypeSpecification createQualifiedTypeSpecification()
-  {
+	public QualifiedTypeSpecification createQualifiedTypeSpecification() {
 		QualifiedTypeSpecificationImpl qualifiedTypeSpecification = new QualifiedTypeSpecificationImpl();
 		return qualifiedTypeSpecification;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public TypeSpecification createTypeSpecification()
-  {
+	public TypeSpecification createTypeSpecification() {
 		TypeSpecificationImpl typeSpecification = new TypeSpecificationImpl();
 		return typeSpecification;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public StructOrUnionSpecification createStructOrUnionSpecification()
-  {
+	public StructOrUnionSpecification createStructOrUnionSpecification() {
 		StructOrUnionSpecificationImpl structOrUnionSpecification = new StructOrUnionSpecificationImpl();
 		return structOrUnionSpecification;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public StructOrUnionDefinition createStructOrUnionDefinition()
-  {
+	public StructOrUnionDefinition createStructOrUnionDefinition() {
 		StructOrUnionDefinitionImpl structOrUnionDefinition = new StructOrUnionDefinitionImpl();
 		return structOrUnionDefinition;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public StructorUnionReference createStructorUnionReference()
-  {
+	public StructorUnionReference createStructorUnionReference() {
 		StructorUnionReferenceImpl structorUnionReference = new StructorUnionReferenceImpl();
 		return structorUnionReference;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public StructMember createStructMember()
-  {
+	public StructMember createStructMember() {
 		StructMemberImpl structMember = new StructMemberImpl();
 		return structMember;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EnumSpecification createEnumSpecification()
-  {
+	public EnumSpecification createEnumSpecification() {
 		EnumSpecificationImpl enumSpecification = new EnumSpecificationImpl();
 		return enumSpecification;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EnumDefinition createEnumDefinition()
-  {
+	public EnumDefinition createEnumDefinition() {
 		EnumDefinitionImpl enumDefinition = new EnumDefinitionImpl();
 		return enumDefinition;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EnumReference createEnumReference()
-  {
+	public EnumReference createEnumReference() {
 		EnumReferenceImpl enumReference = new EnumReferenceImpl();
 		return enumReference;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EnumMemberList createEnumMemberList()
-  {
+	public EnumMemberList createEnumMemberList() {
 		EnumMemberListImpl enumMemberList = new EnumMemberListImpl();
 		return enumMemberList;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EnumMember createEnumMember()
-  {
+	public EnumMember createEnumMember() {
 		EnumMemberImpl enumMember = new EnumMemberImpl();
 		return enumMember;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Declarators createDeclarators()
-  {
+	public Declarators createDeclarators() {
 		DeclaratorsImpl declarators = new DeclaratorsImpl();
 		return declarators;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Declarator createDeclarator()
-  {
+	public Declarator createDeclarator() {
 		DeclaratorImpl declarator = new DeclaratorImpl();
 		return declarator;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AbstractDeclarator createAbstractDeclarator()
-  {
+	public AbstractDeclarator createAbstractDeclarator() {
 		AbstractDeclaratorImpl abstractDeclarator = new AbstractDeclaratorImpl();
 		return abstractDeclarator;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public PointerSpecification createPointerSpecification()
-  {
+	public PointerSpecification createPointerSpecification() {
 		PointerSpecificationImpl pointerSpecification = new PointerSpecificationImpl();
 		return pointerSpecification;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Qualified_PointerSpecification createQualified_PointerSpecification()
-  {
+	public Qualified_PointerSpecification createQualified_PointerSpecification() {
 		Qualified_PointerSpecificationImpl qualified_PointerSpecification = new Qualified_PointerSpecificationImpl();
 		return qualified_PointerSpecification;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public DirectDeclarator createDirectDeclarator()
-  {
+	public DirectDeclarator createDirectDeclarator() {
 		DirectDeclaratorImpl directDeclarator = new DirectDeclaratorImpl();
 		return directDeclarator;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AbstractDirectDeclarator createAbstractDirectDeclarator()
-  {
+	public AbstractDirectDeclarator createAbstractDirectDeclarator() {
 		AbstractDirectDeclaratorImpl abstractDirectDeclarator = new AbstractDirectDeclaratorImpl();
 		return abstractDirectDeclarator;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ArraySpecification createArraySpecification()
-  {
+	public ArraySpecification createArraySpecification() {
 		ArraySpecificationImpl arraySpecification = new ArraySpecificationImpl();
 		return arraySpecification;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ConstantDefinition createConstantDefinition()
-  {
+	public ConstantDefinition createConstantDefinition() {
 		ConstantDefinitionImpl constantDefinition = new ConstantDefinitionImpl();
 		return constantDefinition;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public InterfaceDefinition createInterfaceDefinition()
-  {
+	public InterfaceDefinition createInterfaceDefinition() {
 		InterfaceDefinitionImpl interfaceDefinition = new InterfaceDefinitionImpl();
 		return interfaceDefinition;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public MethodDefinition createMethodDefinition()
-  {
+	public MethodDefinition createMethodDefinition() {
 		MethodDefinitionImpl methodDefinition = new MethodDefinitionImpl();
 		return methodDefinition;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ParameterList createParameterList()
-  {
+	public ParameterList createParameterList() {
 		ParameterListImpl parameterList = new ParameterListImpl();
 		return parameterList;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Parameter createParameter()
-  {
+	public Parameter createParameter() {
 		ParameterImpl parameter = new ParameterImpl();
 		return parameter;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public IncludeDirective createIncludeDirective()
-  {
+	public IncludeDirective createIncludeDirective() {
 		IncludeDirectiveImpl includeDirective = new IncludeDirectiveImpl();
 		return includeDirective;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Annotations createAnnotations()
-  {
+	public Annotations createAnnotations() {
 		AnnotationsImpl annotations = new AnnotationsImpl();
 		return annotations;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Annotation createAnnotation()
-  {
+	public Annotation createAnnotation() {
 		AnnotationImpl annotation = new AnnotationImpl();
 		return annotation;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AnnotationParameters createAnnotationParameters()
-  {
+	public AnnotationParameters createAnnotationParameters() {
 		AnnotationParametersImpl annotationParameters = new AnnotationParametersImpl();
 		return annotationParameters;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AnnotationValuePairs createAnnotationValuePairs()
-  {
+	public AnnotationValuePairs createAnnotationValuePairs() {
 		AnnotationValuePairsImpl annotationValuePairs = new AnnotationValuePairsImpl();
 		return annotationValuePairs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AnnotationValuePair createAnnotationValuePair()
-  {
+	public AnnotationValuePair createAnnotationValuePair() {
 		AnnotationValuePairImpl annotationValuePair = new AnnotationValuePairImpl();
 		return annotationValuePair;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AnnotationValue createAnnotationValue()
-  {
+	public AnnotationValue createAnnotationValue() {
 		AnnotationValueImpl annotationValue = new AnnotationValueImpl();
 		return annotationValue;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ArrayAnnotationValue createArrayAnnotationValue()
-  {
+	public ArrayAnnotationValue createArrayAnnotationValue() {
 		ArrayAnnotationValueImpl arrayAnnotationValue = new ArrayAnnotationValueImpl();
 		return arrayAnnotationValue;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ConstantExpression createConstantExpression()
-  {
+	public ConstantExpression createConstantExpression() {
 		ConstantExpressionImpl constantExpression = new ConstantExpressionImpl();
 		return constantExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public LogicalOrExpression createLogicalOrExpression()
-  {
+	public LogicalOrExpression createLogicalOrExpression() {
 		LogicalOrExpressionImpl logicalOrExpression = new LogicalOrExpressionImpl();
 		return logicalOrExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public LogicalAndExpression createLogicalAndExpression()
-  {
+	public LogicalAndExpression createLogicalAndExpression() {
 		LogicalAndExpressionImpl logicalAndExpression = new LogicalAndExpressionImpl();
 		return logicalAndExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public OrExpression createOrExpression()
-  {
+	public OrExpression createOrExpression() {
 		OrExpressionImpl orExpression = new OrExpressionImpl();
 		return orExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public XorExpression createXorExpression()
-  {
+	public XorExpression createXorExpression() {
 		XorExpressionImpl xorExpression = new XorExpressionImpl();
 		return xorExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AndExpression createAndExpression()
-  {
+	public AndExpression createAndExpression() {
 		AndExpressionImpl andExpression = new AndExpressionImpl();
 		return andExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ShiftExpression createShiftExpression()
-  {
+	public ShiftExpression createShiftExpression() {
 		ShiftExpressionImpl shiftExpression = new ShiftExpressionImpl();
 		return shiftExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AdditiveExpression createAdditiveExpression()
-  {
+	public AdditiveExpression createAdditiveExpression() {
 		AdditiveExpressionImpl additiveExpression = new AdditiveExpressionImpl();
 		return additiveExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public MulExpression createMulExpression()
-  {
+	public MulExpression createMulExpression() {
 		MulExpressionImpl mulExpression = new MulExpressionImpl();
 		return mulExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public CastExpression createCastExpression()
-  {
+	public CastExpression createCastExpression() {
 		CastExpressionImpl castExpression = new CastExpressionImpl();
 		return castExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public UnaryExpression createUnaryExpression()
-  {
+	public UnaryExpression createUnaryExpression() {
 		UnaryExpressionImpl unaryExpression = new UnaryExpressionImpl();
 		return unaryExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public PrimaryExpression createPrimaryExpression()
-  {
+	public PrimaryExpression createPrimaryExpression() {
 		PrimaryExpressionImpl primaryExpression = new PrimaryExpressionImpl();
 		return primaryExpression;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Literal createLiteral()
-  {
+	public Literal createLiteral() {
 		LiteralImpl literal = new LiteralImpl();
 		return literal;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public TypeQualifier createTypeQualifierFromString(EDataType eDataType, String initialValue)
-  {
+	public TypeQualifier createTypeQualifierFromString(EDataType eDataType, String initialValue) {
 		TypeQualifier result = TypeQualifier.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String convertTypeQualifierToString(EDataType eDataType, Object instanceValue)
-  {
+	public String convertTypeQualifierToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public TypeSpecifier createTypeSpecifierFromString(EDataType eDataType, String initialValue)
-  {
+	public TypeSpecifier createTypeSpecifierFromString(EDataType eDataType, String initialValue) {
 		TypeSpecifier result = TypeSpecifier.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String convertTypeSpecifierToString(EDataType eDataType, Object instanceValue)
-  {
+	public String convertTypeSpecifierToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ParameterQualifier createParameterQualifierFromString(EDataType eDataType, String initialValue)
-  {
+	public ParameterQualifier createParameterQualifierFromString(EDataType eDataType, String initialValue) {
 		ParameterQualifier result = ParameterQualifier.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String convertParameterQualifierToString(EDataType eDataType, Object instanceValue)
-  {
+	public String convertParameterQualifierToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public FractalIDLPackage getFractalIDLPackage()
-  {
+	public FractalIDLPackage getFractalIDLPackage() {
 		return (FractalIDLPackage)getEPackage();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
-  @Deprecated
-  public static FractalIDLPackage getPackage()
-  {
+	@Deprecated
+	public static FractalIDLPackage getPackage() {
 		return FractalIDLPackage.eINSTANCE;
 	}
 

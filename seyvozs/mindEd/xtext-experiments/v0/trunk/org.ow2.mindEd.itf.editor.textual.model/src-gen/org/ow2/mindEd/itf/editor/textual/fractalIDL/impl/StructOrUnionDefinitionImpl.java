@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -34,60 +31,55 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.StructOrUnionDefinition;
  *
  * @generated
  */
-public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl implements StructOrUnionDefinition
-{
-  /**
+public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl implements StructOrUnionDefinition {
+	/**
 	 * The cached value of the '{@link #getStructMember() <em>Struct Member</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getStructMember()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<StructMember> structMember;
+	protected EList<StructMember> structMember;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected StructOrUnionDefinitionImpl()
-  {
+	protected StructOrUnionDefinitionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.STRUCT_OR_UNION_DEFINITION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<StructMember> getStructMember()
-  {
+	public EList<StructMember> getStructMember() {
 		if (structMember == null) {
 			structMember = new EObjectContainmentEList<StructMember>(StructMember.class, this, FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER);
 		}
 		return structMember;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER:
 				return ((InternalEList<?>)getStructMember()).basicRemove(otherEnd, msgs);
@@ -95,14 +87,13 @@ public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl 
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER:
 				return getStructMember();
@@ -110,15 +101,14 @@ public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl 
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER:
 				getStructMember().clear();
@@ -128,14 +118,13 @@ public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl 
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER:
 				getStructMember().clear();
@@ -144,14 +133,13 @@ public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl 
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER:
 				return structMember != null && !structMember.isEmpty();

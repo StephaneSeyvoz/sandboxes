@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -32,66 +29,61 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.TypedefSpecification;
  *
  * @generated
  */
-public class TypedefSpecificationImpl extends TypeDefinitionImpl implements TypedefSpecification
-{
-  /**
+public class TypedefSpecificationImpl extends TypeDefinitionImpl implements TypedefSpecification {
+	/**
 	 * The cached value of the '{@link #getQualifedType() <em>Qualifed Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getQualifedType()
 	 * @generated
 	 * @ordered
 	 */
-  protected QualifiedTypeSpecification qualifedType;
+	protected QualifiedTypeSpecification qualifedType;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getDec() <em>Dec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getDec()
 	 * @generated
 	 * @ordered
 	 */
-  protected Declarators dec;
+	protected Declarators dec;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected TypedefSpecificationImpl()
-  {
+	protected TypedefSpecificationImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.TYPEDEF_SPECIFICATION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public QualifiedTypeSpecification getQualifedType()
-  {
+	public QualifiedTypeSpecification getQualifedType() {
 		return qualifedType;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetQualifedType(QualifiedTypeSpecification newQualifedType, NotificationChain msgs)
-  {
+	public NotificationChain basicSetQualifedType(QualifiedTypeSpecification newQualifedType, NotificationChain msgs) {
 		QualifiedTypeSpecification oldQualifedType = qualifedType;
 		qualifedType = newQualifedType;
 		if (eNotificationRequired()) {
@@ -101,13 +93,12 @@ public class TypedefSpecificationImpl extends TypeDefinitionImpl implements Type
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setQualifedType(QualifiedTypeSpecification newQualifedType)
-  {
+	public void setQualifedType(QualifiedTypeSpecification newQualifedType) {
 		if (newQualifedType != qualifedType) {
 			NotificationChain msgs = null;
 			if (qualifedType != null)
@@ -121,23 +112,21 @@ public class TypedefSpecificationImpl extends TypeDefinitionImpl implements Type
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.TYPEDEF_SPECIFICATION__QUALIFED_TYPE, newQualifedType, newQualifedType));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Declarators getDec()
-  {
+	public Declarators getDec() {
 		return dec;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetDec(Declarators newDec, NotificationChain msgs)
-  {
+	public NotificationChain basicSetDec(Declarators newDec, NotificationChain msgs) {
 		Declarators oldDec = dec;
 		dec = newDec;
 		if (eNotificationRequired()) {
@@ -147,13 +136,12 @@ public class TypedefSpecificationImpl extends TypeDefinitionImpl implements Type
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setDec(Declarators newDec)
-  {
+	public void setDec(Declarators newDec) {
 		if (newDec != dec) {
 			NotificationChain msgs = null;
 			if (dec != null)
@@ -167,14 +155,13 @@ public class TypedefSpecificationImpl extends TypeDefinitionImpl implements Type
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.TYPEDEF_SPECIFICATION__DEC, newDec, newDec));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.TYPEDEF_SPECIFICATION__QUALIFED_TYPE:
 				return basicSetQualifedType(null, msgs);
@@ -184,14 +171,13 @@ public class TypedefSpecificationImpl extends TypeDefinitionImpl implements Type
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.TYPEDEF_SPECIFICATION__QUALIFED_TYPE:
 				return getQualifedType();
@@ -201,14 +187,13 @@ public class TypedefSpecificationImpl extends TypeDefinitionImpl implements Type
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.TYPEDEF_SPECIFICATION__QUALIFED_TYPE:
 				setQualifedType((QualifiedTypeSpecification)newValue);
@@ -220,14 +205,13 @@ public class TypedefSpecificationImpl extends TypeDefinitionImpl implements Type
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.TYPEDEF_SPECIFICATION__QUALIFED_TYPE:
 				setQualifedType((QualifiedTypeSpecification)null);
@@ -239,14 +223,13 @@ public class TypedefSpecificationImpl extends TypeDefinitionImpl implements Type
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.TYPEDEF_SPECIFICATION__QUALIFED_TYPE:
 				return qualifedType != null;

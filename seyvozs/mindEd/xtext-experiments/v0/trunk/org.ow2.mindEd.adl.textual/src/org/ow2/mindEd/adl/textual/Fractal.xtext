@@ -183,7 +183,7 @@ ArgumentDefinition :
 
 AttributeDefinition :
 	(annotationsList=AnnotationsList)?
-	'attribute' (type = AttributeType)? attributeName = ID ('=' value = Value)?;
+	'attribute' (type = AttributeType)? attributeName = ID ('=' value = Value)? ';' ;
 
 ImplementationDefinition :
 	(annotationsList=AnnotationsList)?

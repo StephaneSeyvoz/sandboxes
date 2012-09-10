@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -38,106 +35,101 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedTypeSpecification;
  *
  * @generated
  */
-public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implements MethodDefinition
-{
-  /**
+public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implements MethodDefinition {
+	/**
 	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
 	 * @generated
 	 * @ordered
 	 */
-  protected Annotations annotations;
+	protected Annotations annotations;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getQualifiedTypeSpec() <em>Qualified Type Spec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getQualifiedTypeSpec()
 	 * @generated
 	 * @ordered
 	 */
-  protected QualifiedTypeSpecification qualifiedTypeSpec;
+	protected QualifiedTypeSpecification qualifiedTypeSpec;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getPointerSpecification() <em>Pointer Specification</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getPointerSpecification()
 	 * @generated
 	 * @ordered
 	 */
-  protected PointerSpecification pointerSpecification;
+	protected PointerSpecification pointerSpecification;
 
-  /**
+	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String ID_EDEFAULT = null;
+	protected static final String ID_EDEFAULT = null;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
-  protected String id = ID_EDEFAULT;
+	protected String id = ID_EDEFAULT;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getParameterList() <em>Parameter List</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getParameterList()
 	 * @generated
 	 * @ordered
 	 */
-  protected ParameterList parameterList;
+	protected ParameterList parameterList;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected MethodDefinitionImpl()
-  {
+	protected MethodDefinitionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.METHOD_DEFINITION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Annotations getAnnotations()
-  {
+	public Annotations getAnnotations() {
 		return annotations;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetAnnotations(Annotations newAnnotations, NotificationChain msgs)
-  {
+	public NotificationChain basicSetAnnotations(Annotations newAnnotations, NotificationChain msgs) {
 		Annotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
@@ -147,13 +139,12 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setAnnotations(Annotations newAnnotations)
-  {
+	public void setAnnotations(Annotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
 			if (annotations != null)
@@ -167,23 +158,21 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.METHOD_DEFINITION__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public QualifiedTypeSpecification getQualifiedTypeSpec()
-  {
+	public QualifiedTypeSpecification getQualifiedTypeSpec() {
 		return qualifiedTypeSpec;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetQualifiedTypeSpec(QualifiedTypeSpecification newQualifiedTypeSpec, NotificationChain msgs)
-  {
+	public NotificationChain basicSetQualifiedTypeSpec(QualifiedTypeSpecification newQualifiedTypeSpec, NotificationChain msgs) {
 		QualifiedTypeSpecification oldQualifiedTypeSpec = qualifiedTypeSpec;
 		qualifiedTypeSpec = newQualifiedTypeSpec;
 		if (eNotificationRequired()) {
@@ -193,13 +182,12 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setQualifiedTypeSpec(QualifiedTypeSpecification newQualifiedTypeSpec)
-  {
+	public void setQualifiedTypeSpec(QualifiedTypeSpecification newQualifiedTypeSpec) {
 		if (newQualifiedTypeSpec != qualifiedTypeSpec) {
 			NotificationChain msgs = null;
 			if (qualifiedTypeSpec != null)
@@ -213,23 +201,21 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.METHOD_DEFINITION__QUALIFIED_TYPE_SPEC, newQualifiedTypeSpec, newQualifiedTypeSpec));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public PointerSpecification getPointerSpecification()
-  {
+	public PointerSpecification getPointerSpecification() {
 		return pointerSpecification;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetPointerSpecification(PointerSpecification newPointerSpecification, NotificationChain msgs)
-  {
+	public NotificationChain basicSetPointerSpecification(PointerSpecification newPointerSpecification, NotificationChain msgs) {
 		PointerSpecification oldPointerSpecification = pointerSpecification;
 		pointerSpecification = newPointerSpecification;
 		if (eNotificationRequired()) {
@@ -239,13 +225,12 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setPointerSpecification(PointerSpecification newPointerSpecification)
-  {
+	public void setPointerSpecification(PointerSpecification newPointerSpecification) {
 		if (newPointerSpecification != pointerSpecification) {
 			NotificationChain msgs = null;
 			if (pointerSpecification != null)
@@ -259,46 +244,42 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.METHOD_DEFINITION__POINTER_SPECIFICATION, newPointerSpecification, newPointerSpecification));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getId()
-  {
+	public String getId() {
 		return id;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setId(String newId)
-  {
+	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.METHOD_DEFINITION__ID, oldId, id));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ParameterList getParameterList()
-  {
+	public ParameterList getParameterList() {
 		return parameterList;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetParameterList(ParameterList newParameterList, NotificationChain msgs)
-  {
+	public NotificationChain basicSetParameterList(ParameterList newParameterList, NotificationChain msgs) {
 		ParameterList oldParameterList = parameterList;
 		parameterList = newParameterList;
 		if (eNotificationRequired()) {
@@ -308,13 +289,12 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setParameterList(ParameterList newParameterList)
-  {
+	public void setParameterList(ParameterList newParameterList) {
 		if (newParameterList != parameterList) {
 			NotificationChain msgs = null;
 			if (parameterList != null)
@@ -328,14 +308,13 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.METHOD_DEFINITION__PARAMETER_LIST, newParameterList, newParameterList));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.METHOD_DEFINITION__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
@@ -349,14 +328,13 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.METHOD_DEFINITION__ANNOTATIONS:
 				return getAnnotations();
@@ -372,14 +350,13 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.METHOD_DEFINITION__ANNOTATIONS:
 				setAnnotations((Annotations)newValue);
@@ -400,14 +377,13 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.METHOD_DEFINITION__ANNOTATIONS:
 				setAnnotations((Annotations)null);
@@ -428,14 +404,13 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.METHOD_DEFINITION__ANNOTATIONS:
 				return annotations != null;
@@ -451,14 +426,13 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
 		return super.eIsSet(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

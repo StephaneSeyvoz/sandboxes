@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -41,109 +38,103 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
  *
  * @generated
  */
-public class EnumMemberImpl extends EnumMemberListImpl implements EnumMember
-{
-  /**
+public class EnumMemberImpl extends EnumMemberListImpl implements EnumMember {
+	/**
 	 * The cached value of the '{@link #getEnumMember() <em>Enum Member</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getEnumMember()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<EnumMember> enumMember;
+	protected EList<EnumMember> enumMember;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
 	 * @generated
 	 * @ordered
 	 */
-  protected Annotations annotations;
+	protected Annotations annotations;
 
-  /**
+	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String ID_EDEFAULT = null;
+	protected static final String ID_EDEFAULT = null;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
-  protected String id = ID_EDEFAULT;
+	protected String id = ID_EDEFAULT;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getConstExpr() <em>Const Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getConstExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected ConstantExpression constExpr;
+	protected ConstantExpression constExpr;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected EnumMemberImpl()
-  {
+	protected EnumMemberImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.ENUM_MEMBER;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<EnumMember> getEnumMember()
-  {
+	public EList<EnumMember> getEnumMember() {
 		if (enumMember == null) {
 			enumMember = new EObjectContainmentEList<EnumMember>(EnumMember.class, this, FractalIDLPackage.ENUM_MEMBER__ENUM_MEMBER);
 		}
 		return enumMember;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Annotations getAnnotations()
-  {
+	public Annotations getAnnotations() {
 		return annotations;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetAnnotations(Annotations newAnnotations, NotificationChain msgs)
-  {
+	public NotificationChain basicSetAnnotations(Annotations newAnnotations, NotificationChain msgs) {
 		Annotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
@@ -153,13 +144,12 @@ public class EnumMemberImpl extends EnumMemberListImpl implements EnumMember
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setAnnotations(Annotations newAnnotations)
-  {
+	public void setAnnotations(Annotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
 			if (annotations != null)
@@ -173,46 +163,42 @@ public class EnumMemberImpl extends EnumMemberListImpl implements EnumMember
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ENUM_MEMBER__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getId()
-  {
+	public String getId() {
 		return id;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setId(String newId)
-  {
+	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ENUM_MEMBER__ID, oldId, id));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ConstantExpression getConstExpr()
-  {
+	public ConstantExpression getConstExpr() {
 		return constExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetConstExpr(ConstantExpression newConstExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetConstExpr(ConstantExpression newConstExpr, NotificationChain msgs) {
 		ConstantExpression oldConstExpr = constExpr;
 		constExpr = newConstExpr;
 		if (eNotificationRequired()) {
@@ -222,13 +208,12 @@ public class EnumMemberImpl extends EnumMemberListImpl implements EnumMember
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setConstExpr(ConstantExpression newConstExpr)
-  {
+	public void setConstExpr(ConstantExpression newConstExpr) {
 		if (newConstExpr != constExpr) {
 			NotificationChain msgs = null;
 			if (constExpr != null)
@@ -242,14 +227,13 @@ public class EnumMemberImpl extends EnumMemberListImpl implements EnumMember
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ENUM_MEMBER__CONST_EXPR, newConstExpr, newConstExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.ENUM_MEMBER__ENUM_MEMBER:
 				return ((InternalEList<?>)getEnumMember()).basicRemove(otherEnd, msgs);
@@ -261,14 +245,13 @@ public class EnumMemberImpl extends EnumMemberListImpl implements EnumMember
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.ENUM_MEMBER__ENUM_MEMBER:
 				return getEnumMember();
@@ -282,15 +265,14 @@ public class EnumMemberImpl extends EnumMemberListImpl implements EnumMember
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.ENUM_MEMBER__ENUM_MEMBER:
 				getEnumMember().clear();
@@ -309,14 +291,13 @@ public class EnumMemberImpl extends EnumMemberListImpl implements EnumMember
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ENUM_MEMBER__ENUM_MEMBER:
 				getEnumMember().clear();
@@ -334,14 +315,13 @@ public class EnumMemberImpl extends EnumMemberListImpl implements EnumMember
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ENUM_MEMBER__ENUM_MEMBER:
 				return enumMember != null && !enumMember.isEmpty();
@@ -355,14 +335,13 @@ public class EnumMemberImpl extends EnumMemberListImpl implements EnumMember
 		return super.eIsSet(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

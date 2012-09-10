@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -32,66 +29,61 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.XorExpression;
  *
  * @generated
  */
-public class XorExpressionImpl extends MinimalEObjectImpl.Container implements XorExpression
-{
-  /**
+public class XorExpressionImpl extends MinimalEObjectImpl.Container implements XorExpression {
+	/**
 	 * The cached value of the '{@link #getLeftExpr() <em>Left Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getLeftExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected AndExpression leftExpr;
+	protected AndExpression leftExpr;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getRightExpr() <em>Right Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getRightExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected XorExpression rightExpr;
+	protected XorExpression rightExpr;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected XorExpressionImpl()
-  {
+	protected XorExpressionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.XOR_EXPRESSION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AndExpression getLeftExpr()
-  {
+	public AndExpression getLeftExpr() {
 		return leftExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetLeftExpr(AndExpression newLeftExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetLeftExpr(AndExpression newLeftExpr, NotificationChain msgs) {
 		AndExpression oldLeftExpr = leftExpr;
 		leftExpr = newLeftExpr;
 		if (eNotificationRequired()) {
@@ -101,13 +93,12 @@ public class XorExpressionImpl extends MinimalEObjectImpl.Container implements X
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setLeftExpr(AndExpression newLeftExpr)
-  {
+	public void setLeftExpr(AndExpression newLeftExpr) {
 		if (newLeftExpr != leftExpr) {
 			NotificationChain msgs = null;
 			if (leftExpr != null)
@@ -121,23 +112,21 @@ public class XorExpressionImpl extends MinimalEObjectImpl.Container implements X
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.XOR_EXPRESSION__LEFT_EXPR, newLeftExpr, newLeftExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public XorExpression getRightExpr()
-  {
+	public XorExpression getRightExpr() {
 		return rightExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetRightExpr(XorExpression newRightExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetRightExpr(XorExpression newRightExpr, NotificationChain msgs) {
 		XorExpression oldRightExpr = rightExpr;
 		rightExpr = newRightExpr;
 		if (eNotificationRequired()) {
@@ -147,13 +136,12 @@ public class XorExpressionImpl extends MinimalEObjectImpl.Container implements X
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setRightExpr(XorExpression newRightExpr)
-  {
+	public void setRightExpr(XorExpression newRightExpr) {
 		if (newRightExpr != rightExpr) {
 			NotificationChain msgs = null;
 			if (rightExpr != null)
@@ -167,14 +155,13 @@ public class XorExpressionImpl extends MinimalEObjectImpl.Container implements X
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.XOR_EXPRESSION__RIGHT_EXPR, newRightExpr, newRightExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.XOR_EXPRESSION__LEFT_EXPR:
 				return basicSetLeftExpr(null, msgs);
@@ -184,14 +171,13 @@ public class XorExpressionImpl extends MinimalEObjectImpl.Container implements X
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.XOR_EXPRESSION__LEFT_EXPR:
 				return getLeftExpr();
@@ -201,14 +187,13 @@ public class XorExpressionImpl extends MinimalEObjectImpl.Container implements X
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.XOR_EXPRESSION__LEFT_EXPR:
 				setLeftExpr((AndExpression)newValue);
@@ -220,14 +205,13 @@ public class XorExpressionImpl extends MinimalEObjectImpl.Container implements X
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.XOR_EXPRESSION__LEFT_EXPR:
 				setLeftExpr((AndExpression)null);
@@ -239,14 +223,13 @@ public class XorExpressionImpl extends MinimalEObjectImpl.Container implements X
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.XOR_EXPRESSION__LEFT_EXPR:
 				return leftExpr != null;

@@ -1591,13 +1591,14 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cEqualsSignKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cValueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
 		private final RuleCall cValueValueParserRuleCall_4_1_0 = (RuleCall)cValueAssignment_4_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//AttributeDefinition:
 		//
-		//	annotationsList=AnnotationsList? "attribute" type=AttributeType? attributeName=ID ("=" value=Value)?;
+		//	annotationsList=AnnotationsList? "attribute" type=AttributeType? attributeName=ID ("=" value=Value)? ";";
 		public ParserRule getRule() { return rule; }
 
-		//annotationsList=AnnotationsList? "attribute" type=AttributeType? attributeName=ID ("=" value=Value)?
+		//annotationsList=AnnotationsList? "attribute" type=AttributeType? attributeName=ID ("=" value=Value)? ";"
 		public Group getGroup() { return cGroup; }
 
 		//annotationsList=AnnotationsList?
@@ -1632,6 +1633,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Value
 		public RuleCall getValueValueParserRuleCall_4_1_0() { return cValueValueParserRuleCall_4_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 	}
 
 	public class ImplementationDefinitionElements extends AbstractParserRuleElementFinder {
@@ -2645,7 +2649,7 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 	//AttributeDefinition:
 	//
-	//	annotationsList=AnnotationsList? "attribute" type=AttributeType? attributeName=ID ("=" value=Value)?;
+	//	annotationsList=AnnotationsList? "attribute" type=AttributeType? attributeName=ID ("=" value=Value)? ";";
 	public AttributeDefinitionElements getAttributeDefinitionAccess() {
 		return (pAttributeDefinition != null) ? pAttributeDefinition : (pAttributeDefinition = new AttributeDefinitionElements());
 	}

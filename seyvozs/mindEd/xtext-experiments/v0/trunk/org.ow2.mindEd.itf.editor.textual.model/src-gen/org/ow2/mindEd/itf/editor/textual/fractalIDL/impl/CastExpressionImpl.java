@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -34,76 +31,71 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.UnaryExpression;
  *
  * @generated
  */
-public class CastExpressionImpl extends MinimalEObjectImpl.Container implements CastExpression
-{
-  /**
+public class CastExpressionImpl extends MinimalEObjectImpl.Container implements CastExpression {
+	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getType()
 	 * @generated
 	 * @ordered
 	 */
-  protected QualifiedTypeSpecification type;
+	protected QualifiedTypeSpecification type;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected CastExpression expr;
+	protected CastExpression expr;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getUnaryExpr() <em>Unary Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getUnaryExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected UnaryExpression unaryExpr;
+	protected UnaryExpression unaryExpr;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected CastExpressionImpl()
-  {
+	protected CastExpressionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.CAST_EXPRESSION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public QualifiedTypeSpecification getType()
-  {
+	public QualifiedTypeSpecification getType() {
 		return type;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetType(QualifiedTypeSpecification newType, NotificationChain msgs)
-  {
+	public NotificationChain basicSetType(QualifiedTypeSpecification newType, NotificationChain msgs) {
 		QualifiedTypeSpecification oldType = type;
 		type = newType;
 		if (eNotificationRequired()) {
@@ -113,13 +105,12 @@ public class CastExpressionImpl extends MinimalEObjectImpl.Container implements 
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setType(QualifiedTypeSpecification newType)
-  {
+	public void setType(QualifiedTypeSpecification newType) {
 		if (newType != type) {
 			NotificationChain msgs = null;
 			if (type != null)
@@ -133,23 +124,21 @@ public class CastExpressionImpl extends MinimalEObjectImpl.Container implements 
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.CAST_EXPRESSION__TYPE, newType, newType));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public CastExpression getExpr()
-  {
+	public CastExpression getExpr() {
 		return expr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetExpr(CastExpression newExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetExpr(CastExpression newExpr, NotificationChain msgs) {
 		CastExpression oldExpr = expr;
 		expr = newExpr;
 		if (eNotificationRequired()) {
@@ -159,13 +148,12 @@ public class CastExpressionImpl extends MinimalEObjectImpl.Container implements 
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setExpr(CastExpression newExpr)
-  {
+	public void setExpr(CastExpression newExpr) {
 		if (newExpr != expr) {
 			NotificationChain msgs = null;
 			if (expr != null)
@@ -179,23 +167,21 @@ public class CastExpressionImpl extends MinimalEObjectImpl.Container implements 
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.CAST_EXPRESSION__EXPR, newExpr, newExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public UnaryExpression getUnaryExpr()
-  {
+	public UnaryExpression getUnaryExpr() {
 		return unaryExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetUnaryExpr(UnaryExpression newUnaryExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetUnaryExpr(UnaryExpression newUnaryExpr, NotificationChain msgs) {
 		UnaryExpression oldUnaryExpr = unaryExpr;
 		unaryExpr = newUnaryExpr;
 		if (eNotificationRequired()) {
@@ -205,13 +191,12 @@ public class CastExpressionImpl extends MinimalEObjectImpl.Container implements 
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setUnaryExpr(UnaryExpression newUnaryExpr)
-  {
+	public void setUnaryExpr(UnaryExpression newUnaryExpr) {
 		if (newUnaryExpr != unaryExpr) {
 			NotificationChain msgs = null;
 			if (unaryExpr != null)
@@ -225,14 +210,13 @@ public class CastExpressionImpl extends MinimalEObjectImpl.Container implements 
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.CAST_EXPRESSION__UNARY_EXPR, newUnaryExpr, newUnaryExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.CAST_EXPRESSION__TYPE:
 				return basicSetType(null, msgs);
@@ -244,14 +228,13 @@ public class CastExpressionImpl extends MinimalEObjectImpl.Container implements 
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.CAST_EXPRESSION__TYPE:
 				return getType();
@@ -263,14 +246,13 @@ public class CastExpressionImpl extends MinimalEObjectImpl.Container implements 
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.CAST_EXPRESSION__TYPE:
 				setType((QualifiedTypeSpecification)newValue);
@@ -285,14 +267,13 @@ public class CastExpressionImpl extends MinimalEObjectImpl.Container implements 
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.CAST_EXPRESSION__TYPE:
 				setType((QualifiedTypeSpecification)null);
@@ -307,14 +288,13 @@ public class CastExpressionImpl extends MinimalEObjectImpl.Container implements 
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.CAST_EXPRESSION__TYPE:
 				return type != null;

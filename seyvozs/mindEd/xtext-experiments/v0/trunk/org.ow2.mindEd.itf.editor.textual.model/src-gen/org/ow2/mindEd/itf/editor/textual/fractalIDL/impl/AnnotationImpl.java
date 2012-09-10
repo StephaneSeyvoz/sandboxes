@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -31,99 +28,92 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
  *
  * @generated
  */
-public class AnnotationImpl extends AnnotationValueImpl implements Annotation
-{
-  /**
+public class AnnotationImpl extends AnnotationValueImpl implements Annotation {
+	/**
 	 * The default value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getFqn()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String FQN_EDEFAULT = null;
+	protected static final String FQN_EDEFAULT = null;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getFqn() <em>Fqn</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getFqn()
 	 * @generated
 	 * @ordered
 	 */
-  protected String fqn = FQN_EDEFAULT;
+	protected String fqn = FQN_EDEFAULT;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getAnnotationParamaters() <em>Annotation Paramaters</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getAnnotationParamaters()
 	 * @generated
 	 * @ordered
 	 */
-  protected AnnotationParameters annotationParamaters;
+	protected AnnotationParameters annotationParamaters;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected AnnotationImpl()
-  {
+	protected AnnotationImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.ANNOTATION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getFqn()
-  {
+	public String getFqn() {
 		return fqn;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setFqn(String newFqn)
-  {
+	public void setFqn(String newFqn) {
 		String oldFqn = fqn;
 		fqn = newFqn;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ANNOTATION__FQN, oldFqn, fqn));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AnnotationParameters getAnnotationParamaters()
-  {
+	public AnnotationParameters getAnnotationParamaters() {
 		return annotationParamaters;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetAnnotationParamaters(AnnotationParameters newAnnotationParamaters, NotificationChain msgs)
-  {
+	public NotificationChain basicSetAnnotationParamaters(AnnotationParameters newAnnotationParamaters, NotificationChain msgs) {
 		AnnotationParameters oldAnnotationParamaters = annotationParamaters;
 		annotationParamaters = newAnnotationParamaters;
 		if (eNotificationRequired()) {
@@ -133,13 +123,12 @@ public class AnnotationImpl extends AnnotationValueImpl implements Annotation
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setAnnotationParamaters(AnnotationParameters newAnnotationParamaters)
-  {
+	public void setAnnotationParamaters(AnnotationParameters newAnnotationParamaters) {
 		if (newAnnotationParamaters != annotationParamaters) {
 			NotificationChain msgs = null;
 			if (annotationParamaters != null)
@@ -153,14 +142,13 @@ public class AnnotationImpl extends AnnotationValueImpl implements Annotation
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ANNOTATION__ANNOTATION_PARAMATERS, newAnnotationParamaters, newAnnotationParamaters));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION__ANNOTATION_PARAMATERS:
 				return basicSetAnnotationParamaters(null, msgs);
@@ -168,14 +156,13 @@ public class AnnotationImpl extends AnnotationValueImpl implements Annotation
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION__FQN:
 				return getFqn();
@@ -185,14 +172,13 @@ public class AnnotationImpl extends AnnotationValueImpl implements Annotation
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION__FQN:
 				setFqn((String)newValue);
@@ -204,14 +190,13 @@ public class AnnotationImpl extends AnnotationValueImpl implements Annotation
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION__FQN:
 				setFqn(FQN_EDEFAULT);
@@ -223,14 +208,13 @@ public class AnnotationImpl extends AnnotationValueImpl implements Annotation
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION__FQN:
 				return FQN_EDEFAULT == null ? fqn != null : !FQN_EDEFAULT.equals(fqn);
@@ -240,14 +224,13 @@ public class AnnotationImpl extends AnnotationValueImpl implements Annotation
 		return super.eIsSet(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

@@ -2574,7 +2574,11 @@ ruleAttributeDefinition returns [EObject current=null]
 	    }
 
 )
-))?)
+))?	otherlv_6=';' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getAttributeDefinitionAccess().getSemicolonKeyword_5());
+    }
+)
 ;
 
 

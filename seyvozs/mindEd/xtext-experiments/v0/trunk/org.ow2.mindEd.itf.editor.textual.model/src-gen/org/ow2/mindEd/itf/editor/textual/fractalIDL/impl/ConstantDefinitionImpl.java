@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -32,99 +29,92 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
  *
  * @generated
  */
-public class ConstantDefinitionImpl extends MinimalEObjectImpl.Container implements ConstantDefinition
-{
-  /**
+public class ConstantDefinitionImpl extends MinimalEObjectImpl.Container implements ConstantDefinition {
+	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String ID_EDEFAULT = null;
+	protected static final String ID_EDEFAULT = null;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
-  protected String id = ID_EDEFAULT;
+	protected String id = ID_EDEFAULT;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected ConstantExpression expr;
+	protected ConstantExpression expr;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected ConstantDefinitionImpl()
-  {
+	protected ConstantDefinitionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.CONSTANT_DEFINITION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getId()
-  {
+	public String getId() {
 		return id;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setId(String newId)
-  {
+	public void setId(String newId) {
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.CONSTANT_DEFINITION__ID, oldId, id));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public ConstantExpression getExpr()
-  {
+	public ConstantExpression getExpr() {
 		return expr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetExpr(ConstantExpression newExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetExpr(ConstantExpression newExpr, NotificationChain msgs) {
 		ConstantExpression oldExpr = expr;
 		expr = newExpr;
 		if (eNotificationRequired()) {
@@ -134,13 +124,12 @@ public class ConstantDefinitionImpl extends MinimalEObjectImpl.Container impleme
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setExpr(ConstantExpression newExpr)
-  {
+	public void setExpr(ConstantExpression newExpr) {
 		if (newExpr != expr) {
 			NotificationChain msgs = null;
 			if (expr != null)
@@ -154,14 +143,13 @@ public class ConstantDefinitionImpl extends MinimalEObjectImpl.Container impleme
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.CONSTANT_DEFINITION__EXPR, newExpr, newExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.CONSTANT_DEFINITION__EXPR:
 				return basicSetExpr(null, msgs);
@@ -169,14 +157,13 @@ public class ConstantDefinitionImpl extends MinimalEObjectImpl.Container impleme
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.CONSTANT_DEFINITION__ID:
 				return getId();
@@ -186,14 +173,13 @@ public class ConstantDefinitionImpl extends MinimalEObjectImpl.Container impleme
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.CONSTANT_DEFINITION__ID:
 				setId((String)newValue);
@@ -205,14 +191,13 @@ public class ConstantDefinitionImpl extends MinimalEObjectImpl.Container impleme
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.CONSTANT_DEFINITION__ID:
 				setId(ID_EDEFAULT);
@@ -224,14 +209,13 @@ public class ConstantDefinitionImpl extends MinimalEObjectImpl.Container impleme
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.CONSTANT_DEFINITION__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
@@ -241,14 +225,13 @@ public class ConstantDefinitionImpl extends MinimalEObjectImpl.Container impleme
 		return super.eIsSet(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

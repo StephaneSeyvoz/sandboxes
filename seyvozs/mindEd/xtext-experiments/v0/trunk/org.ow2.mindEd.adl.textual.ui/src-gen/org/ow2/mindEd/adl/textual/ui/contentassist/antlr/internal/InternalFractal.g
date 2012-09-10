@@ -6271,6 +6271,7 @@ rule__AttributeDefinition__Group__4
     }
 :
 	rule__AttributeDefinition__Group__4__Impl
+	rule__AttributeDefinition__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -6291,6 +6292,38 @@ rule__AttributeDefinition__Group__4__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__AttributeDefinition__Group__5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__AttributeDefinition__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AttributeDefinition__Group__5__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAttributeDefinitionAccess().getSemicolonKeyword_5()); }
+
+	';' 
+
+{ after(grammarAccess.getAttributeDefinitionAccess().getSemicolonKeyword_5()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 

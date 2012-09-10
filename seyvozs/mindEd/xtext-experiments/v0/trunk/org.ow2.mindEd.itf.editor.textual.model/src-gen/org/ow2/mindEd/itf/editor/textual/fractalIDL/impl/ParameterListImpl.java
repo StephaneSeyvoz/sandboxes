@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -39,66 +36,61 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.ParameterList;
  *
  * @generated
  */
-public class ParameterListImpl extends MinimalEObjectImpl.Container implements ParameterList
-{
-  /**
+public class ParameterListImpl extends MinimalEObjectImpl.Container implements ParameterList {
+	/**
 	 * The cached value of the '{@link #getParam() <em>Param</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getParam()
 	 * @generated
 	 * @ordered
 	 */
-  protected Parameter param;
+	protected Parameter param;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getParams()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<Parameter> params;
+	protected EList<Parameter> params;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected ParameterListImpl()
-  {
+	protected ParameterListImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.PARAMETER_LIST;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Parameter getParam()
-  {
+	public Parameter getParam() {
 		return param;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetParam(Parameter newParam, NotificationChain msgs)
-  {
+	public NotificationChain basicSetParam(Parameter newParam, NotificationChain msgs) {
 		Parameter oldParam = param;
 		param = newParam;
 		if (eNotificationRequired()) {
@@ -108,13 +100,12 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setParam(Parameter newParam)
-  {
+	public void setParam(Parameter newParam) {
 		if (newParam != param) {
 			NotificationChain msgs = null;
 			if (param != null)
@@ -128,27 +119,25 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.PARAMETER_LIST__PARAM, newParam, newParam));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Parameter> getParams()
-  {
+	public EList<Parameter> getParams() {
 		if (params == null) {
 			params = new EObjectContainmentEList<Parameter>(Parameter.class, this, FractalIDLPackage.PARAMETER_LIST__PARAMS);
 		}
 		return params;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.PARAMETER_LIST__PARAM:
 				return basicSetParam(null, msgs);
@@ -158,14 +147,13 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.PARAMETER_LIST__PARAM:
 				return getParam();
@@ -175,15 +163,14 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.PARAMETER_LIST__PARAM:
 				setParam((Parameter)newValue);
@@ -196,14 +183,13 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.PARAMETER_LIST__PARAM:
 				setParam((Parameter)null);
@@ -215,14 +201,13 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.PARAMETER_LIST__PARAM:
 				return param != null;

@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -32,66 +29,61 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.OrExpression;
  *
  * @generated
  */
-public class LogicalAndExpressionImpl extends MinimalEObjectImpl.Container implements LogicalAndExpression
-{
-  /**
+public class LogicalAndExpressionImpl extends MinimalEObjectImpl.Container implements LogicalAndExpression {
+	/**
 	 * The cached value of the '{@link #getLeftExpr() <em>Left Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getLeftExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected OrExpression leftExpr;
+	protected OrExpression leftExpr;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getRightExpr() <em>Right Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getRightExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected LogicalAndExpression rightExpr;
+	protected LogicalAndExpression rightExpr;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected LogicalAndExpressionImpl()
-  {
+	protected LogicalAndExpressionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.LOGICAL_AND_EXPRESSION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public OrExpression getLeftExpr()
-  {
+	public OrExpression getLeftExpr() {
 		return leftExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetLeftExpr(OrExpression newLeftExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetLeftExpr(OrExpression newLeftExpr, NotificationChain msgs) {
 		OrExpression oldLeftExpr = leftExpr;
 		leftExpr = newLeftExpr;
 		if (eNotificationRequired()) {
@@ -101,13 +93,12 @@ public class LogicalAndExpressionImpl extends MinimalEObjectImpl.Container imple
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setLeftExpr(OrExpression newLeftExpr)
-  {
+	public void setLeftExpr(OrExpression newLeftExpr) {
 		if (newLeftExpr != leftExpr) {
 			NotificationChain msgs = null;
 			if (leftExpr != null)
@@ -121,23 +112,21 @@ public class LogicalAndExpressionImpl extends MinimalEObjectImpl.Container imple
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.LOGICAL_AND_EXPRESSION__LEFT_EXPR, newLeftExpr, newLeftExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public LogicalAndExpression getRightExpr()
-  {
+	public LogicalAndExpression getRightExpr() {
 		return rightExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetRightExpr(LogicalAndExpression newRightExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetRightExpr(LogicalAndExpression newRightExpr, NotificationChain msgs) {
 		LogicalAndExpression oldRightExpr = rightExpr;
 		rightExpr = newRightExpr;
 		if (eNotificationRequired()) {
@@ -147,13 +136,12 @@ public class LogicalAndExpressionImpl extends MinimalEObjectImpl.Container imple
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setRightExpr(LogicalAndExpression newRightExpr)
-  {
+	public void setRightExpr(LogicalAndExpression newRightExpr) {
 		if (newRightExpr != rightExpr) {
 			NotificationChain msgs = null;
 			if (rightExpr != null)
@@ -167,14 +155,13 @@ public class LogicalAndExpressionImpl extends MinimalEObjectImpl.Container imple
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.LOGICAL_AND_EXPRESSION__RIGHT_EXPR, newRightExpr, newRightExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.LOGICAL_AND_EXPRESSION__LEFT_EXPR:
 				return basicSetLeftExpr(null, msgs);
@@ -184,14 +171,13 @@ public class LogicalAndExpressionImpl extends MinimalEObjectImpl.Container imple
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.LOGICAL_AND_EXPRESSION__LEFT_EXPR:
 				return getLeftExpr();
@@ -201,14 +187,13 @@ public class LogicalAndExpressionImpl extends MinimalEObjectImpl.Container imple
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.LOGICAL_AND_EXPRESSION__LEFT_EXPR:
 				setLeftExpr((OrExpression)newValue);
@@ -220,14 +205,13 @@ public class LogicalAndExpressionImpl extends MinimalEObjectImpl.Container imple
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.LOGICAL_AND_EXPRESSION__LEFT_EXPR:
 				setLeftExpr((OrExpression)null);
@@ -239,14 +223,13 @@ public class LogicalAndExpressionImpl extends MinimalEObjectImpl.Container imple
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.LOGICAL_AND_EXPRESSION__LEFT_EXPR:
 				return leftExpr != null;

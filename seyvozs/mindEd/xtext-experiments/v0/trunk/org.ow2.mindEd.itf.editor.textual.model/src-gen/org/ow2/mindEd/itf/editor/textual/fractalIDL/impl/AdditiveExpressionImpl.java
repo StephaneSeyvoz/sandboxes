@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -33,86 +30,81 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.MulExpression;
  *
  * @generated
  */
-public class AdditiveExpressionImpl extends MinimalEObjectImpl.Container implements AdditiveExpression
-{
-  /**
+public class AdditiveExpressionImpl extends MinimalEObjectImpl.Container implements AdditiveExpression {
+	/**
 	 * The cached value of the '{@link #getLeftExpr() <em>Left Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getLeftExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected MulExpression leftExpr;
+	protected MulExpression leftExpr;
 
-  /**
+	/**
 	 * The default value of the '{@link #getOp() <em>Op</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getOp()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String OP_EDEFAULT = null;
+	protected static final String OP_EDEFAULT = null;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getOp() <em>Op</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getOp()
 	 * @generated
 	 * @ordered
 	 */
-  protected String op = OP_EDEFAULT;
+	protected String op = OP_EDEFAULT;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getRightExpr() <em>Right Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getRightExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected AdditiveExpression rightExpr;
+	protected AdditiveExpression rightExpr;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected AdditiveExpressionImpl()
-  {
+	protected AdditiveExpressionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.ADDITIVE_EXPRESSION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public MulExpression getLeftExpr()
-  {
+	public MulExpression getLeftExpr() {
 		return leftExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetLeftExpr(MulExpression newLeftExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetLeftExpr(MulExpression newLeftExpr, NotificationChain msgs) {
 		MulExpression oldLeftExpr = leftExpr;
 		leftExpr = newLeftExpr;
 		if (eNotificationRequired()) {
@@ -122,13 +114,12 @@ public class AdditiveExpressionImpl extends MinimalEObjectImpl.Container impleme
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setLeftExpr(MulExpression newLeftExpr)
-  {
+	public void setLeftExpr(MulExpression newLeftExpr) {
 		if (newLeftExpr != leftExpr) {
 			NotificationChain msgs = null;
 			if (leftExpr != null)
@@ -142,46 +133,42 @@ public class AdditiveExpressionImpl extends MinimalEObjectImpl.Container impleme
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ADDITIVE_EXPRESSION__LEFT_EXPR, newLeftExpr, newLeftExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getOp()
-  {
+	public String getOp() {
 		return op;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setOp(String newOp)
-  {
+	public void setOp(String newOp) {
 		String oldOp = op;
 		op = newOp;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ADDITIVE_EXPRESSION__OP, oldOp, op));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AdditiveExpression getRightExpr()
-  {
+	public AdditiveExpression getRightExpr() {
 		return rightExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetRightExpr(AdditiveExpression newRightExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetRightExpr(AdditiveExpression newRightExpr, NotificationChain msgs) {
 		AdditiveExpression oldRightExpr = rightExpr;
 		rightExpr = newRightExpr;
 		if (eNotificationRequired()) {
@@ -191,13 +178,12 @@ public class AdditiveExpressionImpl extends MinimalEObjectImpl.Container impleme
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setRightExpr(AdditiveExpression newRightExpr)
-  {
+	public void setRightExpr(AdditiveExpression newRightExpr) {
 		if (newRightExpr != rightExpr) {
 			NotificationChain msgs = null;
 			if (rightExpr != null)
@@ -211,14 +197,13 @@ public class AdditiveExpressionImpl extends MinimalEObjectImpl.Container impleme
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ADDITIVE_EXPRESSION__RIGHT_EXPR, newRightExpr, newRightExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.ADDITIVE_EXPRESSION__LEFT_EXPR:
 				return basicSetLeftExpr(null, msgs);
@@ -228,14 +213,13 @@ public class AdditiveExpressionImpl extends MinimalEObjectImpl.Container impleme
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.ADDITIVE_EXPRESSION__LEFT_EXPR:
 				return getLeftExpr();
@@ -247,14 +231,13 @@ public class AdditiveExpressionImpl extends MinimalEObjectImpl.Container impleme
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.ADDITIVE_EXPRESSION__LEFT_EXPR:
 				setLeftExpr((MulExpression)newValue);
@@ -269,14 +252,13 @@ public class AdditiveExpressionImpl extends MinimalEObjectImpl.Container impleme
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ADDITIVE_EXPRESSION__LEFT_EXPR:
 				setLeftExpr((MulExpression)null);
@@ -291,14 +273,13 @@ public class AdditiveExpressionImpl extends MinimalEObjectImpl.Container impleme
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ADDITIVE_EXPRESSION__LEFT_EXPR:
 				return leftExpr != null;
@@ -310,14 +291,13 @@ public class AdditiveExpressionImpl extends MinimalEObjectImpl.Container impleme
 		return super.eIsSet(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

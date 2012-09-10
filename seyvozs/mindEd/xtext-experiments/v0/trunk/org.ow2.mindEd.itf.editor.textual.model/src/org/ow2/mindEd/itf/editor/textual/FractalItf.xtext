@@ -97,8 +97,10 @@ ConstantDefinition:
   "#define" id=ID expr=ConstantExpression?;
 
 InterfaceDefinition:
-  annotations=Annotations 'interface' ("unmanaged")? name=QualifiedName (":" fqn2=
-  QualifiedName)? '{' (methodDef+=MethodDefinition)* '}';
+  annotations=Annotations 'interface' ("unmanaged")?
+  name=QualifiedName
+  (":" fqn2=QualifiedName)?
+  '{' (methodDef+=MethodDefinition)* '}';
 
 MethodDefinition:
   annotations=Annotations qualifiedTypeSpec=QualifiedTypeSpecification pointerSpecification=PointerSpecification id=ID ('(' (

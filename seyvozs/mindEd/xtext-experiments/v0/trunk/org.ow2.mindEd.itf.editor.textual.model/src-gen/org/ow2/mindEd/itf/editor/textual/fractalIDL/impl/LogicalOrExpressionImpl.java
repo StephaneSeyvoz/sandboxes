@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -31,66 +28,61 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.LogicalOrExpression;
  *
  * @generated
  */
-public class LogicalOrExpressionImpl extends ConstantExpressionImpl implements LogicalOrExpression
-{
-  /**
+public class LogicalOrExpressionImpl extends ConstantExpressionImpl implements LogicalOrExpression {
+	/**
 	 * The cached value of the '{@link #getLeftExpr() <em>Left Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getLeftExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected LogicalAndExpression leftExpr;
+	protected LogicalAndExpression leftExpr;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getRightExpr() <em>Right Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getRightExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected LogicalOrExpression rightExpr;
+	protected LogicalOrExpression rightExpr;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected LogicalOrExpressionImpl()
-  {
+	protected LogicalOrExpressionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.LOGICAL_OR_EXPRESSION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public LogicalAndExpression getLeftExpr()
-  {
+	public LogicalAndExpression getLeftExpr() {
 		return leftExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetLeftExpr(LogicalAndExpression newLeftExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetLeftExpr(LogicalAndExpression newLeftExpr, NotificationChain msgs) {
 		LogicalAndExpression oldLeftExpr = leftExpr;
 		leftExpr = newLeftExpr;
 		if (eNotificationRequired()) {
@@ -100,13 +92,12 @@ public class LogicalOrExpressionImpl extends ConstantExpressionImpl implements L
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setLeftExpr(LogicalAndExpression newLeftExpr)
-  {
+	public void setLeftExpr(LogicalAndExpression newLeftExpr) {
 		if (newLeftExpr != leftExpr) {
 			NotificationChain msgs = null;
 			if (leftExpr != null)
@@ -120,23 +111,21 @@ public class LogicalOrExpressionImpl extends ConstantExpressionImpl implements L
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.LOGICAL_OR_EXPRESSION__LEFT_EXPR, newLeftExpr, newLeftExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public LogicalOrExpression getRightExpr()
-  {
+	public LogicalOrExpression getRightExpr() {
 		return rightExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetRightExpr(LogicalOrExpression newRightExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetRightExpr(LogicalOrExpression newRightExpr, NotificationChain msgs) {
 		LogicalOrExpression oldRightExpr = rightExpr;
 		rightExpr = newRightExpr;
 		if (eNotificationRequired()) {
@@ -146,13 +135,12 @@ public class LogicalOrExpressionImpl extends ConstantExpressionImpl implements L
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setRightExpr(LogicalOrExpression newRightExpr)
-  {
+	public void setRightExpr(LogicalOrExpression newRightExpr) {
 		if (newRightExpr != rightExpr) {
 			NotificationChain msgs = null;
 			if (rightExpr != null)
@@ -166,14 +154,13 @@ public class LogicalOrExpressionImpl extends ConstantExpressionImpl implements L
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.LOGICAL_OR_EXPRESSION__RIGHT_EXPR, newRightExpr, newRightExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.LOGICAL_OR_EXPRESSION__LEFT_EXPR:
 				return basicSetLeftExpr(null, msgs);
@@ -183,14 +170,13 @@ public class LogicalOrExpressionImpl extends ConstantExpressionImpl implements L
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.LOGICAL_OR_EXPRESSION__LEFT_EXPR:
 				return getLeftExpr();
@@ -200,14 +186,13 @@ public class LogicalOrExpressionImpl extends ConstantExpressionImpl implements L
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.LOGICAL_OR_EXPRESSION__LEFT_EXPR:
 				setLeftExpr((LogicalAndExpression)newValue);
@@ -219,14 +204,13 @@ public class LogicalOrExpressionImpl extends ConstantExpressionImpl implements L
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.LOGICAL_OR_EXPRESSION__LEFT_EXPR:
 				setLeftExpr((LogicalAndExpression)null);
@@ -238,14 +222,13 @@ public class LogicalOrExpressionImpl extends ConstantExpressionImpl implements L
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.LOGICAL_OR_EXPRESSION__LEFT_EXPR:
 				return leftExpr != null;

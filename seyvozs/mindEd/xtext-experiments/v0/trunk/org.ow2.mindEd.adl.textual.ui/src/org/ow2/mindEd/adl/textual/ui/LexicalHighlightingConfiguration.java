@@ -35,8 +35,7 @@ public class LexicalHighlightingConfiguration implements
 	
 	
 	public static final String HEXA_ID = "0x";
-
-	@Override
+	
 	public void configure(IHighlightingConfigurationAcceptor acceptor) {
 		
 		acceptor.acceptDefaultHighlighting(KEYWORD_ID, "Keyword",

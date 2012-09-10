@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -32,99 +29,92 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.UnaryExpression;
  *
  * @generated
  */
-public class UnaryExpressionImpl extends MinimalEObjectImpl.Container implements UnaryExpression
-{
-  /**
+public class UnaryExpressionImpl extends MinimalEObjectImpl.Container implements UnaryExpression {
+	/**
 	 * The default value of the '{@link #getUnaryExpr() <em>Unary Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getUnaryExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String UNARY_EXPR_EDEFAULT = null;
+	protected static final String UNARY_EXPR_EDEFAULT = null;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getUnaryExpr() <em>Unary Expr</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getUnaryExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected String unaryExpr = UNARY_EXPR_EDEFAULT;
+	protected String unaryExpr = UNARY_EXPR_EDEFAULT;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getPrimaryExpr() <em>Primary Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getPrimaryExpr()
 	 * @generated
 	 * @ordered
 	 */
-  protected PrimaryExpression primaryExpr;
+	protected PrimaryExpression primaryExpr;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected UnaryExpressionImpl()
-  {
+	protected UnaryExpressionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.UNARY_EXPRESSION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getUnaryExpr()
-  {
+	public String getUnaryExpr() {
 		return unaryExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setUnaryExpr(String newUnaryExpr)
-  {
+	public void setUnaryExpr(String newUnaryExpr) {
 		String oldUnaryExpr = unaryExpr;
 		unaryExpr = newUnaryExpr;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.UNARY_EXPRESSION__UNARY_EXPR, oldUnaryExpr, unaryExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public PrimaryExpression getPrimaryExpr()
-  {
+	public PrimaryExpression getPrimaryExpr() {
 		return primaryExpr;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetPrimaryExpr(PrimaryExpression newPrimaryExpr, NotificationChain msgs)
-  {
+	public NotificationChain basicSetPrimaryExpr(PrimaryExpression newPrimaryExpr, NotificationChain msgs) {
 		PrimaryExpression oldPrimaryExpr = primaryExpr;
 		primaryExpr = newPrimaryExpr;
 		if (eNotificationRequired()) {
@@ -134,13 +124,12 @@ public class UnaryExpressionImpl extends MinimalEObjectImpl.Container implements
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setPrimaryExpr(PrimaryExpression newPrimaryExpr)
-  {
+	public void setPrimaryExpr(PrimaryExpression newPrimaryExpr) {
 		if (newPrimaryExpr != primaryExpr) {
 			NotificationChain msgs = null;
 			if (primaryExpr != null)
@@ -154,14 +143,13 @@ public class UnaryExpressionImpl extends MinimalEObjectImpl.Container implements
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.UNARY_EXPRESSION__PRIMARY_EXPR, newPrimaryExpr, newPrimaryExpr));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.UNARY_EXPRESSION__PRIMARY_EXPR:
 				return basicSetPrimaryExpr(null, msgs);
@@ -169,14 +157,13 @@ public class UnaryExpressionImpl extends MinimalEObjectImpl.Container implements
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.UNARY_EXPRESSION__UNARY_EXPR:
 				return getUnaryExpr();
@@ -186,14 +173,13 @@ public class UnaryExpressionImpl extends MinimalEObjectImpl.Container implements
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.UNARY_EXPRESSION__UNARY_EXPR:
 				setUnaryExpr((String)newValue);
@@ -205,14 +191,13 @@ public class UnaryExpressionImpl extends MinimalEObjectImpl.Container implements
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.UNARY_EXPRESSION__UNARY_EXPR:
 				setUnaryExpr(UNARY_EXPR_EDEFAULT);
@@ -224,14 +209,13 @@ public class UnaryExpressionImpl extends MinimalEObjectImpl.Container implements
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.UNARY_EXPRESSION__UNARY_EXPR:
 				return UNARY_EXPR_EDEFAULT == null ? unaryExpr != null : !UNARY_EXPR_EDEFAULT.equals(unaryExpr);
@@ -241,14 +225,13 @@ public class UnaryExpressionImpl extends MinimalEObjectImpl.Container implements
 		return super.eIsSet(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

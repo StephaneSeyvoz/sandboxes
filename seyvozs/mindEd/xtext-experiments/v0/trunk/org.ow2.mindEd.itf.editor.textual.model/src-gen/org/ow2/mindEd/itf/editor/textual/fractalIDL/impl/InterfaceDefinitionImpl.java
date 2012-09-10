@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -42,19 +39,18 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.MethodDefinition;
  *
  * @generated
  */
-public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implements InterfaceDefinition
-{
-  /**
+public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implements InterfaceDefinition {
+	/**
 	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
 	 * @generated
 	 * @ordered
 	 */
-  protected Annotations annotations;
+	protected Annotations annotations;
 
-  /**
+	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,7 +60,7 @@ public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 */
 	protected static final String NAME_EDEFAULT = null;
 
-		/**
+	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,74 +70,70 @@ public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implem
 	 */
 	protected String name = NAME_EDEFAULT;
 
-		/**
+	/**
 	 * The default value of the '{@link #getFqn2() <em>Fqn2</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getFqn2()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String FQN2_EDEFAULT = null;
+	protected static final String FQN2_EDEFAULT = null;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getFqn2() <em>Fqn2</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getFqn2()
 	 * @generated
 	 * @ordered
 	 */
-  protected String fqn2 = FQN2_EDEFAULT;
+	protected String fqn2 = FQN2_EDEFAULT;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getMethodDef() <em>Method Def</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getMethodDef()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<MethodDefinition> methodDef;
+	protected EList<MethodDefinition> methodDef;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected InterfaceDefinitionImpl()
-  {
+	protected InterfaceDefinitionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.INTERFACE_DEFINITION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Annotations getAnnotations()
-  {
+	public Annotations getAnnotations() {
 		return annotations;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetAnnotations(Annotations newAnnotations, NotificationChain msgs)
-  {
+	public NotificationChain basicSetAnnotations(Annotations newAnnotations, NotificationChain msgs) {
 		Annotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
@@ -151,13 +143,12 @@ public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implem
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setAnnotations(Annotations newAnnotations)
-  {
+	public void setAnnotations(Annotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
 			if (annotations != null)
@@ -171,7 +162,7 @@ public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implem
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.INTERFACE_DEFINITION__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -180,7 +171,7 @@ public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implem
 		return name;
 	}
 
-		/**
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -192,50 +183,46 @@ public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implem
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.INTERFACE_DEFINITION__NAME, oldName, name));
 	}
 
-		/**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getFqn2()
-  {
+	public String getFqn2() {
 		return fqn2;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setFqn2(String newFqn2)
-  {
+	public void setFqn2(String newFqn2) {
 		String oldFqn2 = fqn2;
 		fqn2 = newFqn2;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.INTERFACE_DEFINITION__FQN2, oldFqn2, fqn2));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<MethodDefinition> getMethodDef()
-  {
+	public EList<MethodDefinition> getMethodDef() {
 		if (methodDef == null) {
 			methodDef = new EObjectContainmentEList<MethodDefinition>(MethodDefinition.class, this, FractalIDLPackage.INTERFACE_DEFINITION__METHOD_DEF);
 		}
 		return methodDef;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.INTERFACE_DEFINITION__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
@@ -245,14 +232,13 @@ public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implem
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.INTERFACE_DEFINITION__ANNOTATIONS:
 				return getAnnotations();
@@ -266,15 +252,14 @@ public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implem
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.INTERFACE_DEFINITION__ANNOTATIONS:
 				setAnnotations((Annotations)newValue);
@@ -293,14 +278,13 @@ public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implem
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.INTERFACE_DEFINITION__ANNOTATIONS:
 				setAnnotations((Annotations)null);
@@ -318,14 +302,13 @@ public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implem
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.INTERFACE_DEFINITION__ANNOTATIONS:
 				return annotations != null;
@@ -339,14 +322,13 @@ public class InterfaceDefinitionImpl extends MinimalEObjectImpl.Container implem
 		return super.eIsSet(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

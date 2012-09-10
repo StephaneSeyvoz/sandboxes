@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -41,76 +38,71 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
  *
  * @generated
  */
-public class AbstractDirectDeclaratorImpl extends MinimalEObjectImpl.Container implements AbstractDirectDeclarator
-{
-  /**
+public class AbstractDirectDeclaratorImpl extends MinimalEObjectImpl.Container implements AbstractDirectDeclarator {
+	/**
 	 * The cached value of the '{@link #getDec() <em>Dec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getDec()
 	 * @generated
 	 * @ordered
 	 */
-  protected AbstractDeclarator dec;
+	protected AbstractDeclarator dec;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getArrays() <em>Arrays</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getArrays()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<ArraySpecification> arrays;
+	protected EList<ArraySpecification> arrays;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getArray() <em>Array</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getArray()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<ArraySpecification> array;
+	protected EList<ArraySpecification> array;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected AbstractDirectDeclaratorImpl()
-  {
+	protected AbstractDirectDeclaratorImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.ABSTRACT_DIRECT_DECLARATOR;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AbstractDeclarator getDec()
-  {
+	public AbstractDeclarator getDec() {
 		return dec;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetDec(AbstractDeclarator newDec, NotificationChain msgs)
-  {
+	public NotificationChain basicSetDec(AbstractDeclarator newDec, NotificationChain msgs) {
 		AbstractDeclarator oldDec = dec;
 		dec = newDec;
 		if (eNotificationRequired()) {
@@ -120,13 +112,12 @@ public class AbstractDirectDeclaratorImpl extends MinimalEObjectImpl.Container i
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setDec(AbstractDeclarator newDec)
-  {
+	public void setDec(AbstractDeclarator newDec) {
 		if (newDec != dec) {
 			NotificationChain msgs = null;
 			if (dec != null)
@@ -140,40 +131,37 @@ public class AbstractDirectDeclaratorImpl extends MinimalEObjectImpl.Container i
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ABSTRACT_DIRECT_DECLARATOR__DEC, newDec, newDec));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<ArraySpecification> getArrays()
-  {
+	public EList<ArraySpecification> getArrays() {
 		if (arrays == null) {
 			arrays = new EObjectContainmentEList<ArraySpecification>(ArraySpecification.class, this, FractalIDLPackage.ABSTRACT_DIRECT_DECLARATOR__ARRAYS);
 		}
 		return arrays;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<ArraySpecification> getArray()
-  {
+	public EList<ArraySpecification> getArray() {
 		if (array == null) {
 			array = new EObjectContainmentEList<ArraySpecification>(ArraySpecification.class, this, FractalIDLPackage.ABSTRACT_DIRECT_DECLARATOR__ARRAY);
 		}
 		return array;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.ABSTRACT_DIRECT_DECLARATOR__DEC:
 				return basicSetDec(null, msgs);
@@ -185,14 +173,13 @@ public class AbstractDirectDeclaratorImpl extends MinimalEObjectImpl.Container i
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.ABSTRACT_DIRECT_DECLARATOR__DEC:
 				return getDec();
@@ -204,15 +191,14 @@ public class AbstractDirectDeclaratorImpl extends MinimalEObjectImpl.Container i
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.ABSTRACT_DIRECT_DECLARATOR__DEC:
 				setDec((AbstractDeclarator)newValue);
@@ -229,14 +215,13 @@ public class AbstractDirectDeclaratorImpl extends MinimalEObjectImpl.Container i
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ABSTRACT_DIRECT_DECLARATOR__DEC:
 				setDec((AbstractDeclarator)null);
@@ -251,14 +236,13 @@ public class AbstractDirectDeclaratorImpl extends MinimalEObjectImpl.Container i
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ABSTRACT_DIRECT_DECLARATOR__DEC:
 				return dec != null;

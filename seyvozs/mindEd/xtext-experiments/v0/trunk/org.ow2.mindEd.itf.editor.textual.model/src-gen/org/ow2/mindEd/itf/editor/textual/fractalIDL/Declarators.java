@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL;
 
@@ -26,48 +23,47 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Declarators extends EObject
-{
-  /**
+public interface Declarators extends EObject {
+	/**
 	 * Returns the value of the '<em><b>Dec</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Dec</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Dec</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Dec</em>' containment reference.
 	 * @see #setDec(Declarator)
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage#getDeclarators_Dec()
 	 * @model containment="true"
 	 * @generated
 	 */
-  Declarator getDec();
+	Declarator getDec();
 
-  /**
+	/**
 	 * Sets the value of the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarators#getDec <em>Dec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Dec</em>' containment reference.
 	 * @see #getDec()
 	 * @generated
 	 */
-  void setDec(Declarator value);
+	void setDec(Declarator value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Declarator List</b></em>' containment reference list.
 	 * The list contents are of type {@link org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarator}.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Declarator List</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Declarator List</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Declarator List</em>' containment reference list.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage#getDeclarators_DeclaratorList()
 	 * @model containment="true"
 	 * @generated
 	 */
-  EList<Declarator> getDeclaratorList();
+	EList<Declarator> getDeclaratorList();
 
 } // Declarators

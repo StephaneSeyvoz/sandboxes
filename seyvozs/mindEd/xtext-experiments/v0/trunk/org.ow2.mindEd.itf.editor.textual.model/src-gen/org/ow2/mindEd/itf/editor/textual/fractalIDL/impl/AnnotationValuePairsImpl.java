@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -39,66 +36,61 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
  *
  * @generated
  */
-public class AnnotationValuePairsImpl extends MinimalEObjectImpl.Container implements AnnotationValuePairs
-{
-  /**
+public class AnnotationValuePairsImpl extends MinimalEObjectImpl.Container implements AnnotationValuePairs {
+	/**
 	 * The cached value of the '{@link #getFirst() <em>First</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getFirst()
 	 * @generated
 	 * @ordered
 	 */
-  protected AnnotationValuePair first;
+	protected AnnotationValuePair first;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getListValue() <em>List Value</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getListValue()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<AnnotationValuePair> listValue;
+	protected EList<AnnotationValuePair> listValue;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected AnnotationValuePairsImpl()
-  {
+	protected AnnotationValuePairsImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.ANNOTATION_VALUE_PAIRS;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AnnotationValuePair getFirst()
-  {
+	public AnnotationValuePair getFirst() {
 		return first;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetFirst(AnnotationValuePair newFirst, NotificationChain msgs)
-  {
+	public NotificationChain basicSetFirst(AnnotationValuePair newFirst, NotificationChain msgs) {
 		AnnotationValuePair oldFirst = first;
 		first = newFirst;
 		if (eNotificationRequired()) {
@@ -108,13 +100,12 @@ public class AnnotationValuePairsImpl extends MinimalEObjectImpl.Container imple
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setFirst(AnnotationValuePair newFirst)
-  {
+	public void setFirst(AnnotationValuePair newFirst) {
 		if (newFirst != first) {
 			NotificationChain msgs = null;
 			if (first != null)
@@ -128,27 +119,25 @@ public class AnnotationValuePairsImpl extends MinimalEObjectImpl.Container imple
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ANNOTATION_VALUE_PAIRS__FIRST, newFirst, newFirst));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<AnnotationValuePair> getListValue()
-  {
+	public EList<AnnotationValuePair> getListValue() {
 		if (listValue == null) {
 			listValue = new EObjectContainmentEList<AnnotationValuePair>(AnnotationValuePair.class, this, FractalIDLPackage.ANNOTATION_VALUE_PAIRS__LIST_VALUE);
 		}
 		return listValue;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION_VALUE_PAIRS__FIRST:
 				return basicSetFirst(null, msgs);
@@ -158,14 +147,13 @@ public class AnnotationValuePairsImpl extends MinimalEObjectImpl.Container imple
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION_VALUE_PAIRS__FIRST:
 				return getFirst();
@@ -175,15 +163,14 @@ public class AnnotationValuePairsImpl extends MinimalEObjectImpl.Container imple
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION_VALUE_PAIRS__FIRST:
 				setFirst((AnnotationValuePair)newValue);
@@ -196,14 +183,13 @@ public class AnnotationValuePairsImpl extends MinimalEObjectImpl.Container imple
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION_VALUE_PAIRS__FIRST:
 				setFirst((AnnotationValuePair)null);
@@ -215,14 +201,13 @@ public class AnnotationValuePairsImpl extends MinimalEObjectImpl.Container imple
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ANNOTATION_VALUE_PAIRS__FIRST:
 				return first != null;

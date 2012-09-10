@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -38,66 +35,61 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
  *
  * @generated
  */
-public class ArrayAnnotationValueImpl extends AnnotationValueImpl implements ArrayAnnotationValue
-{
-  /**
+public class ArrayAnnotationValueImpl extends AnnotationValueImpl implements ArrayAnnotationValue {
+	/**
 	 * The cached value of the '{@link #getFirstValue() <em>First Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getFirstValue()
 	 * @generated
 	 * @ordered
 	 */
-  protected AnnotationValue firstValue;
+	protected AnnotationValue firstValue;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getValues() <em>Values</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getValues()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<AnnotationValue> values;
+	protected EList<AnnotationValue> values;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected ArrayAnnotationValueImpl()
-  {
+	protected ArrayAnnotationValueImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.ARRAY_ANNOTATION_VALUE;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AnnotationValue getFirstValue()
-  {
+	public AnnotationValue getFirstValue() {
 		return firstValue;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetFirstValue(AnnotationValue newFirstValue, NotificationChain msgs)
-  {
+	public NotificationChain basicSetFirstValue(AnnotationValue newFirstValue, NotificationChain msgs) {
 		AnnotationValue oldFirstValue = firstValue;
 		firstValue = newFirstValue;
 		if (eNotificationRequired()) {
@@ -107,13 +99,12 @@ public class ArrayAnnotationValueImpl extends AnnotationValueImpl implements Arr
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setFirstValue(AnnotationValue newFirstValue)
-  {
+	public void setFirstValue(AnnotationValue newFirstValue) {
 		if (newFirstValue != firstValue) {
 			NotificationChain msgs = null;
 			if (firstValue != null)
@@ -127,27 +118,25 @@ public class ArrayAnnotationValueImpl extends AnnotationValueImpl implements Arr
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ARRAY_ANNOTATION_VALUE__FIRST_VALUE, newFirstValue, newFirstValue));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<AnnotationValue> getValues()
-  {
+	public EList<AnnotationValue> getValues() {
 		if (values == null) {
 			values = new EObjectContainmentEList<AnnotationValue>(AnnotationValue.class, this, FractalIDLPackage.ARRAY_ANNOTATION_VALUE__VALUES);
 		}
 		return values;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.ARRAY_ANNOTATION_VALUE__FIRST_VALUE:
 				return basicSetFirstValue(null, msgs);
@@ -157,14 +146,13 @@ public class ArrayAnnotationValueImpl extends AnnotationValueImpl implements Arr
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.ARRAY_ANNOTATION_VALUE__FIRST_VALUE:
 				return getFirstValue();
@@ -174,15 +162,14 @@ public class ArrayAnnotationValueImpl extends AnnotationValueImpl implements Arr
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.ARRAY_ANNOTATION_VALUE__FIRST_VALUE:
 				setFirstValue((AnnotationValue)newValue);
@@ -195,14 +182,13 @@ public class ArrayAnnotationValueImpl extends AnnotationValueImpl implements Arr
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ARRAY_ANNOTATION_VALUE__FIRST_VALUE:
 				setFirstValue((AnnotationValue)null);
@@ -214,14 +200,13 @@ public class ArrayAnnotationValueImpl extends AnnotationValueImpl implements Arr
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.ARRAY_ANNOTATION_VALUE__FIRST_VALUE:
 				return firstValue != null;

@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -31,56 +28,51 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.PrimaryExpression;
  *
  * @generated
  */
-public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implements PrimaryExpression
-{
-  /**
+public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implements PrimaryExpression {
+	/**
 	 * The cached value of the '{@link #getLiteral() <em>Literal</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getLiteral()
 	 * @generated
 	 * @ordered
 	 */
-  protected Literal literal;
+	protected Literal literal;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected PrimaryExpressionImpl()
-  {
+	protected PrimaryExpressionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.PRIMARY_EXPRESSION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Literal getLiteral()
-  {
+	public Literal getLiteral() {
 		return literal;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetLiteral(Literal newLiteral, NotificationChain msgs)
-  {
+	public NotificationChain basicSetLiteral(Literal newLiteral, NotificationChain msgs) {
 		Literal oldLiteral = literal;
 		literal = newLiteral;
 		if (eNotificationRequired()) {
@@ -90,13 +82,12 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setLiteral(Literal newLiteral)
-  {
+	public void setLiteral(Literal newLiteral) {
 		if (newLiteral != literal) {
 			NotificationChain msgs = null;
 			if (literal != null)
@@ -110,14 +101,13 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.PRIMARY_EXPRESSION__LITERAL, newLiteral, newLiteral));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.PRIMARY_EXPRESSION__LITERAL:
 				return basicSetLiteral(null, msgs);
@@ -125,14 +115,13 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.PRIMARY_EXPRESSION__LITERAL:
 				return getLiteral();
@@ -140,14 +129,13 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.PRIMARY_EXPRESSION__LITERAL:
 				setLiteral((Literal)newValue);
@@ -156,14 +144,13 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.PRIMARY_EXPRESSION__LITERAL:
 				setLiteral((Literal)null);
@@ -172,14 +159,13 @@ public class PrimaryExpressionImpl extends MinimalEObjectImpl.Container implemen
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.PRIMARY_EXPRESSION__LITERAL:
 				return literal != null;

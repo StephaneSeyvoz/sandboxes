@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -36,103 +33,96 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.TypeSpecifier;
  *
  * @generated
  */
-public class TypeSpecificationImpl extends MinimalEObjectImpl.Container implements TypeSpecification
-{
-  /**
+public class TypeSpecificationImpl extends MinimalEObjectImpl.Container implements TypeSpecification {
+	/**
 	 * The default value of the '{@link #getTypeDefName() <em>Type Def Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getTypeDefName()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String TYPE_DEF_NAME_EDEFAULT = null;
+	protected static final String TYPE_DEF_NAME_EDEFAULT = null;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getTypeDefName() <em>Type Def Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getTypeDefName()
 	 * @generated
 	 * @ordered
 	 */
-  protected String typeDefName = TYPE_DEF_NAME_EDEFAULT;
+	protected String typeDefName = TYPE_DEF_NAME_EDEFAULT;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getTypeSpecifier() <em>Type Specifier</em>}' attribute list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getTypeSpecifier()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<TypeSpecifier> typeSpecifier;
+	protected EList<TypeSpecifier> typeSpecifier;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected TypeSpecificationImpl()
-  {
+	protected TypeSpecificationImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.TYPE_SPECIFICATION;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getTypeDefName()
-  {
+	public String getTypeDefName() {
 		return typeDefName;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setTypeDefName(String newTypeDefName)
-  {
+	public void setTypeDefName(String newTypeDefName) {
 		String oldTypeDefName = typeDefName;
 		typeDefName = newTypeDefName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.TYPE_SPECIFICATION__TYPE_DEF_NAME, oldTypeDefName, typeDefName));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<TypeSpecifier> getTypeSpecifier()
-  {
+	public EList<TypeSpecifier> getTypeSpecifier() {
 		if (typeSpecifier == null) {
 			typeSpecifier = new EDataTypeEList<TypeSpecifier>(TypeSpecifier.class, this, FractalIDLPackage.TYPE_SPECIFICATION__TYPE_SPECIFIER);
 		}
 		return typeSpecifier;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.TYPE_SPECIFICATION__TYPE_DEF_NAME:
 				return getTypeDefName();
@@ -142,15 +132,14 @@ public class TypeSpecificationImpl extends MinimalEObjectImpl.Container implemen
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.TYPE_SPECIFICATION__TYPE_DEF_NAME:
 				setTypeDefName((String)newValue);
@@ -163,14 +152,13 @@ public class TypeSpecificationImpl extends MinimalEObjectImpl.Container implemen
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.TYPE_SPECIFICATION__TYPE_DEF_NAME:
 				setTypeDefName(TYPE_DEF_NAME_EDEFAULT);
@@ -182,14 +170,13 @@ public class TypeSpecificationImpl extends MinimalEObjectImpl.Container implemen
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.TYPE_SPECIFICATION__TYPE_DEF_NAME:
 				return TYPE_DEF_NAME_EDEFAULT == null ? typeDefName != null : !TYPE_DEF_NAME_EDEFAULT.equals(typeDefName);
@@ -199,14 +186,13 @@ public class TypeSpecificationImpl extends MinimalEObjectImpl.Container implemen
 		return super.eIsSet(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

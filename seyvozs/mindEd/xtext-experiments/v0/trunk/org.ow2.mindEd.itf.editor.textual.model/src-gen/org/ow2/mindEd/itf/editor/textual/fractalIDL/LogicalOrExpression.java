@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL;
 
@@ -23,58 +20,57 @@ package org.ow2.mindEd.itf.editor.textual.fractalIDL;
  * @model
  * @generated
  */
-public interface LogicalOrExpression extends ConstantExpression
-{
-  /**
+public interface LogicalOrExpression extends ConstantExpression {
+	/**
 	 * Returns the value of the '<em><b>Left Expr</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Left Expr</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Left Expr</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Left Expr</em>' containment reference.
 	 * @see #setLeftExpr(LogicalAndExpression)
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage#getLogicalOrExpression_LeftExpr()
 	 * @model containment="true"
 	 * @generated
 	 */
-  LogicalAndExpression getLeftExpr();
+	LogicalAndExpression getLeftExpr();
 
-  /**
+	/**
 	 * Sets the value of the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.LogicalOrExpression#getLeftExpr <em>Left Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Left Expr</em>' containment reference.
 	 * @see #getLeftExpr()
 	 * @generated
 	 */
-  void setLeftExpr(LogicalAndExpression value);
+	void setLeftExpr(LogicalAndExpression value);
 
-  /**
+	/**
 	 * Returns the value of the '<em><b>Right Expr</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Right Expr</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Right Expr</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Right Expr</em>' containment reference.
 	 * @see #setRightExpr(LogicalOrExpression)
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage#getLogicalOrExpression_RightExpr()
 	 * @model containment="true"
 	 * @generated
 	 */
-  LogicalOrExpression getRightExpr();
+	LogicalOrExpression getRightExpr();
 
-  /**
+	/**
 	 * Sets the value of the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.LogicalOrExpression#getRightExpr <em>Right Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Right Expr</em>' containment reference.
 	 * @see #getRightExpr()
 	 * @generated
 	 */
-  void setRightExpr(LogicalOrExpression value);
+	void setRightExpr(LogicalOrExpression value);
 
 } // LogicalOrExpression

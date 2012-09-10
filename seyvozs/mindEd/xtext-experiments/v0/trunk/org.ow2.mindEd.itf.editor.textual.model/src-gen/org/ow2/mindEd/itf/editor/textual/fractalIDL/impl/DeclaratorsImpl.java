@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -39,66 +36,61 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
  *
  * @generated
  */
-public class DeclaratorsImpl extends MinimalEObjectImpl.Container implements Declarators
-{
-  /**
+public class DeclaratorsImpl extends MinimalEObjectImpl.Container implements Declarators {
+	/**
 	 * The cached value of the '{@link #getDec() <em>Dec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getDec()
 	 * @generated
 	 * @ordered
 	 */
-  protected Declarator dec;
+	protected Declarator dec;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getDeclaratorList() <em>Declarator List</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getDeclaratorList()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<Declarator> declaratorList;
+	protected EList<Declarator> declaratorList;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected DeclaratorsImpl()
-  {
+	protected DeclaratorsImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.DECLARATORS;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Declarator getDec()
-  {
+	public Declarator getDec() {
 		return dec;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetDec(Declarator newDec, NotificationChain msgs)
-  {
+	public NotificationChain basicSetDec(Declarator newDec, NotificationChain msgs) {
 		Declarator oldDec = dec;
 		dec = newDec;
 		if (eNotificationRequired()) {
@@ -108,13 +100,12 @@ public class DeclaratorsImpl extends MinimalEObjectImpl.Container implements Dec
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setDec(Declarator newDec)
-  {
+	public void setDec(Declarator newDec) {
 		if (newDec != dec) {
 			NotificationChain msgs = null;
 			if (dec != null)
@@ -128,27 +119,25 @@ public class DeclaratorsImpl extends MinimalEObjectImpl.Container implements Dec
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.DECLARATORS__DEC, newDec, newDec));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<Declarator> getDeclaratorList()
-  {
+	public EList<Declarator> getDeclaratorList() {
 		if (declaratorList == null) {
 			declaratorList = new EObjectContainmentEList<Declarator>(Declarator.class, this, FractalIDLPackage.DECLARATORS__DECLARATOR_LIST);
 		}
 		return declaratorList;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.DECLARATORS__DEC:
 				return basicSetDec(null, msgs);
@@ -158,14 +147,13 @@ public class DeclaratorsImpl extends MinimalEObjectImpl.Container implements Dec
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.DECLARATORS__DEC:
 				return getDec();
@@ -175,15 +163,14 @@ public class DeclaratorsImpl extends MinimalEObjectImpl.Container implements Dec
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.DECLARATORS__DEC:
 				setDec((Declarator)newValue);
@@ -196,14 +183,13 @@ public class DeclaratorsImpl extends MinimalEObjectImpl.Container implements Dec
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.DECLARATORS__DEC:
 				setDec((Declarator)null);
@@ -215,14 +201,13 @@ public class DeclaratorsImpl extends MinimalEObjectImpl.Container implements Dec
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.DECLARATORS__DEC:
 				return dec != null;

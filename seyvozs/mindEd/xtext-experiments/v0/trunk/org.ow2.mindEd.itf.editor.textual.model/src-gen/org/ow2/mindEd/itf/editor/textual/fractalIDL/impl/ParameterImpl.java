@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -45,96 +42,91 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedTypeSpecification;
  *
  * @generated
  */
-public class ParameterImpl extends MinimalEObjectImpl.Container implements Parameter
-{
-  /**
+public class ParameterImpl extends MinimalEObjectImpl.Container implements Parameter {
+	/**
 	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getAnnotations()
 	 * @generated
 	 * @ordered
 	 */
-  protected Annotations annotations;
+	protected Annotations annotations;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getParameterQualifier() <em>Parameter Qualifier</em>}' attribute list.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getParameterQualifier()
 	 * @generated
 	 * @ordered
 	 */
-  protected EList<ParameterQualifier> parameterQualifier;
+	protected EList<ParameterQualifier> parameterQualifier;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getQualifiedTypeSpec() <em>Qualified Type Spec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getQualifiedTypeSpec()
 	 * @generated
 	 * @ordered
 	 */
-  protected QualifiedTypeSpecification qualifiedTypeSpec;
+	protected QualifiedTypeSpecification qualifiedTypeSpec;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getDec() <em>Dec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getDec()
 	 * @generated
 	 * @ordered
 	 */
-  protected Declarator dec;
+	protected Declarator dec;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getAbsDec() <em>Abs Dec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getAbsDec()
 	 * @generated
 	 * @ordered
 	 */
-  protected AbstractDeclarator absDec;
+	protected AbstractDeclarator absDec;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected ParameterImpl()
-  {
+	protected ParameterImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.PARAMETER;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Annotations getAnnotations()
-  {
+	public Annotations getAnnotations() {
 		return annotations;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetAnnotations(Annotations newAnnotations, NotificationChain msgs)
-  {
+	public NotificationChain basicSetAnnotations(Annotations newAnnotations, NotificationChain msgs) {
 		Annotations oldAnnotations = annotations;
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
@@ -144,13 +136,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setAnnotations(Annotations newAnnotations)
-  {
+	public void setAnnotations(Annotations newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
 			if (annotations != null)
@@ -164,36 +155,33 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.PARAMETER__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public EList<ParameterQualifier> getParameterQualifier()
-  {
+	public EList<ParameterQualifier> getParameterQualifier() {
 		if (parameterQualifier == null) {
 			parameterQualifier = new EDataTypeEList<ParameterQualifier>(ParameterQualifier.class, this, FractalIDLPackage.PARAMETER__PARAMETER_QUALIFIER);
 		}
 		return parameterQualifier;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public QualifiedTypeSpecification getQualifiedTypeSpec()
-  {
+	public QualifiedTypeSpecification getQualifiedTypeSpec() {
 		return qualifiedTypeSpec;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetQualifiedTypeSpec(QualifiedTypeSpecification newQualifiedTypeSpec, NotificationChain msgs)
-  {
+	public NotificationChain basicSetQualifiedTypeSpec(QualifiedTypeSpecification newQualifiedTypeSpec, NotificationChain msgs) {
 		QualifiedTypeSpecification oldQualifiedTypeSpec = qualifiedTypeSpec;
 		qualifiedTypeSpec = newQualifiedTypeSpec;
 		if (eNotificationRequired()) {
@@ -203,13 +191,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setQualifiedTypeSpec(QualifiedTypeSpecification newQualifiedTypeSpec)
-  {
+	public void setQualifiedTypeSpec(QualifiedTypeSpecification newQualifiedTypeSpec) {
 		if (newQualifiedTypeSpec != qualifiedTypeSpec) {
 			NotificationChain msgs = null;
 			if (qualifiedTypeSpec != null)
@@ -223,23 +210,21 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.PARAMETER__QUALIFIED_TYPE_SPEC, newQualifiedTypeSpec, newQualifiedTypeSpec));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public Declarator getDec()
-  {
+	public Declarator getDec() {
 		return dec;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetDec(Declarator newDec, NotificationChain msgs)
-  {
+	public NotificationChain basicSetDec(Declarator newDec, NotificationChain msgs) {
 		Declarator oldDec = dec;
 		dec = newDec;
 		if (eNotificationRequired()) {
@@ -249,13 +234,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setDec(Declarator newDec)
-  {
+	public void setDec(Declarator newDec) {
 		if (newDec != dec) {
 			NotificationChain msgs = null;
 			if (dec != null)
@@ -269,23 +253,21 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.PARAMETER__DEC, newDec, newDec));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public AbstractDeclarator getAbsDec()
-  {
+	public AbstractDeclarator getAbsDec() {
 		return absDec;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public NotificationChain basicSetAbsDec(AbstractDeclarator newAbsDec, NotificationChain msgs)
-  {
+	public NotificationChain basicSetAbsDec(AbstractDeclarator newAbsDec, NotificationChain msgs) {
 		AbstractDeclarator oldAbsDec = absDec;
 		absDec = newAbsDec;
 		if (eNotificationRequired()) {
@@ -295,13 +277,12 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		return msgs;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setAbsDec(AbstractDeclarator newAbsDec)
-  {
+	public void setAbsDec(AbstractDeclarator newAbsDec) {
 		if (newAbsDec != absDec) {
 			NotificationChain msgs = null;
 			if (absDec != null)
@@ -315,14 +296,13 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.PARAMETER__ABS_DEC, newAbsDec, newAbsDec));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case FractalIDLPackage.PARAMETER__ANNOTATIONS:
 				return basicSetAnnotations(null, msgs);
@@ -336,14 +316,13 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.PARAMETER__ANNOTATIONS:
 				return getAnnotations();
@@ -359,15 +338,14 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @SuppressWarnings("unchecked")
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.PARAMETER__ANNOTATIONS:
 				setAnnotations((Annotations)newValue);
@@ -389,14 +367,13 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.PARAMETER__ANNOTATIONS:
 				setAnnotations((Annotations)null);
@@ -417,14 +394,13 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.PARAMETER__ANNOTATIONS:
 				return annotations != null;
@@ -440,14 +416,13 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
 		return super.eIsSet(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

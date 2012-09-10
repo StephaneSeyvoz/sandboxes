@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.util;
 
@@ -22,40 +19,37 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.*;
  * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage
  * @generated
  */
-public class FractalIDLAdapterFactory extends AdapterFactoryImpl
-{
-  /**
+public class FractalIDLAdapterFactory extends AdapterFactoryImpl {
+	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected static FractalIDLPackage modelPackage;
+	protected static FractalIDLPackage modelPackage;
 
-  /**
+	/**
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public FractalIDLAdapterFactory()
-  {
+	public FractalIDLAdapterFactory() {
 		if (modelPackage == null) {
 			modelPackage = FractalIDLPackage.eINSTANCE;
 		}
 	}
 
-  /**
+	/**
 	 * Returns whether this factory is applicable for the type of the object.
 	 * <!-- begin-user-doc -->
-   * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
-   * <!-- end-user-doc -->
+	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
+	 * <!-- end-user-doc -->
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
-  @Override
-  public boolean isFactoryForType(Object object)
-  {
+	@Override
+	public boolean isFactoryForType(Object object) {
 		if (object == modelPackage) {
 			return true;
 		}
@@ -65,14 +59,14 @@ public class FractalIDLAdapterFactory extends AdapterFactoryImpl
 		return false;
 	}
 
-  /**
+	/**
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected FractalIDLSwitch<Adapter> modelSwitch =
-    new FractalIDLSwitch<Adapter>() {
+	protected FractalIDLSwitch<Adapter> modelSwitch =
+		new FractalIDLSwitch<Adapter>() {
 			@Override
 			public Adapter caseItfFile(ItfFile object) {
 				return createItfFileAdapter();
@@ -271,751 +265,701 @@ public class FractalIDLAdapterFactory extends AdapterFactoryImpl
 			}
 		};
 
-  /**
+	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param target the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
-  @Override
-  public Adapter createAdapter(Notifier target)
-  {
+	@Override
+	public Adapter createAdapter(Notifier target) {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ItfFile <em>Itf File</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.ItfFile
 	 * @generated
 	 */
-  public Adapter createItfFileAdapter()
-  {
+	public Adapter createItfFileAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.TypeDefinition <em>Type Definition</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.TypeDefinition
 	 * @generated
 	 */
-  public Adapter createTypeDefinitionAdapter()
-  {
+	public Adapter createTypeDefinitionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.TypedefSpecification <em>Typedef Specification</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.TypedefSpecification
 	 * @generated
 	 */
-  public Adapter createTypedefSpecificationAdapter()
-  {
+	public Adapter createTypedefSpecificationAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedTypeSpecification <em>Qualified Type Specification</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedTypeSpecification
 	 * @generated
 	 */
-  public Adapter createQualifiedTypeSpecificationAdapter()
-  {
+	public Adapter createQualifiedTypeSpecificationAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.TypeSpecification <em>Type Specification</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.TypeSpecification
 	 * @generated
 	 */
-  public Adapter createTypeSpecificationAdapter()
-  {
+	public Adapter createTypeSpecificationAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.StructOrUnionSpecification <em>Struct Or Union Specification</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.StructOrUnionSpecification
 	 * @generated
 	 */
-  public Adapter createStructOrUnionSpecificationAdapter()
-  {
+	public Adapter createStructOrUnionSpecificationAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.StructOrUnionDefinition <em>Struct Or Union Definition</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.StructOrUnionDefinition
 	 * @generated
 	 */
-  public Adapter createStructOrUnionDefinitionAdapter()
-  {
+	public Adapter createStructOrUnionDefinitionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.StructorUnionReference <em>Structor Union Reference</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.StructorUnionReference
 	 * @generated
 	 */
-  public Adapter createStructorUnionReferenceAdapter()
-  {
+	public Adapter createStructorUnionReferenceAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.StructMember <em>Struct Member</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.StructMember
 	 * @generated
 	 */
-  public Adapter createStructMemberAdapter()
-  {
+	public Adapter createStructMemberAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumSpecification <em>Enum Specification</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumSpecification
 	 * @generated
 	 */
-  public Adapter createEnumSpecificationAdapter()
-  {
+	public Adapter createEnumSpecificationAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumDefinition <em>Enum Definition</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumDefinition
 	 * @generated
 	 */
-  public Adapter createEnumDefinitionAdapter()
-  {
+	public Adapter createEnumDefinitionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumReference <em>Enum Reference</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumReference
 	 * @generated
 	 */
-  public Adapter createEnumReferenceAdapter()
-  {
+	public Adapter createEnumReferenceAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumMemberList <em>Enum Member List</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumMemberList
 	 * @generated
 	 */
-  public Adapter createEnumMemberListAdapter()
-  {
+	public Adapter createEnumMemberListAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumMember <em>Enum Member</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumMember
 	 * @generated
 	 */
-  public Adapter createEnumMemberAdapter()
-  {
+	public Adapter createEnumMemberAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarators <em>Declarators</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarators
 	 * @generated
 	 */
-  public Adapter createDeclaratorsAdapter()
-  {
+	public Adapter createDeclaratorsAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarator <em>Declarator</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarator
 	 * @generated
 	 */
-  public Adapter createDeclaratorAdapter()
-  {
+	public Adapter createDeclaratorAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.AbstractDeclarator <em>Abstract Declarator</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.AbstractDeclarator
 	 * @generated
 	 */
-  public Adapter createAbstractDeclaratorAdapter()
-  {
+	public Adapter createAbstractDeclaratorAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.PointerSpecification <em>Pointer Specification</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.PointerSpecification
 	 * @generated
 	 */
-  public Adapter createPointerSpecificationAdapter()
-  {
+	public Adapter createPointerSpecificationAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.Qualified_PointerSpecification <em>Qualified Pointer Specification</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.Qualified_PointerSpecification
 	 * @generated
 	 */
-  public Adapter createQualified_PointerSpecificationAdapter()
-  {
+	public Adapter createQualified_PointerSpecificationAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator <em>Direct Declarator</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator
 	 * @generated
 	 */
-  public Adapter createDirectDeclaratorAdapter()
-  {
+	public Adapter createDirectDeclaratorAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.AbstractDirectDeclarator <em>Abstract Direct Declarator</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.AbstractDirectDeclarator
 	 * @generated
 	 */
-  public Adapter createAbstractDirectDeclaratorAdapter()
-  {
+	public Adapter createAbstractDirectDeclaratorAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ArraySpecification <em>Array Specification</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.ArraySpecification
 	 * @generated
 	 */
-  public Adapter createArraySpecificationAdapter()
-  {
+	public Adapter createArraySpecificationAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ConstantDefinition <em>Constant Definition</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.ConstantDefinition
 	 * @generated
 	 */
-  public Adapter createConstantDefinitionAdapter()
-  {
+	public Adapter createConstantDefinitionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.InterfaceDefinition <em>Interface Definition</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.InterfaceDefinition
 	 * @generated
 	 */
-  public Adapter createInterfaceDefinitionAdapter()
-  {
+	public Adapter createInterfaceDefinitionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.MethodDefinition <em>Method Definition</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.MethodDefinition
 	 * @generated
 	 */
-  public Adapter createMethodDefinitionAdapter()
-  {
+	public Adapter createMethodDefinitionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ParameterList <em>Parameter List</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.ParameterList
 	 * @generated
 	 */
-  public Adapter createParameterListAdapter()
-  {
+	public Adapter createParameterListAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.Parameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.Parameter
 	 * @generated
 	 */
-  public Adapter createParameterAdapter()
-  {
+	public Adapter createParameterAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.IncludeDirective <em>Include Directive</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.IncludeDirective
 	 * @generated
 	 */
-  public Adapter createIncludeDirectiveAdapter()
-  {
+	public Adapter createIncludeDirectiveAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.Annotations <em>Annotations</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.Annotations
 	 * @generated
 	 */
-  public Adapter createAnnotationsAdapter()
-  {
+	public Adapter createAnnotationsAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.Annotation <em>Annotation</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.Annotation
 	 * @generated
 	 */
-  public Adapter createAnnotationAdapter()
-  {
+	public Adapter createAnnotationAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationParameters <em>Annotation Parameters</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationParameters
 	 * @generated
 	 */
-  public Adapter createAnnotationParametersAdapter()
-  {
+	public Adapter createAnnotationParametersAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValuePairs <em>Annotation Value Pairs</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValuePairs
 	 * @generated
 	 */
-  public Adapter createAnnotationValuePairsAdapter()
-  {
+	public Adapter createAnnotationValuePairsAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValuePair <em>Annotation Value Pair</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValuePair
 	 * @generated
 	 */
-  public Adapter createAnnotationValuePairAdapter()
-  {
+	public Adapter createAnnotationValuePairAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValue <em>Annotation Value</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValue
 	 * @generated
 	 */
-  public Adapter createAnnotationValueAdapter()
-  {
+	public Adapter createAnnotationValueAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ArrayAnnotationValue <em>Array Annotation Value</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.ArrayAnnotationValue
 	 * @generated
 	 */
-  public Adapter createArrayAnnotationValueAdapter()
-  {
+	public Adapter createArrayAnnotationValueAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ConstantExpression <em>Constant Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.ConstantExpression
 	 * @generated
 	 */
-  public Adapter createConstantExpressionAdapter()
-  {
+	public Adapter createConstantExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.LogicalOrExpression <em>Logical Or Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.LogicalOrExpression
 	 * @generated
 	 */
-  public Adapter createLogicalOrExpressionAdapter()
-  {
+	public Adapter createLogicalOrExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.LogicalAndExpression <em>Logical And Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.LogicalAndExpression
 	 * @generated
 	 */
-  public Adapter createLogicalAndExpressionAdapter()
-  {
+	public Adapter createLogicalAndExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.OrExpression <em>Or Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.OrExpression
 	 * @generated
 	 */
-  public Adapter createOrExpressionAdapter()
-  {
+	public Adapter createOrExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.XorExpression <em>Xor Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.XorExpression
 	 * @generated
 	 */
-  public Adapter createXorExpressionAdapter()
-  {
+	public Adapter createXorExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.AndExpression <em>And Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.AndExpression
 	 * @generated
 	 */
-  public Adapter createAndExpressionAdapter()
-  {
+	public Adapter createAndExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ShiftExpression <em>Shift Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.ShiftExpression
 	 * @generated
 	 */
-  public Adapter createShiftExpressionAdapter()
-  {
+	public Adapter createShiftExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.AdditiveExpression <em>Additive Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.AdditiveExpression
 	 * @generated
 	 */
-  public Adapter createAdditiveExpressionAdapter()
-  {
+	public Adapter createAdditiveExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.MulExpression <em>Mul Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.MulExpression
 	 * @generated
 	 */
-  public Adapter createMulExpressionAdapter()
-  {
+	public Adapter createMulExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.CastExpression <em>Cast Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.CastExpression
 	 * @generated
 	 */
-  public Adapter createCastExpressionAdapter()
-  {
+	public Adapter createCastExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.UnaryExpression <em>Unary Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.UnaryExpression
 	 * @generated
 	 */
-  public Adapter createUnaryExpressionAdapter()
-  {
+	public Adapter createUnaryExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.PrimaryExpression <em>Primary Expression</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.PrimaryExpression
 	 * @generated
 	 */
-  public Adapter createPrimaryExpressionAdapter()
-  {
+	public Adapter createPrimaryExpressionAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.Literal <em>Literal</em>}'.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.Literal
 	 * @generated
 	 */
-  public Adapter createLiteralAdapter()
-  {
+	public Adapter createLiteralAdapter() {
 		return null;
 	}
 
-  /**
+	/**
 	 * Creates a new adapter for the default case.
 	 * <!-- begin-user-doc -->
-   * This default implementation returns null.
-   * <!-- end-user-doc -->
+	 * This default implementation returns null.
+	 * <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @generated
 	 */
-  public Adapter createEObjectAdapter()
-  {
+	public Adapter createEObjectAdapter() {
 		return null;
 	}
 

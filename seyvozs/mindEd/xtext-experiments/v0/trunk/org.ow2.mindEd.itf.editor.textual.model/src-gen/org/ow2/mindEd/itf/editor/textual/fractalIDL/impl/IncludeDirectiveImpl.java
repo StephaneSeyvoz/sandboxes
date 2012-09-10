@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -29,123 +26,115 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.IncludeDirective;
  *
  * @generated
  */
-public class IncludeDirectiveImpl extends MinimalEObjectImpl.Container implements IncludeDirective
-{
-  /**
+public class IncludeDirectiveImpl extends MinimalEObjectImpl.Container implements IncludeDirective {
+	/**
 	 * The default value of the '{@link #getImportedURI() <em>Imported URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getImportedURI()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String IMPORTED_URI_EDEFAULT = null;
+	protected static final String IMPORTED_URI_EDEFAULT = null;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getImportedURI() <em>Imported URI</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getImportedURI()
 	 * @generated
 	 * @ordered
 	 */
-  protected String importedURI = IMPORTED_URI_EDEFAULT;
+	protected String importedURI = IMPORTED_URI_EDEFAULT;
 
-  /**
+	/**
 	 * The default value of the '{@link #getIncludeID() <em>Include ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getIncludeID()
 	 * @generated
 	 * @ordered
 	 */
-  protected static final String INCLUDE_ID_EDEFAULT = null;
+	protected static final String INCLUDE_ID_EDEFAULT = null;
 
-  /**
+	/**
 	 * The cached value of the '{@link #getIncludeID() <em>Include ID</em>}' attribute.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @see #getIncludeID()
 	 * @generated
 	 * @ordered
 	 */
-  protected String includeID = INCLUDE_ID_EDEFAULT;
+	protected String includeID = INCLUDE_ID_EDEFAULT;
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected IncludeDirectiveImpl()
-  {
+	protected IncludeDirectiveImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.INCLUDE_DIRECTIVE;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getImportedURI()
-  {
+	public String getImportedURI() {
 		return importedURI;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setImportedURI(String newImportedURI)
-  {
+	public void setImportedURI(String newImportedURI) {
 		String oldImportedURI = importedURI;
 		importedURI = newImportedURI;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.INCLUDE_DIRECTIVE__IMPORTED_URI, oldImportedURI, importedURI));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public String getIncludeID()
-  {
+	public String getIncludeID() {
 		return includeID;
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  public void setIncludeID(String newIncludeID)
-  {
+	public void setIncludeID(String newIncludeID) {
 		String oldIncludeID = includeID;
 		includeID = newIncludeID;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.INCLUDE_DIRECTIVE__INCLUDE_ID, oldIncludeID, includeID));
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case FractalIDLPackage.INCLUDE_DIRECTIVE__IMPORTED_URI:
 				return getImportedURI();
@@ -155,14 +144,13 @@ public class IncludeDirectiveImpl extends MinimalEObjectImpl.Container implement
 		return super.eGet(featureID, resolve, coreType);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
+	@Override
+	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case FractalIDLPackage.INCLUDE_DIRECTIVE__IMPORTED_URI:
 				setImportedURI((String)newValue);
@@ -174,14 +162,13 @@ public class IncludeDirectiveImpl extends MinimalEObjectImpl.Container implement
 		super.eSet(featureID, newValue);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public void eUnset(int featureID)
-  {
+	@Override
+	public void eUnset(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.INCLUDE_DIRECTIVE__IMPORTED_URI:
 				setImportedURI(IMPORTED_URI_EDEFAULT);
@@ -193,14 +180,13 @@ public class IncludeDirectiveImpl extends MinimalEObjectImpl.Container implement
 		super.eUnset(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
+	@Override
+	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case FractalIDLPackage.INCLUDE_DIRECTIVE__IMPORTED_URI:
 				return IMPORTED_URI_EDEFAULT == null ? importedURI != null : !IMPORTED_URI_EDEFAULT.equals(importedURI);
@@ -210,14 +196,13 @@ public class IncludeDirectiveImpl extends MinimalEObjectImpl.Container implement
 		return super.eIsSet(featureID);
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  public String toString()
-  {
+	@Override
+	public String toString() {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());

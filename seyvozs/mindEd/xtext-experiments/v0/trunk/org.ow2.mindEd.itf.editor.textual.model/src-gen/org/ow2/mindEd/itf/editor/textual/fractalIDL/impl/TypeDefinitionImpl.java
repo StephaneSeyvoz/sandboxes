@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL.impl;
 
@@ -21,26 +18,23 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.TypeDefinition;
  *
  * @generated
  */
-public class TypeDefinitionImpl extends MinimalEObjectImpl.Container implements TypeDefinition
-{
-  /**
+public class TypeDefinitionImpl extends MinimalEObjectImpl.Container implements TypeDefinition {
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  protected TypeDefinitionImpl()
-  {
+	protected TypeDefinitionImpl() {
 		super();
 	}
 
-  /**
+	/**
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-  @Override
-  protected EClass eStaticClass()
-  {
+	@Override
+	protected EClass eStaticClass() {
 		return FractalIDLPackage.Literals.TYPE_DEFINITION;
 	}
 

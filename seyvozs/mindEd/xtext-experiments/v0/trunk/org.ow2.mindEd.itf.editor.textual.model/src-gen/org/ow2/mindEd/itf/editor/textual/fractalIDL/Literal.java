@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package org.ow2.mindEd.itf.editor.textual.fractalIDL;
 
@@ -23,32 +20,31 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Literal extends EObject
-{
-  /**
+public interface Literal extends EObject {
+	/**
 	 * Returns the value of the '<em><b>Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Ref</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ref</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ref</em>' reference.
 	 * @see #setRef(ConstantDefinition)
 	 * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage#getLiteral_Ref()
 	 * @model
 	 * @generated
 	 */
-  ConstantDefinition getRef();
+	ConstantDefinition getRef();
 
-  /**
+	/**
 	 * Sets the value of the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.Literal#getRef <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Ref</em>' reference.
 	 * @see #getRef()
 	 * @generated
 	 */
-  void setRef(ConstantDefinition value);
+	void setRef(ConstantDefinition value);
 
 } // Literal
