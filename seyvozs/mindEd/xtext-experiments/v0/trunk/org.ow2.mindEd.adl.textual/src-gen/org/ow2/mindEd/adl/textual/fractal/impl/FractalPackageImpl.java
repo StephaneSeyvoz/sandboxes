@@ -425,7 +425,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getArchitectureDefinition_SuperType()
+  public EReference getArchitectureDefinition_SuperTypes()
   {
     return (EReference)architectureDefinitionEClass.getEStructuralFeatures().get(2);
   }
@@ -1367,7 +1367,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     architectureDefinitionEClass = createEClass(ARCHITECTURE_DEFINITION);
     createEReference(architectureDefinitionEClass, ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST);
     createEAttribute(architectureDefinitionEClass, ARCHITECTURE_DEFINITION__NAME);
-    createEReference(architectureDefinitionEClass, ARCHITECTURE_DEFINITION__SUPER_TYPE);
+    createEReference(architectureDefinitionEClass, ARCHITECTURE_DEFINITION__SUPER_TYPES);
 
     importDefinitionEClass = createEClass(IMPORT_DEFINITION);
     createEReference(importDefinitionEClass, IMPORT_DEFINITION__ANNOTATIONS_LIST);
@@ -1553,7 +1553,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     initEClass(architectureDefinitionEClass, ArchitectureDefinition.class, "ArchitectureDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArchitectureDefinition_AnnotationsList(), this.getAnnotationsList(), null, "annotationsList", null, 0, 1, ArchitectureDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getArchitectureDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, ArchitectureDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getArchitectureDefinition_SuperType(), this.getArchitectureDefinition(), null, "superType", null, 0, 1, ArchitectureDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArchitectureDefinition_SuperTypes(), this.getArchitectureDefinition(), null, "superTypes", null, 0, -1, ArchitectureDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importDefinitionEClass, ImportDefinition.class, "ImportDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getImportDefinition_AnnotationsList(), this.getAnnotationsList(), null, "annotationsList", null, 0, 1, ImportDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

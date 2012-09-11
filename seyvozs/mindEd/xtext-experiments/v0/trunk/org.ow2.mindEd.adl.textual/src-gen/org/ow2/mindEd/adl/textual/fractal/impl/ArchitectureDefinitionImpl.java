@@ -2,14 +2,20 @@
  */
 package org.ow2.mindEd.adl.textual.fractal.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.ow2.mindEd.adl.textual.fractal.AnnotationsList;
 import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
@@ -24,7 +30,7 @@ import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.ArchitectureDefinitionImpl#getAnnotationsList <em>Annotations List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.ArchitectureDefinitionImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.ArchitectureDefinitionImpl#getSuperType <em>Super Type</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.ArchitectureDefinitionImpl#getSuperTypes <em>Super Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,14 +69,14 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSuperType() <em>Super Type</em>}' reference.
+   * The cached value of the '{@link #getSuperTypes() <em>Super Types</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSuperType()
+   * @see #getSuperTypes()
    * @generated
    * @ordered
    */
-  protected ArchitectureDefinition superType;
+  protected EList<ArchitectureDefinition> superTypes;
 
   /**
    * <!-- begin-user-doc -->
@@ -169,42 +175,13 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
    * <!-- end-user-doc -->
    * @generated
    */
-  public ArchitectureDefinition getSuperType()
+  public EList<ArchitectureDefinition> getSuperTypes()
   {
-    if (superType != null && superType.eIsProxy())
+    if (superTypes == null)
     {
-      InternalEObject oldSuperType = (InternalEObject)superType;
-      superType = (ArchitectureDefinition)eResolveProxy(oldSuperType);
-      if (superType != oldSuperType)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPE, oldSuperType, superType));
-      }
+      superTypes = new EObjectResolvingEList<ArchitectureDefinition>(ArchitectureDefinition.class, this, FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPES);
     }
-    return superType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ArchitectureDefinition basicGetSuperType()
-  {
-    return superType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSuperType(ArchitectureDefinition newSuperType)
-  {
-    ArchitectureDefinition oldSuperType = superType;
-    superType = newSuperType;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPE, oldSuperType, superType));
+    return superTypes;
   }
 
   /**
@@ -237,9 +214,8 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
         return getAnnotationsList();
       case FractalPackage.ARCHITECTURE_DEFINITION__NAME:
         return getName();
-      case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPE:
-        if (resolve) return getSuperType();
-        return basicGetSuperType();
+      case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPES:
+        return getSuperTypes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -249,6 +225,7 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -260,8 +237,9 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
       case FractalPackage.ARCHITECTURE_DEFINITION__NAME:
         setName((String)newValue);
         return;
-      case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPE:
-        setSuperType((ArchitectureDefinition)newValue);
+      case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPES:
+        getSuperTypes().clear();
+        getSuperTypes().addAll((Collection<? extends ArchitectureDefinition>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -283,8 +261,8 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
       case FractalPackage.ARCHITECTURE_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPE:
-        setSuperType((ArchitectureDefinition)null);
+      case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPES:
+        getSuperTypes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -304,8 +282,8 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
         return annotationsList != null;
       case FractalPackage.ARCHITECTURE_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPE:
-        return superType != null;
+      case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPES:
+        return superTypes != null && !superTypes.isEmpty();
     }
     return super.eIsSet(featureID);
   }

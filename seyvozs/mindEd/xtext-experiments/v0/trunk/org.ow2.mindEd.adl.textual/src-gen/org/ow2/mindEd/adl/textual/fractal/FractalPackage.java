@@ -122,13 +122,13 @@ public interface FractalPackage extends EPackage
   int ARCHITECTURE_DEFINITION__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * The feature id for the '<em><b>Super Types</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARCHITECTURE_DEFINITION__SUPER_TYPE = 2;
+  int ARCHITECTURE_DEFINITION__SUPER_TYPES = 2;
 
   /**
    * The number of structural features of the '<em>Architecture Definition</em>' class.
@@ -205,13 +205,13 @@ public interface FractalPackage extends EPackage
   int COMPOSITE_DEFINITION__NAME = ARCHITECTURE_DEFINITION__NAME;
 
   /**
-   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * The feature id for the '<em><b>Super Types</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITE_DEFINITION__SUPER_TYPE = ARCHITECTURE_DEFINITION__SUPER_TYPE;
+  int COMPOSITE_DEFINITION__SUPER_TYPES = ARCHITECTURE_DEFINITION__SUPER_TYPES;
 
   /**
    * The feature id for the '<em><b>Template Specifiers List</b></em>' containment reference.
@@ -278,13 +278,13 @@ public interface FractalPackage extends EPackage
   int PRIMITIVE_DEFINITION__NAME = ARCHITECTURE_DEFINITION__NAME;
 
   /**
-   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * The feature id for the '<em><b>Super Types</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRIMITIVE_DEFINITION__SUPER_TYPE = ARCHITECTURE_DEFINITION__SUPER_TYPE;
+  int PRIMITIVE_DEFINITION__SUPER_TYPES = ARCHITECTURE_DEFINITION__SUPER_TYPES;
 
   /**
    * The feature id for the '<em><b>Abstract</b></em>' attribute.
@@ -351,13 +351,13 @@ public interface FractalPackage extends EPackage
   int TYPE_DEFINITION__NAME = ARCHITECTURE_DEFINITION__NAME;
 
   /**
-   * The feature id for the '<em><b>Super Type</b></em>' reference.
+   * The feature id for the '<em><b>Super Types</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_DEFINITION__SUPER_TYPE = ARCHITECTURE_DEFINITION__SUPER_TYPE;
+  int TYPE_DEFINITION__SUPER_TYPES = ARCHITECTURE_DEFINITION__SUPER_TYPES;
 
   /**
    * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -1614,15 +1614,15 @@ public interface FractalPackage extends EPackage
   EAttribute getArchitectureDefinition_Name();
 
   /**
-   * Returns the meta object for the reference '{@link org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getSuperType <em>Super Type</em>}'.
+   * Returns the meta object for the reference list '{@link org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getSuperTypes <em>Super Types</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Super Type</em>'.
-   * @see org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getSuperType()
+   * @return the meta object for the reference list '<em>Super Types</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getSuperTypes()
    * @see #getArchitectureDefinition()
    * @generated
    */
-  EReference getArchitectureDefinition_SuperType();
+  EReference getArchitectureDefinition_SuperTypes();
 
   /**
    * Returns the meta object for class '{@link org.ow2.mindEd.adl.textual.fractal.ImportDefinition <em>Import Definition</em>}'.
@@ -2658,12 +2658,12 @@ public interface FractalPackage extends EPackage
     EAttribute ARCHITECTURE_DEFINITION__NAME = eINSTANCE.getArchitectureDefinition_Name();
 
     /**
-     * The meta object literal for the '<em><b>Super Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Super Types</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ARCHITECTURE_DEFINITION__SUPER_TYPE = eINSTANCE.getArchitectureDefinition_SuperType();
+    EReference ARCHITECTURE_DEFINITION__SUPER_TYPES = eINSTANCE.getArchitectureDefinition_SuperTypes();
 
     /**
      * The meta object literal for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.ImportDefinitionImpl <em>Import Definition</em>}' class.

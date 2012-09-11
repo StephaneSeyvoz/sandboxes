@@ -31,6 +31,8 @@ import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
  */
 public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 
+	
+	// Heaviest methods ever: will need further optimization, not sure how to improve templated ELists behavior.
 	public IScope scope_BindingDefinition_sourceInterface(final BindingDefinition bindingDef, final EReference ref) {
 
 		ArchitectureDefinition sourceComponentArchDef = null;
@@ -59,6 +61,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all required interfaces coming from Super Types
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			} else {
@@ -68,6 +72,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all provided interfaces coming from Super Types
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			}
@@ -83,6 +89,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all required interfaces coming from Super Types
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			} else {
@@ -92,6 +100,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all provided interfaces coming from Super Types
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			}
@@ -107,6 +117,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all required interfaces coming from Super Types
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			} else {
@@ -116,6 +128,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all provided interfaces coming from Super Types
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			}
@@ -152,6 +166,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all provided interfaces coming from Super Types
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			} else {
@@ -161,6 +177,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all required interfaces coming from Super Types
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			}
@@ -176,6 +194,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all provided interfaces coming from Super Types
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			} else {
@@ -185,6 +205,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all required interfaces coming from Super Types
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			}
@@ -200,6 +222,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all provided interfaces coming from Super Types
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			} else {
@@ -209,6 +233,8 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
 					}
 				}
+				// We also want all required interfaces coming from Super Types
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			}
@@ -216,6 +242,108 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 			// error case
 			return IScope.NULLSCOPE;
 		}
+	}
+
+	private EList<RequiredInterfaceDefinition> listAllRequiredInterfacesFromArchDefSuperTypes(ArchitectureDefinition archDef){
+		EList<ArchitectureDefinition> superTypes = archDef.getSuperTypes();
+		
+		EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
+		
+		for (ArchitectureDefinition currSuperArchDef : superTypes) {
+			reqItfList.addAll(getAllArchDefRequiredInterfaces(currSuperArchDef));
+			// we need a recursion in all supertypes
+			listAllRequiredInterfacesFromArchDefSuperTypes(currSuperArchDef);
+		}
+		
+		return reqItfList;
+	}
+
+	private EList<RequiredInterfaceDefinition> getAllArchDefRequiredInterfaces(ArchitectureDefinition archDef) {
+		EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
+		
+		if (archDef instanceof TypeDefinition) {
+			// Get all the elements
+			EList<HostedInterfaceDefinition> elements = ((TypeDefinition) archDef).getElements();
+			// Then filter for RequiredInterfaceDefinition(s)
+			
+			for (EObject currentEObject : elements) {
+				if (currentEObject instanceof RequiredInterfaceDefinition) {
+					reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+				}
+			}
+		} else if (archDef instanceof CompositeDefinition) {
+			// Get all the elements
+			EList<CompositeElement> elements = ((CompositeDefinition) archDef).getElements();
+			// Then filter for RequiredInterfaceDefinition(s)
+
+			for (EObject currentEObject : elements) {
+				if (currentEObject instanceof RequiredInterfaceDefinition) {
+					reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+				}
+			}
+		} else if (archDef instanceof PrimitiveDefinition) {
+			// Get all the elements
+			EList<PrimitiveElement> elements = ((PrimitiveDefinition) archDef).getElements();
+			// Then filter for RequiredInterfaceDefinition(s)
+
+			for (EObject currentEObject : elements) {
+				if (currentEObject instanceof RequiredInterfaceDefinition) {
+					reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+				}
+			}
+		}
+		return reqItfList;
+	}
+	
+	private EList<ProvidedInterfaceDefinition> listAllProvidedInterfacesFromArchDefSuperTypes(ArchitectureDefinition archDef){
+		EList<ArchitectureDefinition> superTypes = archDef.getSuperTypes();
+		
+		EList<ProvidedInterfaceDefinition> reqItfList = new BasicEList<ProvidedInterfaceDefinition>();
+		
+		for (ArchitectureDefinition currSuperArchDef : superTypes) {
+			reqItfList.addAll(getAllArchDefProvidedInterfaces(currSuperArchDef));
+			// we need a recursion in all supertypes
+			listAllProvidedInterfacesFromArchDefSuperTypes(currSuperArchDef);
+		}
+		
+		return reqItfList;
+	}
+
+	private EList<ProvidedInterfaceDefinition> getAllArchDefProvidedInterfaces(ArchitectureDefinition archDef) {
+		EList<ProvidedInterfaceDefinition> reqItfList = new BasicEList<ProvidedInterfaceDefinition>();
+		
+		if (archDef instanceof TypeDefinition) {
+			// Get all the elements
+			EList<HostedInterfaceDefinition> elements = ((TypeDefinition) archDef).getElements();
+			// Then filter for RequiredInterfaceDefinition(s)
+			
+			for (EObject currentEObject : elements) {
+				if (currentEObject instanceof ProvidedInterfaceDefinition) {
+					reqItfList.add((ProvidedInterfaceDefinition) currentEObject);
+				}
+			}
+		} else if (archDef instanceof CompositeDefinition) {
+			// Get all the elements
+			EList<CompositeElement> elements = ((CompositeDefinition) archDef).getElements();
+			// Then filter for RequiredInterfaceDefinition(s)
+
+			for (EObject currentEObject : elements) {
+				if (currentEObject instanceof ProvidedInterfaceDefinition) {
+					reqItfList.add((ProvidedInterfaceDefinition) currentEObject);
+				}
+			}
+		} else if (archDef instanceof PrimitiveDefinition) {
+			// Get all the elements
+			EList<PrimitiveElement> elements = ((PrimitiveDefinition) archDef).getElements();
+			// Then filter for RequiredInterfaceDefinition(s)
+
+			for (EObject currentEObject : elements) {
+				if (currentEObject instanceof ProvidedInterfaceDefinition) {
+					reqItfList.add((ProvidedInterfaceDefinition) currentEObject);
+				}
+			}
+		}
+		return reqItfList;
 	}
 
 	//	public IScope getScope(SubComponentDefinition subCompDef, EReference ref){

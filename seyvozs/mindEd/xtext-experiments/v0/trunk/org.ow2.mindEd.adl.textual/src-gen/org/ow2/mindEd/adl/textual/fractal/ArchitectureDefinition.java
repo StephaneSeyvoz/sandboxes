@@ -2,6 +2,8 @@
  */
 package org.ow2.mindEd.adl.textual.fractal;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getAnnotationsList <em>Annotations List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getName <em>Name</em>}</li>
- *   <li>{@link org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getSuperType <em>Super Type</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getSuperTypes <em>Super Types</em>}</li>
  * </ul>
  * </p>
  *
@@ -77,29 +79,19 @@ public interface ArchitectureDefinition extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Super Type</b></em>' reference.
+   * Returns the value of the '<em><b>Super Types</b></em>' reference list.
+   * The list contents are of type {@link org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Super Type</em>' reference isn't clear,
+   * If the meaning of the '<em>Super Types</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Super Type</em>' reference.
-   * @see #setSuperType(ArchitectureDefinition)
-   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getArchitectureDefinition_SuperType()
+   * @return the value of the '<em>Super Types</em>' reference list.
+   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getArchitectureDefinition_SuperTypes()
    * @model
    * @generated
    */
-  ArchitectureDefinition getSuperType();
-
-  /**
-   * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getSuperType <em>Super Type</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Super Type</em>' reference.
-   * @see #getSuperType()
-   * @generated
-   */
-  void setSuperType(ArchitectureDefinition value);
+  EList<ArchitectureDefinition> getSuperTypes();
 
 } // ArchitectureDefinition

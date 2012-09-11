@@ -324,7 +324,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=QualifiedName 
 	 *         templateSpecifiersList=TemplateSpecifiersList? 
 	 *         compositeFormalArgumentsList=FormalArgumentsList? 
-	 *         superType=[ArchitectureDefinition|QualifiedName]? 
+	 *         (superTypes+=[ArchitectureDefinition|QualifiedName] superTypes+=[ArchitectureDefinition|QualifiedName]*)? 
 	 *         (elements+=HostedInterfaceDefinition | elements+=SubComponentDefinition | elements+=BindingDefinition)*
 	 *     )
 	 */
@@ -442,7 +442,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         abstract?='abstract'? 
 	 *         name=QualifiedName 
 	 *         compositeFormalArgumentsList=FormalArgumentsList? 
-	 *         superType=[ArchitectureDefinition|QualifiedName]? 
+	 *         (superTypes+=[ArchitectureDefinition|QualifiedName] superTypes+=[ArchitectureDefinition|QualifiedName]*)? 
 	 *         (
 	 *             elements+=ProvidedInterfaceDefinition | 
 	 *             elements+=RequiredInterfaceDefinition | 
@@ -570,7 +570,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         annotationsList=AnnotationsList? 
 	 *         name=QualifiedName 
-	 *         superType=[ArchitectureDefinition|QualifiedName]? 
+	 *         (superTypes+=[ArchitectureDefinition|QualifiedName] superTypes+=[ArchitectureDefinition|QualifiedName]*)? 
 	 *         (elements+=ProvidedInterfaceDefinition | elements+=RequiredInterfaceDefinition)*
 	 *     )
 	 */
