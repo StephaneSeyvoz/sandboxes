@@ -31,96 +31,187 @@ import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
  */
 public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 
-	public IScope scope_BindingDefinition_sourceInterface(BindingDefinition bindingDef, EReference ref) {
-		ArchitectureDefinition sourceComponentArchDef = bindingDef.getSourceParent().getType();
+	public IScope scope_BindingDefinition_sourceInterface(final BindingDefinition bindingDef, final EReference ref) {
+
+		ArchitectureDefinition sourceComponentArchDef = null;
+
+		// If the source parent is a subcomponent
+		if (!bindingDef.isIsSrcParentThis())
+			sourceComponentArchDef = bindingDef.getSourceParent().getType();
+		else  {
+			// if the source parent is "this"
+			EObject container = bindingDef.eContainer();
+			// Find the parent host definition
+			while (!(container instanceof CompositeDefinition))
+				container = container.eContainer();
+			sourceComponentArchDef = (ArchitectureDefinition) container;
+		}
 
 		if (sourceComponentArchDef instanceof TypeDefinition) {
 			// Get all the elements
 			EList<HostedInterfaceDefinition> elements = ((TypeDefinition) sourceComponentArchDef).getElements();
 			// Then filter for RequiredInterfaceDefinition(s)
 
-			EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
-			for (EObject currentEObject : elements) {
-				if (currentEObject instanceof RequiredInterfaceDefinition) {
-					reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+			if (!bindingDef.isIsSrcParentThis()) {
+				EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof RequiredInterfaceDefinition) {
+						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+					}
 				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(reqItfList);
+			} else {
+				EList<ProvidedInterfaceDefinition> pvdItfList = new BasicEList<ProvidedInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof ProvidedInterfaceDefinition) {
+						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
+					}
+				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(pvdItfList);
 			}
-			// Obtain and return a scope according to the computed list
-			return Scopes.scopeFor(reqItfList);
 		} else if (sourceComponentArchDef instanceof CompositeDefinition) {
 			// Get all the elements
 			EList<CompositeElement> elements = ((CompositeDefinition) sourceComponentArchDef).getElements();
 			// Then filter for RequiredInterfaceDefinition(s)
 
-			EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
-			for (EObject currentEObject : elements) {
-				if (currentEObject instanceof RequiredInterfaceDefinition) {
-					reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+			if (!bindingDef.isIsSrcParentThis()) {
+				EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof RequiredInterfaceDefinition) {
+						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+					}
 				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(reqItfList);
+			} else {
+				EList<ProvidedInterfaceDefinition> pvdItfList = new BasicEList<ProvidedInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof ProvidedInterfaceDefinition) {
+						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
+					}
+				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(pvdItfList);
 			}
-			// Obtain and return a scope according to the computed list
-			return Scopes.scopeFor(reqItfList);
 		} else if (sourceComponentArchDef instanceof PrimitiveDefinition) {
 			// Get all the elements
 			EList<PrimitiveElement> elements = ((PrimitiveDefinition) sourceComponentArchDef).getElements();
 			// Then filter for RequiredInterfaceDefinition(s)
 
-			EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
-			for (EObject currentEObject : elements) {
-				if (currentEObject instanceof RequiredInterfaceDefinition) {
-					reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+			if (!bindingDef.isIsSrcParentThis()) {
+				EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof RequiredInterfaceDefinition) {
+						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+					}
 				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(reqItfList);
+			} else {
+				EList<ProvidedInterfaceDefinition> pvdItfList = new BasicEList<ProvidedInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof ProvidedInterfaceDefinition) {
+						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
+					}
+				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(pvdItfList);
 			}
-			// Obtain and return a scope according to the computed list
-			return Scopes.scopeFor(reqItfList);
 		} else {
 			// error case
 			return IScope.NULLSCOPE;
 		}
 	}
 
-	public IScope scope_BindingDefinition_targetInterface(BindingDefinition bindingDef, EReference ref) {
-		ArchitectureDefinition targetComponentArchDef = bindingDef.getTargetParent().getType();
+	public IScope scope_BindingDefinition_targetInterface(final BindingDefinition bindingDef, final EReference ref) {
+
+		ArchitectureDefinition targetComponentArchDef = null;
+
+		// If the source parent isn't a sub-component but "this"
+		if (!bindingDef.isIsTgtParentThis())
+			targetComponentArchDef = bindingDef.getTargetParent().getType();
+		else  {
+			EObject container = bindingDef.eContainer();
+			// Find the parent host definition
+			while (!(container instanceof CompositeDefinition))
+				container = container.eContainer();
+			targetComponentArchDef = (ArchitectureDefinition) container;
+		}
 
 		if (targetComponentArchDef instanceof TypeDefinition) {
 			// Get all the elements
 			EList<HostedInterfaceDefinition> elements = ((TypeDefinition) targetComponentArchDef).getElements();
 			// Then filter for RequiredInterfaceDefinition(s)
 
-			EList<ProvidedInterfaceDefinition> reqItfList = new BasicEList<ProvidedInterfaceDefinition>();
-			for (EObject currentEObject : elements) {
-				if (currentEObject instanceof ProvidedInterfaceDefinition) {
-					reqItfList.add((ProvidedInterfaceDefinition) currentEObject);
+			if (!bindingDef.isIsTgtParentThis()) {
+				EList<ProvidedInterfaceDefinition> pvdItfList = new BasicEList<ProvidedInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof ProvidedInterfaceDefinition) {
+						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
+					}
 				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(pvdItfList);
+			} else {
+				EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof RequiredInterfaceDefinition) {
+						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+					}
+				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(reqItfList);
 			}
-			// Obtain and return a scope according to the computed list
-			return Scopes.scopeFor(reqItfList);
 		} else if (targetComponentArchDef instanceof CompositeDefinition) {
 			// Get all the elements
 			EList<CompositeElement> elements = ((CompositeDefinition) targetComponentArchDef).getElements();
 			// Then filter for RequiredInterfaceDefinition(s)
 
-			EList<ProvidedInterfaceDefinition> reqItfList = new BasicEList<ProvidedInterfaceDefinition>();
-			for (EObject currentEObject : elements) {
-				if (currentEObject instanceof ProvidedInterfaceDefinition) {
-					reqItfList.add((ProvidedInterfaceDefinition) currentEObject);
+			if (!bindingDef.isIsTgtParentThis()) {
+				EList<ProvidedInterfaceDefinition> pvdItfList = new BasicEList<ProvidedInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof ProvidedInterfaceDefinition) {
+						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
+					}
 				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(pvdItfList);
+			} else {
+				EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof RequiredInterfaceDefinition) {
+						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+					}
+				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(reqItfList);
 			}
-			// Obtain and return a scope according to the computed list
-			return Scopes.scopeFor(reqItfList);
 		} else if (targetComponentArchDef instanceof PrimitiveDefinition) {
 			// Get all the elements
 			EList<PrimitiveElement> elements = ((PrimitiveDefinition) targetComponentArchDef).getElements();
 			// Then filter for RequiredInterfaceDefinition(s)
 
-			EList<ProvidedInterfaceDefinition> reqItfList = new BasicEList<ProvidedInterfaceDefinition>();
-			for (EObject currentEObject : elements) {
-				if (currentEObject instanceof ProvidedInterfaceDefinition) {
-					reqItfList.add((ProvidedInterfaceDefinition) currentEObject);
+			if (!bindingDef.isIsTgtParentThis()) {
+				EList<ProvidedInterfaceDefinition> pvdItfList = new BasicEList<ProvidedInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof ProvidedInterfaceDefinition) {
+						pvdItfList.add((ProvidedInterfaceDefinition) currentEObject);
+					}
 				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(pvdItfList);
+			} else {
+				EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
+				for (EObject currentEObject : elements) {
+					if (currentEObject instanceof RequiredInterfaceDefinition) {
+						reqItfList.add((RequiredInterfaceDefinition) currentEObject);
+					}
+				}
+				// Obtain and return a scope according to the computed list
+				return Scopes.scopeFor(reqItfList);
 			}
-			// Obtain and return a scope according to the computed list
-			return Scopes.scopeFor(reqItfList);
 		} else {
 			// error case
 			return IScope.NULLSCOPE;
@@ -132,15 +223,15 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 	//		
 	//	}
 
-//	@Override
-//	public IScope getScope(EObject context, EReference reference){
-//		System.out.println(
-//				"scope_" + reference.getEContainingClass().getName()
-//				+ "_" + reference.getName()
-//				+ "(" + context.eClass().getName() + ", ..)"
-//				);
-//		return super.getScope(context, reference);
-//	}
+	//	@Override
+	//	public IScope getScope(EObject context, EReference reference){
+	//		System.out.println(
+	//				"scope_" + reference.getEContainingClass().getName()
+	//				+ "_" + reference.getName()
+	//				+ "(" + context.eClass().getName() + ", ..)"
+	//				);
+	//		return super.getScope(context, reference);
+	//	}
 
 	/* A tentative to filter binding source components (parent) for auto-completion to suggest only components bearing client interfaces.
 	 * The result of the method is good but the scoping doesnt seem to b used by the ProposalProvider, it only says there's an error when you chose a

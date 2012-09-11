@@ -67,9 +67,11 @@
     <genClasses ecoreClass="Fractal.ecore#//PrimitiveElement"/>
     <genClasses ecoreClass="Fractal.ecore#//BindingDefinition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Fractal.ecore#//BindingDefinition/sourceParent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Fractal.ecore#//BindingDefinition/isSrcParentThis"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Fractal.ecore#//BindingDefinition/sourceInterface"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Fractal.ecore#//BindingDefinition/sourceIndex"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Fractal.ecore#//BindingDefinition/targetParent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Fractal.ecore#//BindingDefinition/isTgtParentThis"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Fractal.ecore#//BindingDefinition/targetInterface"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Fractal.ecore#//BindingDefinition/targetIndex"/>
     </genClasses>

@@ -835,9 +835,19 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getBindingDefinition_IsSrcParentThis()
+  {
+    return (EAttribute)bindingDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getBindingDefinition_SourceInterface()
   {
-    return (EReference)bindingDefinitionEClass.getEStructuralFeatures().get(1);
+    return (EReference)bindingDefinitionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -847,7 +857,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    */
   public EAttribute getBindingDefinition_SourceIndex()
   {
-    return (EAttribute)bindingDefinitionEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)bindingDefinitionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -857,7 +867,17 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    */
   public EReference getBindingDefinition_TargetParent()
   {
-    return (EReference)bindingDefinitionEClass.getEStructuralFeatures().get(3);
+    return (EReference)bindingDefinitionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBindingDefinition_IsTgtParentThis()
+  {
+    return (EAttribute)bindingDefinitionEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -867,7 +887,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    */
   public EReference getBindingDefinition_TargetInterface()
   {
-    return (EReference)bindingDefinitionEClass.getEStructuralFeatures().get(4);
+    return (EReference)bindingDefinitionEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -877,7 +897,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    */
   public EAttribute getBindingDefinition_TargetIndex()
   {
-    return (EAttribute)bindingDefinitionEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)bindingDefinitionEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1403,9 +1423,11 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
 
     bindingDefinitionEClass = createEClass(BINDING_DEFINITION);
     createEReference(bindingDefinitionEClass, BINDING_DEFINITION__SOURCE_PARENT);
+    createEAttribute(bindingDefinitionEClass, BINDING_DEFINITION__IS_SRC_PARENT_THIS);
     createEReference(bindingDefinitionEClass, BINDING_DEFINITION__SOURCE_INTERFACE);
     createEAttribute(bindingDefinitionEClass, BINDING_DEFINITION__SOURCE_INDEX);
     createEReference(bindingDefinitionEClass, BINDING_DEFINITION__TARGET_PARENT);
+    createEAttribute(bindingDefinitionEClass, BINDING_DEFINITION__IS_TGT_PARENT_THIS);
     createEReference(bindingDefinitionEClass, BINDING_DEFINITION__TARGET_INTERFACE);
     createEAttribute(bindingDefinitionEClass, BINDING_DEFINITION__TARGET_INDEX);
 
@@ -1587,10 +1609,12 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
 
     initEClass(bindingDefinitionEClass, BindingDefinition.class, "BindingDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBindingDefinition_SourceParent(), this.getSubComponentDefinition(), null, "sourceParent", null, 0, 1, BindingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBindingDefinition_SourceInterface(), this.getRequiredInterfaceDefinition(), null, "sourceInterface", null, 0, 1, BindingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBindingDefinition_IsSrcParentThis(), ecorePackage.getEBoolean(), "isSrcParentThis", null, 0, 1, BindingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBindingDefinition_SourceInterface(), this.getHostedInterfaceDefinition(), null, "sourceInterface", null, 0, 1, BindingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBindingDefinition_SourceIndex(), ecorePackage.getEInt(), "sourceIndex", null, 0, 1, BindingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBindingDefinition_TargetParent(), this.getSubComponentDefinition(), null, "targetParent", null, 0, 1, BindingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBindingDefinition_TargetInterface(), this.getProvidedInterfaceDefinition(), null, "targetInterface", null, 0, 1, BindingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBindingDefinition_IsTgtParentThis(), ecorePackage.getEBoolean(), "isTgtParentThis", null, 0, 1, BindingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBindingDefinition_TargetInterface(), this.getHostedInterfaceDefinition(), null, "targetInterface", null, 0, 1, BindingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBindingDefinition_TargetIndex(), ecorePackage.getEInt(), "targetIndex", null, 0, 1, BindingDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(formalArgumentEClass, FormalArgument.class, "FormalArgument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -12,9 +12,11 @@ package org.ow2.mindEd.adl.textual.fractal;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#getSourceParent <em>Source Parent</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#isIsSrcParentThis <em>Is Src Parent This</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#getSourceInterface <em>Source Interface</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#getSourceIndex <em>Source Index</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#getTargetParent <em>Target Parent</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#isIsTgtParentThis <em>Is Tgt Parent This</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#getTargetInterface <em>Target Interface</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#getTargetIndex <em>Target Index</em>}</li>
  * </ul>
@@ -53,6 +55,32 @@ public interface BindingDefinition extends CompositeElement
   void setSourceParent(SubComponentDefinition value);
 
   /**
+   * Returns the value of the '<em><b>Is Src Parent This</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Is Src Parent This</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Src Parent This</em>' attribute.
+   * @see #setIsSrcParentThis(boolean)
+   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getBindingDefinition_IsSrcParentThis()
+   * @model
+   * @generated
+   */
+  boolean isIsSrcParentThis();
+
+  /**
+   * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#isIsSrcParentThis <em>Is Src Parent This</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Src Parent This</em>' attribute.
+   * @see #isIsSrcParentThis()
+   * @generated
+   */
+  void setIsSrcParentThis(boolean value);
+
+  /**
    * Returns the value of the '<em><b>Source Interface</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -61,12 +89,12 @@ public interface BindingDefinition extends CompositeElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Source Interface</em>' reference.
-   * @see #setSourceInterface(RequiredInterfaceDefinition)
+   * @see #setSourceInterface(HostedInterfaceDefinition)
    * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getBindingDefinition_SourceInterface()
    * @model
    * @generated
    */
-  RequiredInterfaceDefinition getSourceInterface();
+  HostedInterfaceDefinition getSourceInterface();
 
   /**
    * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#getSourceInterface <em>Source Interface</em>}' reference.
@@ -76,7 +104,7 @@ public interface BindingDefinition extends CompositeElement
    * @see #getSourceInterface()
    * @generated
    */
-  void setSourceInterface(RequiredInterfaceDefinition value);
+  void setSourceInterface(HostedInterfaceDefinition value);
 
   /**
    * Returns the value of the '<em><b>Source Index</b></em>' attribute.
@@ -131,6 +159,32 @@ public interface BindingDefinition extends CompositeElement
   void setTargetParent(SubComponentDefinition value);
 
   /**
+   * Returns the value of the '<em><b>Is Tgt Parent This</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Is Tgt Parent This</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Is Tgt Parent This</em>' attribute.
+   * @see #setIsTgtParentThis(boolean)
+   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getBindingDefinition_IsTgtParentThis()
+   * @model
+   * @generated
+   */
+  boolean isIsTgtParentThis();
+
+  /**
+   * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#isIsTgtParentThis <em>Is Tgt Parent This</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Is Tgt Parent This</em>' attribute.
+   * @see #isIsTgtParentThis()
+   * @generated
+   */
+  void setIsTgtParentThis(boolean value);
+
+  /**
    * Returns the value of the '<em><b>Target Interface</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -139,12 +193,12 @@ public interface BindingDefinition extends CompositeElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target Interface</em>' reference.
-   * @see #setTargetInterface(ProvidedInterfaceDefinition)
+   * @see #setTargetInterface(HostedInterfaceDefinition)
    * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getBindingDefinition_TargetInterface()
    * @model
    * @generated
    */
-  ProvidedInterfaceDefinition getTargetInterface();
+  HostedInterfaceDefinition getTargetInterface();
 
   /**
    * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#getTargetInterface <em>Target Interface</em>}' reference.
@@ -154,7 +208,7 @@ public interface BindingDefinition extends CompositeElement
    * @see #getTargetInterface()
    * @generated
    */
-  void setTargetInterface(ProvidedInterfaceDefinition value);
+  void setTargetInterface(HostedInterfaceDefinition value);
 
   /**
    * Returns the value of the '<em><b>Target Index</b></em>' attribute.

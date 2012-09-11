@@ -304,11 +304,11 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         annotationsList=AnnotationsList? 
-	 *         sourceParent=[SubComponentDefinition|ID]? 
-	 *         sourceInterface=[RequiredInterfaceDefinition|ID] 
+	 *         (sourceParent=[SubComponentDefinition|ID] | isSrcParentThis?='this') 
+	 *         sourceInterface=[HostedInterfaceDefinition|ID] 
 	 *         sourceIndex=INT? 
-	 *         targetParent=[SubComponentDefinition|ID]? 
-	 *         targetInterface=[ProvidedInterfaceDefinition|ID] 
+	 *         (targetParent=[SubComponentDefinition|ID] | isTgtParentThis?='this') 
+	 *         targetInterface=[HostedInterfaceDefinition|ID] 
 	 *         targetIndex=INT?
 	 *     )
 	 */

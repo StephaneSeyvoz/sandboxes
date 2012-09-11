@@ -1780,12 +1780,7 @@ ruleBindingDefinition returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getBindingDefinitionAccess().getBindsKeyword_1());
     }
-(	otherlv_2='this' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getBindingDefinitionAccess().getThisKeyword_2_0());
-    }
-
-    |(
+((
 (
 		{ 
 		  /* */ 
@@ -1795,10 +1790,26 @@ ruleBindingDefinition returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getBindingDefinitionRule());
 	        }
         }
-	otherlv_3=RULE_ID
+	otherlv_2=RULE_ID
 	{
-		newLeafNode(otherlv_3, grammarAccess.getBindingDefinitionAccess().getSourceParentSubComponentDefinitionCrossReference_2_1_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getBindingDefinitionAccess().getSourceParentSubComponentDefinitionCrossReference_2_0_0()); 
 	}
+
+)
+)
+    |(
+(
+		lv_isSrcParentThis_3_0=	'this' 
+    {
+        newLeafNode(lv_isSrcParentThis_3_0, grammarAccess.getBindingDefinitionAccess().getIsSrcParentThisThisKeyword_2_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getBindingDefinitionRule());
+	        }
+       		setWithLastConsumed($current, "isSrcParentThis", true, "this");
+	    }
 
 )
 ))	otherlv_4='.' 
@@ -1817,7 +1828,7 @@ ruleBindingDefinition returns [EObject current=null]
         }
 	otherlv_5=RULE_ID
 	{
-		newLeafNode(otherlv_5, grammarAccess.getBindingDefinitionAccess().getSourceInterfaceRequiredInterfaceDefinitionCrossReference_4_0()); 
+		newLeafNode(otherlv_5, grammarAccess.getBindingDefinitionAccess().getSourceInterfaceHostedInterfaceDefinitionCrossReference_4_0()); 
 	}
 
 )
@@ -1851,12 +1862,7 @@ ruleBindingDefinition returns [EObject current=null]
     {
     	newLeafNode(otherlv_9, grammarAccess.getBindingDefinitionAccess().getToKeyword_6());
     }
-(	otherlv_10='this' 
-    {
-    	newLeafNode(otherlv_10, grammarAccess.getBindingDefinitionAccess().getThisKeyword_7_0());
-    }
-
-    |(
+((
 (
 		{ 
 		  /* */ 
@@ -1866,10 +1872,26 @@ ruleBindingDefinition returns [EObject current=null]
 	            $current = createModelElement(grammarAccess.getBindingDefinitionRule());
 	        }
         }
-	otherlv_11=RULE_ID
+	otherlv_10=RULE_ID
 	{
-		newLeafNode(otherlv_11, grammarAccess.getBindingDefinitionAccess().getTargetParentSubComponentDefinitionCrossReference_7_1_0()); 
+		newLeafNode(otherlv_10, grammarAccess.getBindingDefinitionAccess().getTargetParentSubComponentDefinitionCrossReference_7_0_0()); 
 	}
+
+)
+)
+    |(
+(
+		lv_isTgtParentThis_11_0=	'this' 
+    {
+        newLeafNode(lv_isTgtParentThis_11_0, grammarAccess.getBindingDefinitionAccess().getIsTgtParentThisThisKeyword_7_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getBindingDefinitionRule());
+	        }
+       		setWithLastConsumed($current, "isTgtParentThis", true, "this");
+	    }
 
 )
 ))	otherlv_12='.' 
@@ -1888,7 +1910,7 @@ ruleBindingDefinition returns [EObject current=null]
         }
 	otherlv_13=RULE_ID
 	{
-		newLeafNode(otherlv_13, grammarAccess.getBindingDefinitionAccess().getTargetInterfaceProvidedInterfaceDefinitionCrossReference_9_0()); 
+		newLeafNode(otherlv_13, grammarAccess.getBindingDefinitionAccess().getTargetInterfaceHostedInterfaceDefinitionCrossReference_9_0()); 
 	}
 
 )

@@ -138,13 +138,13 @@ PrimitiveElement :
 BindingDefinition :
 	(annotationsList=AnnotationsList)?
 	'binds'
-	('this' | sourceParent = [SubComponentDefinition | ID])
+	(sourceParent = [SubComponentDefinition | ID] | isSrcParentThis ?= 'this')
 	'.'
-	sourceInterface = [RequiredInterfaceDefinition | ID] ('[' sourceIndex = INT ']')?
+	sourceInterface = [HostedInterfaceDefinition | ID] ('[' sourceIndex = INT ']')?
 	'to'
-	('this' | targetParent = [SubComponentDefinition | ID])
+	(targetParent = [SubComponentDefinition | ID] | isTgtParentThis ?= 'this')
 	'.'
-	targetInterface = [ProvidedInterfaceDefinition | ID] ('[' targetIndex = INT ']')?
+	targetInterface = [HostedInterfaceDefinition | ID] ('[' targetIndex = INT ']')?
 	';'
 ;
 

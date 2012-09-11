@@ -1085,14 +1085,15 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAnnotationsListAnnotationsListParserRuleCall_0_0 = (RuleCall)cAnnotationsListAssignment_0.eContents().get(0);
 		private final Keyword cBindsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Keyword cThisKeyword_2_0 = (Keyword)cAlternatives_2.eContents().get(0);
-		private final Assignment cSourceParentAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
-		private final CrossReference cSourceParentSubComponentDefinitionCrossReference_2_1_0 = (CrossReference)cSourceParentAssignment_2_1.eContents().get(0);
-		private final RuleCall cSourceParentSubComponentDefinitionIDTerminalRuleCall_2_1_0_1 = (RuleCall)cSourceParentSubComponentDefinitionCrossReference_2_1_0.eContents().get(1);
+		private final Assignment cSourceParentAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final CrossReference cSourceParentSubComponentDefinitionCrossReference_2_0_0 = (CrossReference)cSourceParentAssignment_2_0.eContents().get(0);
+		private final RuleCall cSourceParentSubComponentDefinitionIDTerminalRuleCall_2_0_0_1 = (RuleCall)cSourceParentSubComponentDefinitionCrossReference_2_0_0.eContents().get(1);
+		private final Assignment cIsSrcParentThisAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final Keyword cIsSrcParentThisThisKeyword_2_1_0 = (Keyword)cIsSrcParentThisAssignment_2_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cSourceInterfaceAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cSourceInterfaceRequiredInterfaceDefinitionCrossReference_4_0 = (CrossReference)cSourceInterfaceAssignment_4.eContents().get(0);
-		private final RuleCall cSourceInterfaceRequiredInterfaceDefinitionIDTerminalRuleCall_4_0_1 = (RuleCall)cSourceInterfaceRequiredInterfaceDefinitionCrossReference_4_0.eContents().get(1);
+		private final CrossReference cSourceInterfaceHostedInterfaceDefinitionCrossReference_4_0 = (CrossReference)cSourceInterfaceAssignment_4.eContents().get(0);
+		private final RuleCall cSourceInterfaceHostedInterfaceDefinitionIDTerminalRuleCall_4_0_1 = (RuleCall)cSourceInterfaceHostedInterfaceDefinitionCrossReference_4_0.eContents().get(1);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cLeftSquareBracketKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cSourceIndexAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
@@ -1100,14 +1101,15 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
 		private final Keyword cToKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Alternatives cAlternatives_7 = (Alternatives)cGroup.eContents().get(7);
-		private final Keyword cThisKeyword_7_0 = (Keyword)cAlternatives_7.eContents().get(0);
-		private final Assignment cTargetParentAssignment_7_1 = (Assignment)cAlternatives_7.eContents().get(1);
-		private final CrossReference cTargetParentSubComponentDefinitionCrossReference_7_1_0 = (CrossReference)cTargetParentAssignment_7_1.eContents().get(0);
-		private final RuleCall cTargetParentSubComponentDefinitionIDTerminalRuleCall_7_1_0_1 = (RuleCall)cTargetParentSubComponentDefinitionCrossReference_7_1_0.eContents().get(1);
+		private final Assignment cTargetParentAssignment_7_0 = (Assignment)cAlternatives_7.eContents().get(0);
+		private final CrossReference cTargetParentSubComponentDefinitionCrossReference_7_0_0 = (CrossReference)cTargetParentAssignment_7_0.eContents().get(0);
+		private final RuleCall cTargetParentSubComponentDefinitionIDTerminalRuleCall_7_0_0_1 = (RuleCall)cTargetParentSubComponentDefinitionCrossReference_7_0_0.eContents().get(1);
+		private final Assignment cIsTgtParentThisAssignment_7_1 = (Assignment)cAlternatives_7.eContents().get(1);
+		private final Keyword cIsTgtParentThisThisKeyword_7_1_0 = (Keyword)cIsTgtParentThisAssignment_7_1.eContents().get(0);
 		private final Keyword cFullStopKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Assignment cTargetInterfaceAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final CrossReference cTargetInterfaceProvidedInterfaceDefinitionCrossReference_9_0 = (CrossReference)cTargetInterfaceAssignment_9.eContents().get(0);
-		private final RuleCall cTargetInterfaceProvidedInterfaceDefinitionIDTerminalRuleCall_9_0_1 = (RuleCall)cTargetInterfaceProvidedInterfaceDefinitionCrossReference_9_0.eContents().get(1);
+		private final CrossReference cTargetInterfaceHostedInterfaceDefinitionCrossReference_9_0 = (CrossReference)cTargetInterfaceAssignment_9.eContents().get(0);
+		private final RuleCall cTargetInterfaceHostedInterfaceDefinitionIDTerminalRuleCall_9_0_1 = (RuleCall)cTargetInterfaceHostedInterfaceDefinitionCrossReference_9_0.eContents().get(1);
 		private final Group cGroup_10 = (Group)cGroup.eContents().get(10);
 		private final Keyword cLeftSquareBracketKeyword_10_0 = (Keyword)cGroup_10.eContents().get(0);
 		private final Assignment cTargetIndexAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
@@ -1121,22 +1123,18 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//BindingDefinition:
 		//
-		//	annotationsList=AnnotationsList? "binds" ("this" | sourceParent=[SubComponentDefinition]) "."
+		//	annotationsList=AnnotationsList? "binds" (sourceParent=[SubComponentDefinition] | isSrcParentThis?="this") "."
 		//
-		//	sourceInterface=[RequiredInterfaceDefinition] ("[" sourceIndex=INT "]")? "to" ("this" |
+		//	sourceInterface=[HostedInterfaceDefinition] ("[" sourceIndex=INT "]")? "to" (targetParent=[SubComponentDefinition] |
 		//
-		//	targetParent=[SubComponentDefinition]) "." targetInterface=[ProvidedInterfaceDefinition] ("[" targetIndex=INT "]")?
-		//
-		//	";";
+		//	isTgtParentThis?="this") "." targetInterface=[HostedInterfaceDefinition] ("[" targetIndex=INT "]")? ";";
 		public ParserRule getRule() { return rule; }
 
-		//annotationsList=AnnotationsList? "binds" ("this" | sourceParent=[SubComponentDefinition]) "."
+		//annotationsList=AnnotationsList? "binds" (sourceParent=[SubComponentDefinition] | isSrcParentThis?="this") "."
 		//
-		//sourceInterface=[RequiredInterfaceDefinition] ("[" sourceIndex=INT "]")? "to" ("this" |
+		//sourceInterface=[HostedInterfaceDefinition] ("[" sourceIndex=INT "]")? "to" (targetParent=[SubComponentDefinition] |
 		//
-		//targetParent=[SubComponentDefinition]) "." targetInterface=[ProvidedInterfaceDefinition] ("[" targetIndex=INT "]")?
-		//
-		//";"
+		//isTgtParentThis?="this") "." targetInterface=[HostedInterfaceDefinition] ("[" targetIndex=INT "]")? ";"
 		public Group getGroup() { return cGroup; }
 
 		//annotationsList=AnnotationsList?
@@ -1148,32 +1146,35 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//"binds"
 		public Keyword getBindsKeyword_1() { return cBindsKeyword_1; }
 
-		//"this" | sourceParent=[SubComponentDefinition]
+		//sourceParent=[SubComponentDefinition] | isSrcParentThis?="this"
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
-		//"this"
-		public Keyword getThisKeyword_2_0() { return cThisKeyword_2_0; }
-
 		//sourceParent=[SubComponentDefinition]
-		public Assignment getSourceParentAssignment_2_1() { return cSourceParentAssignment_2_1; }
+		public Assignment getSourceParentAssignment_2_0() { return cSourceParentAssignment_2_0; }
 
 		//[SubComponentDefinition]
-		public CrossReference getSourceParentSubComponentDefinitionCrossReference_2_1_0() { return cSourceParentSubComponentDefinitionCrossReference_2_1_0; }
+		public CrossReference getSourceParentSubComponentDefinitionCrossReference_2_0_0() { return cSourceParentSubComponentDefinitionCrossReference_2_0_0; }
 
 		//ID
-		public RuleCall getSourceParentSubComponentDefinitionIDTerminalRuleCall_2_1_0_1() { return cSourceParentSubComponentDefinitionIDTerminalRuleCall_2_1_0_1; }
+		public RuleCall getSourceParentSubComponentDefinitionIDTerminalRuleCall_2_0_0_1() { return cSourceParentSubComponentDefinitionIDTerminalRuleCall_2_0_0_1; }
+
+		//isSrcParentThis?="this"
+		public Assignment getIsSrcParentThisAssignment_2_1() { return cIsSrcParentThisAssignment_2_1; }
+
+		//"this"
+		public Keyword getIsSrcParentThisThisKeyword_2_1_0() { return cIsSrcParentThisThisKeyword_2_1_0; }
 
 		//"."
 		public Keyword getFullStopKeyword_3() { return cFullStopKeyword_3; }
 
-		//sourceInterface=[RequiredInterfaceDefinition]
+		//sourceInterface=[HostedInterfaceDefinition]
 		public Assignment getSourceInterfaceAssignment_4() { return cSourceInterfaceAssignment_4; }
 
-		//[RequiredInterfaceDefinition]
-		public CrossReference getSourceInterfaceRequiredInterfaceDefinitionCrossReference_4_0() { return cSourceInterfaceRequiredInterfaceDefinitionCrossReference_4_0; }
+		//[HostedInterfaceDefinition]
+		public CrossReference getSourceInterfaceHostedInterfaceDefinitionCrossReference_4_0() { return cSourceInterfaceHostedInterfaceDefinitionCrossReference_4_0; }
 
 		//ID
-		public RuleCall getSourceInterfaceRequiredInterfaceDefinitionIDTerminalRuleCall_4_0_1() { return cSourceInterfaceRequiredInterfaceDefinitionIDTerminalRuleCall_4_0_1; }
+		public RuleCall getSourceInterfaceHostedInterfaceDefinitionIDTerminalRuleCall_4_0_1() { return cSourceInterfaceHostedInterfaceDefinitionIDTerminalRuleCall_4_0_1; }
 
 		//("[" sourceIndex=INT "]")?
 		public Group getGroup_5() { return cGroup_5; }
@@ -1193,32 +1194,35 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//"to"
 		public Keyword getToKeyword_6() { return cToKeyword_6; }
 
-		//"this" | targetParent=[SubComponentDefinition]
+		//targetParent=[SubComponentDefinition] | isTgtParentThis?="this"
 		public Alternatives getAlternatives_7() { return cAlternatives_7; }
 
-		//"this"
-		public Keyword getThisKeyword_7_0() { return cThisKeyword_7_0; }
-
 		//targetParent=[SubComponentDefinition]
-		public Assignment getTargetParentAssignment_7_1() { return cTargetParentAssignment_7_1; }
+		public Assignment getTargetParentAssignment_7_0() { return cTargetParentAssignment_7_0; }
 
 		//[SubComponentDefinition]
-		public CrossReference getTargetParentSubComponentDefinitionCrossReference_7_1_0() { return cTargetParentSubComponentDefinitionCrossReference_7_1_0; }
+		public CrossReference getTargetParentSubComponentDefinitionCrossReference_7_0_0() { return cTargetParentSubComponentDefinitionCrossReference_7_0_0; }
 
 		//ID
-		public RuleCall getTargetParentSubComponentDefinitionIDTerminalRuleCall_7_1_0_1() { return cTargetParentSubComponentDefinitionIDTerminalRuleCall_7_1_0_1; }
+		public RuleCall getTargetParentSubComponentDefinitionIDTerminalRuleCall_7_0_0_1() { return cTargetParentSubComponentDefinitionIDTerminalRuleCall_7_0_0_1; }
+
+		//isTgtParentThis?="this"
+		public Assignment getIsTgtParentThisAssignment_7_1() { return cIsTgtParentThisAssignment_7_1; }
+
+		//"this"
+		public Keyword getIsTgtParentThisThisKeyword_7_1_0() { return cIsTgtParentThisThisKeyword_7_1_0; }
 
 		//"."
 		public Keyword getFullStopKeyword_8() { return cFullStopKeyword_8; }
 
-		//targetInterface=[ProvidedInterfaceDefinition]
+		//targetInterface=[HostedInterfaceDefinition]
 		public Assignment getTargetInterfaceAssignment_9() { return cTargetInterfaceAssignment_9; }
 
-		//[ProvidedInterfaceDefinition]
-		public CrossReference getTargetInterfaceProvidedInterfaceDefinitionCrossReference_9_0() { return cTargetInterfaceProvidedInterfaceDefinitionCrossReference_9_0; }
+		//[HostedInterfaceDefinition]
+		public CrossReference getTargetInterfaceHostedInterfaceDefinitionCrossReference_9_0() { return cTargetInterfaceHostedInterfaceDefinitionCrossReference_9_0; }
 
 		//ID
-		public RuleCall getTargetInterfaceProvidedInterfaceDefinitionIDTerminalRuleCall_9_0_1() { return cTargetInterfaceProvidedInterfaceDefinitionIDTerminalRuleCall_9_0_1; }
+		public RuleCall getTargetInterfaceHostedInterfaceDefinitionIDTerminalRuleCall_9_0_1() { return cTargetInterfaceHostedInterfaceDefinitionIDTerminalRuleCall_9_0_1; }
 
 		//("[" targetIndex=INT "]")?
 		public Group getGroup_10() { return cGroup_10; }
@@ -2522,13 +2526,11 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//BindingDefinition:
 	//
-	//	annotationsList=AnnotationsList? "binds" ("this" | sourceParent=[SubComponentDefinition]) "."
+	//	annotationsList=AnnotationsList? "binds" (sourceParent=[SubComponentDefinition] | isSrcParentThis?="this") "."
 	//
-	//	sourceInterface=[RequiredInterfaceDefinition] ("[" sourceIndex=INT "]")? "to" ("this" |
+	//	sourceInterface=[HostedInterfaceDefinition] ("[" sourceIndex=INT "]")? "to" (targetParent=[SubComponentDefinition] |
 	//
-	//	targetParent=[SubComponentDefinition]) "." targetInterface=[ProvidedInterfaceDefinition] ("[" targetIndex=INT "]")?
-	//
-	//	";";
+	//	isTgtParentThis?="this") "." targetInterface=[HostedInterfaceDefinition] ("[" targetIndex=INT "]")? ";";
 	public BindingDefinitionElements getBindingDefinitionAccess() {
 		return (pBindingDefinition != null) ? pBindingDefinition : (pBindingDefinition = new BindingDefinitionElements());
 	}

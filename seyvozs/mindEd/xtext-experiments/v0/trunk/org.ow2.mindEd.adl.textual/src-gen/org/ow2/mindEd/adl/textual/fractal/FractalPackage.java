@@ -893,13 +893,22 @@ public interface FractalPackage extends EPackage
   int BINDING_DEFINITION__SOURCE_PARENT = COMPOSITE_ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Is Src Parent This</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_DEFINITION__IS_SRC_PARENT_THIS = COMPOSITE_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Source Interface</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDING_DEFINITION__SOURCE_INTERFACE = COMPOSITE_ELEMENT_FEATURE_COUNT + 1;
+  int BINDING_DEFINITION__SOURCE_INTERFACE = COMPOSITE_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Source Index</b></em>' attribute.
@@ -908,7 +917,7 @@ public interface FractalPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_DEFINITION__SOURCE_INDEX = COMPOSITE_ELEMENT_FEATURE_COUNT + 2;
+  int BINDING_DEFINITION__SOURCE_INDEX = COMPOSITE_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Target Parent</b></em>' reference.
@@ -917,7 +926,16 @@ public interface FractalPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_DEFINITION__TARGET_PARENT = COMPOSITE_ELEMENT_FEATURE_COUNT + 3;
+  int BINDING_DEFINITION__TARGET_PARENT = COMPOSITE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Is Tgt Parent This</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_DEFINITION__IS_TGT_PARENT_THIS = COMPOSITE_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Target Interface</b></em>' reference.
@@ -926,7 +944,7 @@ public interface FractalPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_DEFINITION__TARGET_INTERFACE = COMPOSITE_ELEMENT_FEATURE_COUNT + 4;
+  int BINDING_DEFINITION__TARGET_INTERFACE = COMPOSITE_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Target Index</b></em>' attribute.
@@ -935,7 +953,7 @@ public interface FractalPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_DEFINITION__TARGET_INDEX = COMPOSITE_ELEMENT_FEATURE_COUNT + 5;
+  int BINDING_DEFINITION__TARGET_INDEX = COMPOSITE_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Binding Definition</em>' class.
@@ -944,7 +962,7 @@ public interface FractalPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDING_DEFINITION_FEATURE_COUNT = COMPOSITE_ELEMENT_FEATURE_COUNT + 6;
+  int BINDING_DEFINITION_FEATURE_COUNT = COMPOSITE_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.FormalArgumentImpl <em>Formal Argument</em>}' class.
@@ -2032,6 +2050,17 @@ public interface FractalPackage extends EPackage
   EReference getBindingDefinition_SourceParent();
 
   /**
+   * Returns the meta object for the attribute '{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#isIsSrcParentThis <em>Is Src Parent This</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Src Parent This</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.BindingDefinition#isIsSrcParentThis()
+   * @see #getBindingDefinition()
+   * @generated
+   */
+  EAttribute getBindingDefinition_IsSrcParentThis();
+
+  /**
    * Returns the meta object for the reference '{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#getSourceInterface <em>Source Interface</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2063,6 +2092,17 @@ public interface FractalPackage extends EPackage
    * @generated
    */
   EReference getBindingDefinition_TargetParent();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#isIsTgtParentThis <em>Is Tgt Parent This</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Is Tgt Parent This</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.BindingDefinition#isIsTgtParentThis()
+   * @see #getBindingDefinition()
+   * @generated
+   */
+  EAttribute getBindingDefinition_IsTgtParentThis();
 
   /**
    * Returns the meta object for the reference '{@link org.ow2.mindEd.adl.textual.fractal.BindingDefinition#getTargetInterface <em>Target Interface</em>}'.
@@ -2976,6 +3016,14 @@ public interface FractalPackage extends EPackage
     EReference BINDING_DEFINITION__SOURCE_PARENT = eINSTANCE.getBindingDefinition_SourceParent();
 
     /**
+     * The meta object literal for the '<em><b>Is Src Parent This</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BINDING_DEFINITION__IS_SRC_PARENT_THIS = eINSTANCE.getBindingDefinition_IsSrcParentThis();
+
+    /**
      * The meta object literal for the '<em><b>Source Interface</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2998,6 +3046,14 @@ public interface FractalPackage extends EPackage
      * @generated
      */
     EReference BINDING_DEFINITION__TARGET_PARENT = eINSTANCE.getBindingDefinition_TargetParent();
+
+    /**
+     * The meta object literal for the '<em><b>Is Tgt Parent This</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BINDING_DEFINITION__IS_TGT_PARENT_THIS = eINSTANCE.getBindingDefinition_IsTgtParentThis();
 
     /**
      * The meta object literal for the '<em><b>Target Interface</b></em>' reference feature.

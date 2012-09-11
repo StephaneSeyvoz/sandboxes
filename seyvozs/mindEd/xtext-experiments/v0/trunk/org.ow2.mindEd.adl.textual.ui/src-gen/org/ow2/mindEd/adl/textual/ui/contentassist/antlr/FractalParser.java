@@ -161,10 +161,12 @@ public class FractalParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSubComponentPrimitiveBodyAccess().getAnonymousAssignment_0(), "rule__SubComponentPrimitiveBody__AnonymousAssignment_0");
 					put(grammarAccess.getSubComponentPrimitiveBodyAccess().getElementsAssignment_2(), "rule__SubComponentPrimitiveBody__ElementsAssignment_2");
 					put(grammarAccess.getBindingDefinitionAccess().getAnnotationsListAssignment_0(), "rule__BindingDefinition__AnnotationsListAssignment_0");
-					put(grammarAccess.getBindingDefinitionAccess().getSourceParentAssignment_2_1(), "rule__BindingDefinition__SourceParentAssignment_2_1");
+					put(grammarAccess.getBindingDefinitionAccess().getSourceParentAssignment_2_0(), "rule__BindingDefinition__SourceParentAssignment_2_0");
+					put(grammarAccess.getBindingDefinitionAccess().getIsSrcParentThisAssignment_2_1(), "rule__BindingDefinition__IsSrcParentThisAssignment_2_1");
 					put(grammarAccess.getBindingDefinitionAccess().getSourceInterfaceAssignment_4(), "rule__BindingDefinition__SourceInterfaceAssignment_4");
 					put(grammarAccess.getBindingDefinitionAccess().getSourceIndexAssignment_5_1(), "rule__BindingDefinition__SourceIndexAssignment_5_1");
-					put(grammarAccess.getBindingDefinitionAccess().getTargetParentAssignment_7_1(), "rule__BindingDefinition__TargetParentAssignment_7_1");
+					put(grammarAccess.getBindingDefinitionAccess().getTargetParentAssignment_7_0(), "rule__BindingDefinition__TargetParentAssignment_7_0");
+					put(grammarAccess.getBindingDefinitionAccess().getIsTgtParentThisAssignment_7_1(), "rule__BindingDefinition__IsTgtParentThisAssignment_7_1");
 					put(grammarAccess.getBindingDefinitionAccess().getTargetInterfaceAssignment_9(), "rule__BindingDefinition__TargetInterfaceAssignment_9");
 					put(grammarAccess.getBindingDefinitionAccess().getTargetIndexAssignment_10_1(), "rule__BindingDefinition__TargetIndexAssignment_10_1");
 					put(grammarAccess.getFormalArgumentAccess().getNameAssignment(), "rule__FormalArgument__NameAssignment");

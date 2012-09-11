@@ -395,7 +395,6 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value="binds"/>
         <elements xsi:type="xtext:Alternatives">
-          <elements xsi:type="xtext:Keyword" value="this"/>
           <elements xsi:type="xtext:Assignment" feature="sourceParent" operator="=">
             <terminal xsi:type="xtext:CrossReference">
               <type metamodel="/0/@metamodelDeclarations.0">
@@ -404,12 +403,15 @@
               <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
             </terminal>
           </elements>
+          <elements xsi:type="xtext:Assignment" feature="isSrcParentThis" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="this"/>
+          </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value="."/>
         <elements xsi:type="xtext:Assignment" feature="sourceInterface" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//RequiredInterfaceDefinition"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//HostedInterfaceDefinition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>
@@ -423,7 +425,6 @@
         </elements>
         <elements xsi:type="xtext:Keyword" value="to"/>
         <elements xsi:type="xtext:Alternatives">
-          <elements xsi:type="xtext:Keyword" value="this"/>
           <elements xsi:type="xtext:Assignment" feature="targetParent" operator="=">
             <terminal xsi:type="xtext:CrossReference">
               <type metamodel="/0/@metamodelDeclarations.0">
@@ -432,12 +433,15 @@
               <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
             </terminal>
           </elements>
+          <elements xsi:type="xtext:Assignment" feature="isTgtParentThis" operator="?=">
+            <terminal xsi:type="xtext:Keyword" value="this"/>
+          </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value="."/>
         <elements xsi:type="xtext:Assignment" feature="targetInterface" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//ProvidedInterfaceDefinition"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//HostedInterfaceDefinition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
           </terminal>

@@ -11,8 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.ow2.mindEd.adl.textual.fractal.BindingDefinition;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
-import org.ow2.mindEd.adl.textual.fractal.ProvidedInterfaceDefinition;
-import org.ow2.mindEd.adl.textual.fractal.RequiredInterfaceDefinition;
+import org.ow2.mindEd.adl.textual.fractal.HostedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
 
 /**
@@ -23,9 +22,11 @@ import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.BindingDefinitionImpl#getSourceParent <em>Source Parent</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.BindingDefinitionImpl#isIsSrcParentThis <em>Is Src Parent This</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.BindingDefinitionImpl#getSourceInterface <em>Source Interface</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.BindingDefinitionImpl#getSourceIndex <em>Source Index</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.BindingDefinitionImpl#getTargetParent <em>Target Parent</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.BindingDefinitionImpl#isIsTgtParentThis <em>Is Tgt Parent This</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.BindingDefinitionImpl#getTargetInterface <em>Target Interface</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.BindingDefinitionImpl#getTargetIndex <em>Target Index</em>}</li>
  * </ul>
@@ -46,6 +47,26 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
   protected SubComponentDefinition sourceParent;
 
   /**
+   * The default value of the '{@link #isIsSrcParentThis() <em>Is Src Parent This</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsSrcParentThis()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_SRC_PARENT_THIS_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsSrcParentThis() <em>Is Src Parent This</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsSrcParentThis()
+   * @generated
+   * @ordered
+   */
+  protected boolean isSrcParentThis = IS_SRC_PARENT_THIS_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getSourceInterface() <em>Source Interface</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -53,7 +74,7 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
    * @generated
    * @ordered
    */
-  protected RequiredInterfaceDefinition sourceInterface;
+  protected HostedInterfaceDefinition sourceInterface;
 
   /**
    * The default value of the '{@link #getSourceIndex() <em>Source Index</em>}' attribute.
@@ -86,6 +107,26 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
   protected SubComponentDefinition targetParent;
 
   /**
+   * The default value of the '{@link #isIsTgtParentThis() <em>Is Tgt Parent This</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsTgtParentThis()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IS_TGT_PARENT_THIS_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isIsTgtParentThis() <em>Is Tgt Parent This</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isIsTgtParentThis()
+   * @generated
+   * @ordered
+   */
+  protected boolean isTgtParentThis = IS_TGT_PARENT_THIS_EDEFAULT;
+
+  /**
    * The cached value of the '{@link #getTargetInterface() <em>Target Interface</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -93,7 +134,7 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
    * @generated
    * @ordered
    */
-  protected ProvidedInterfaceDefinition targetInterface;
+  protected HostedInterfaceDefinition targetInterface;
 
   /**
    * The default value of the '{@link #getTargetIndex() <em>Target Index</em>}' attribute.
@@ -184,12 +225,35 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
    * <!-- end-user-doc -->
    * @generated
    */
-  public RequiredInterfaceDefinition getSourceInterface()
+  public boolean isIsSrcParentThis()
+  {
+    return isSrcParentThis;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIsSrcParentThis(boolean newIsSrcParentThis)
+  {
+    boolean oldIsSrcParentThis = isSrcParentThis;
+    isSrcParentThis = newIsSrcParentThis;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.BINDING_DEFINITION__IS_SRC_PARENT_THIS, oldIsSrcParentThis, isSrcParentThis));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HostedInterfaceDefinition getSourceInterface()
   {
     if (sourceInterface != null && sourceInterface.eIsProxy())
     {
       InternalEObject oldSourceInterface = (InternalEObject)sourceInterface;
-      sourceInterface = (RequiredInterfaceDefinition)eResolveProxy(oldSourceInterface);
+      sourceInterface = (HostedInterfaceDefinition)eResolveProxy(oldSourceInterface);
       if (sourceInterface != oldSourceInterface)
       {
         if (eNotificationRequired())
@@ -204,7 +268,7 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
    * <!-- end-user-doc -->
    * @generated
    */
-  public RequiredInterfaceDefinition basicGetSourceInterface()
+  public HostedInterfaceDefinition basicGetSourceInterface()
   {
     return sourceInterface;
   }
@@ -214,9 +278,9 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSourceInterface(RequiredInterfaceDefinition newSourceInterface)
+  public void setSourceInterface(HostedInterfaceDefinition newSourceInterface)
   {
-    RequiredInterfaceDefinition oldSourceInterface = sourceInterface;
+    HostedInterfaceDefinition oldSourceInterface = sourceInterface;
     sourceInterface = newSourceInterface;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.BINDING_DEFINITION__SOURCE_INTERFACE, oldSourceInterface, sourceInterface));
@@ -293,12 +357,35 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProvidedInterfaceDefinition getTargetInterface()
+  public boolean isIsTgtParentThis()
+  {
+    return isTgtParentThis;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setIsTgtParentThis(boolean newIsTgtParentThis)
+  {
+    boolean oldIsTgtParentThis = isTgtParentThis;
+    isTgtParentThis = newIsTgtParentThis;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.BINDING_DEFINITION__IS_TGT_PARENT_THIS, oldIsTgtParentThis, isTgtParentThis));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public HostedInterfaceDefinition getTargetInterface()
   {
     if (targetInterface != null && targetInterface.eIsProxy())
     {
       InternalEObject oldTargetInterface = (InternalEObject)targetInterface;
-      targetInterface = (ProvidedInterfaceDefinition)eResolveProxy(oldTargetInterface);
+      targetInterface = (HostedInterfaceDefinition)eResolveProxy(oldTargetInterface);
       if (targetInterface != oldTargetInterface)
       {
         if (eNotificationRequired())
@@ -313,7 +400,7 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
    * <!-- end-user-doc -->
    * @generated
    */
-  public ProvidedInterfaceDefinition basicGetTargetInterface()
+  public HostedInterfaceDefinition basicGetTargetInterface()
   {
     return targetInterface;
   }
@@ -323,9 +410,9 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTargetInterface(ProvidedInterfaceDefinition newTargetInterface)
+  public void setTargetInterface(HostedInterfaceDefinition newTargetInterface)
   {
-    ProvidedInterfaceDefinition oldTargetInterface = targetInterface;
+    HostedInterfaceDefinition oldTargetInterface = targetInterface;
     targetInterface = newTargetInterface;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.BINDING_DEFINITION__TARGET_INTERFACE, oldTargetInterface, targetInterface));
@@ -367,6 +454,8 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
       case FractalPackage.BINDING_DEFINITION__SOURCE_PARENT:
         if (resolve) return getSourceParent();
         return basicGetSourceParent();
+      case FractalPackage.BINDING_DEFINITION__IS_SRC_PARENT_THIS:
+        return isIsSrcParentThis();
       case FractalPackage.BINDING_DEFINITION__SOURCE_INTERFACE:
         if (resolve) return getSourceInterface();
         return basicGetSourceInterface();
@@ -375,6 +464,8 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
       case FractalPackage.BINDING_DEFINITION__TARGET_PARENT:
         if (resolve) return getTargetParent();
         return basicGetTargetParent();
+      case FractalPackage.BINDING_DEFINITION__IS_TGT_PARENT_THIS:
+        return isIsTgtParentThis();
       case FractalPackage.BINDING_DEFINITION__TARGET_INTERFACE:
         if (resolve) return getTargetInterface();
         return basicGetTargetInterface();
@@ -397,8 +488,11 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
       case FractalPackage.BINDING_DEFINITION__SOURCE_PARENT:
         setSourceParent((SubComponentDefinition)newValue);
         return;
+      case FractalPackage.BINDING_DEFINITION__IS_SRC_PARENT_THIS:
+        setIsSrcParentThis((Boolean)newValue);
+        return;
       case FractalPackage.BINDING_DEFINITION__SOURCE_INTERFACE:
-        setSourceInterface((RequiredInterfaceDefinition)newValue);
+        setSourceInterface((HostedInterfaceDefinition)newValue);
         return;
       case FractalPackage.BINDING_DEFINITION__SOURCE_INDEX:
         setSourceIndex((Integer)newValue);
@@ -406,8 +500,11 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
       case FractalPackage.BINDING_DEFINITION__TARGET_PARENT:
         setTargetParent((SubComponentDefinition)newValue);
         return;
+      case FractalPackage.BINDING_DEFINITION__IS_TGT_PARENT_THIS:
+        setIsTgtParentThis((Boolean)newValue);
+        return;
       case FractalPackage.BINDING_DEFINITION__TARGET_INTERFACE:
-        setTargetInterface((ProvidedInterfaceDefinition)newValue);
+        setTargetInterface((HostedInterfaceDefinition)newValue);
         return;
       case FractalPackage.BINDING_DEFINITION__TARGET_INDEX:
         setTargetIndex((Integer)newValue);
@@ -429,8 +526,11 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
       case FractalPackage.BINDING_DEFINITION__SOURCE_PARENT:
         setSourceParent((SubComponentDefinition)null);
         return;
+      case FractalPackage.BINDING_DEFINITION__IS_SRC_PARENT_THIS:
+        setIsSrcParentThis(IS_SRC_PARENT_THIS_EDEFAULT);
+        return;
       case FractalPackage.BINDING_DEFINITION__SOURCE_INTERFACE:
-        setSourceInterface((RequiredInterfaceDefinition)null);
+        setSourceInterface((HostedInterfaceDefinition)null);
         return;
       case FractalPackage.BINDING_DEFINITION__SOURCE_INDEX:
         setSourceIndex(SOURCE_INDEX_EDEFAULT);
@@ -438,8 +538,11 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
       case FractalPackage.BINDING_DEFINITION__TARGET_PARENT:
         setTargetParent((SubComponentDefinition)null);
         return;
+      case FractalPackage.BINDING_DEFINITION__IS_TGT_PARENT_THIS:
+        setIsTgtParentThis(IS_TGT_PARENT_THIS_EDEFAULT);
+        return;
       case FractalPackage.BINDING_DEFINITION__TARGET_INTERFACE:
-        setTargetInterface((ProvidedInterfaceDefinition)null);
+        setTargetInterface((HostedInterfaceDefinition)null);
         return;
       case FractalPackage.BINDING_DEFINITION__TARGET_INDEX:
         setTargetIndex(TARGET_INDEX_EDEFAULT);
@@ -460,12 +563,16 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
     {
       case FractalPackage.BINDING_DEFINITION__SOURCE_PARENT:
         return sourceParent != null;
+      case FractalPackage.BINDING_DEFINITION__IS_SRC_PARENT_THIS:
+        return isSrcParentThis != IS_SRC_PARENT_THIS_EDEFAULT;
       case FractalPackage.BINDING_DEFINITION__SOURCE_INTERFACE:
         return sourceInterface != null;
       case FractalPackage.BINDING_DEFINITION__SOURCE_INDEX:
         return sourceIndex != SOURCE_INDEX_EDEFAULT;
       case FractalPackage.BINDING_DEFINITION__TARGET_PARENT:
         return targetParent != null;
+      case FractalPackage.BINDING_DEFINITION__IS_TGT_PARENT_THIS:
+        return isTgtParentThis != IS_TGT_PARENT_THIS_EDEFAULT;
       case FractalPackage.BINDING_DEFINITION__TARGET_INTERFACE:
         return targetInterface != null;
       case FractalPackage.BINDING_DEFINITION__TARGET_INDEX:
@@ -485,8 +592,12 @@ public class BindingDefinitionImpl extends CompositeElementImpl implements Bindi
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (sourceIndex: ");
+    result.append(" (isSrcParentThis: ");
+    result.append(isSrcParentThis);
+    result.append(", sourceIndex: ");
     result.append(sourceIndex);
+    result.append(", isTgtParentThis: ");
+    result.append(isTgtParentThis);
     result.append(", targetIndex: ");
     result.append(targetIndex);
     result.append(')');
