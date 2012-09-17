@@ -83,6 +83,7 @@ public class FractalSwitch<T> extends Switch<T>
       {
         ArchitectureDefinition architectureDefinition = (ArchitectureDefinition)theEObject;
         T result = caseArchitectureDefinition(architectureDefinition);
+        if (result == null) result = caseTypeReference(architectureDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -98,6 +99,7 @@ public class FractalSwitch<T> extends Switch<T>
         CompositeDefinition compositeDefinition = (CompositeDefinition)theEObject;
         T result = caseCompositeDefinition(compositeDefinition);
         if (result == null) result = caseArchitectureDefinition(compositeDefinition);
+        if (result == null) result = caseTypeReference(compositeDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -106,6 +108,7 @@ public class FractalSwitch<T> extends Switch<T>
         PrimitiveDefinition primitiveDefinition = (PrimitiveDefinition)theEObject;
         T result = casePrimitiveDefinition(primitiveDefinition);
         if (result == null) result = caseArchitectureDefinition(primitiveDefinition);
+        if (result == null) result = caseTypeReference(primitiveDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -114,6 +117,7 @@ public class FractalSwitch<T> extends Switch<T>
         TypeDefinition typeDefinition = (TypeDefinition)theEObject;
         T result = caseTypeDefinition(typeDefinition);
         if (result == null) result = caseArchitectureDefinition(typeDefinition);
+        if (result == null) result = caseTypeReference(typeDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -146,6 +150,13 @@ public class FractalSwitch<T> extends Switch<T>
         if (result == null) result = caseCompositeElement(requiredInterfaceDefinition);
         if (result == null) result = casePrimitiveElement(requiredInterfaceDefinition);
         if (result == null) result = caseElement(requiredInterfaceDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FractalPackage.TYPE_REFERENCE:
+      {
+        TypeReference typeReference = (TypeReference)theEObject;
+        T result = caseTypeReference(typeReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -231,13 +242,7 @@ public class FractalSwitch<T> extends Switch<T>
       {
         TemplateSpecifier templateSpecifier = (TemplateSpecifier)theEObject;
         T result = caseTemplateSpecifier(templateSpecifier);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FractalPackage.TEMPLATE_SPECIFIERS_LIST:
-      {
-        TemplateSpecifiersList templateSpecifiersList = (TemplateSpecifiersList)theEObject;
-        T result = caseTemplateSpecifiersList(templateSpecifiersList);
+        if (result == null) result = caseTypeReference(templateSpecifier);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -490,6 +495,22 @@ public class FractalSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Type Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Type Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTypeReference(TypeReference object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Sub Component Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -661,22 +682,6 @@ public class FractalSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTemplateSpecifier(TemplateSpecifier object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Template Specifiers List</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Template Specifiers List</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTemplateSpecifiersList(TemplateSpecifiersList object)
   {
     return null;
   }

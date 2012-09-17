@@ -17,12 +17,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentBody;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
+import org.ow2.mindEd.adl.textual.fractal.TypeReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +51,7 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
    * @generated
    * @ordered
    */
-  protected ArchitectureDefinition type;
+  protected TypeReference type;
 
   /**
    * The cached value of the '{@link #getTemplatesList() <em>Templates List</em>}' containment reference list.
@@ -129,12 +129,12 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public ArchitectureDefinition getType()
+  public TypeReference getType()
   {
     if (type != null && type.eIsProxy())
     {
       InternalEObject oldType = (InternalEObject)type;
-      type = (ArchitectureDefinition)eResolveProxy(oldType);
+      type = (TypeReference)eResolveProxy(oldType);
       if (type != oldType)
       {
         if (eNotificationRequired())
@@ -149,7 +149,7 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public ArchitectureDefinition basicGetType()
+  public TypeReference basicGetType()
   {
     return type;
   }
@@ -159,9 +159,9 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(ArchitectureDefinition newType)
+  public void setType(TypeReference newType)
   {
-    ArchitectureDefinition oldType = type;
+    TypeReference oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.SUB_COMPONENT_DEFINITION__TYPE, oldType, type));
@@ -323,7 +323,7 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
     switch (featureID)
     {
       case FractalPackage.SUB_COMPONENT_DEFINITION__TYPE:
-        setType((ArchitectureDefinition)newValue);
+        setType((TypeReference)newValue);
         return;
       case FractalPackage.SUB_COMPONENT_DEFINITION__TEMPLATES_LIST:
         getTemplatesList().clear();
@@ -354,7 +354,7 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
     switch (featureID)
     {
       case FractalPackage.SUB_COMPONENT_DEFINITION__TYPE:
-        setType((ArchitectureDefinition)null);
+        setType((TypeReference)null);
         return;
       case FractalPackage.SUB_COMPONENT_DEFINITION__TEMPLATES_LIST:
         getTemplatesList().clear();

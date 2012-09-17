@@ -39,7 +39,6 @@ import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentPrimitiveBody;
 import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
-import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifiersList;
 import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
 import org.ow2.mindEd.adl.textual.services.FractalGrammarAccess;
 
@@ -100,7 +99,8 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 				else break;
 			case FractalPackage.COMPOSITE_DEFINITION:
 				if(context == grammarAccess.getArchitectureDefinitionRule() ||
-				   context == grammarAccess.getCompositeDefinitionRule()) {
+				   context == grammarAccess.getCompositeDefinitionRule() ||
+				   context == grammarAccess.getTypeReferenceRule()) {
 					sequence_CompositeDefinition(context, (CompositeDefinition) semanticObject); 
 					return; 
 				}
@@ -167,7 +167,8 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 				else break;
 			case FractalPackage.PRIMITIVE_DEFINITION:
 				if(context == grammarAccess.getArchitectureDefinitionRule() ||
-				   context == grammarAccess.getPrimitiveDefinitionRule()) {
+				   context == grammarAccess.getPrimitiveDefinitionRule() ||
+				   context == grammarAccess.getTypeReferenceRule()) {
 					sequence_PrimitiveDefinition(context, (PrimitiveDefinition) semanticObject); 
 					return; 
 				}
@@ -221,20 +222,16 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 				}
 				else break;
 			case FractalPackage.TEMPLATE_SPECIFIER:
-				if(context == grammarAccess.getTemplateSpecifierRule()) {
+				if(context == grammarAccess.getTemplateSpecifierRule() ||
+				   context == grammarAccess.getTypeReferenceRule()) {
 					sequence_TemplateSpecifier(context, (TemplateSpecifier) semanticObject); 
-					return; 
-				}
-				else break;
-			case FractalPackage.TEMPLATE_SPECIFIERS_LIST:
-				if(context == grammarAccess.getTemplateSpecifiersListRule()) {
-					sequence_TemplateSpecifiersList(context, (TemplateSpecifiersList) semanticObject); 
 					return; 
 				}
 				else break;
 			case FractalPackage.TYPE_DEFINITION:
 				if(context == grammarAccess.getArchitectureDefinitionRule() ||
-				   context == grammarAccess.getTypeDefinitionRule()) {
+				   context == grammarAccess.getTypeDefinitionRule() ||
+				   context == grammarAccess.getTypeReferenceRule()) {
 					sequence_TypeDefinition(context, (TypeDefinition) semanticObject); 
 					return; 
 				}
@@ -322,7 +319,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         annotationsList=AnnotationsList? 
 	 *         name=QualifiedName 
-	 *         templateSpecifiersList=TemplateSpecifiersList? 
+	 *         (templateSpecifiers+=TemplateSpecifier templateSpecifiers+=TemplateSpecifier*)? 
 	 *         compositeFormalArgumentsList=FormalArgumentsList? 
 	 *         (superTypes+=[ArchitectureDefinition|QualifiedName] superTypes+=[ArchitectureDefinition|QualifiedName]*)? 
 	 *         (elements+=HostedInterfaceDefinition | elements+=SubComponentDefinition | elements+=BindingDefinition)*
@@ -498,7 +495,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         annotationsList=AnnotationsList? 
-	 *         type=[ArchitectureDefinition|QualifiedName]? 
+	 *         type=[TypeReference|QualifiedName]? 
 	 *         (templatesList+=TemplateDefinition templatesList+=TemplateDefinition*)? 
 	 *         (argumentsList+=ArgumentDefinition argumentsList+=ArgumentDefinition*)? 
 	 *         name=ID 
@@ -530,7 +527,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? reference=[CompositeDefinition|QualifiedName])
+	 *     (name=TemplateSpecifier? typeReference=[ArchitectureDefinition|QualifiedName])
 	 */
 	protected void sequence_TemplateDefinition(EObject context, TemplateDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -539,29 +536,20 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID reference=[TypeDefinition|QualifiedName])
+	 *     (name=ID typeReference=[TypeDefinition|QualifiedName])
 	 */
 	protected void sequence_TemplateSpecifier(EObject context, TemplateSpecifier semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, FractalPackage.Literals.TEMPLATE_SPECIFIER__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FractalPackage.Literals.TEMPLATE_SPECIFIER__NAME));
-			if(transientValues.isValueTransient(semanticObject, FractalPackage.Literals.TEMPLATE_SPECIFIER__REFERENCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FractalPackage.Literals.TEMPLATE_SPECIFIER__REFERENCE));
+			if(transientValues.isValueTransient(semanticObject, FractalPackage.Literals.TYPE_REFERENCE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FractalPackage.Literals.TYPE_REFERENCE__NAME));
+			if(transientValues.isValueTransient(semanticObject, FractalPackage.Literals.TEMPLATE_SPECIFIER__TYPE_REFERENCE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FractalPackage.Literals.TEMPLATE_SPECIFIER__TYPE_REFERENCE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getTemplateSpecifierAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getTemplateSpecifierAccess().getReferenceTypeDefinitionQualifiedNameParserRuleCall_2_0_1(), semanticObject.getReference());
+		feeder.accept(grammarAccess.getTemplateSpecifierAccess().getTypeReferenceTypeDefinitionQualifiedNameParserRuleCall_2_0_1(), semanticObject.getTypeReference());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (templateSpecifiers+=TemplateSpecifier templateSpecifiers+=TemplateSpecifier*)
-	 */
-	protected void sequence_TemplateSpecifiersList(EObject context, TemplateSpecifiersList semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

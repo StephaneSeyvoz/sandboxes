@@ -35,12 +35,12 @@ public interface SubComponentDefinition extends CompositeElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(ArchitectureDefinition)
+   * @see #setType(TypeReference)
    * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getSubComponentDefinition_Type()
    * @model
    * @generated
    */
-  ArchitectureDefinition getType();
+  TypeReference getType();
 
   /**
    * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition#getType <em>Type</em>}' reference.
@@ -50,7 +50,7 @@ public interface SubComponentDefinition extends CompositeElement
    * @see #getType()
    * @generated
    */
-  void setType(ArchitectureDefinition value);
+  void setType(TypeReference value);
 
   /**
    * Returns the value of the '<em><b>Templates List</b></em>' containment reference list.

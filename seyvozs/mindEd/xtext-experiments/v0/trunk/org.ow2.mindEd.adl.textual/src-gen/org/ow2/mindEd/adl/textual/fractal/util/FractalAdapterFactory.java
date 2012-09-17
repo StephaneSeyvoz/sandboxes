@@ -120,6 +120,11 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
         return createRequiredInterfaceDefinitionAdapter();
       }
       @Override
+      public Adapter caseTypeReference(TypeReference object)
+      {
+        return createTypeReferenceAdapter();
+      }
+      @Override
       public Adapter caseSubComponentDefinition(SubComponentDefinition object)
       {
         return createSubComponentDefinitionAdapter();
@@ -173,11 +178,6 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTemplateSpecifier(TemplateSpecifier object)
       {
         return createTemplateSpecifierAdapter();
-      }
-      @Override
-      public Adapter caseTemplateSpecifiersList(TemplateSpecifiersList object)
-      {
-        return createTemplateSpecifiersListAdapter();
       }
       @Override
       public Adapter caseTemplateDefinition(TemplateDefinition object)
@@ -402,6 +402,21 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.TypeReference <em>Type Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ow2.mindEd.adl.textual.fractal.TypeReference
+   * @generated
+   */
+  public Adapter createTypeReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition <em>Sub Component Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -562,21 +577,6 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTemplateSpecifierAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.TemplateSpecifiersList <em>Template Specifiers List</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.ow2.mindEd.adl.textual.fractal.TemplateSpecifiersList
-   * @generated
-   */
-  public Adapter createTemplateSpecifiersListAdapter()
   {
     return null;
   }

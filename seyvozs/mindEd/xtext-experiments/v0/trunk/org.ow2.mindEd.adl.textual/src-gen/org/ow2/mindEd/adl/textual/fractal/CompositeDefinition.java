@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.ow2.mindEd.adl.textual.fractal.CompositeDefinition#getTemplateSpecifiersList <em>Template Specifiers List</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.CompositeDefinition#getTemplateSpecifiers <em>Template Specifiers</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.CompositeDefinition#getCompositeFormalArgumentsList <em>Composite Formal Arguments List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.CompositeDefinition#getElements <em>Elements</em>}</li>
  * </ul>
@@ -25,30 +25,20 @@ import org.eclipse.emf.common.util.EList;
 public interface CompositeDefinition extends ArchitectureDefinition
 {
   /**
-   * Returns the value of the '<em><b>Template Specifiers List</b></em>' containment reference.
+   * Returns the value of the '<em><b>Template Specifiers</b></em>' containment reference list.
+   * The list contents are of type {@link org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Template Specifiers List</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Template Specifiers</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Template Specifiers List</em>' containment reference.
-   * @see #setTemplateSpecifiersList(TemplateSpecifiersList)
-   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getCompositeDefinition_TemplateSpecifiersList()
+   * @return the value of the '<em>Template Specifiers</em>' containment reference list.
+   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getCompositeDefinition_TemplateSpecifiers()
    * @model containment="true"
    * @generated
    */
-  TemplateSpecifiersList getTemplateSpecifiersList();
-
-  /**
-   * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.CompositeDefinition#getTemplateSpecifiersList <em>Template Specifiers List</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Template Specifiers List</em>' containment reference.
-   * @see #getTemplateSpecifiersList()
-   * @generated
-   */
-  void setTemplateSpecifiersList(TemplateSpecifiersList value);
+  EList<TemplateSpecifier> getTemplateSpecifiers();
 
   /**
    * Returns the value of the '<em><b>Composite Formal Arguments List</b></em>' containment reference.

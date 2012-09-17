@@ -21,7 +21,7 @@ import org.ow2.mindEd.adl.textual.fractal.CompositeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeElement;
 import org.ow2.mindEd.adl.textual.fractal.FormalArgumentsList;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
-import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifiersList;
+import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifiersList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeDefinitionImpl#getTemplateSpecifiersList <em>Template Specifiers List</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeDefinitionImpl#getTemplateSpecifiers <em>Template Specifiers</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeDefinitionImpl#getCompositeFormalArgumentsList <em>Composite Formal Arguments List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeDefinitionImpl#getElements <em>Elements</em>}</li>
  * </ul>
@@ -41,14 +41,14 @@ import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifiersList;
 public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implements CompositeDefinition
 {
   /**
-   * The cached value of the '{@link #getTemplateSpecifiersList() <em>Template Specifiers List</em>}' containment reference.
+   * The cached value of the '{@link #getTemplateSpecifiers() <em>Template Specifiers</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTemplateSpecifiersList()
+   * @see #getTemplateSpecifiers()
    * @generated
    * @ordered
    */
-  protected TemplateSpecifiersList templateSpecifiersList;
+  protected EList<TemplateSpecifier> templateSpecifiers;
 
   /**
    * The cached value of the '{@link #getCompositeFormalArgumentsList() <em>Composite Formal Arguments List</em>}' containment reference.
@@ -96,47 +96,13 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public TemplateSpecifiersList getTemplateSpecifiersList()
+  public EList<TemplateSpecifier> getTemplateSpecifiers()
   {
-    return templateSpecifiersList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTemplateSpecifiersList(TemplateSpecifiersList newTemplateSpecifiersList, NotificationChain msgs)
-  {
-    TemplateSpecifiersList oldTemplateSpecifiersList = templateSpecifiersList;
-    templateSpecifiersList = newTemplateSpecifiersList;
-    if (eNotificationRequired())
+    if (templateSpecifiers == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS_LIST, oldTemplateSpecifiersList, newTemplateSpecifiersList);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      templateSpecifiers = new EObjectContainmentEList<TemplateSpecifier>(TemplateSpecifier.class, this, FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTemplateSpecifiersList(TemplateSpecifiersList newTemplateSpecifiersList)
-  {
-    if (newTemplateSpecifiersList != templateSpecifiersList)
-    {
-      NotificationChain msgs = null;
-      if (templateSpecifiersList != null)
-        msgs = ((InternalEObject)templateSpecifiersList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS_LIST, null, msgs);
-      if (newTemplateSpecifiersList != null)
-        msgs = ((InternalEObject)newTemplateSpecifiersList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS_LIST, null, msgs);
-      msgs = basicSetTemplateSpecifiersList(newTemplateSpecifiersList, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS_LIST, newTemplateSpecifiersList, newTemplateSpecifiersList));
+    return templateSpecifiers;
   }
 
   /**
@@ -211,8 +177,8 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
   {
     switch (featureID)
     {
-      case FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS_LIST:
-        return basicSetTemplateSpecifiersList(null, msgs);
+      case FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS:
+        return ((InternalEList<?>)getTemplateSpecifiers()).basicRemove(otherEnd, msgs);
       case FractalPackage.COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         return basicSetCompositeFormalArgumentsList(null, msgs);
       case FractalPackage.COMPOSITE_DEFINITION__ELEMENTS:
@@ -231,8 +197,8 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
   {
     switch (featureID)
     {
-      case FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS_LIST:
-        return getTemplateSpecifiersList();
+      case FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS:
+        return getTemplateSpecifiers();
       case FractalPackage.COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         return getCompositeFormalArgumentsList();
       case FractalPackage.COMPOSITE_DEFINITION__ELEMENTS:
@@ -252,8 +218,9 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
   {
     switch (featureID)
     {
-      case FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS_LIST:
-        setTemplateSpecifiersList((TemplateSpecifiersList)newValue);
+      case FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS:
+        getTemplateSpecifiers().clear();
+        getTemplateSpecifiers().addAll((Collection<? extends TemplateSpecifier>)newValue);
         return;
       case FractalPackage.COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         setCompositeFormalArgumentsList((FormalArgumentsList)newValue);
@@ -276,8 +243,8 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
   {
     switch (featureID)
     {
-      case FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS_LIST:
-        setTemplateSpecifiersList((TemplateSpecifiersList)null);
+      case FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS:
+        getTemplateSpecifiers().clear();
         return;
       case FractalPackage.COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         setCompositeFormalArgumentsList((FormalArgumentsList)null);
@@ -299,8 +266,8 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
   {
     switch (featureID)
     {
-      case FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS_LIST:
-        return templateSpecifiersList != null;
+      case FractalPackage.COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS:
+        return templateSpecifiers != null && !templateSpecifiers.isEmpty();
       case FractalPackage.COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         return compositeFormalArgumentsList != null;
       case FractalPackage.COMPOSITE_DEFINITION__ELEMENTS:

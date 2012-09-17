@@ -14,6 +14,8 @@ import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ProvidedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.RequiredInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
+import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
+import org.ow2.mindEd.adl.textual.fractal.TypeReference;
 import org.ow2.mindEd.adl.textual.ui.contentassist.AbstractFractalProposalProvider;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.InterfaceDefinition;
 /**
@@ -43,7 +45,19 @@ public class FractalProposalProvider extends AbstractFractalProposalProvider {
 		String proposal = null;
 		ICompletionProposal completionProposal = null;
 
-		ArchitectureDefinition archDef = subCompDef.getType();
+		TypeReference currArchDefOrTemplate = subCompDef.getType();
+		
+		ArchitectureDefinition archDef = null;
+		
+		if (currArchDefOrTemplate instanceof ArchitectureDefinition)
+			archDef = (ArchitectureDefinition) currArchDefOrTemplate;
+		else if (currArchDefOrTemplate instanceof TemplateSpecifier)
+			archDef = ((TemplateSpecifier) currArchDefOrTemplate).getTypeReference();
+		else { // error case: return default value
+			super.complete_ID(subCompDef, ruleCall, context, acceptor);
+			return;
+		}
+		
 		String typeName = archDef.getName();
 
 		// Filter the complete QualifiedName to keep only the last substring

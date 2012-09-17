@@ -147,8 +147,16 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCompositeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameQualifiedNameParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Assignment cTemplateSpecifiersListAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTemplateSpecifiersListTemplateSpecifiersListParserRuleCall_3_0 = (RuleCall)cTemplateSpecifiersListAssignment_3.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLessThanSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Assignment cTemplateSpecifiersAssignment_3_1_0 = (Assignment)cGroup_3_1.eContents().get(0);
+		private final RuleCall cTemplateSpecifiersTemplateSpecifierParserRuleCall_3_1_0_0 = (RuleCall)cTemplateSpecifiersAssignment_3_1_0.eContents().get(0);
+		private final Group cGroup_3_1_1 = (Group)cGroup_3_1.eContents().get(1);
+		private final Keyword cCommaKeyword_3_1_1_0 = (Keyword)cGroup_3_1_1.eContents().get(0);
+		private final Assignment cTemplateSpecifiersAssignment_3_1_1_1 = (Assignment)cGroup_3_1_1.eContents().get(1);
+		private final RuleCall cTemplateSpecifiersTemplateSpecifierParserRuleCall_3_1_1_1_0 = (RuleCall)cTemplateSpecifiersAssignment_3_1_1_1.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		private final Assignment cCompositeFormalArgumentsListAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cCompositeFormalArgumentsListFormalArgumentsListParserRuleCall_4_0 = (RuleCall)cCompositeFormalArgumentsListAssignment_4.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
@@ -171,7 +179,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CompositeDefinition:
 		//
-		//	annotationsList=AnnotationsList? "composite" name=QualifiedName templateSpecifiersList=TemplateSpecifiersList? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
+		//	annotationsList=AnnotationsList? "composite" name=QualifiedName ("<" (templateSpecifiers+=TemplateSpecifier (","
+		//
+		//	templateSpecifiers+=TemplateSpecifier)*) ">")? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
 		//
 		//	compositeFormalArgumentsList=FormalArgumentsList? // (arg1, arg2, ...)
 		//
@@ -182,7 +192,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//	SubComponentDefinition | BindingDefinition)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//annotationsList=AnnotationsList? "composite" name=QualifiedName templateSpecifiersList=TemplateSpecifiersList? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
+		//annotationsList=AnnotationsList? "composite" name=QualifiedName ("<" (templateSpecifiers+=TemplateSpecifier (","
+		//
+		//templateSpecifiers+=TemplateSpecifier)*) ">")? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
 		//
 		//compositeFormalArgumentsList=FormalArgumentsList? // (arg1, arg2, ...)
 		//
@@ -208,11 +220,35 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_2_0() { return cNameQualifiedNameParserRuleCall_2_0; }
 
-		//templateSpecifiersList=TemplateSpecifiersList?
-		public Assignment getTemplateSpecifiersListAssignment_3() { return cTemplateSpecifiersListAssignment_3; }
+		//("<" (templateSpecifiers+=TemplateSpecifier ("," templateSpecifiers+=TemplateSpecifier)*) ">")?
+		public Group getGroup_3() { return cGroup_3; }
 
-		//TemplateSpecifiersList
-		public RuleCall getTemplateSpecifiersListTemplateSpecifiersListParserRuleCall_3_0() { return cTemplateSpecifiersListTemplateSpecifiersListParserRuleCall_3_0; }
+		//"<"
+		public Keyword getLessThanSignKeyword_3_0() { return cLessThanSignKeyword_3_0; }
+
+		//templateSpecifiers+=TemplateSpecifier ("," templateSpecifiers+=TemplateSpecifier)*
+		public Group getGroup_3_1() { return cGroup_3_1; }
+
+		//templateSpecifiers+=TemplateSpecifier
+		public Assignment getTemplateSpecifiersAssignment_3_1_0() { return cTemplateSpecifiersAssignment_3_1_0; }
+
+		//TemplateSpecifier
+		public RuleCall getTemplateSpecifiersTemplateSpecifierParserRuleCall_3_1_0_0() { return cTemplateSpecifiersTemplateSpecifierParserRuleCall_3_1_0_0; }
+
+		//("," templateSpecifiers+=TemplateSpecifier)*
+		public Group getGroup_3_1_1() { return cGroup_3_1_1; }
+
+		//","
+		public Keyword getCommaKeyword_3_1_1_0() { return cCommaKeyword_3_1_1_0; }
+
+		//templateSpecifiers+=TemplateSpecifier
+		public Assignment getTemplateSpecifiersAssignment_3_1_1_1() { return cTemplateSpecifiersAssignment_3_1_1_1; }
+
+		//TemplateSpecifier
+		public RuleCall getTemplateSpecifiersTemplateSpecifierParserRuleCall_3_1_1_1_0() { return cTemplateSpecifiersTemplateSpecifierParserRuleCall_3_1_1_1_0; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_3_2() { return cGreaterThanSignKeyword_3_2; }
 
 		//compositeFormalArgumentsList=FormalArgumentsList?
 		public Assignment getCompositeFormalArgumentsListAssignment_4() { return cCompositeFormalArgumentsListAssignment_4; }
@@ -729,6 +765,27 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
 	}
 
+	public class TypeReferenceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TypeReference");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cArchitectureDefinitionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTemplateSpecifierParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//TypeReference:
+		//
+		//	ArchitectureDefinition | TemplateSpecifier;
+		public ParserRule getRule() { return rule; }
+
+		//ArchitectureDefinition | TemplateSpecifier
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ArchitectureDefinition
+		public RuleCall getArchitectureDefinitionParserRuleCall_0() { return cArchitectureDefinitionParserRuleCall_0; }
+
+		//TemplateSpecifier
+		public RuleCall getTemplateSpecifierParserRuleCall_1() { return cTemplateSpecifierParserRuleCall_1; }
+	}
+
 	public class SubComponentDefinitionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SubComponentDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -736,8 +793,8 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAnnotationsListAnnotationsListParserRuleCall_0_0 = (RuleCall)cAnnotationsListAssignment_0.eContents().get(0);
 		private final Keyword cContainsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cTypeArchitectureDefinitionCrossReference_2_0 = (CrossReference)cTypeAssignment_2.eContents().get(0);
-		private final RuleCall cTypeArchitectureDefinitionQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cTypeArchitectureDefinitionCrossReference_2_0.eContents().get(1);
+		private final CrossReference cTypeTypeReferenceCrossReference_2_0 = (CrossReference)cTypeAssignment_2.eContents().get(0);
+		private final RuleCall cTypeTypeReferenceQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cTypeTypeReferenceCrossReference_2_0.eContents().get(1);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cLessThanSignKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cTemplatesListAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
@@ -763,9 +820,11 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBodySubComponentBodyParserRuleCall_7_0 = (RuleCall)cBodyAssignment_7.eContents().get(0);
 		private final Keyword cSemicolonKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
+		//// Original: can do anything but needs lots of manual scoping/validation
+		//
 		//SubComponentDefinition:
 		//
-		//	annotationsList=AnnotationsList? "contains" type=[ArchitectureDefinition|QualifiedName]? ("<"
+		//	annotationsList=AnnotationsList? "contains" type=[TypeReference|QualifiedName]? ("<"
 		//
 		//	templatesList+=TemplateDefinition ("," templatesList+=TemplateDefinition)* ">")? ("("
 		//
@@ -774,13 +833,11 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//	";";
 		public ParserRule getRule() { return rule; }
 
-		//annotationsList=AnnotationsList? "contains" type=[ArchitectureDefinition|QualifiedName]? ("<"
+		//annotationsList=AnnotationsList? "contains" type=[TypeReference|QualifiedName]? ("<" templatesList+=TemplateDefinition
 		//
-		//templatesList+=TemplateDefinition ("," templatesList+=TemplateDefinition)* ">")? ("("
+		//("," templatesList+=TemplateDefinition)* ">")? ("(" argumentsList+=ArgumentDefinition (","
 		//
-		//argumentsList+=ArgumentDefinition ("," argumentsList+=ArgumentDefinition)* ")")? "as" name=ID body=SubComponentBody?
-		//
-		//";"
+		//argumentsList+=ArgumentDefinition)* ")")? "as" name=ID body=SubComponentBody? ";"
 		public Group getGroup() { return cGroup; }
 
 		//annotationsList=AnnotationsList?
@@ -792,14 +849,14 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//"contains"
 		public Keyword getContainsKeyword_1() { return cContainsKeyword_1; }
 
-		//type=[ArchitectureDefinition|QualifiedName]?
+		//type=[TypeReference|QualifiedName]?
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 
-		//[ArchitectureDefinition|QualifiedName]
-		public CrossReference getTypeArchitectureDefinitionCrossReference_2_0() { return cTypeArchitectureDefinitionCrossReference_2_0; }
+		//[TypeReference|QualifiedName]
+		public CrossReference getTypeTypeReferenceCrossReference_2_0() { return cTypeTypeReferenceCrossReference_2_0; }
 
 		//QualifiedName
-		public RuleCall getTypeArchitectureDefinitionQualifiedNameParserRuleCall_2_0_1() { return cTypeArchitectureDefinitionQualifiedNameParserRuleCall_2_0_1; }
+		public RuleCall getTypeTypeReferenceQualifiedNameParserRuleCall_2_0_1() { return cTypeTypeReferenceQualifiedNameParserRuleCall_2_0_1; }
 
 		//("<" templatesList+=TemplateDefinition ("," templatesList+=TemplateDefinition)* ">")?
 		public Group getGroup_3() { return cGroup_3; }
@@ -1359,16 +1416,18 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cConformstoKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cReferenceAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cReferenceTypeDefinitionCrossReference_2_0 = (CrossReference)cReferenceAssignment_2.eContents().get(0);
-		private final RuleCall cReferenceTypeDefinitionQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cReferenceTypeDefinitionCrossReference_2_0.eContents().get(1);
+		private final Assignment cTypeReferenceAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTypeReferenceTypeDefinitionCrossReference_2_0 = (CrossReference)cTypeReferenceAssignment_2.eContents().get(0);
+		private final RuleCall cTypeReferenceTypeDefinitionQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cTypeReferenceTypeDefinitionCrossReference_2_0.eContents().get(1);
 		
+		//// Using "id=ID" instead of "name=ID" allows us for the TemplateSpecifiers not to be indexed by default and we'll add them where needed by hand
+		//
 		//TemplateSpecifier:
 		//
-		//	name=ID "conformsto" reference=[TypeDefinition|QualifiedName];
+		//	name=ID "conformsto" typeReference=[TypeDefinition|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "conformsto" reference=[TypeDefinition|QualifiedName]
+		//name=ID "conformsto" typeReference=[TypeDefinition|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -1380,63 +1439,14 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//"conformsto"
 		public Keyword getConformstoKeyword_1() { return cConformstoKeyword_1; }
 
-		//reference=[TypeDefinition|QualifiedName]
-		public Assignment getReferenceAssignment_2() { return cReferenceAssignment_2; }
+		//typeReference=[TypeDefinition|QualifiedName]
+		public Assignment getTypeReferenceAssignment_2() { return cTypeReferenceAssignment_2; }
 
 		//[TypeDefinition|QualifiedName]
-		public CrossReference getReferenceTypeDefinitionCrossReference_2_0() { return cReferenceTypeDefinitionCrossReference_2_0; }
+		public CrossReference getTypeReferenceTypeDefinitionCrossReference_2_0() { return cTypeReferenceTypeDefinitionCrossReference_2_0; }
 
 		//QualifiedName
-		public RuleCall getReferenceTypeDefinitionQualifiedNameParserRuleCall_2_0_1() { return cReferenceTypeDefinitionQualifiedNameParserRuleCall_2_0_1; }
-	}
-
-	public class TemplateSpecifiersListElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TemplateSpecifiersList");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLessThanSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Assignment cTemplateSpecifiersAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cTemplateSpecifiersTemplateSpecifierParserRuleCall_1_0_0 = (RuleCall)cTemplateSpecifiersAssignment_1_0.eContents().get(0);
-		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
-		private final Keyword cCommaKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
-		private final Assignment cTemplateSpecifiersAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
-		private final RuleCall cTemplateSpecifiersTemplateSpecifierParserRuleCall_1_1_1_0 = (RuleCall)cTemplateSpecifiersAssignment_1_1_1.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		
-		//TemplateSpecifiersList:
-		//
-		//	"<" (templateSpecifiers+=TemplateSpecifier ("," templateSpecifiers+=TemplateSpecifier)*) ">";
-		public ParserRule getRule() { return rule; }
-
-		//"<" (templateSpecifiers+=TemplateSpecifier ("," templateSpecifiers+=TemplateSpecifier)*) ">"
-		public Group getGroup() { return cGroup; }
-
-		//"<"
-		public Keyword getLessThanSignKeyword_0() { return cLessThanSignKeyword_0; }
-
-		//templateSpecifiers+=TemplateSpecifier ("," templateSpecifiers+=TemplateSpecifier)*
-		public Group getGroup_1() { return cGroup_1; }
-
-		//templateSpecifiers+=TemplateSpecifier
-		public Assignment getTemplateSpecifiersAssignment_1_0() { return cTemplateSpecifiersAssignment_1_0; }
-
-		//TemplateSpecifier
-		public RuleCall getTemplateSpecifiersTemplateSpecifierParserRuleCall_1_0_0() { return cTemplateSpecifiersTemplateSpecifierParserRuleCall_1_0_0; }
-
-		//("," templateSpecifiers+=TemplateSpecifier)*
-		public Group getGroup_1_1() { return cGroup_1_1; }
-
-		//","
-		public Keyword getCommaKeyword_1_1_0() { return cCommaKeyword_1_1_0; }
-
-		//templateSpecifiers+=TemplateSpecifier
-		public Assignment getTemplateSpecifiersAssignment_1_1_1() { return cTemplateSpecifiersAssignment_1_1_1; }
-
-		//TemplateSpecifier
-		public RuleCall getTemplateSpecifiersTemplateSpecifierParserRuleCall_1_1_1_0() { return cTemplateSpecifiersTemplateSpecifierParserRuleCall_1_1_1_0; }
-
-		//">"
-		public Keyword getGreaterThanSignKeyword_2() { return cGreaterThanSignKeyword_2; }
+		public RuleCall getTypeReferenceTypeDefinitionQualifiedNameParserRuleCall_2_0_1() { return cTypeReferenceTypeDefinitionQualifiedNameParserRuleCall_2_0_1; }
 	}
 
 	public class AttributeTypeElements extends AbstractParserRuleElementFinder {
@@ -1447,6 +1457,10 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cENUMKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		private final RuleCall cIDTerminalRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
+		////TemplateSpecifiersList :
+		//
+		////	'<' (templateSpecifiers+=TemplateSpecifier (',' templateSpecifiers+=TemplateSpecifier)*) '>';
+		//
 		//AttributeType:
 		//
 		//	"STRUCT" | "UNION" | "ENUM" | ID;
@@ -1556,40 +1570,40 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0_0 = (RuleCall)cNameAssignment_0_0.eContents().get(0);
+		private final RuleCall cNameTemplateSpecifierParserRuleCall_0_0_0 = (RuleCall)cNameAssignment_0_0.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cReferenceCompositeDefinitionCrossReference_1_0 = (CrossReference)cReferenceAssignment_1.eContents().get(0);
-		private final RuleCall cReferenceCompositeDefinitionQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cReferenceCompositeDefinitionCrossReference_1_0.eContents().get(1);
+		private final Assignment cTypeReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cTypeReferenceArchitectureDefinitionCrossReference_1_0 = (CrossReference)cTypeReferenceAssignment_1.eContents().get(0);
+		private final RuleCall cTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cTypeReferenceArchitectureDefinitionCrossReference_1_0.eContents().get(1);
 		
 		//TemplateDefinition:
 		//
-		//	(name=ID "=")? reference=[CompositeDefinition|QualifiedName];
+		//	(name=TemplateSpecifier "=")? typeReference=[ArchitectureDefinition|QualifiedName];
 		public ParserRule getRule() { return rule; }
 
-		//(name=ID "=")? reference=[CompositeDefinition|QualifiedName]
+		//(name=TemplateSpecifier "=")? typeReference=[ArchitectureDefinition|QualifiedName]
 		public Group getGroup() { return cGroup; }
 
-		//(name=ID "=")?
+		//(name=TemplateSpecifier "=")?
 		public Group getGroup_0() { return cGroup_0; }
 
-		//name=ID
+		//name=TemplateSpecifier
 		public Assignment getNameAssignment_0_0() { return cNameAssignment_0_0; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0_0() { return cNameIDTerminalRuleCall_0_0_0; }
+		//TemplateSpecifier
+		public RuleCall getNameTemplateSpecifierParserRuleCall_0_0_0() { return cNameTemplateSpecifierParserRuleCall_0_0_0; }
 
 		//"="
 		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
 
-		//reference=[CompositeDefinition|QualifiedName]
-		public Assignment getReferenceAssignment_1() { return cReferenceAssignment_1; }
+		//typeReference=[ArchitectureDefinition|QualifiedName]
+		public Assignment getTypeReferenceAssignment_1() { return cTypeReferenceAssignment_1; }
 
-		//[CompositeDefinition|QualifiedName]
-		public CrossReference getReferenceCompositeDefinitionCrossReference_1_0() { return cReferenceCompositeDefinitionCrossReference_1_0; }
+		//[ArchitectureDefinition|QualifiedName]
+		public CrossReference getTypeReferenceArchitectureDefinitionCrossReference_1_0() { return cTypeReferenceArchitectureDefinitionCrossReference_1_0; }
 
 		//QualifiedName
-		public RuleCall getReferenceCompositeDefinitionQualifiedNameParserRuleCall_1_0_1() { return cReferenceCompositeDefinitionQualifiedNameParserRuleCall_1_0_1; }
+		public RuleCall getTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_1() { return cTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_1; }
 	}
 
 	public class ArgumentDefinitionElements extends AbstractParserRuleElementFinder {
@@ -2229,6 +2243,7 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 	private HostedInterfaceDefinitionElements pHostedInterfaceDefinition;
 	private ProvidedInterfaceDefinitionElements pProvidedInterfaceDefinition;
 	private RequiredInterfaceDefinitionElements pRequiredInterfaceDefinition;
+	private TypeReferenceElements pTypeReference;
 	private SubComponentDefinitionElements pSubComponentDefinition;
 	private SubComponentBodyElements pSubComponentBody;
 	private SubComponentCompositeBodyElements pSubComponentCompositeBody;
@@ -2240,7 +2255,6 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 	private FormalArgumentElements pFormalArgument;
 	private FormalArgumentsListElements pFormalArgumentsList;
 	private TemplateSpecifierElements pTemplateSpecifier;
-	private TemplateSpecifiersListElements pTemplateSpecifiersList;
 	private AttributeTypeElements pAttributeType;
 	private SignedINTElements pSignedINT;
 	private HexadecimalTypeElements pHexadecimalType;
@@ -2357,7 +2371,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 	//CompositeDefinition:
 	//
-	//	annotationsList=AnnotationsList? "composite" name=QualifiedName templateSpecifiersList=TemplateSpecifiersList? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
+	//	annotationsList=AnnotationsList? "composite" name=QualifiedName ("<" (templateSpecifiers+=TemplateSpecifier (","
+	//
+	//	templateSpecifiers+=TemplateSpecifier)*) ">")? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
 	//
 	//	compositeFormalArgumentsList=FormalArgumentsList? // (arg1, arg2, ...)
 	//
@@ -2449,9 +2465,22 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		return getRequiredInterfaceDefinitionAccess().getRule();
 	}
 
+	//TypeReference:
+	//
+	//	ArchitectureDefinition | TemplateSpecifier;
+	public TypeReferenceElements getTypeReferenceAccess() {
+		return (pTypeReference != null) ? pTypeReference : (pTypeReference = new TypeReferenceElements());
+	}
+	
+	public ParserRule getTypeReferenceRule() {
+		return getTypeReferenceAccess().getRule();
+	}
+
+	//// Original: can do anything but needs lots of manual scoping/validation
+	//
 	//SubComponentDefinition:
 	//
-	//	annotationsList=AnnotationsList? "contains" type=[ArchitectureDefinition|QualifiedName]? ("<"
+	//	annotationsList=AnnotationsList? "contains" type=[TypeReference|QualifiedName]? ("<"
 	//
 	//	templatesList+=TemplateDefinition ("," templatesList+=TemplateDefinition)* ">")? ("("
 	//
@@ -2587,9 +2616,11 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		return getFormalArgumentsListAccess().getRule();
 	}
 
+	//// Using "id=ID" instead of "name=ID" allows us for the TemplateSpecifiers not to be indexed by default and we'll add them where needed by hand
+	//
 	//TemplateSpecifier:
 	//
-	//	name=ID "conformsto" reference=[TypeDefinition|QualifiedName];
+	//	name=ID "conformsto" typeReference=[TypeDefinition|QualifiedName];
 	public TemplateSpecifierElements getTemplateSpecifierAccess() {
 		return (pTemplateSpecifier != null) ? pTemplateSpecifier : (pTemplateSpecifier = new TemplateSpecifierElements());
 	}
@@ -2598,17 +2629,10 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		return getTemplateSpecifierAccess().getRule();
 	}
 
-	//TemplateSpecifiersList:
+	////TemplateSpecifiersList :
 	//
-	//	"<" (templateSpecifiers+=TemplateSpecifier ("," templateSpecifiers+=TemplateSpecifier)*) ">";
-	public TemplateSpecifiersListElements getTemplateSpecifiersListAccess() {
-		return (pTemplateSpecifiersList != null) ? pTemplateSpecifiersList : (pTemplateSpecifiersList = new TemplateSpecifiersListElements());
-	}
-	
-	public ParserRule getTemplateSpecifiersListRule() {
-		return getTemplateSpecifiersListAccess().getRule();
-	}
-
+	////	'<' (templateSpecifiers+=TemplateSpecifier (',' templateSpecifiers+=TemplateSpecifier)*) '>';
+	//
 	//AttributeType:
 	//
 	//	"STRUCT" | "UNION" | "ENUM" | ID;
@@ -2655,7 +2679,7 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 	//TemplateDefinition:
 	//
-	//	(name=ID "=")? reference=[CompositeDefinition|QualifiedName];
+	//	(name=TemplateSpecifier "=")? typeReference=[ArchitectureDefinition|QualifiedName];
 	public TemplateDefinitionElements getTemplateDefinitionAccess() {
 		return (pTemplateDefinition != null) ? pTemplateDefinition : (pTemplateDefinition = new TemplateDefinitionElements());
 	}

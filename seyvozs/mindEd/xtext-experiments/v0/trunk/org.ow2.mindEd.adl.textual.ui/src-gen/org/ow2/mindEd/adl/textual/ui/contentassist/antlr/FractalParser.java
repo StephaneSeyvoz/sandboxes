@@ -42,6 +42,7 @@ public class FractalParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPrimitiveDefinitionAccess().getElementsAlternatives_7_0(), "rule__PrimitiveDefinition__ElementsAlternatives_7_0");
 					put(grammarAccess.getTypeDefinitionAccess().getElementsAlternatives_5_0(), "rule__TypeDefinition__ElementsAlternatives_5_0");
 					put(grammarAccess.getHostedInterfaceDefinitionAccess().getAlternatives(), "rule__HostedInterfaceDefinition__Alternatives");
+					put(grammarAccess.getTypeReferenceAccess().getAlternatives(), "rule__TypeReference__Alternatives");
 					put(grammarAccess.getSubComponentBodyAccess().getAlternatives(), "rule__SubComponentBody__Alternatives");
 					put(grammarAccess.getSubComponentCompositeBodyAccess().getElementsAlternatives_2_0(), "rule__SubComponentCompositeBody__ElementsAlternatives_2_0");
 					put(grammarAccess.getSubComponentPrimitiveBodyAccess().getElementsAlternatives_2_0(), "rule__SubComponentPrimitiveBody__ElementsAlternatives_2_0");
@@ -64,6 +65,9 @@ public class FractalParser extends AbstractContentAssistParser {
 					put(grammarAccess.getImportDefinitionAccess().getGroup(), "rule__ImportDefinition__Group__0");
 					put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
 					put(grammarAccess.getCompositeDefinitionAccess().getGroup(), "rule__CompositeDefinition__Group__0");
+					put(grammarAccess.getCompositeDefinitionAccess().getGroup_3(), "rule__CompositeDefinition__Group_3__0");
+					put(grammarAccess.getCompositeDefinitionAccess().getGroup_3_1(), "rule__CompositeDefinition__Group_3_1__0");
+					put(grammarAccess.getCompositeDefinitionAccess().getGroup_3_1_1(), "rule__CompositeDefinition__Group_3_1_1__0");
 					put(grammarAccess.getCompositeDefinitionAccess().getGroup_5(), "rule__CompositeDefinition__Group_5__0");
 					put(grammarAccess.getCompositeDefinitionAccess().getGroup_5_2(), "rule__CompositeDefinition__Group_5_2__0");
 					put(grammarAccess.getPrimitiveDefinitionAccess().getGroup(), "rule__PrimitiveDefinition__Group__0");
@@ -89,9 +93,6 @@ public class FractalParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFormalArgumentsListAccess().getGroup(), "rule__FormalArgumentsList__Group__0");
 					put(grammarAccess.getFormalArgumentsListAccess().getGroup_2(), "rule__FormalArgumentsList__Group_2__0");
 					put(grammarAccess.getTemplateSpecifierAccess().getGroup(), "rule__TemplateSpecifier__Group__0");
-					put(grammarAccess.getTemplateSpecifiersListAccess().getGroup(), "rule__TemplateSpecifiersList__Group__0");
-					put(grammarAccess.getTemplateSpecifiersListAccess().getGroup_1(), "rule__TemplateSpecifiersList__Group_1__0");
-					put(grammarAccess.getTemplateSpecifiersListAccess().getGroup_1_1(), "rule__TemplateSpecifiersList__Group_1_1__0");
 					put(grammarAccess.getSignedINTAccess().getGroup(), "rule__SignedINT__Group__0");
 					put(grammarAccess.getHexadecimalTypeAccess().getGroup(), "rule__HexadecimalType__Group__0");
 					put(grammarAccess.getTemplateDefinitionAccess().getGroup(), "rule__TemplateDefinition__Group__0");
@@ -124,7 +125,8 @@ public class FractalParser extends AbstractContentAssistParser {
 					put(grammarAccess.getImportDefinitionAccess().getImportedNamespaceAssignment_2(), "rule__ImportDefinition__ImportedNamespaceAssignment_2");
 					put(grammarAccess.getCompositeDefinitionAccess().getAnnotationsListAssignment_0(), "rule__CompositeDefinition__AnnotationsListAssignment_0");
 					put(grammarAccess.getCompositeDefinitionAccess().getNameAssignment_2(), "rule__CompositeDefinition__NameAssignment_2");
-					put(grammarAccess.getCompositeDefinitionAccess().getTemplateSpecifiersListAssignment_3(), "rule__CompositeDefinition__TemplateSpecifiersListAssignment_3");
+					put(grammarAccess.getCompositeDefinitionAccess().getTemplateSpecifiersAssignment_3_1_0(), "rule__CompositeDefinition__TemplateSpecifiersAssignment_3_1_0");
+					put(grammarAccess.getCompositeDefinitionAccess().getTemplateSpecifiersAssignment_3_1_1_1(), "rule__CompositeDefinition__TemplateSpecifiersAssignment_3_1_1_1");
 					put(grammarAccess.getCompositeDefinitionAccess().getCompositeFormalArgumentsListAssignment_4(), "rule__CompositeDefinition__CompositeFormalArgumentsListAssignment_4");
 					put(grammarAccess.getCompositeDefinitionAccess().getSuperTypesAssignment_5_1(), "rule__CompositeDefinition__SuperTypesAssignment_5_1");
 					put(grammarAccess.getCompositeDefinitionAccess().getSuperTypesAssignment_5_2_1(), "rule__CompositeDefinition__SuperTypesAssignment_5_2_1");
@@ -179,11 +181,9 @@ public class FractalParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFormalArgumentsListAccess().getFormalArgumentsAssignment_1(), "rule__FormalArgumentsList__FormalArgumentsAssignment_1");
 					put(grammarAccess.getFormalArgumentsListAccess().getFormalArgumentsAssignment_2_1(), "rule__FormalArgumentsList__FormalArgumentsAssignment_2_1");
 					put(grammarAccess.getTemplateSpecifierAccess().getNameAssignment_0(), "rule__TemplateSpecifier__NameAssignment_0");
-					put(grammarAccess.getTemplateSpecifierAccess().getReferenceAssignment_2(), "rule__TemplateSpecifier__ReferenceAssignment_2");
-					put(grammarAccess.getTemplateSpecifiersListAccess().getTemplateSpecifiersAssignment_1_0(), "rule__TemplateSpecifiersList__TemplateSpecifiersAssignment_1_0");
-					put(grammarAccess.getTemplateSpecifiersListAccess().getTemplateSpecifiersAssignment_1_1_1(), "rule__TemplateSpecifiersList__TemplateSpecifiersAssignment_1_1_1");
+					put(grammarAccess.getTemplateSpecifierAccess().getTypeReferenceAssignment_2(), "rule__TemplateSpecifier__TypeReferenceAssignment_2");
 					put(grammarAccess.getTemplateDefinitionAccess().getNameAssignment_0_0(), "rule__TemplateDefinition__NameAssignment_0_0");
-					put(grammarAccess.getTemplateDefinitionAccess().getReferenceAssignment_1(), "rule__TemplateDefinition__ReferenceAssignment_1");
+					put(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceAssignment_1(), "rule__TemplateDefinition__TypeReferenceAssignment_1");
 					put(grammarAccess.getArgumentDefinitionAccess().getArgumentNameAssignment_0_0(), "rule__ArgumentDefinition__ArgumentNameAssignment_0_0");
 					put(grammarAccess.getArgumentDefinitionAccess().getArgumentValueAssignment_1(), "rule__ArgumentDefinition__ArgumentValueAssignment_1");
 					put(grammarAccess.getAttributeDefinitionAccess().getAnnotationsListAssignment_0(), "rule__AttributeDefinition__AnnotationsListAssignment_0");

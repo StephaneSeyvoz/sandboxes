@@ -73,6 +73,7 @@ public class FractalFactoryImpl extends EFactoryImpl implements FractalFactory
       case FractalPackage.HOSTED_INTERFACE_DEFINITION: return createHostedInterfaceDefinition();
       case FractalPackage.PROVIDED_INTERFACE_DEFINITION: return createProvidedInterfaceDefinition();
       case FractalPackage.REQUIRED_INTERFACE_DEFINITION: return createRequiredInterfaceDefinition();
+      case FractalPackage.TYPE_REFERENCE: return createTypeReference();
       case FractalPackage.SUB_COMPONENT_DEFINITION: return createSubComponentDefinition();
       case FractalPackage.SUB_COMPONENT_BODY: return createSubComponentBody();
       case FractalPackage.SUB_COMPONENT_COMPOSITE_BODY: return createSubComponentCompositeBody();
@@ -84,7 +85,6 @@ public class FractalFactoryImpl extends EFactoryImpl implements FractalFactory
       case FractalPackage.FORMAL_ARGUMENT: return createFormalArgument();
       case FractalPackage.FORMAL_ARGUMENTS_LIST: return createFormalArgumentsList();
       case FractalPackage.TEMPLATE_SPECIFIER: return createTemplateSpecifier();
-      case FractalPackage.TEMPLATE_SPECIFIERS_LIST: return createTemplateSpecifiersList();
       case FractalPackage.TEMPLATE_DEFINITION: return createTemplateDefinition();
       case FractalPackage.ARGUMENT_DEFINITION: return createArgumentDefinition();
       case FractalPackage.ATTRIBUTE_DEFINITION: return createAttributeDefinition();
@@ -207,6 +207,17 @@ public class FractalFactoryImpl extends EFactoryImpl implements FractalFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public TypeReference createTypeReference()
+  {
+    TypeReferenceImpl typeReference = new TypeReferenceImpl();
+    return typeReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SubComponentDefinition createSubComponentDefinition()
   {
     SubComponentDefinitionImpl subComponentDefinition = new SubComponentDefinitionImpl();
@@ -321,17 +332,6 @@ public class FractalFactoryImpl extends EFactoryImpl implements FractalFactory
   {
     TemplateSpecifierImpl templateSpecifier = new TemplateSpecifierImpl();
     return templateSpecifier;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TemplateSpecifiersList createTemplateSpecifiersList()
-  {
-    TemplateSpecifiersListImpl templateSpecifiersList = new TemplateSpecifiersListImpl();
-    return templateSpecifiersList;
   }
 
   /**

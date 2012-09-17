@@ -31,7 +31,7 @@ QualifiedNameWithWildcard:
 CompositeDefinition:
 	(annotationsList=AnnotationsList)?
 	'composite' name = QualifiedName
-	(templateSpecifiersList = TemplateSpecifiersList)? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
+	('<' (templateSpecifiers+=TemplateSpecifier (',' templateSpecifiers+=TemplateSpecifier)*) '>')? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
 	(compositeFormalArgumentsList = FormalArgumentsList)? // (arg1, arg2, ...)
 	('extends' superTypes += [ArchitectureDefinition | QualifiedName] (',' superTypes += [ArchitectureDefinition | QualifiedName])*)? '{'
 		elements += (HostedInterfaceDefinition | SubComponentDefinition | BindingDefinition)*
@@ -74,10 +74,15 @@ RequiredInterfaceDefinition :
 	(collection?='['(collectionsize=INT)?']')? ';'
 ;
 
+TypeReference:
+	ArchitectureDefinition | TemplateSpecifier
+;
+
+// Original: can do anything but needs lots of manual scoping/validation
 SubComponentDefinition:
 	(annotationsList=AnnotationsList)?
 	'contains'
-	(type = [ArchitectureDefinition | QualifiedName])?
+	(type = [TypeReference | QualifiedName])?
 	('<' templatesList+=TemplateDefinition (',' templatesList+=TemplateDefinition)* '>')?
 	('(' argumentsList+=ArgumentDefinition (',' argumentsList+=ArgumentDefinition)* ')')?
 	'as'
@@ -140,12 +145,13 @@ FormalArgument :
 FormalArgumentsList :
 	'(' formalArguments+=FormalArgument (',' formalArguments+=FormalArgument)* ')';
 
+// Using "id=ID" instead of "name=ID" allows us for the TemplateSpecifiers not to be indexed by default and we'll add them where needed by hand
 TemplateSpecifier :
-	name=ID 'conformsto' reference = [TypeDefinition | QualifiedName]
+	name=ID 'conformsto' typeReference = [TypeDefinition | QualifiedName]
 ;
 
-TemplateSpecifiersList :
-	'<' (templateSpecifiers+=TemplateSpecifier (',' templateSpecifiers+=TemplateSpecifier)*) '>';
+//TemplateSpecifiersList :
+//	'<' (templateSpecifiers+=TemplateSpecifier (',' templateSpecifiers+=TemplateSpecifier)*) '>';
 
 AttributeType :
 	'STRUCT'|'UNION'|'ENUM'|ID;
@@ -160,7 +166,7 @@ Value :
 	ID | signedINT | HexadecimalType | STRING | 'null';
 
 TemplateDefinition :
-	(name=ID '=')? reference = [CompositeDefinition | QualifiedName]
+	(name=TemplateSpecifier '=')? typeReference = [ArchitectureDefinition | QualifiedName]
 ;
 
 ArgumentDefinition :

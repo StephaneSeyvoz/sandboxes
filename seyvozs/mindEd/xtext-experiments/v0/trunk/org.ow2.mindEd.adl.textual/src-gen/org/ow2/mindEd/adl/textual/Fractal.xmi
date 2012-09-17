@@ -66,11 +66,23 @@
         <elements xsi:type="xtext:Assignment" feature="name" operator="=">
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
         </elements>
-        <elements xsi:type="xtext:Assignment" cardinality="?" feature="templateSpecifiersList" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
+        <elements xsi:type="xtext:Group" cardinality="?">
+          <elements xsi:type="xtext:Keyword" value="&lt;"/>
+          <elements xsi:type="xtext:Group">
+            <elements xsi:type="xtext:Assignment" feature="templateSpecifiers" operator="+=">
+              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
+            </elements>
+            <elements xsi:type="xtext:Group" cardinality="*">
+              <elements xsi:type="xtext:Keyword" value=","/>
+              <elements xsi:type="xtext:Assignment" feature="templateSpecifiers" operator="+=">
+                <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
+              </elements>
+            </elements>
+          </elements>
+          <elements xsi:type="xtext:Keyword" value=">"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="compositeFormalArgumentsList" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="extends"/>
@@ -98,8 +110,8 @@
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="elements" operator="+=">
           <terminal xsi:type="xtext:Alternatives">
             <elements xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
-            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
-            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
+            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
           </terminal>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
@@ -121,7 +133,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="compositeFormalArgumentsList" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Keyword" value="extends"/>
@@ -284,6 +296,15 @@
         <elements xsi:type="xtext:Keyword" value=";"/>
       </alternatives>
     </rules>
+    <rules xsi:type="xtext:ParserRule" name="TypeReference">
+      <type metamodel="/0/@metamodelDeclarations.0">
+        <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//TypeReference"/>
+      </type>
+      <alternatives xsi:type="xtext:Alternatives">
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.1"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
+      </alternatives>
+    </rules>
     <rules xsi:type="xtext:ParserRule" name="SubComponentDefinition">
       <type metamodel="/0/@metamodelDeclarations.0">
         <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//SubComponentDefinition"/>
@@ -296,7 +317,7 @@
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="type" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//ArchitectureDefinition"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//TypeReference"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
           </terminal>
@@ -332,7 +353,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Assignment" cardinality="?" feature="body" operator="=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value=";"/>
       </alternatives>
@@ -342,8 +363,8 @@
         <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//SubComponentBody"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.12"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.13"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.14"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="SubComponentCompositeBody">
@@ -357,10 +378,10 @@
         <elements xsi:type="xtext:Keyword" value="{"/>
         <elements xsi:type="xtext:Assignment" cardinality="*" feature="elements" operator="+=">
           <terminal xsi:type="xtext:Alternatives">
-            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
+            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
             <elements xsi:type="xtext:RuleCall" rule="/0/@rules.8"/>
             <elements xsi:type="xtext:RuleCall" rule="/0/@rules.9"/>
-            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+            <elements xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
           </terminal>
         </elements>
         <elements xsi:type="xtext:Keyword" value="}"/>
@@ -392,8 +413,8 @@
         <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//Element"/>
       </type>
       <alternatives xsi:type="xtext:Alternatives">
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.15"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.16"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
       </alternatives>
     </rules>
@@ -403,8 +424,8 @@
       </type>
       <alternatives xsi:type="xtext:Alternatives">
         <elements xsi:type="xtext:RuleCall" rule="/0/@rules.7"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.10"/>
-        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.17"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.11"/>
+        <elements xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="PrimitiveElement">
@@ -504,12 +525,12 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Keyword" value="("/>
         <elements xsi:type="xtext:Assignment" feature="formalArguments" operator="+=">
-          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
+          <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
         </elements>
         <elements xsi:type="xtext:Group" cardinality="*">
           <elements xsi:type="xtext:Keyword" value=","/>
           <elements xsi:type="xtext:Assignment" feature="formalArguments" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.18"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.19"/>
           </elements>
         </elements>
         <elements xsi:type="xtext:Keyword" value=")"/>
@@ -524,7 +545,7 @@
           <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
         </elements>
         <elements xsi:type="xtext:Keyword" value="conformsto"/>
-        <elements xsi:type="xtext:Assignment" feature="reference" operator="=">
+        <elements xsi:type="xtext:Assignment" feature="typeReference" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.0">
               <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//TypeDefinition"/>
@@ -532,26 +553,6 @@
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
           </terminal>
         </elements>
-      </alternatives>
-    </rules>
-    <rules xsi:type="xtext:ParserRule" name="TemplateSpecifiersList">
-      <type metamodel="/0/@metamodelDeclarations.0">
-        <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//TemplateSpecifiersList"/>
-      </type>
-      <alternatives xsi:type="xtext:Group">
-        <elements xsi:type="xtext:Keyword" value="&lt;"/>
-        <elements xsi:type="xtext:Group">
-          <elements xsi:type="xtext:Assignment" feature="templateSpecifiers" operator="+=">
-            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
-          </elements>
-          <elements xsi:type="xtext:Group" cardinality="*">
-            <elements xsi:type="xtext:Keyword" value=","/>
-            <elements xsi:type="xtext:Assignment" feature="templateSpecifiers" operator="+=">
-              <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.20"/>
-            </elements>
-          </elements>
-        </elements>
-        <elements xsi:type="xtext:Keyword" value=">"/>
       </alternatives>
     </rules>
     <rules xsi:type="xtext:ParserRule" name="AttributeType">
@@ -605,14 +606,14 @@
       <alternatives xsi:type="xtext:Group">
         <elements xsi:type="xtext:Group" cardinality="?">
           <elements xsi:type="xtext:Assignment" feature="name" operator="=">
-            <terminal xsi:type="xtext:RuleCall" rule="/1/@rules.0"/>
+            <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.21"/>
           </elements>
           <elements xsi:type="xtext:Keyword" value="="/>
         </elements>
-        <elements xsi:type="xtext:Assignment" feature="reference" operator="=">
+        <elements xsi:type="xtext:Assignment" feature="typeReference" operator="=">
           <terminal xsi:type="xtext:CrossReference">
             <type metamodel="/0/@metamodelDeclarations.0">
-              <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//CompositeDefinition"/>
+              <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//ArchitectureDefinition"/>
             </type>
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.31"/>
           </terminal>

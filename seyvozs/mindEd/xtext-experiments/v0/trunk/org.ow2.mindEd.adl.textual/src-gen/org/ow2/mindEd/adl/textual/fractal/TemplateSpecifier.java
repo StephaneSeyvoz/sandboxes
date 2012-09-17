@@ -2,7 +2,6 @@
  */
 package org.ow2.mindEd.adl.textual.fractal;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,8 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier#getName <em>Name</em>}</li>
- *   <li>{@link org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier#getTypeReference <em>Type Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,58 +19,32 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface TemplateSpecifier extends EObject
+public interface TemplateSpecifier extends TypeReference
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Type Reference</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Type Reference</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getTemplateSpecifier_Name()
+   * @return the value of the '<em>Type Reference</em>' reference.
+   * @see #setTypeReference(TypeDefinition)
+   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getTemplateSpecifier_TypeReference()
    * @model
    * @generated
    */
-  String getName();
+  TypeDefinition getTypeReference();
 
   /**
-   * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier#getTypeReference <em>Type Reference</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Type Reference</em>' reference.
+   * @see #getTypeReference()
    * @generated
    */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Reference</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Reference</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Reference</em>' reference.
-   * @see #setReference(TypeDefinition)
-   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getTemplateSpecifier_Reference()
-   * @model
-   * @generated
-   */
-  TypeDefinition getReference();
-
-  /**
-   * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier#getReference <em>Reference</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Reference</em>' reference.
-   * @see #getReference()
-   * @generated
-   */
-  void setReference(TypeDefinition value);
+  void setTypeReference(TypeDefinition value);
 
 } // TemplateSpecifier

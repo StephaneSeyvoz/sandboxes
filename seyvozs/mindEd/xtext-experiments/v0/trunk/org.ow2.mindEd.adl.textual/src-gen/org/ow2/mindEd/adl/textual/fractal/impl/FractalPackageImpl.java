@@ -43,8 +43,8 @@ import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentPrimitiveBody;
 import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
-import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifiersList;
 import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
+import org.ow2.mindEd.adl.textual.fractal.TypeReference;
 
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
 
@@ -124,6 +124,13 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass typeReferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass subComponentDefinitionEClass = null;
 
   /**
@@ -195,13 +202,6 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * @generated
    */
   private EClass templateSpecifierEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass templateSpecifiersListEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -415,19 +415,9 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getArchitectureDefinition_Name()
-  {
-    return (EAttribute)architectureDefinitionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getArchitectureDefinition_SuperTypes()
   {
-    return (EReference)architectureDefinitionEClass.getEStructuralFeatures().get(2);
+    return (EReference)architectureDefinitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -475,7 +465,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCompositeDefinition_TemplateSpecifiersList()
+  public EReference getCompositeDefinition_TemplateSpecifiers()
   {
     return (EReference)compositeDefinitionEClass.getEStructuralFeatures().get(0);
   }
@@ -648,6 +638,26 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
   public EAttribute getRequiredInterfaceDefinition_Optional()
   {
     return (EAttribute)requiredInterfaceDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTypeReference()
+  {
+    return typeReferenceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTypeReference_Name()
+  {
+    return (EAttribute)typeReferenceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -955,39 +965,9 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTemplateSpecifier_Name()
+  public EReference getTemplateSpecifier_TypeReference()
   {
-    return (EAttribute)templateSpecifierEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTemplateSpecifier_Reference()
-  {
-    return (EReference)templateSpecifierEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getTemplateSpecifiersList()
-  {
-    return templateSpecifiersListEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getTemplateSpecifiersList_TemplateSpecifiers()
-  {
-    return (EReference)templateSpecifiersListEClass.getEStructuralFeatures().get(0);
+    return (EReference)templateSpecifierEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1005,9 +985,9 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTemplateDefinition_Name()
+  public EReference getTemplateDefinition_Name()
   {
-    return (EAttribute)templateDefinitionEClass.getEStructuralFeatures().get(0);
+    return (EReference)templateDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1015,7 +995,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTemplateDefinition_Reference()
+  public EReference getTemplateDefinition_TypeReference()
   {
     return (EReference)templateDefinitionEClass.getEStructuralFeatures().get(1);
   }
@@ -1366,7 +1346,6 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
 
     architectureDefinitionEClass = createEClass(ARCHITECTURE_DEFINITION);
     createEReference(architectureDefinitionEClass, ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST);
-    createEAttribute(architectureDefinitionEClass, ARCHITECTURE_DEFINITION__NAME);
     createEReference(architectureDefinitionEClass, ARCHITECTURE_DEFINITION__SUPER_TYPES);
 
     importDefinitionEClass = createEClass(IMPORT_DEFINITION);
@@ -1374,7 +1353,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     createEAttribute(importDefinitionEClass, IMPORT_DEFINITION__IMPORTED_NAMESPACE);
 
     compositeDefinitionEClass = createEClass(COMPOSITE_DEFINITION);
-    createEReference(compositeDefinitionEClass, COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS_LIST);
+    createEReference(compositeDefinitionEClass, COMPOSITE_DEFINITION__TEMPLATE_SPECIFIERS);
     createEReference(compositeDefinitionEClass, COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST);
     createEReference(compositeDefinitionEClass, COMPOSITE_DEFINITION__ELEMENTS);
 
@@ -1397,6 +1376,9 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
 
     requiredInterfaceDefinitionEClass = createEClass(REQUIRED_INTERFACE_DEFINITION);
     createEAttribute(requiredInterfaceDefinitionEClass, REQUIRED_INTERFACE_DEFINITION__OPTIONAL);
+
+    typeReferenceEClass = createEClass(TYPE_REFERENCE);
+    createEAttribute(typeReferenceEClass, TYPE_REFERENCE__NAME);
 
     subComponentDefinitionEClass = createEClass(SUB_COMPONENT_DEFINITION);
     createEReference(subComponentDefinitionEClass, SUB_COMPONENT_DEFINITION__TYPE);
@@ -1438,15 +1420,11 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     createEReference(formalArgumentsListEClass, FORMAL_ARGUMENTS_LIST__FORMAL_ARGUMENTS);
 
     templateSpecifierEClass = createEClass(TEMPLATE_SPECIFIER);
-    createEAttribute(templateSpecifierEClass, TEMPLATE_SPECIFIER__NAME);
-    createEReference(templateSpecifierEClass, TEMPLATE_SPECIFIER__REFERENCE);
-
-    templateSpecifiersListEClass = createEClass(TEMPLATE_SPECIFIERS_LIST);
-    createEReference(templateSpecifiersListEClass, TEMPLATE_SPECIFIERS_LIST__TEMPLATE_SPECIFIERS);
+    createEReference(templateSpecifierEClass, TEMPLATE_SPECIFIER__TYPE_REFERENCE);
 
     templateDefinitionEClass = createEClass(TEMPLATE_DEFINITION);
-    createEAttribute(templateDefinitionEClass, TEMPLATE_DEFINITION__NAME);
-    createEReference(templateDefinitionEClass, TEMPLATE_DEFINITION__REFERENCE);
+    createEReference(templateDefinitionEClass, TEMPLATE_DEFINITION__NAME);
+    createEReference(templateDefinitionEClass, TEMPLATE_DEFINITION__TYPE_REFERENCE);
 
     argumentDefinitionEClass = createEClass(ARGUMENT_DEFINITION);
     createEAttribute(argumentDefinitionEClass, ARGUMENT_DEFINITION__ARGUMENT_NAME);
@@ -1524,6 +1502,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    architectureDefinitionEClass.getESuperTypes().add(this.getTypeReference());
     compositeDefinitionEClass.getESuperTypes().add(this.getArchitectureDefinition());
     primitiveDefinitionEClass.getESuperTypes().add(this.getArchitectureDefinition());
     typeDefinitionEClass.getESuperTypes().add(this.getArchitectureDefinition());
@@ -1538,6 +1517,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     compositeElementEClass.getESuperTypes().add(this.getElement());
     primitiveElementEClass.getESuperTypes().add(this.getElement());
     bindingDefinitionEClass.getESuperTypes().add(this.getCompositeElement());
+    templateSpecifierEClass.getESuperTypes().add(this.getTypeReference());
     attributeDefinitionEClass.getESuperTypes().add(this.getPrimitiveElement());
     implementationDefinitionEClass.getESuperTypes().add(this.getPrimitiveElement());
     dataDefinitionEClass.getESuperTypes().add(this.getPrimitiveElement());
@@ -1552,7 +1532,6 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
 
     initEClass(architectureDefinitionEClass, ArchitectureDefinition.class, "ArchitectureDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArchitectureDefinition_AnnotationsList(), this.getAnnotationsList(), null, "annotationsList", null, 0, 1, ArchitectureDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getArchitectureDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, ArchitectureDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getArchitectureDefinition_SuperTypes(), this.getArchitectureDefinition(), null, "superTypes", null, 0, -1, ArchitectureDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importDefinitionEClass, ImportDefinition.class, "ImportDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1560,7 +1539,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     initEAttribute(getImportDefinition_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, ImportDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(compositeDefinitionEClass, CompositeDefinition.class, "CompositeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCompositeDefinition_TemplateSpecifiersList(), this.getTemplateSpecifiersList(), null, "templateSpecifiersList", null, 0, 1, CompositeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCompositeDefinition_TemplateSpecifiers(), this.getTemplateSpecifier(), null, "templateSpecifiers", null, 0, -1, CompositeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCompositeDefinition_CompositeFormalArgumentsList(), this.getFormalArgumentsList(), null, "compositeFormalArgumentsList", null, 0, 1, CompositeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCompositeDefinition_Elements(), this.getCompositeElement(), null, "elements", null, 0, -1, CompositeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1584,8 +1563,11 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     initEClass(requiredInterfaceDefinitionEClass, RequiredInterfaceDefinition.class, "RequiredInterfaceDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRequiredInterfaceDefinition_Optional(), ecorePackage.getEBoolean(), "optional", null, 0, 1, RequiredInterfaceDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(typeReferenceEClass, TypeReference.class, "TypeReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTypeReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, TypeReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(subComponentDefinitionEClass, SubComponentDefinition.class, "SubComponentDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSubComponentDefinition_Type(), this.getArchitectureDefinition(), null, "type", null, 0, 1, SubComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubComponentDefinition_Type(), this.getTypeReference(), null, "type", null, 0, 1, SubComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSubComponentDefinition_TemplatesList(), this.getTemplateDefinition(), null, "templatesList", null, 0, -1, SubComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSubComponentDefinition_ArgumentsList(), this.getArgumentDefinition(), null, "argumentsList", null, 0, -1, SubComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSubComponentDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1624,15 +1606,11 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     initEReference(getFormalArgumentsList_FormalArguments(), this.getFormalArgument(), null, "formalArguments", null, 0, -1, FormalArgumentsList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(templateSpecifierEClass, TemplateSpecifier.class, "TemplateSpecifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTemplateSpecifier_Name(), ecorePackage.getEString(), "name", null, 0, 1, TemplateSpecifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTemplateSpecifier_Reference(), this.getTypeDefinition(), null, "reference", null, 0, 1, TemplateSpecifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(templateSpecifiersListEClass, TemplateSpecifiersList.class, "TemplateSpecifiersList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTemplateSpecifiersList_TemplateSpecifiers(), this.getTemplateSpecifier(), null, "templateSpecifiers", null, 0, -1, TemplateSpecifiersList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTemplateSpecifier_TypeReference(), this.getTypeDefinition(), null, "typeReference", null, 0, 1, TemplateSpecifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(templateDefinitionEClass, TemplateDefinition.class, "TemplateDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getTemplateDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, TemplateDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTemplateDefinition_Reference(), this.getCompositeDefinition(), null, "reference", null, 0, 1, TemplateDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTemplateDefinition_Name(), this.getTemplateSpecifier(), null, "name", null, 0, 1, TemplateDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTemplateDefinition_TypeReference(), this.getArchitectureDefinition(), null, "typeReference", null, 0, 1, TemplateDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(argumentDefinitionEClass, ArgumentDefinition.class, "ArgumentDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getArgumentDefinition_ArgumentName(), ecorePackage.getEString(), "argumentName", null, 0, 1, ArgumentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

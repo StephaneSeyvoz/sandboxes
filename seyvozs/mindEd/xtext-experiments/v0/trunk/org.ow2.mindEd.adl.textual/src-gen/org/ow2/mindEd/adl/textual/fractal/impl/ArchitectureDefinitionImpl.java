@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -29,14 +28,13 @@ import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.ArchitectureDefinitionImpl#getAnnotationsList <em>Annotations List</em>}</li>
- *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.ArchitectureDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.ArchitectureDefinitionImpl#getSuperTypes <em>Super Types</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container implements ArchitectureDefinition
+public class ArchitectureDefinitionImpl extends TypeReferenceImpl implements ArchitectureDefinition
 {
   /**
    * The cached value of the '{@link #getAnnotationsList() <em>Annotations List</em>}' containment reference.
@@ -47,26 +45,6 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
    * @ordered
    */
   protected AnnotationsList annotationsList;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSuperTypes() <em>Super Types</em>}' reference list.
@@ -152,29 +130,6 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.ARCHITECTURE_DEFINITION__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<ArchitectureDefinition> getSuperTypes()
   {
     if (superTypes == null)
@@ -212,8 +167,6 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
     {
       case FractalPackage.ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST:
         return getAnnotationsList();
-      case FractalPackage.ARCHITECTURE_DEFINITION__NAME:
-        return getName();
       case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPES:
         return getSuperTypes();
     }
@@ -233,9 +186,6 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
     {
       case FractalPackage.ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST:
         setAnnotationsList((AnnotationsList)newValue);
-        return;
-      case FractalPackage.ARCHITECTURE_DEFINITION__NAME:
-        setName((String)newValue);
         return;
       case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPES:
         getSuperTypes().clear();
@@ -258,9 +208,6 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
       case FractalPackage.ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST:
         setAnnotationsList((AnnotationsList)null);
         return;
-      case FractalPackage.ARCHITECTURE_DEFINITION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPES:
         getSuperTypes().clear();
         return;
@@ -280,29 +227,10 @@ public class ArchitectureDefinitionImpl extends MinimalEObjectImpl.Container imp
     {
       case FractalPackage.ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST:
         return annotationsList != null;
-      case FractalPackage.ARCHITECTURE_DEFINITION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case FractalPackage.ARCHITECTURE_DEFINITION__SUPER_TYPES:
         return superTypes != null && !superTypes.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //ArchitectureDefinitionImpl

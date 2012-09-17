@@ -8,10 +8,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="architectureDefinition"
         eType="#//ArchitectureDefinition" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureDefinition">
+  <eClassifiers xsi:type="ecore:EClass" name="ArchitectureDefinition" eSuperTypes="#//TypeReference">
     <eStructuralFeatures xsi:type="ecore:EReference" name="annotationsList" eType="#//AnnotationsList"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superTypes" unique="false"
         upperBound="-1" eType="#//ArchitectureDefinition"/>
   </eClassifiers>
@@ -21,8 +20,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeDefinition" eSuperTypes="#//ArchitectureDefinition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="templateSpecifiersList"
-        eType="#//TemplateSpecifiersList" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templateSpecifiers" upperBound="-1"
+        eType="#//TemplateSpecifier" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compositeFormalArgumentsList"
         eType="#//FormalArgumentsList" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
@@ -50,8 +49,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="RequiredInterfaceDefinition" eSuperTypes="#//HostedInterfaceDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeReference">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubComponentDefinition" eSuperTypes="#//CompositeElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ArchitectureDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//TypeReference"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="templatesList" upperBound="-1"
         eType="#//TemplateDefinition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="argumentsList" upperBound="-1"
@@ -94,17 +96,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="formalArguments" upperBound="-1"
         eType="#//FormalArgument" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TemplateSpecifier">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//TypeDefinition"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TemplateSpecifiersList">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="templateSpecifiers" upperBound="-1"
-        eType="#//TemplateSpecifier" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateSpecifier" eSuperTypes="#//TypeReference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeReference" eType="#//TypeDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TemplateDefinition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//CompositeDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//TemplateSpecifier"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeReference" eType="#//ArchitectureDefinition"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArgumentDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="argumentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

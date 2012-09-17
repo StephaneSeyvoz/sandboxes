@@ -104,6 +104,15 @@ public interface FractalFactory extends EFactory
   RequiredInterfaceDefinition createRequiredInterfaceDefinition();
 
   /**
+   * Returns a new object of class '<em>Type Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Type Reference</em>'.
+   * @generated
+   */
+  TypeReference createTypeReference();
+
+  /**
    * Returns a new object of class '<em>Sub Component Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -201,15 +210,6 @@ public interface FractalFactory extends EFactory
    * @generated
    */
   TemplateSpecifier createTemplateSpecifier();
-
-  /**
-   * Returns a new object of class '<em>Template Specifiers List</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Template Specifiers List</em>'.
-   * @generated
-   */
-  TemplateSpecifiersList createTemplateSpecifiersList();
 
   /**
    * Returns a new object of class '<em>Template Definition</em>'.
