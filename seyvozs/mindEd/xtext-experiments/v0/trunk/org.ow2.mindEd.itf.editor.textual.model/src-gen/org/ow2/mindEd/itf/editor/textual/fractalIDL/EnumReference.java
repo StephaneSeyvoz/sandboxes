@@ -13,5 +13,6 @@ package org.ow2.mindEd.itf.editor.textual.fractalIDL;
  * @model
  * @generated
  */
-public interface EnumReference extends EnumSpecification {
+public interface EnumReference extends EnumSpecification
+{
 } // EnumReference

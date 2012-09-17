@@ -2,7 +2,7 @@ grammar org.ow2.mindEd.adl.textual.Fractal with org.eclipse.xtext.common.Termina
 
 generate fractal "http://www.ow2.org/mindEd/adl/textual/Fractal"
 
-import 'http://www.ow2.org/mindEd/itf/' as fractalItf
+import "http://www.ow2.org/mindEd/itf/" as fractalIDL
 
 AdlDefinition :
 	imports += ImportDefinition*
@@ -64,13 +64,13 @@ HostedInterfaceDefinition:
 // Another way to solve the problem is to use prefixes ?
 ProvidedInterfaceDefinition :
 	(annotationsList=AnnotationsList)?
-	role="provides" signature = [fractalItf::InterfaceDefinition | QualifiedName] 'as' name=ID
+	role="provides" signature = [fractalIDL::InterfaceDefinition | QualifiedName] 'as' name=ID
 	(collection?='['(collectionsize=INT)?']')? ';'
 ;
 
 RequiredInterfaceDefinition :
 	(annotationsList=AnnotationsList)?
-	role="requires" (optional?='optional')? signature = [fractalItf::InterfaceDefinition | QualifiedName] 'as' name=ID
+	role="requires" (optional?='optional')? signature = [fractalIDL::InterfaceDefinition | QualifiedName] 'as' name=ID
 	(collection?='['(collectionsize=INT)?']')? ';'
 ;
 

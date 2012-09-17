@@ -11,44 +11,46 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.Annotation;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationsList;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
-import org.ow2.mindEd.itf.editor.textual.fractalIDL.StructMember;
-import org.ow2.mindEd.itf.editor.textual.fractalIDL.StructOrUnionDefinition;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Struct Or Union Definition</b></em>'.
+ * An implementation of the model object '<em><b>Annotations List</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.StructOrUnionDefinitionImpl#getStructMember <em>Struct Member</em>}</li>
+ *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.AnnotationsListImpl#getAnnotations <em>Annotations</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl implements StructOrUnionDefinition
+public class AnnotationsListImpl extends MinimalEObjectImpl.Container implements AnnotationsList
 {
   /**
-   * The cached value of the '{@link #getStructMember() <em>Struct Member</em>}' containment reference list.
+   * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStructMember()
+   * @see #getAnnotations()
    * @generated
    * @ordered
    */
-  protected EList<StructMember> structMember;
+  protected EList<Annotation> annotations;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StructOrUnionDefinitionImpl()
+  protected AnnotationsListImpl()
   {
     super();
   }
@@ -61,7 +63,7 @@ public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl 
   @Override
   protected EClass eStaticClass()
   {
-    return FractalIDLPackage.Literals.STRUCT_OR_UNION_DEFINITION;
+    return FractalIDLPackage.Literals.ANNOTATIONS_LIST;
   }
 
   /**
@@ -69,13 +71,13 @@ public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StructMember> getStructMember()
+  public EList<Annotation> getAnnotations()
   {
-    if (structMember == null)
+    if (annotations == null)
     {
-      structMember = new EObjectContainmentEList<StructMember>(StructMember.class, this, FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER);
+      annotations = new EObjectContainmentEList<Annotation>(Annotation.class, this, FractalIDLPackage.ANNOTATIONS_LIST__ANNOTATIONS);
     }
-    return structMember;
+    return annotations;
   }
 
   /**
@@ -88,8 +90,8 @@ public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl 
   {
     switch (featureID)
     {
-      case FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER:
-        return ((InternalEList<?>)getStructMember()).basicRemove(otherEnd, msgs);
+      case FractalIDLPackage.ANNOTATIONS_LIST__ANNOTATIONS:
+        return ((InternalEList<?>)getAnnotations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +106,8 @@ public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl 
   {
     switch (featureID)
     {
-      case FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER:
-        return getStructMember();
+      case FractalIDLPackage.ANNOTATIONS_LIST__ANNOTATIONS:
+        return getAnnotations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +123,9 @@ public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl 
   {
     switch (featureID)
     {
-      case FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER:
-        getStructMember().clear();
-        getStructMember().addAll((Collection<? extends StructMember>)newValue);
+      case FractalIDLPackage.ANNOTATIONS_LIST__ANNOTATIONS:
+        getAnnotations().clear();
+        getAnnotations().addAll((Collection<? extends Annotation>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +141,8 @@ public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl 
   {
     switch (featureID)
     {
-      case FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER:
-        getStructMember().clear();
+      case FractalIDLPackage.ANNOTATIONS_LIST__ANNOTATIONS:
+        getAnnotations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,10 +158,10 @@ public class StructOrUnionDefinitionImpl extends StructOrUnionSpecificationImpl 
   {
     switch (featureID)
     {
-      case FractalIDLPackage.STRUCT_OR_UNION_DEFINITION__STRUCT_MEMBER:
-        return structMember != null && !structMember.isEmpty();
+      case FractalIDLPackage.ANNOTATIONS_LIST__ANNOTATIONS:
+        return annotations != null && !annotations.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //StructOrUnionDefinitionImpl
+} //AnnotationsListImpl

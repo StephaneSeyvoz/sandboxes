@@ -16,24 +16,27 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.StructorUnionReference;
  *
  * @generated
  */
-public class StructorUnionReferenceImpl extends StructOrUnionSpecificationImpl implements StructorUnionReference {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StructorUnionReferenceImpl() {
-		super();
-	}
+public class StructorUnionReferenceImpl extends StructOrUnionSpecificationImpl implements StructorUnionReference
+{
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected StructorUnionReferenceImpl()
+  {
+    super();
+  }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return FractalIDLPackage.Literals.STRUCTOR_UNION_REFERENCE;
-	}
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  protected EClass eStaticClass()
+  {
+    return FractalIDLPackage.Literals.STRUCTOR_UNION_REFERENCE;
+  }
 
 } //StructorUnionReferenceImpl

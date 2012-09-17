@@ -4,10 +4,9 @@
     editDirectory="/org.ow2.mindEd.idt.editor.textual.model.edit/src" editorDirectory="/org.ow2.mindEd.idt.editor.textual.model.editor/src"
     modelPluginID="org.ow2.mindEd.idt.editor.textual.model" forceOverwrite="true"
     modelName="FractalIdt" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    editPluginID="org.ow2.mindEd.idt.editor.textual.model.edit" editorPluginID="org.ow2.mindEd.idt.editor.textual.model.editor"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.ow2.mindEd.idt.editor.textual.model.edit"
+    editorPluginID="org.ow2.mindEd.idt.editor.textual.model.editor" runtimeVersion="2.8"
     usedGenPackages="../../../../../../../../org.ow2.mindEd.itf.editor.textual.model/src-gen/org/ow2/mindEd/itf/editor/textual/FractalItf.genmodel#//fractalIDL">
-  <foreignModel>FractalIdt.ecore</foreignModel>
   <genPackages prefix="FractalIdt" basePackage="org.ow2.mindEd.idt.editor.textual"
       disposableProviderFactory="true" ecorePackage="FractalIdt.ecore#/">
     <genClasses ecoreClass="FractalIdt.ecore#//IdtFile">

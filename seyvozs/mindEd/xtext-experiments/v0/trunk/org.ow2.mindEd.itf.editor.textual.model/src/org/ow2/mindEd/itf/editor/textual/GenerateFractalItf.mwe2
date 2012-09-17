@@ -16,8 +16,6 @@ var runtimeProject = "../${packageName}"
 Workflow {
     bean = StandaloneSetup {
 		platformUri = ".."
-		//registerGeneratedEPackage = "org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage"
-		//registerGenModelFile = "platform:/resource/org.ow2.mindEd.itf.editor.textual.model/src-gen/org/ow2/mindEd/itf/editor/textual/FractalItf.genmodel"
 	}
 	
 	component = DirectoryCleaner {
@@ -46,8 +44,13 @@ Workflow {
 			// referencedGenModels = "uri to genmodel, uri to next genmodel"
 			}
 			
-			// the serialization component
-			fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
+			// Serializer 2.0
+			fragment = serializer.SerializerFragment {
+				generateStub = false
+			}
+                
+			// the serialization component (1.0)
+			// fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
 			
 			// a custom ResourceFactory for use with EMF 
 			fragment = resourceFactory.ResourceFactoryFragment {

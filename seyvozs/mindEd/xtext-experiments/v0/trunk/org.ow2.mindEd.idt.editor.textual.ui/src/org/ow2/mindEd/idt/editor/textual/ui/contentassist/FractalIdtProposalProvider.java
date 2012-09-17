@@ -37,7 +37,7 @@ public class FractalIdtProposalProvider extends AbstractFractalIdtProposalProvid
 	}*/
 
 	@Override
-	public void completeConstantDefinition_Id(EObject model,
+	public void completeConstantDefinitionBegin_Id(EObject model,
 			Assignment assignment, ContentAssistContext context,
 			ICompletionProposalAcceptor acceptor) {
 
