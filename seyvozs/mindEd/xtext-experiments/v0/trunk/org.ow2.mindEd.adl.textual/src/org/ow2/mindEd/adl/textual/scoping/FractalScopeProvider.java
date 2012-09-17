@@ -39,6 +39,18 @@ import org.ow2.mindEd.adl.textual.fractal.TypeReference;
  */
 public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 
+
+	// VERY seful debug method
+//	@Override
+//	public IScope getScope(EObject context, EReference reference){
+//		System.out.println(
+//				"scope_" + reference.getEContainingClass().getName()
+//				+ "_" + reference.getName()
+//				+ "(" + context.eClass().getName() + ", ..)"
+//				);
+//		return super.getScope(context, reference);
+//	}
+	
 	/**
 	 * Here we need to handle local templates:
 	 * composite TemplatedType<LocalTemplate conformsto AbstractType> { ... contains LocalTemplate as template; ...}
@@ -504,14 +516,5 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 	//		
 	//	}
 
-	@Override
-	public IScope getScope(EObject context, EReference reference){
-		System.out.println(
-				"scope_" + reference.getEContainingClass().getName()
-				+ "_" + reference.getName()
-				+ "(" + context.eClass().getName() + ", ..)"
-				);
-		return super.getScope(context, reference);
-	}
 
 }
