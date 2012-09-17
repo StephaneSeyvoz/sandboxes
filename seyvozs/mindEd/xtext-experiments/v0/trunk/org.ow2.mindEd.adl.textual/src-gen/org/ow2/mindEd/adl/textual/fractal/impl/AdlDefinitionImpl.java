@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.ow2.mindEd.adl.textual.fractal.AdlDefinition;
+import org.ow2.mindEd.adl.textual.fractal.AnnotationsList;
 import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
 import org.ow2.mindEd.adl.textual.fractal.ImportDefinition;
@@ -31,6 +32,7 @@ import org.ow2.mindEd.adl.textual.fractal.ImportDefinition;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.AdlDefinitionImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.AdlDefinitionImpl#getAnnotationsList <em>Annotations List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.AdlDefinitionImpl#getArchitectureDefinition <em>Architecture Definition</em>}</li>
  * </ul>
  * </p>
@@ -48,6 +50,16 @@ public class AdlDefinitionImpl extends MinimalEObjectImpl.Container implements A
    * @ordered
    */
   protected EList<ImportDefinition> imports;
+
+  /**
+   * The cached value of the '{@link #getAnnotationsList() <em>Annotations List</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAnnotationsList()
+   * @generated
+   * @ordered
+   */
+  protected AnnotationsList annotationsList;
 
   /**
    * The cached value of the '{@link #getArchitectureDefinition() <em>Architecture Definition</em>}' containment reference.
@@ -92,6 +104,54 @@ public class AdlDefinitionImpl extends MinimalEObjectImpl.Container implements A
       imports = new EObjectContainmentEList<ImportDefinition>(ImportDefinition.class, this, FractalPackage.ADL_DEFINITION__IMPORTS);
     }
     return imports;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AnnotationsList getAnnotationsList()
+  {
+    return annotationsList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAnnotationsList(AnnotationsList newAnnotationsList, NotificationChain msgs)
+  {
+    AnnotationsList oldAnnotationsList = annotationsList;
+    annotationsList = newAnnotationsList;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FractalPackage.ADL_DEFINITION__ANNOTATIONS_LIST, oldAnnotationsList, newAnnotationsList);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAnnotationsList(AnnotationsList newAnnotationsList)
+  {
+    if (newAnnotationsList != annotationsList)
+    {
+      NotificationChain msgs = null;
+      if (annotationsList != null)
+        msgs = ((InternalEObject)annotationsList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FractalPackage.ADL_DEFINITION__ANNOTATIONS_LIST, null, msgs);
+      if (newAnnotationsList != null)
+        msgs = ((InternalEObject)newAnnotationsList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FractalPackage.ADL_DEFINITION__ANNOTATIONS_LIST, null, msgs);
+      msgs = basicSetAnnotationsList(newAnnotationsList, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.ADL_DEFINITION__ANNOTATIONS_LIST, newAnnotationsList, newAnnotationsList));
   }
 
   /**
@@ -154,6 +214,8 @@ public class AdlDefinitionImpl extends MinimalEObjectImpl.Container implements A
     {
       case FractalPackage.ADL_DEFINITION__IMPORTS:
         return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+      case FractalPackage.ADL_DEFINITION__ANNOTATIONS_LIST:
+        return basicSetAnnotationsList(null, msgs);
       case FractalPackage.ADL_DEFINITION__ARCHITECTURE_DEFINITION:
         return basicSetArchitectureDefinition(null, msgs);
     }
@@ -172,6 +234,8 @@ public class AdlDefinitionImpl extends MinimalEObjectImpl.Container implements A
     {
       case FractalPackage.ADL_DEFINITION__IMPORTS:
         return getImports();
+      case FractalPackage.ADL_DEFINITION__ANNOTATIONS_LIST:
+        return getAnnotationsList();
       case FractalPackage.ADL_DEFINITION__ARCHITECTURE_DEFINITION:
         return getArchitectureDefinition();
     }
@@ -193,6 +257,9 @@ public class AdlDefinitionImpl extends MinimalEObjectImpl.Container implements A
         getImports().clear();
         getImports().addAll((Collection<? extends ImportDefinition>)newValue);
         return;
+      case FractalPackage.ADL_DEFINITION__ANNOTATIONS_LIST:
+        setAnnotationsList((AnnotationsList)newValue);
+        return;
       case FractalPackage.ADL_DEFINITION__ARCHITECTURE_DEFINITION:
         setArchitectureDefinition((ArchitectureDefinition)newValue);
         return;
@@ -213,6 +280,9 @@ public class AdlDefinitionImpl extends MinimalEObjectImpl.Container implements A
       case FractalPackage.ADL_DEFINITION__IMPORTS:
         getImports().clear();
         return;
+      case FractalPackage.ADL_DEFINITION__ANNOTATIONS_LIST:
+        setAnnotationsList((AnnotationsList)null);
+        return;
       case FractalPackage.ADL_DEFINITION__ARCHITECTURE_DEFINITION:
         setArchitectureDefinition((ArchitectureDefinition)null);
         return;
@@ -232,6 +302,8 @@ public class AdlDefinitionImpl extends MinimalEObjectImpl.Container implements A
     {
       case FractalPackage.ADL_DEFINITION__IMPORTS:
         return imports != null && !imports.isEmpty();
+      case FractalPackage.ADL_DEFINITION__ANNOTATIONS_LIST:
+        return annotationsList != null;
       case FractalPackage.ADL_DEFINITION__ARCHITECTURE_DEFINITION:
         return architectureDefinition != null;
     }

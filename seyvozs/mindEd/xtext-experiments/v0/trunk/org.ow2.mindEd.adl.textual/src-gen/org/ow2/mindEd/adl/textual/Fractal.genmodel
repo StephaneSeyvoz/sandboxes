@@ -9,10 +9,10 @@
       ecorePackage="Fractal.ecore#/">
     <genClasses ecoreClass="Fractal.ecore#//AdlDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//AdlDefinition/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//AdlDefinition/annotationsList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//AdlDefinition/architectureDefinition"/>
     </genClasses>
     <genClasses ecoreClass="Fractal.ecore#//ArchitectureDefinition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//ArchitectureDefinition/annotationsList"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Fractal.ecore#//ArchitectureDefinition/superTypes"/>
     </genClasses>
     <genClasses ecoreClass="Fractal.ecore#//ImportDefinition">

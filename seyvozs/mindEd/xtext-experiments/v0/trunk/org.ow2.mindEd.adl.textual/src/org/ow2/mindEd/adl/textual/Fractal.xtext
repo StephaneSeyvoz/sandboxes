@@ -6,6 +6,14 @@ import "http://www.ow2.org/mindEd/itf/" as fractalIDL
 
 AdlDefinition :
 	imports += ImportDefinition*
+	/*
+	 * Any ArchitectureDefinition can be annotated
+	 * The following line used to be defined in each of the kinds of ArchitectureDefinition
+	 * (allowing to use the getAnnotationsList method of the according feature in EMF on each type)
+	 * but led to ambiguities in the grammar, leading to breaking Xtext's model and autocompletion,
+	 * mostly on provided and required interfaces.
+	 */
+	(annotationsList=AnnotationsList)?
 	architectureDefinition = ArchitectureDefinition
 ;
 
@@ -29,17 +37,15 @@ QualifiedNameWithWildcard:
 ;
 
 CompositeDefinition:
-	(annotationsList=AnnotationsList)?
 	'composite' name = QualifiedName
 	('<' (templateSpecifiers+=TemplateSpecifier (',' templateSpecifiers+=TemplateSpecifier)*) '>')? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
 	(compositeFormalArgumentsList = FormalArgumentsList)? // (arg1, arg2, ...)
 	('extends' superTypes += [ArchitectureDefinition | QualifiedName] (',' superTypes += [ArchitectureDefinition | QualifiedName])*)? '{'
-		elements += (HostedInterfaceDefinition | SubComponentDefinition | BindingDefinition)*
+		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition | SubComponentDefinition | BindingDefinition)*
 	'}'
 ;
 
 PrimitiveDefinition:
-	(annotationsList=AnnotationsList)?
 	(abstract ?= 'abstract')?
 	'primitive' name = QualifiedName
 	(compositeFormalArgumentsList = FormalArgumentsList)?
@@ -49,7 +55,6 @@ PrimitiveDefinition:
 ;
 
 TypeDefinition:
-	(annotationsList=AnnotationsList)?
 	'type' name = QualifiedName
 	('extends' superTypes += [ArchitectureDefinition | QualifiedName] (',' superTypes += [ArchitectureDefinition | QualifiedName])*)? '{'
 		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition)*

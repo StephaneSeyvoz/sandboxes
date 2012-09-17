@@ -76,13 +76,22 @@ public interface FractalPackage extends EPackage
   int ADL_DEFINITION__IMPORTS = 0;
 
   /**
+   * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADL_DEFINITION__ANNOTATIONS_LIST = 1;
+
+  /**
    * The feature id for the '<em><b>Architecture Definition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ADL_DEFINITION__ARCHITECTURE_DEFINITION = 1;
+  int ADL_DEFINITION__ARCHITECTURE_DEFINITION = 2;
 
   /**
    * The number of structural features of the '<em>Adl Definition</em>' class.
@@ -91,7 +100,7 @@ public interface FractalPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ADL_DEFINITION_FEATURE_COUNT = 2;
+  int ADL_DEFINITION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.TypeReferenceImpl <em>Type Reference</em>}' class.
@@ -141,22 +150,13 @@ public interface FractalPackage extends EPackage
   int ARCHITECTURE_DEFINITION__NAME = TYPE_REFERENCE__NAME;
 
   /**
-   * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST = TYPE_REFERENCE_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Super Types</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARCHITECTURE_DEFINITION__SUPER_TYPES = TYPE_REFERENCE_FEATURE_COUNT + 1;
+  int ARCHITECTURE_DEFINITION__SUPER_TYPES = TYPE_REFERENCE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Architecture Definition</em>' class.
@@ -165,7 +165,7 @@ public interface FractalPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARCHITECTURE_DEFINITION_FEATURE_COUNT = TYPE_REFERENCE_FEATURE_COUNT + 2;
+  int ARCHITECTURE_DEFINITION_FEATURE_COUNT = TYPE_REFERENCE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.ImportDefinitionImpl <em>Import Definition</em>}' class.
@@ -222,15 +222,6 @@ public interface FractalPackage extends EPackage
    * @ordered
    */
   int COMPOSITE_DEFINITION__NAME = ARCHITECTURE_DEFINITION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPOSITE_DEFINITION__ANNOTATIONS_LIST = ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST;
 
   /**
    * The feature id for the '<em><b>Super Types</b></em>' reference list.
@@ -297,15 +288,6 @@ public interface FractalPackage extends EPackage
   int PRIMITIVE_DEFINITION__NAME = ARCHITECTURE_DEFINITION__NAME;
 
   /**
-   * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PRIMITIVE_DEFINITION__ANNOTATIONS_LIST = ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST;
-
-  /**
    * The feature id for the '<em><b>Super Types</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -368,15 +350,6 @@ public interface FractalPackage extends EPackage
    * @ordered
    */
   int TYPE_DEFINITION__NAME = ARCHITECTURE_DEFINITION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_DEFINITION__ANNOTATIONS_LIST = ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST;
 
   /**
    * The feature id for the '<em><b>Super Types</b></em>' reference list.
@@ -1571,6 +1544,17 @@ public interface FractalPackage extends EPackage
   EReference getAdlDefinition_Imports();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.ow2.mindEd.adl.textual.fractal.AdlDefinition#getAnnotationsList <em>Annotations List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Annotations List</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.AdlDefinition#getAnnotationsList()
+   * @see #getAdlDefinition()
+   * @generated
+   */
+  EReference getAdlDefinition_AnnotationsList();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.ow2.mindEd.adl.textual.fractal.AdlDefinition#getArchitectureDefinition <em>Architecture Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1590,17 +1574,6 @@ public interface FractalPackage extends EPackage
    * @generated
    */
   EClass getArchitectureDefinition();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getAnnotationsList <em>Annotations List</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Annotations List</em>'.
-   * @see org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getAnnotationsList()
-   * @see #getArchitectureDefinition()
-   * @generated
-   */
-  EReference getArchitectureDefinition_AnnotationsList();
 
   /**
    * Returns the meta object for the reference list '{@link org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition#getSuperTypes <em>Super Types</em>}'.
@@ -2602,6 +2575,14 @@ public interface FractalPackage extends EPackage
     EReference ADL_DEFINITION__IMPORTS = eINSTANCE.getAdlDefinition_Imports();
 
     /**
+     * The meta object literal for the '<em><b>Annotations List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADL_DEFINITION__ANNOTATIONS_LIST = eINSTANCE.getAdlDefinition_AnnotationsList();
+
+    /**
      * The meta object literal for the '<em><b>Architecture Definition</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2618,14 +2599,6 @@ public interface FractalPackage extends EPackage
      * @generated
      */
     EClass ARCHITECTURE_DEFINITION = eINSTANCE.getArchitectureDefinition();
-
-    /**
-     * The meta object literal for the '<em><b>Annotations List</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST = eINSTANCE.getArchitectureDefinition_AnnotationsList();
 
     /**
      * The meta object literal for the '<em><b>Super Types</b></em>' reference list feature.

@@ -385,9 +385,19 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAdlDefinition_ArchitectureDefinition()
+  public EReference getAdlDefinition_AnnotationsList()
   {
     return (EReference)adlDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAdlDefinition_ArchitectureDefinition()
+  {
+    return (EReference)adlDefinitionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -405,19 +415,9 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getArchitectureDefinition_AnnotationsList()
-  {
-    return (EReference)architectureDefinitionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getArchitectureDefinition_SuperTypes()
   {
-    return (EReference)architectureDefinitionEClass.getEStructuralFeatures().get(1);
+    return (EReference)architectureDefinitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1342,10 +1342,10 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     // Create classes and their features
     adlDefinitionEClass = createEClass(ADL_DEFINITION);
     createEReference(adlDefinitionEClass, ADL_DEFINITION__IMPORTS);
+    createEReference(adlDefinitionEClass, ADL_DEFINITION__ANNOTATIONS_LIST);
     createEReference(adlDefinitionEClass, ADL_DEFINITION__ARCHITECTURE_DEFINITION);
 
     architectureDefinitionEClass = createEClass(ARCHITECTURE_DEFINITION);
-    createEReference(architectureDefinitionEClass, ARCHITECTURE_DEFINITION__ANNOTATIONS_LIST);
     createEReference(architectureDefinitionEClass, ARCHITECTURE_DEFINITION__SUPER_TYPES);
 
     importDefinitionEClass = createEClass(IMPORT_DEFINITION);
@@ -1528,10 +1528,10 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     // Initialize classes and features; add operations and parameters
     initEClass(adlDefinitionEClass, AdlDefinition.class, "AdlDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAdlDefinition_Imports(), this.getImportDefinition(), null, "imports", null, 0, -1, AdlDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAdlDefinition_AnnotationsList(), this.getAnnotationsList(), null, "annotationsList", null, 0, 1, AdlDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAdlDefinition_ArchitectureDefinition(), this.getArchitectureDefinition(), null, "architectureDefinition", null, 0, 1, AdlDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(architectureDefinitionEClass, ArchitectureDefinition.class, "ArchitectureDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getArchitectureDefinition_AnnotationsList(), this.getAnnotationsList(), null, "annotationsList", null, 0, 1, ArchitectureDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getArchitectureDefinition_SuperTypes(), this.getArchitectureDefinition(), null, "superTypes", null, 0, -1, ArchitectureDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importDefinitionEClass, ImportDefinition.class, "ImportDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

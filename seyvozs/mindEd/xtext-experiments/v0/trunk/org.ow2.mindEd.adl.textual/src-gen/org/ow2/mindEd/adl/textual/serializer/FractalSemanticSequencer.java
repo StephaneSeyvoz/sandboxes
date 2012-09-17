@@ -242,7 +242,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (imports+=ImportDefinition* architectureDefinition=ArchitectureDefinition)
+	 *     (imports+=ImportDefinition* annotationsList=AnnotationsList? architectureDefinition=ArchitectureDefinition)
 	 */
 	protected void sequence_AdlDefinition(EObject context, AdlDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -317,12 +317,11 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Constraint:
 	 *     (
-	 *         annotationsList=AnnotationsList? 
 	 *         name=QualifiedName 
 	 *         (templateSpecifiers+=TemplateSpecifier templateSpecifiers+=TemplateSpecifier*)? 
 	 *         compositeFormalArgumentsList=FormalArgumentsList? 
 	 *         (superTypes+=[ArchitectureDefinition|QualifiedName] superTypes+=[ArchitectureDefinition|QualifiedName]*)? 
-	 *         (elements+=HostedInterfaceDefinition | elements+=SubComponentDefinition | elements+=BindingDefinition)*
+	 *         (elements+=ProvidedInterfaceDefinition | elements+=RequiredInterfaceDefinition | elements+=SubComponentDefinition | elements+=BindingDefinition)*
 	 *     )
 	 */
 	protected void sequence_CompositeDefinition(EObject context, CompositeDefinition semanticObject) {
@@ -435,7 +434,6 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Constraint:
 	 *     (
-	 *         annotationsList=AnnotationsList? 
 	 *         abstract?='abstract'? 
 	 *         name=QualifiedName 
 	 *         compositeFormalArgumentsList=FormalArgumentsList? 
@@ -556,7 +554,6 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Constraint:
 	 *     (
-	 *         annotationsList=AnnotationsList? 
 	 *         name=QualifiedName 
 	 *         (superTypes+=[ArchitectureDefinition|QualifiedName] superTypes+=[ArchitectureDefinition|QualifiedName]*)? 
 	 *         (elements+=ProvidedInterfaceDefinition | elements+=RequiredInterfaceDefinition)*
