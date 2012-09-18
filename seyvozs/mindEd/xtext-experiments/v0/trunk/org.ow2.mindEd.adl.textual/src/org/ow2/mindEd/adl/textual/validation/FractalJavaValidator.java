@@ -98,7 +98,7 @@ public class FractalJavaValidator extends AbstractFractalJavaValidator {
 	 * Check Cycles in definition references
 	 */
 	@Check
-	public void checkHostedInterfaceIsUniqueInComposite(SubComponentDefinition subCompDef) {
+	public void checkCyclesInDefinitionReferences(SubComponentDefinition subCompDef) {
 		// Get the parent
 		EObject container = subCompDef.eContainer();
 		while (!(container instanceof CompositeDefinition))
