@@ -79,18 +79,18 @@ public class FractalHyperlink extends HyperlinkHelper {
 			} else {
 				// Absolute: we need to search from the root of the source-path for every source-path entry
 				if (directory.startsWith("/")) {
-//					uri = URI.createPlatformResourceURI(f.getPath(), true);
-//					MindFile mf = ModelToProjectUtil.INSTANCE.getCurrentMindFile(uri);
-					
+					//					uri = URI.createPlatformResourceURI(f.getPath(), true);
+					//					MindFile mf = ModelToProjectUtil.INSTANCE.getCurrentMindFile(uri);
+
 					ArchitectureDefinition parentAdl = null;
 					// parent adl is...?
 					while (!(eObject instanceof ArchitectureDefinition))
 						eObject = eObject.eContainer();
 					parentAdl = (ArchitectureDefinition) eObject;
-					
+
 					MindProject adlHostProject = ModelToProjectUtil.INSTANCE.getMindProject(parentAdl.eResource().getURI());
 					URI hostProjectURI = URI.createPlatformResourceURI(adlHostProject.getProject().getFullPath().toString(), true);
-					
+
 					// for all path entries, try to locate the C file
 					EList<MindPathEntry> path = adlHostProject.getMindpathentries();
 					URI cFileURI = null;
@@ -98,14 +98,18 @@ public class FractalHyperlink extends HyperlinkHelper {
 						if (currentPath.getEntryKind() == MindPathKind.SOURCE) {
 							// There should be a more elegant way
 							// TODO: fix this
-							URI pathURI = hostProjectURI.appendSegment(currentPath.getName().substring(currentPath.getName().lastIndexOf("/") + 1));
-							// We remove the first / AND the last / (if it exists)
-							if (directory.endsWith("/"))
-								directory = directory.substring(1, directory.length() - 1);
-							else 
-								directory = directory.substring(1);
+							URI pathURI = hostProjectURI.appendSegment(currentPath.getName().substring(currentPath.getName().lastIndexOf("/") + 1));;
+							if (!directory.equals("/")) {
+								// We remove the first / AND the last / (if it exists)
+								if (directory.endsWith("/"))
+									directory = directory.substring(1, directory.length() - 1);
+								else 
+									directory = directory.substring(1);
+								
+								cFileURI = pathURI.appendSegment(directory).appendSegment(fileName);
+							} else
+								cFileURI = pathURI.appendSegment(fileName);
 							
-							cFileURI = pathURI.appendSegment(directory).appendSegment(fileName);
 							file = ModelToProjectUtil.INSTANCE.getIFile(cFileURI);
 							if (file.exists()) // found !
 								break;
@@ -115,7 +119,7 @@ public class FractalHyperlink extends HyperlinkHelper {
 
 					// handle host definition path for resource resolution
 					File f = new File(directory, fileName);
-					
+
 					// SSZ
 					// Find the file according to the host component package  
 					// Here the resource is the ADL from where the link was called
@@ -137,7 +141,7 @@ public class FractalHyperlink extends HyperlinkHelper {
 			try {
 				// Get the file URI
 				// Create the editor input
-				
+
 				if (file == null || !(file.exists())) {
 					// SSZ: TODO: handle errors
 					return; // warn/error ?
