@@ -1087,13 +1087,22 @@ public interface FractalPackage extends EPackage
   int TEMPLATE_DEFINITION__TYPE_REFERENCE = 1;
 
   /**
+   * The feature id for the '<em><b>Any Type Reference</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEMPLATE_DEFINITION__ANY_TYPE_REFERENCE = 2;
+
+  /**
    * The number of structural features of the '<em>Template Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEMPLATE_DEFINITION_FEATURE_COUNT = 2;
+  int TEMPLATE_DEFINITION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.ArgumentDefinitionImpl <em>Argument Definition</em>}' class.
@@ -2205,6 +2214,17 @@ public interface FractalPackage extends EPackage
   EReference getTemplateDefinition_TypeReference();
 
   /**
+   * Returns the meta object for the attribute '{@link org.ow2.mindEd.adl.textual.fractal.TemplateDefinition#isAnyTypeReference <em>Any Type Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Any Type Reference</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.TemplateDefinition#isAnyTypeReference()
+   * @see #getTemplateDefinition()
+   * @generated
+   */
+  EAttribute getTemplateDefinition_AnyTypeReference();
+
+  /**
    * Returns the meta object for class '{@link org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition <em>Argument Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3111,6 +3131,14 @@ public interface FractalPackage extends EPackage
      * @generated
      */
     EReference TEMPLATE_DEFINITION__TYPE_REFERENCE = eINSTANCE.getTemplateDefinition_TypeReference();
+
+    /**
+     * The meta object literal for the '<em><b>Any Type Reference</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TEMPLATE_DEFINITION__ANY_TYPE_REFERENCE = eINSTANCE.getTemplateDefinition_AnyTypeReference();
 
     /**
      * The meta object literal for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.ArgumentDefinitionImpl <em>Argument Definition</em>}' class.

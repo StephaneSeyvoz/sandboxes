@@ -54,6 +54,7 @@ public class FractalParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAttributeTypeAccess().getAlternatives(), "rule__AttributeType__Alternatives");
 					put(grammarAccess.getSignedINTAccess().getAlternatives_0(), "rule__SignedINT__Alternatives_0");
 					put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
+					put(grammarAccess.getTemplateDefinitionAccess().getAlternatives_1(), "rule__TemplateDefinition__Alternatives_1");
 					put(grammarAccess.getImplementationDefinitionAccess().getAlternatives_2(), "rule__ImplementationDefinition__Alternatives_2");
 					put(grammarAccess.getDataDefinitionAccess().getAlternatives_2(), "rule__DataDefinition__Alternatives_2");
 					put(grammarAccess.getPathAccess().getAlternatives_0(), "rule__Path__Alternatives_0");
@@ -181,7 +182,8 @@ public class FractalParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTemplateSpecifierAccess().getNameAssignment_0(), "rule__TemplateSpecifier__NameAssignment_0");
 					put(grammarAccess.getTemplateSpecifierAccess().getTypeReferenceAssignment_2(), "rule__TemplateSpecifier__TypeReferenceAssignment_2");
 					put(grammarAccess.getTemplateDefinitionAccess().getNameAssignment_0_0(), "rule__TemplateDefinition__NameAssignment_0_0");
-					put(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceAssignment_1(), "rule__TemplateDefinition__TypeReferenceAssignment_1");
+					put(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceAssignment_1_0(), "rule__TemplateDefinition__TypeReferenceAssignment_1_0");
+					put(grammarAccess.getTemplateDefinitionAccess().getAnyTypeReferenceAssignment_1_1(), "rule__TemplateDefinition__AnyTypeReferenceAssignment_1_1");
 					put(grammarAccess.getArgumentDefinitionAccess().getArgumentNameAssignment_0_0(), "rule__ArgumentDefinition__ArgumentNameAssignment_0_0");
 					put(grammarAccess.getArgumentDefinitionAccess().getArgumentValueAssignment_1(), "rule__ArgumentDefinition__ArgumentValueAssignment_1");
 					put(grammarAccess.getAttributeDefinitionAccess().getAnnotationsListAssignment_0(), "rule__AttributeDefinition__AnnotationsListAssignment_0");

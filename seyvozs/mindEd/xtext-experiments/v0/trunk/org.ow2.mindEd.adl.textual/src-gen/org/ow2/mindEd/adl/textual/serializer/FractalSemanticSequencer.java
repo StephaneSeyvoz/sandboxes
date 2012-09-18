@@ -525,7 +525,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=TemplateSpecifier? typeReference=[ArchitectureDefinition|QualifiedName])
+	 *     (name=TemplateSpecifier? (typeReference=[ArchitectureDefinition|QualifiedName] | anyTypeReference?='?'))
 	 */
 	protected void sequence_TemplateDefinition(EObject context, TemplateDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

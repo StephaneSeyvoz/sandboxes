@@ -25,6 +25,7 @@ import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.TemplateDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.TemplateDefinitionImpl#getTypeReference <em>Type Reference</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.TemplateDefinitionImpl#isAnyTypeReference <em>Any Type Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +52,26 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * @ordered
    */
   protected ArchitectureDefinition typeReference;
+
+  /**
+   * The default value of the '{@link #isAnyTypeReference() <em>Any Type Reference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAnyTypeReference()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean ANY_TYPE_REFERENCE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isAnyTypeReference() <em>Any Type Reference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAnyTypeReference()
+   * @generated
+   * @ordered
+   */
+  protected boolean anyTypeReference = ANY_TYPE_REFERENCE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -169,6 +190,29 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isAnyTypeReference()
+  {
+    return anyTypeReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAnyTypeReference(boolean newAnyTypeReference)
+  {
+    boolean oldAnyTypeReference = anyTypeReference;
+    anyTypeReference = newAnyTypeReference;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.TEMPLATE_DEFINITION__ANY_TYPE_REFERENCE, oldAnyTypeReference, anyTypeReference));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -195,6 +239,8 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
       case FractalPackage.TEMPLATE_DEFINITION__TYPE_REFERENCE:
         if (resolve) return getTypeReference();
         return basicGetTypeReference();
+      case FractalPackage.TEMPLATE_DEFINITION__ANY_TYPE_REFERENCE:
+        return isAnyTypeReference();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -214,6 +260,9 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
         return;
       case FractalPackage.TEMPLATE_DEFINITION__TYPE_REFERENCE:
         setTypeReference((ArchitectureDefinition)newValue);
+        return;
+      case FractalPackage.TEMPLATE_DEFINITION__ANY_TYPE_REFERENCE:
+        setAnyTypeReference((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -235,6 +284,9 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
       case FractalPackage.TEMPLATE_DEFINITION__TYPE_REFERENCE:
         setTypeReference((ArchitectureDefinition)null);
         return;
+      case FractalPackage.TEMPLATE_DEFINITION__ANY_TYPE_REFERENCE:
+        setAnyTypeReference(ANY_TYPE_REFERENCE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -253,8 +305,27 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
         return name != null;
       case FractalPackage.TEMPLATE_DEFINITION__TYPE_REFERENCE:
         return typeReference != null;
+      case FractalPackage.TEMPLATE_DEFINITION__ANY_TYPE_REFERENCE:
+        return anyTypeReference != ANY_TYPE_REFERENCE_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (anyTypeReference: ");
+    result.append(anyTypeReference);
+    result.append(')');
+    return result.toString();
   }
 
 } //TemplateDefinitionImpl

@@ -1584,16 +1584,19 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
 		private final RuleCall cNameTemplateSpecifierParserRuleCall_0_0_0 = (RuleCall)cNameAssignment_0_0.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cTypeReferenceAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cTypeReferenceArchitectureDefinitionCrossReference_1_0 = (CrossReference)cTypeReferenceAssignment_1.eContents().get(0);
-		private final RuleCall cTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cTypeReferenceArchitectureDefinitionCrossReference_1_0.eContents().get(1);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cTypeReferenceAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final CrossReference cTypeReferenceArchitectureDefinitionCrossReference_1_0_0 = (CrossReference)cTypeReferenceAssignment_1_0.eContents().get(0);
+		private final RuleCall cTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_0_1 = (RuleCall)cTypeReferenceArchitectureDefinitionCrossReference_1_0_0.eContents().get(1);
+		private final Assignment cAnyTypeReferenceAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final Keyword cAnyTypeReferenceQuestionMarkKeyword_1_1_0 = (Keyword)cAnyTypeReferenceAssignment_1_1.eContents().get(0);
 		
 		//TemplateDefinition:
 		//
-		//	(name=TemplateSpecifier "=")? typeReference=[ArchitectureDefinition|QualifiedName];
+		//	(name=TemplateSpecifier "=")? (typeReference=[ArchitectureDefinition|QualifiedName] | anyTypeReference?="?");
 		public ParserRule getRule() { return rule; }
 
-		//(name=TemplateSpecifier "=")? typeReference=[ArchitectureDefinition|QualifiedName]
+		//(name=TemplateSpecifier "=")? (typeReference=[ArchitectureDefinition|QualifiedName] | anyTypeReference?="?")
 		public Group getGroup() { return cGroup; }
 
 		//(name=TemplateSpecifier "=")?
@@ -1608,14 +1611,23 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
 
+		//typeReference=[ArchitectureDefinition|QualifiedName] | anyTypeReference?="?"
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+
 		//typeReference=[ArchitectureDefinition|QualifiedName]
-		public Assignment getTypeReferenceAssignment_1() { return cTypeReferenceAssignment_1; }
+		public Assignment getTypeReferenceAssignment_1_0() { return cTypeReferenceAssignment_1_0; }
 
 		//[ArchitectureDefinition|QualifiedName]
-		public CrossReference getTypeReferenceArchitectureDefinitionCrossReference_1_0() { return cTypeReferenceArchitectureDefinitionCrossReference_1_0; }
+		public CrossReference getTypeReferenceArchitectureDefinitionCrossReference_1_0_0() { return cTypeReferenceArchitectureDefinitionCrossReference_1_0_0; }
 
 		//QualifiedName
-		public RuleCall getTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_1() { return cTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_1; }
+		public RuleCall getTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_0_1() { return cTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_0_1; }
+
+		//anyTypeReference?="?"
+		public Assignment getAnyTypeReferenceAssignment_1_1() { return cAnyTypeReferenceAssignment_1_1; }
+
+		//"?"
+		public Keyword getAnyTypeReferenceQuestionMarkKeyword_1_1_0() { return cAnyTypeReferenceQuestionMarkKeyword_1_1_0; }
 	}
 
 	public class ArgumentDefinitionElements extends AbstractParserRuleElementFinder {
@@ -2703,7 +2715,7 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 	//TemplateDefinition:
 	//
-	//	(name=TemplateSpecifier "=")? typeReference=[ArchitectureDefinition|QualifiedName];
+	//	(name=TemplateSpecifier "=")? (typeReference=[ArchitectureDefinition|QualifiedName] | anyTypeReference?="?");
 	public TemplateDefinitionElements getTemplateDefinitionAccess() {
 		return (pTemplateDefinition != null) ? pTemplateDefinition : (pTemplateDefinition = new TemplateDefinitionElements());
 	}

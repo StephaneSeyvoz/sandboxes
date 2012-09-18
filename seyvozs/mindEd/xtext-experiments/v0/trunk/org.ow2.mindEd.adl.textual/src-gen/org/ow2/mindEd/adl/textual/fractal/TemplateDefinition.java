@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.TemplateDefinition#getName <em>Name</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.TemplateDefinition#getTypeReference <em>Type Reference</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.TemplateDefinition#isAnyTypeReference <em>Any Type Reference</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +75,31 @@ public interface TemplateDefinition extends EObject
    * @generated
    */
   void setTypeReference(ArchitectureDefinition value);
+
+  /**
+   * Returns the value of the '<em><b>Any Type Reference</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Any Type Reference</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Any Type Reference</em>' attribute.
+   * @see #setAnyTypeReference(boolean)
+   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getTemplateDefinition_AnyTypeReference()
+   * @model
+   * @generated
+   */
+  boolean isAnyTypeReference();
+
+  /**
+   * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.TemplateDefinition#isAnyTypeReference <em>Any Type Reference</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Any Type Reference</em>' attribute.
+   * @see #isAnyTypeReference()
+   * @generated
+   */
+  void setAnyTypeReference(boolean value);
 
 } // TemplateDefinition

@@ -103,6 +103,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//TemplateSpecifier"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeReference" eType="#//ArchitectureDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anyTypeReference" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArgumentDefinition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="argumentName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

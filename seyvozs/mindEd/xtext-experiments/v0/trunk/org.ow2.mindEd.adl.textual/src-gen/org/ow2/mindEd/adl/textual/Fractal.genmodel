@@ -89,6 +89,7 @@
     <genClasses ecoreClass="Fractal.ecore#//TemplateDefinition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//TemplateDefinition/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Fractal.ecore#//TemplateDefinition/typeReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Fractal.ecore#//TemplateDefinition/anyTypeReference"/>
     </genClasses>
     <genClasses ecoreClass="Fractal.ecore#//ArgumentDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Fractal.ecore#//ArgumentDefinition/argumentName"/>

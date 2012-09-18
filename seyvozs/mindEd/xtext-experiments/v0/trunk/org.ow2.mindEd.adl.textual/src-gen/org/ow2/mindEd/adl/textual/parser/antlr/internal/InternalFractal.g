@@ -2424,7 +2424,7 @@ ruleTemplateDefinition returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getTemplateDefinitionAccess().getEqualsSignKeyword_0_1());
     }
-)?(
+)?((
 (
 		{ 
 		  /* */ 
@@ -2435,14 +2435,30 @@ ruleTemplateDefinition returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceArchitectureDefinitionCrossReference_1_0()); 
+	        newCompositeNode(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceArchitectureDefinitionCrossReference_1_0_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))
+)
+    |(
+(
+		lv_anyTypeReference_3_0=	'?' 
+    {
+        newLeafNode(lv_anyTypeReference_3_0, grammarAccess.getTemplateDefinitionAccess().getAnyTypeReferenceQuestionMarkKeyword_1_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTemplateDefinitionRule());
+	        }
+       		setWithLastConsumed($current, "anyTypeReference", true, "?");
+	    }
+
+)
+)))
 ;
 
 
