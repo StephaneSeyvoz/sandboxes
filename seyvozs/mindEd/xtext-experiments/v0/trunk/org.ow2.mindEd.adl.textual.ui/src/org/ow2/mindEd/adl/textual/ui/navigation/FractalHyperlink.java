@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.Region;
@@ -20,11 +21,16 @@ import org.eclipse.xtext.ui.editor.hyperlinking.HyperlinkHelper;
 import org.eclipse.xtext.ui.editor.hyperlinking.IHyperlinkAcceptor;
 import org.eclipse.xtext.ui.editor.hyperlinking.XtextHyperlink;
 import org.eclipse.xtext.util.ITextRegion;
+import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import org.ow2.mindEd.adl.textual.fractal.impl.FileCImpl;
 import org.ow2.mindEd.ide.core.MindIdeCore;
 import org.ow2.mindEd.ide.core.MindModelManager;
 import org.ow2.mindEd.ide.core.ModelToProjectUtil;
+import org.ow2.mindEd.ide.model.MindFile;
 import org.ow2.mindEd.ide.model.MindPackage;
+import org.ow2.mindEd.ide.model.MindPathEntry;
+import org.ow2.mindEd.ide.model.MindPathKind;
+import org.ow2.mindEd.ide.model.MindProject;
 import org.eclipse.xtext.resource.ILocationInFileProvider;
 
 import com.google.inject.Inject;
@@ -71,20 +77,45 @@ public class FractalHyperlink extends HyperlinkHelper {
 					file = f.getFile(fileName);
 				}
 			} else {
-				// handle host definition path for resource resolution
-				File f = new File(directory, fileName);
-
-				// Absolute
+				// Absolute: we need to search from the root of the source-path for every source-path entry
 				if (directory.startsWith("/")) {
-					// removed the "f.isAbsolute() test as it wouldn't work on Windows
-
-					uri = URI.createPlatformResourceURI(f.getPath(), true);
-					MindPackage pack = ModelToProjectUtil.INSTANCE.getCurrentPackage(uri);
-					IFolder f2 = MindIdeCore.getResource(pack);
-					file = f2.getFile(fileName);
+//					uri = URI.createPlatformResourceURI(f.getPath(), true);
+//					MindFile mf = ModelToProjectUtil.INSTANCE.getCurrentMindFile(uri);
+					
+					ArchitectureDefinition parentAdl = null;
+					// parent adl is...?
+					while (!(eObject instanceof ArchitectureDefinition))
+						eObject = eObject.eContainer();
+					parentAdl = (ArchitectureDefinition) eObject;
+					
+					MindProject adlHostProject = ModelToProjectUtil.INSTANCE.getMindProject(parentAdl.eResource().getURI());
+					URI hostProjectURI = URI.createPlatformResourceURI(adlHostProject.getProject().getFullPath().toString(), true);
+					
+					// for all path entries, try to locate the C file
+					EList<MindPathEntry> path = adlHostProject.getMindpathentries();
+					URI cFileURI = null;
+					for (MindPathEntry currentPath : path)
+						if (currentPath.getEntryKind() == MindPathKind.SOURCE) {
+							// There should be a more elegant way
+							// TODO: fix this
+							URI pathURI = hostProjectURI.appendSegment(currentPath.getName().substring(currentPath.getName().lastIndexOf("/") + 1));
+							// We remove the first / AND the last / (if it exists)
+							if (directory.endsWith("/"))
+								directory = directory.substring(1, directory.length() - 1);
+							else 
+								directory = directory.substring(1);
+							
+							cFileURI = pathURI.appendSegment(directory).appendSegment(fileName);
+							file = ModelToProjectUtil.INSTANCE.getIFile(cFileURI);
+							if (file.exists()) // found !
+								break;
+						}
 				} else {
 					// Relative
 
+					// handle host definition path for resource resolution
+					File f = new File(directory, fileName);
+					
 					// SSZ
 					// Find the file according to the host component package  
 					// Here the resource is the ADL from where the link was called
