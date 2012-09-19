@@ -401,21 +401,24 @@ public class CDTUtil {
 		config.setName("Default");
 		config.setArtifactName(newProject.getName());
 
+		// Create a source entries ArrayList
+		List<ICSourceEntry> sourceEntries = new ArrayList<ICSourceEntry>();
+		
 		// ADD the source entry 'src'
-
 		ICSourceEntry srcEntry = new CSourceEntry(newProject.getFolder("src"),
 				null, ICSettingEntry.VALUE_WORKSPACE_PATH);
-		config.setSourceEntries(new ICSourceEntry[] { srcEntry });
-		config.exportArtifactInfo();
+		sourceEntries.add(srcEntry);
 
 		// ADD the source entry 'runtime'
 		if (mindLocation != null) {
 			ICSourceEntry runtimeEntry = new CSourceEntry(newProject.getFolder("runtime"),
 					null, ICSettingEntry.VALUE_WORKSPACE_PATH);
-			config.setSourceEntries(new ICSourceEntry[] { runtimeEntry });
-			config.exportArtifactInfo();
+			sourceEntries.add(runtimeEntry);
 		}
 		
+		// convert the List to good-sized typed array
+		config.setSourceEntries(sourceEntries.toArray(new ICSourceEntry[sourceEntries.size()]));
+		config.exportArtifactInfo();
 		
 		CConfigurationData data = config.getConfigurationData();
 		data.getBuildData();
