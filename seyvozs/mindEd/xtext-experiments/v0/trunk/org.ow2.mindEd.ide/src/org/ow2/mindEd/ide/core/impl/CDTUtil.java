@@ -1,6 +1,7 @@
 package org.ow2.mindEd.ide.core.impl;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -29,13 +30,18 @@ import org.eclipse.cdt.managedbuilder.core.ManagedBuildManager;
 import org.eclipse.cdt.managedbuilder.internal.core.Configuration;
 import org.eclipse.cdt.managedbuilder.internal.core.ManagedProject;
 import org.eclipse.cdt.utils.envvar.StorableEnvironment;
+import org.eclipse.core.filesystem.IFileStore;
+import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.ow2.mindEd.ide.core.FamilyJobCST;
@@ -47,7 +53,7 @@ import org.ow2.mindEd.ide.core.template.TemplateMake;
 
 public class CDTUtil {
 
-	
+
 	private static final class RemoveCSourceFolderJob extends Job {
 		private final IFolder f;
 
@@ -88,8 +94,8 @@ public class CDTUtil {
 						mgr.setProjectDescription(f.getProject(), des);
 						if (MindModelImpl.TRACING)
 							System.out
-									.println("DONE REMOVE CSOURCE FOLDER "
-											+ f);
+							.println("DONE REMOVE CSOURCE FOLDER "
+									+ f);
 						return Status.OK_STATUS;
 					}
 				}
@@ -98,7 +104,7 @@ public class CDTUtil {
 			}
 			return Status.OK_STATUS;
 		}
-		
+
 		@Override
 		public boolean belongsTo(Object family) {
 			return FamilyJobCST.FAMILY_ALL == family || FamilyJobCST.FAMILY_REMOVE_CSOURCE_FOLDER == family;
@@ -149,7 +155,7 @@ public class CDTUtil {
 			}
 			return Status.OK_STATUS;
 		}
-		
+
 		@Override
 		public boolean belongsTo(Object family) {
 			return FamilyJobCST.FAMILY_ALL == family || FamilyJobCST.FAMILY_CREATE_CSOURCE_FOLDER == family;
@@ -189,7 +195,7 @@ public class CDTUtil {
 			}
 			return Status.OK_STATUS;
 		}
-		
+
 
 		@Override
 		public boolean belongsTo(Object family) {
@@ -244,24 +250,24 @@ public class CDTUtil {
 	public static void initMindProject(IProject newProject,
 			IProgressMonitor monitor) throws CoreException,
 			UnsupportedEncodingException {
-		
+
 		// create first
 		IFile makefile = newProject.getFile("Makefile");
 		if (!makefile.exists())
 			makefile.create(
-				new ByteArrayInputStream(createMakeTemplate(newProject)), true,
-				monitor);
-		
+					new ByteArrayInputStream(createMakeTemplate(newProject)), true,
+					monitor);
+
 		// add nature
 		CProjectNature.addNature(newProject, CProjectNature.C_NATURE_ID,
 				monitor);
 		CProjectNature.addNature(newProject, "org.eclipse.xtext.ui.shared.xtextNature",
 				monitor);
-		
+
 		CProjectNature.addNature(newProject, MindNature.NATURE_ID, monitor);
 
-		
-		
+
+
 		// Create the default structure
 		IFolder buildFolder = newProject.getFolder("build");
 		if (!buildFolder.exists())
@@ -269,7 +275,20 @@ public class CDTUtil {
 		IFolder srcFolder = newProject.getFolder("src");
 		if (!srcFolder.exists())
 			srcFolder.create(true, true, monitor);
-		
+
+		// Link the runtime folder to the compiler runtime from the Mindc location variable (in preference store)
+		String mindLocation = MindActivator.getPref().getMindCLocation();
+		if (mindLocation == null) {
+			MindActivator.log(new Status(Status.ERROR, MindActivator.ID, "\"Runtime\" linked folder could not be created, set mindc location in preference"));
+		} else {
+			// is a "folder" but File is the Java way :)
+			File mindRuntimeFile = new File(mindLocation + "/runtime");
+
+			IFolder runtimeFolder = newProject.getFolder("runtime");
+			if (mindRuntimeFile.exists() && !runtimeFolder.exists())
+				runtimeFolder.createLink(new Path(mindRuntimeFile.getAbsolutePath()), IResource.ALLOW_MISSING_LOCAL, monitor);
+		}
+		// end runtime folder
 
 		// Set CDT information
 		ICProjectDescriptionManager mgr = CoreModel.getDefault()
@@ -294,7 +313,7 @@ public class CDTUtil {
 
 		ManagedProject mProj = new ManagedProject(des);
 		info.setManagedProject(mProj);
-	
+
 		String id = ManagedBuildManager.calculateChildId(
 				"org.ow2.mindEd.ide.core.build", null);
 		Configuration config = new Configuration(mProj, null, id, "Default");
@@ -314,21 +333,29 @@ public class CDTUtil {
 			bld.getBuildData();
 		}
 		// the name of this configuration is Default
-		
+
 		config.setName("Default");
 		config.setArtifactName(newProject.getName());
-		
+
 		// ADD the source entry 'src'
-		
+
 		ICSourceEntry srcEntry = new CSourceEntry(newProject.getFolder("src"),
 				null, ICSettingEntry.VALUE_WORKSPACE_PATH);
 		config.setSourceEntries(new ICSourceEntry[] { srcEntry });
 		config.exportArtifactInfo();
+
+		// ADD the source entry 'runtime'
+		if (mindLocation != null) {
+			ICSourceEntry runtimeEntry = new CSourceEntry(newProject.getFolder("runtime"),
+					null, ICSettingEntry.VALUE_WORKSPACE_PATH);
+			config.setSourceEntries(new ICSourceEntry[] { runtimeEntry });
+			config.exportArtifactInfo();
+		}
 		
-				
+		
 		CConfigurationData data = config.getConfigurationData();
 		data.getBuildData();
-		
+
 		des.createConfiguration(ManagedBuildManager.CFG_DATA_PROVIDER_ID, data);
 
 		// ADD CPL Macro settings
@@ -339,10 +366,10 @@ public class CDTUtil {
 		cfgDes.setExternalSettingsProviderIds(settingProviders.toArray(new String[settingProviders.size()]));
 
 		mgr.setProjectDescription(newProject, des);
-		
+
 
 	}
-	
+
 	/**
 	 * The default template for makefile
 	 * 
