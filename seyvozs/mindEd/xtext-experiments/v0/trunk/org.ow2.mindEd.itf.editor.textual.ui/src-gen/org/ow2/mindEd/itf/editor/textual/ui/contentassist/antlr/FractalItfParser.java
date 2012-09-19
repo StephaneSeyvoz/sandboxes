@@ -43,10 +43,12 @@ public class FractalItfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStructOrUnionSpecificationAccess().getAlternatives(), "rule__StructOrUnionSpecification__Alternatives");
 					put(grammarAccess.getStructOrUnionAccess().getAlternatives(), "rule__StructOrUnion__Alternatives");
 					put(grammarAccess.getEnumSpecificationAccess().getAlternatives(), "rule__EnumSpecification__Alternatives");
+					put(grammarAccess.getDirectDeclaratorAccess().getAlternatives_0(), "rule__DirectDeclarator__Alternatives_0");
 					put(grammarAccess.getArraySpecificationAccess().getAlternatives(), "rule__ArraySpecification__Alternatives");
 					put(grammarAccess.getMethodDefinitionAccess().getAlternatives_4(), "rule__MethodDefinition__Alternatives_4");
 					put(grammarAccess.getIncludeDirectiveAccess().getAlternatives_1(), "rule__IncludeDirective__Alternatives_1");
 					put(grammarAccess.getAnnotationValueAccess().getAlternatives(), "rule__AnnotationValue__Alternatives");
+					put(grammarAccess.getAnnotationValueAccess().getValueAlternatives_0_0(), "rule__AnnotationValue__ValueAlternatives_0_0");
 					put(grammarAccess.getCastExpressionAccess().getAlternatives(), "rule__CastExpression__Alternatives");
 					put(grammarAccess.getPrimaryExpressionAccess().getAlternatives(), "rule__PrimaryExpression__Alternatives");
 					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
@@ -73,7 +75,9 @@ public class FractalItfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDeclaratorsAccess().getGroup(), "rule__Declarators__Group__0");
 					put(grammarAccess.getDeclaratorsAccess().getGroup_1(), "rule__Declarators__Group_1__0");
 					put(grammarAccess.getDeclaratorAccess().getGroup(), "rule__Declarator__Group__0");
+					put(grammarAccess.getQualifiedPointerSpecificationAccess().getGroup(), "rule__QualifiedPointerSpecification__Group__0");
 					put(grammarAccess.getDirectDeclaratorAccess().getGroup(), "rule__DirectDeclarator__Group__0");
+					put(grammarAccess.getDirectDeclaratorAccess().getGroup_0_1(), "rule__DirectDeclarator__Group_0_1__0");
 					put(grammarAccess.getArraySpecificationAccess().getGroup_0(), "rule__ArraySpecification__Group_0__0");
 					put(grammarAccess.getArraySpecificationAccess().getGroup_1(), "rule__ArraySpecification__Group_1__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
@@ -95,6 +99,8 @@ public class FractalItfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAnnotationAccess().getGroup_2_2(), "rule__Annotation__Group_2_2__0");
 					put(grammarAccess.getAnnotationValuePairAccess().getGroup(), "rule__AnnotationValuePair__Group__0");
 					put(grammarAccess.getAnnotationValuePairAccess().getGroup_0(), "rule__AnnotationValuePair__Group_0__0");
+					put(grammarAccess.getArrayAnnotationValueAccess().getGroup(), "rule__ArrayAnnotationValue__Group__0");
+					put(grammarAccess.getArrayAnnotationValueAccess().getGroup_2(), "rule__ArrayAnnotationValue__Group_2__0");
 					put(grammarAccess.getSignedINTAccess().getGroup(), "rule__SignedINT__Group__0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getGroup(), "rule__LogicalOrExpression__Group__0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getGroup_1(), "rule__LogicalOrExpression__Group_1__0");
@@ -152,7 +158,9 @@ public class FractalItfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDeclaratorsAccess().getDeclaratorListAssignment_1_1(), "rule__Declarators__DeclaratorListAssignment_1_1");
 					put(grammarAccess.getDeclaratorAccess().getPointerAssignment_0(), "rule__Declarator__PointerAssignment_0");
 					put(grammarAccess.getDeclaratorAccess().getDcAssignment_1(), "rule__Declarator__DcAssignment_1");
-					put(grammarAccess.getDirectDeclaratorAccess().getNameAssignment_0(), "rule__DirectDeclarator__NameAssignment_0");
+					put(grammarAccess.getQualifiedPointerSpecificationAccess().getTypeQualifiersAssignment_2(), "rule__QualifiedPointerSpecification__TypeQualifiersAssignment_2");
+					put(grammarAccess.getDirectDeclaratorAccess().getNameAssignment_0_0(), "rule__DirectDeclarator__NameAssignment_0_0");
+					put(grammarAccess.getDirectDeclaratorAccess().getDecAssignment_0_1_1(), "rule__DirectDeclarator__DecAssignment_0_1_1");
 					put(grammarAccess.getDirectDeclaratorAccess().getArrayAssignment_1(), "rule__DirectDeclarator__ArrayAssignment_1");
 					put(grammarAccess.getArraySpecificationAccess().getUnspecifiedSizeAssignment_0_0(), "rule__ArraySpecification__UnspecifiedSizeAssignment_0_0");
 					put(grammarAccess.getArraySpecificationAccess().getFixedSizeAssignment_1_1(), "rule__ArraySpecification__FixedSizeAssignment_1_1");
@@ -182,6 +190,10 @@ public class FractalItfParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAnnotationAccess().getAnnotationParametersListAssignment_2_2_1(), "rule__Annotation__AnnotationParametersListAssignment_2_2_1");
 					put(grammarAccess.getAnnotationValuePairAccess().getNameAssignment_0_0(), "rule__AnnotationValuePair__NameAssignment_0_0");
 					put(grammarAccess.getAnnotationValuePairAccess().getValueAssignment_1(), "rule__AnnotationValuePair__ValueAssignment_1");
+					put(grammarAccess.getAnnotationValueAccess().getValueAssignment_0(), "rule__AnnotationValue__ValueAssignment_0");
+					put(grammarAccess.getAnnotationValueAccess().getArrayValueAssignment_1(), "rule__AnnotationValue__ArrayValueAssignment_1");
+					put(grammarAccess.getArrayAnnotationValueAccess().getValuesAssignment_1(), "rule__ArrayAnnotationValue__ValuesAssignment_1");
+					put(grammarAccess.getArrayAnnotationValueAccess().getValuesAssignment_2_1(), "rule__ArrayAnnotationValue__ValuesAssignment_2_1");
 					put(grammarAccess.getLogicalOrExpressionAccess().getLeftExprAssignment_0(), "rule__LogicalOrExpression__LeftExprAssignment_0");
 					put(grammarAccess.getLogicalOrExpressionAccess().getRightExprAssignment_1_1(), "rule__LogicalOrExpression__RightExprAssignment_1_1");
 					put(grammarAccess.getLogicalAndExpressionAccess().getLeftExprAssignment_0(), "rule__LogicalAndExpression__LeftExprAssignment_0");

@@ -26,20 +26,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface Declarator extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Pointer</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Pointer</b></em>' containment reference list.
+   * The list contents are of type {@link org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedPointerSpecification}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Pointer</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Pointer</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Pointer</em>' attribute list.
+   * @return the value of the '<em>Pointer</em>' containment reference list.
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage#getDeclarator_Pointer()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getPointer();
+  EList<QualifiedPointerSpecification> getPointer();
 
   /**
    * Returns the value of the '<em><b>Dc</b></em>' containment reference.

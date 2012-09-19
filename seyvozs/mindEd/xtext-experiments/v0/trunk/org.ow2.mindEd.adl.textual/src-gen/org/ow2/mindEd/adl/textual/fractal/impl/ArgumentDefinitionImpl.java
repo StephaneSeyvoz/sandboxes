@@ -19,7 +19,7 @@ import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.ArgumentDefinitionImpl#getArgumentName <em>Argument Name</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.ArgumentDefinitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.ArgumentDefinitionImpl#getArgumentValue <em>Argument Value</em>}</li>
  * </ul>
  * </p>
@@ -29,24 +29,24 @@ import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
 public class ArgumentDefinitionImpl extends MinimalEObjectImpl.Container implements ArgumentDefinition
 {
   /**
-   * The default value of the '{@link #getArgumentName() <em>Argument Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArgumentName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ARGUMENT_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getArgumentName() <em>Argument Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArgumentName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String argumentName = ARGUMENT_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getArgumentValue() <em>Argument Value</em>}' attribute.
@@ -94,9 +94,9 @@ public class ArgumentDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getArgumentName()
+  public String getName()
   {
-    return argumentName;
+    return name;
   }
 
   /**
@@ -104,12 +104,12 @@ public class ArgumentDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setArgumentName(String newArgumentName)
+  public void setName(String newName)
   {
-    String oldArgumentName = argumentName;
-    argumentName = newArgumentName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.ARGUMENT_DEFINITION__ARGUMENT_NAME, oldArgumentName, argumentName));
+      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.ARGUMENT_DEFINITION__NAME, oldName, name));
   }
 
   /**
@@ -145,8 +145,8 @@ public class ArgumentDefinitionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case FractalPackage.ARGUMENT_DEFINITION__ARGUMENT_NAME:
-        return getArgumentName();
+      case FractalPackage.ARGUMENT_DEFINITION__NAME:
+        return getName();
       case FractalPackage.ARGUMENT_DEFINITION__ARGUMENT_VALUE:
         return getArgumentValue();
     }
@@ -163,8 +163,8 @@ public class ArgumentDefinitionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case FractalPackage.ARGUMENT_DEFINITION__ARGUMENT_NAME:
-        setArgumentName((String)newValue);
+      case FractalPackage.ARGUMENT_DEFINITION__NAME:
+        setName((String)newValue);
         return;
       case FractalPackage.ARGUMENT_DEFINITION__ARGUMENT_VALUE:
         setArgumentValue((String)newValue);
@@ -183,8 +183,8 @@ public class ArgumentDefinitionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case FractalPackage.ARGUMENT_DEFINITION__ARGUMENT_NAME:
-        setArgumentName(ARGUMENT_NAME_EDEFAULT);
+      case FractalPackage.ARGUMENT_DEFINITION__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case FractalPackage.ARGUMENT_DEFINITION__ARGUMENT_VALUE:
         setArgumentValue(ARGUMENT_VALUE_EDEFAULT);
@@ -203,8 +203,8 @@ public class ArgumentDefinitionImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case FractalPackage.ARGUMENT_DEFINITION__ARGUMENT_NAME:
-        return ARGUMENT_NAME_EDEFAULT == null ? argumentName != null : !ARGUMENT_NAME_EDEFAULT.equals(argumentName);
+      case FractalPackage.ARGUMENT_DEFINITION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case FractalPackage.ARGUMENT_DEFINITION__ARGUMENT_VALUE:
         return ARGUMENT_VALUE_EDEFAULT == null ? argumentValue != null : !ARGUMENT_VALUE_EDEFAULT.equals(argumentValue);
     }
@@ -222,8 +222,8 @@ public class ArgumentDefinitionImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (argumentName: ");
-    result.append(argumentName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(", argumentValue: ");
     result.append(argumentValue);
     result.append(')');

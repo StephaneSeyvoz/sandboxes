@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.ArraySpecification;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarator;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
 
@@ -30,6 +31,7 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectDeclaratorImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectDeclaratorImpl#getDec <em>Dec</em>}</li>
  *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectDeclaratorImpl#getArray <em>Array</em>}</li>
  * </ul>
  * </p>
@@ -57,6 +59,16 @@ public class DirectDeclaratorImpl extends MinimalEObjectImpl.Container implement
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getDec() <em>Dec</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDec()
+   * @generated
+   * @ordered
+   */
+  protected Declarator dec;
 
   /**
    * The cached value of the '{@link #getArray() <em>Array</em>}' containment reference list.
@@ -117,6 +129,54 @@ public class DirectDeclaratorImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
+  public Declarator getDec()
+  {
+    return dec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDec(Declarator newDec, NotificationChain msgs)
+  {
+    Declarator oldDec = dec;
+    dec = newDec;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FractalIDLPackage.DIRECT_DECLARATOR__DEC, oldDec, newDec);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDec(Declarator newDec)
+  {
+    if (newDec != dec)
+    {
+      NotificationChain msgs = null;
+      if (dec != null)
+        msgs = ((InternalEObject)dec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FractalIDLPackage.DIRECT_DECLARATOR__DEC, null, msgs);
+      if (newDec != null)
+        msgs = ((InternalEObject)newDec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FractalIDLPackage.DIRECT_DECLARATOR__DEC, null, msgs);
+      msgs = basicSetDec(newDec, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.DIRECT_DECLARATOR__DEC, newDec, newDec));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<ArraySpecification> getArray()
   {
     if (array == null)
@@ -136,6 +196,8 @@ public class DirectDeclaratorImpl extends MinimalEObjectImpl.Container implement
   {
     switch (featureID)
     {
+      case FractalIDLPackage.DIRECT_DECLARATOR__DEC:
+        return basicSetDec(null, msgs);
       case FractalIDLPackage.DIRECT_DECLARATOR__ARRAY:
         return ((InternalEList<?>)getArray()).basicRemove(otherEnd, msgs);
     }
@@ -154,6 +216,8 @@ public class DirectDeclaratorImpl extends MinimalEObjectImpl.Container implement
     {
       case FractalIDLPackage.DIRECT_DECLARATOR__NAME:
         return getName();
+      case FractalIDLPackage.DIRECT_DECLARATOR__DEC:
+        return getDec();
       case FractalIDLPackage.DIRECT_DECLARATOR__ARRAY:
         return getArray();
     }
@@ -173,6 +237,9 @@ public class DirectDeclaratorImpl extends MinimalEObjectImpl.Container implement
     {
       case FractalIDLPackage.DIRECT_DECLARATOR__NAME:
         setName((String)newValue);
+        return;
+      case FractalIDLPackage.DIRECT_DECLARATOR__DEC:
+        setDec((Declarator)newValue);
         return;
       case FractalIDLPackage.DIRECT_DECLARATOR__ARRAY:
         getArray().clear();
@@ -195,6 +262,9 @@ public class DirectDeclaratorImpl extends MinimalEObjectImpl.Container implement
       case FractalIDLPackage.DIRECT_DECLARATOR__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case FractalIDLPackage.DIRECT_DECLARATOR__DEC:
+        setDec((Declarator)null);
+        return;
       case FractalIDLPackage.DIRECT_DECLARATOR__ARRAY:
         getArray().clear();
         return;
@@ -214,6 +284,8 @@ public class DirectDeclaratorImpl extends MinimalEObjectImpl.Container implement
     {
       case FractalIDLPackage.DIRECT_DECLARATOR__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case FractalIDLPackage.DIRECT_DECLARATOR__DEC:
+        return dec != null;
       case FractalIDLPackage.DIRECT_DECLARATOR__ARRAY:
         return array != null && !array.isEmpty();
     }

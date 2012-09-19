@@ -15,10 +15,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.ow2.mindEd.adl.textual.fractal.CompositeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeElement;
+import org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.FormalArgumentsList;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
@@ -32,6 +34,7 @@ import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeDefinitionImpl#getTemplateSpecifiers <em>Template Specifiers</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeDefinitionImpl#getCompositeFormalArgumentsList <em>Composite Formal Arguments List</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeDefinitionImpl#getSuperTypes <em>Super Types</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeDefinitionImpl#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
@@ -59,6 +62,16 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
    * @ordered
    */
   protected FormalArgumentsList compositeFormalArgumentsList;
+
+  /**
+   * The cached value of the '{@link #getSuperTypes() <em>Super Types</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSuperTypes()
+   * @generated
+   * @ordered
+   */
+  protected EList<CompositeSuperTypeDefinition> superTypes;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -158,6 +171,20 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<CompositeSuperTypeDefinition> getSuperTypes()
+  {
+    if (superTypes == null)
+    {
+      superTypes = new EObjectResolvingEList<CompositeSuperTypeDefinition>(CompositeSuperTypeDefinition.class, this, FractalPackage.COMPOSITE_DEFINITION__SUPER_TYPES);
+    }
+    return superTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<CompositeElement> getElements()
   {
     if (elements == null)
@@ -201,6 +228,8 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
         return getTemplateSpecifiers();
       case FractalPackage.COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         return getCompositeFormalArgumentsList();
+      case FractalPackage.COMPOSITE_DEFINITION__SUPER_TYPES:
+        return getSuperTypes();
       case FractalPackage.COMPOSITE_DEFINITION__ELEMENTS:
         return getElements();
     }
@@ -224,6 +253,10 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
         return;
       case FractalPackage.COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         setCompositeFormalArgumentsList((FormalArgumentsList)newValue);
+        return;
+      case FractalPackage.COMPOSITE_DEFINITION__SUPER_TYPES:
+        getSuperTypes().clear();
+        getSuperTypes().addAll((Collection<? extends CompositeSuperTypeDefinition>)newValue);
         return;
       case FractalPackage.COMPOSITE_DEFINITION__ELEMENTS:
         getElements().clear();
@@ -249,6 +282,9 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
       case FractalPackage.COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         setCompositeFormalArgumentsList((FormalArgumentsList)null);
         return;
+      case FractalPackage.COMPOSITE_DEFINITION__SUPER_TYPES:
+        getSuperTypes().clear();
+        return;
       case FractalPackage.COMPOSITE_DEFINITION__ELEMENTS:
         getElements().clear();
         return;
@@ -270,6 +306,8 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
         return templateSpecifiers != null && !templateSpecifiers.isEmpty();
       case FractalPackage.COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         return compositeFormalArgumentsList != null;
+      case FractalPackage.COMPOSITE_DEFINITION__SUPER_TYPES:
+        return superTypes != null && !superTypes.isEmpty();
       case FractalPackage.COMPOSITE_DEFINITION__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }

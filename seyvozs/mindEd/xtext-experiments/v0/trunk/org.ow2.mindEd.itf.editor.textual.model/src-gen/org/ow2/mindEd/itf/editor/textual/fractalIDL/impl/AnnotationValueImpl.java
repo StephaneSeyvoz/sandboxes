@@ -12,61 +12,61 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValue;
-import org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValuePair;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.ArrayAnnotationValue;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Annotation Value Pair</b></em>'.
+ * An implementation of the model object '<em><b>Annotation Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.AnnotationValuePairImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.AnnotationValuePairImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.AnnotationValueImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.AnnotationValueImpl#getArrayValue <em>Array Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class AnnotationValuePairImpl extends MinimalEObjectImpl.Container implements AnnotationValuePair
+public class AnnotationValueImpl extends MinimalEObjectImpl.Container implements AnnotationValue
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValue()
    * @generated
    * @ordered
    */
-  protected AnnotationValue value;
+  protected static final String VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected String value = VALUE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getArrayValue() <em>Array Value</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArrayValue()
+   * @generated
+   * @ordered
+   */
+  protected ArrayAnnotationValue arrayValue;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AnnotationValuePairImpl()
+  protected AnnotationValueImpl()
   {
     super();
   }
@@ -79,7 +79,7 @@ public class AnnotationValuePairImpl extends MinimalEObjectImpl.Container implem
   @Override
   protected EClass eStaticClass()
   {
-    return FractalIDLPackage.Literals.ANNOTATION_VALUE_PAIR;
+    return FractalIDLPackage.Literals.ANNOTATION_VALUE;
   }
 
   /**
@@ -87,30 +87,7 @@ public class AnnotationValuePairImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ANNOTATION_VALUE_PAIR__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AnnotationValue getValue()
+  public String getValue()
   {
     return value;
   }
@@ -120,13 +97,36 @@ public class AnnotationValuePairImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(AnnotationValue newValue, NotificationChain msgs)
+  public void setValue(String newValue)
   {
-    AnnotationValue oldValue = value;
+    String oldValue = value;
     value = newValue;
     if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ANNOTATION_VALUE__VALUE, oldValue, value));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArrayAnnotationValue getArrayValue()
+  {
+    return arrayValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetArrayValue(ArrayAnnotationValue newArrayValue, NotificationChain msgs)
+  {
+    ArrayAnnotationValue oldArrayValue = arrayValue;
+    arrayValue = newArrayValue;
+    if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ANNOTATION_VALUE_PAIR__VALUE, oldValue, newValue);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ANNOTATION_VALUE__ARRAY_VALUE, oldArrayValue, newArrayValue);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -137,20 +137,20 @@ public class AnnotationValuePairImpl extends MinimalEObjectImpl.Container implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(AnnotationValue newValue)
+  public void setArrayValue(ArrayAnnotationValue newArrayValue)
   {
-    if (newValue != value)
+    if (newArrayValue != arrayValue)
     {
       NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FractalIDLPackage.ANNOTATION_VALUE_PAIR__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FractalIDLPackage.ANNOTATION_VALUE_PAIR__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
+      if (arrayValue != null)
+        msgs = ((InternalEObject)arrayValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FractalIDLPackage.ANNOTATION_VALUE__ARRAY_VALUE, null, msgs);
+      if (newArrayValue != null)
+        msgs = ((InternalEObject)newArrayValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FractalIDLPackage.ANNOTATION_VALUE__ARRAY_VALUE, null, msgs);
+      msgs = basicSetArrayValue(newArrayValue, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ANNOTATION_VALUE_PAIR__VALUE, newValue, newValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.ANNOTATION_VALUE__ARRAY_VALUE, newArrayValue, newArrayValue));
   }
 
   /**
@@ -163,8 +163,8 @@ public class AnnotationValuePairImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case FractalIDLPackage.ANNOTATION_VALUE_PAIR__VALUE:
-        return basicSetValue(null, msgs);
+      case FractalIDLPackage.ANNOTATION_VALUE__ARRAY_VALUE:
+        return basicSetArrayValue(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -179,10 +179,10 @@ public class AnnotationValuePairImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case FractalIDLPackage.ANNOTATION_VALUE_PAIR__NAME:
-        return getName();
-      case FractalIDLPackage.ANNOTATION_VALUE_PAIR__VALUE:
+      case FractalIDLPackage.ANNOTATION_VALUE__VALUE:
         return getValue();
+      case FractalIDLPackage.ANNOTATION_VALUE__ARRAY_VALUE:
+        return getArrayValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -197,11 +197,11 @@ public class AnnotationValuePairImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case FractalIDLPackage.ANNOTATION_VALUE_PAIR__NAME:
-        setName((String)newValue);
+      case FractalIDLPackage.ANNOTATION_VALUE__VALUE:
+        setValue((String)newValue);
         return;
-      case FractalIDLPackage.ANNOTATION_VALUE_PAIR__VALUE:
-        setValue((AnnotationValue)newValue);
+      case FractalIDLPackage.ANNOTATION_VALUE__ARRAY_VALUE:
+        setArrayValue((ArrayAnnotationValue)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -217,11 +217,11 @@ public class AnnotationValuePairImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case FractalIDLPackage.ANNOTATION_VALUE_PAIR__NAME:
-        setName(NAME_EDEFAULT);
+      case FractalIDLPackage.ANNOTATION_VALUE__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
-      case FractalIDLPackage.ANNOTATION_VALUE_PAIR__VALUE:
-        setValue((AnnotationValue)null);
+      case FractalIDLPackage.ANNOTATION_VALUE__ARRAY_VALUE:
+        setArrayValue((ArrayAnnotationValue)null);
         return;
     }
     super.eUnset(featureID);
@@ -237,10 +237,10 @@ public class AnnotationValuePairImpl extends MinimalEObjectImpl.Container implem
   {
     switch (featureID)
     {
-      case FractalIDLPackage.ANNOTATION_VALUE_PAIR__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case FractalIDLPackage.ANNOTATION_VALUE_PAIR__VALUE:
-        return value != null;
+      case FractalIDLPackage.ANNOTATION_VALUE__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+      case FractalIDLPackage.ANNOTATION_VALUE__ARRAY_VALUE:
+        return arrayValue != null;
     }
     return super.eIsSet(featureID);
   }
@@ -256,10 +256,10 @@ public class AnnotationValuePairImpl extends MinimalEObjectImpl.Container implem
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (value: ");
+    result.append(value);
     result.append(')');
     return result.toString();
   }
 
-} //AnnotationValuePairImpl
+} //AnnotationValueImpl

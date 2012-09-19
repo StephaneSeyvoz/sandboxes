@@ -15,12 +15,14 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationsList;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.MethodDefinition;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.ParameterList;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedPointerSpecification;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedTypeSpecification;
 
 /**
@@ -63,14 +65,14 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
   protected QualifiedTypeSpecification qualifiedTypeSpec;
 
   /**
-   * The cached value of the '{@link #getPointerSpecification() <em>Pointer Specification</em>}' attribute list.
+   * The cached value of the '{@link #getPointerSpecification() <em>Pointer Specification</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPointerSpecification()
    * @generated
    * @ordered
    */
-  protected EList<String> pointerSpecification;
+  protected EList<QualifiedPointerSpecification> pointerSpecification;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -224,11 +226,11 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getPointerSpecification()
+  public EList<QualifiedPointerSpecification> getPointerSpecification()
   {
     if (pointerSpecification == null)
     {
-      pointerSpecification = new EDataTypeEList<String>(String.class, this, FractalIDLPackage.METHOD_DEFINITION__POINTER_SPECIFICATION);
+      pointerSpecification = new EObjectContainmentEList<QualifiedPointerSpecification>(QualifiedPointerSpecification.class, this, FractalIDLPackage.METHOD_DEFINITION__POINTER_SPECIFICATION);
     }
     return pointerSpecification;
   }
@@ -318,6 +320,8 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
         return basicSetAnnotationsList(null, msgs);
       case FractalIDLPackage.METHOD_DEFINITION__QUALIFIED_TYPE_SPEC:
         return basicSetQualifiedTypeSpec(null, msgs);
+      case FractalIDLPackage.METHOD_DEFINITION__POINTER_SPECIFICATION:
+        return ((InternalEList<?>)getPointerSpecification()).basicRemove(otherEnd, msgs);
       case FractalIDLPackage.METHOD_DEFINITION__PARAMETER_LIST:
         return basicSetParameterList(null, msgs);
     }
@@ -367,7 +371,7 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
         return;
       case FractalIDLPackage.METHOD_DEFINITION__POINTER_SPECIFICATION:
         getPointerSpecification().clear();
-        getPointerSpecification().addAll((Collection<? extends String>)newValue);
+        getPointerSpecification().addAll((Collection<? extends QualifiedPointerSpecification>)newValue);
         return;
       case FractalIDLPackage.METHOD_DEFINITION__NAME:
         setName((String)newValue);
@@ -443,9 +447,7 @@ public class MethodDefinitionImpl extends MinimalEObjectImpl.Container implement
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (pointerSpecification: ");
-    result.append(pointerSpecification);
-    result.append(", name: ");
+    result.append(" (name: ");
     result.append(name);
     result.append(')');
     return result.toString();

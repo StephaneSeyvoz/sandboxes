@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition#getCompositeFormalArgumentsList <em>Composite Formal Arguments List</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition#getSuperTypes <em>Super Types</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
@@ -22,7 +23,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface PrimitiveDefinition extends ArchitectureDefinition
+public interface PrimitiveDefinition extends ArchitectureDefinition, PrimitiveSuperTypeDefinition
 {
   /**
    * Returns the value of the '<em><b>Abstract</b></em>' attribute.
@@ -75,6 +76,22 @@ public interface PrimitiveDefinition extends ArchitectureDefinition
    * @generated
    */
   void setCompositeFormalArgumentsList(FormalArgumentsList value);
+
+  /**
+   * Returns the value of the '<em><b>Super Types</b></em>' reference list.
+   * The list contents are of type {@link org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Super Types</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Super Types</em>' reference list.
+   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getPrimitiveDefinition_SuperTypes()
+   * @model
+   * @generated
+   */
+  EList<PrimitiveSuperTypeDefinition> getSuperTypes();
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

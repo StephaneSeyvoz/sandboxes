@@ -167,6 +167,15 @@ public interface FractalIDLFactory extends EFactory
   Declarator createDeclarator();
 
   /**
+   * Returns a new object of class '<em>Qualified Pointer Specification</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Qualified Pointer Specification</em>'.
+   * @generated
+   */
+  QualifiedPointerSpecification createQualifiedPointerSpecification();
+
+  /**
    * Returns a new object of class '<em>Direct Declarator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -264,6 +273,24 @@ public interface FractalIDLFactory extends EFactory
    * @generated
    */
   AnnotationValuePair createAnnotationValuePair();
+
+  /**
+   * Returns a new object of class '<em>Annotation Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Annotation Value</em>'.
+   * @generated
+   */
+  AnnotationValue createAnnotationValue();
+
+  /**
+   * Returns a new object of class '<em>Array Annotation Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Array Annotation Value</em>'.
+   * @generated
+   */
+  ArrayAnnotationValue createArrayAnnotationValue();
 
   /**
    * Returns a new object of class '<em>Constant Expression</em>'.

@@ -169,6 +169,16 @@ public class FractalIdtPackageImpl extends EPackageImpl implements FractalIdtPac
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getIdtFile_EndDef()
+  {
+    return (EAttribute)idtFileEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getConstantDefinitionBegin()
   {
     return constantDefinitionBeginEClass;
@@ -179,7 +189,7 @@ public class FractalIdtPackageImpl extends EPackageImpl implements FractalIdtPac
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getConstantDefinitionBegin_Id()
+  public EAttribute getConstantDefinitionBegin_Name()
   {
     return (EAttribute)constantDefinitionBeginEClass.getEStructuralFeatures().get(0);
   }
@@ -220,9 +230,10 @@ public class FractalIdtPackageImpl extends EPackageImpl implements FractalIdtPac
     createEReference(idtFileEClass, IDT_FILE__INCLUDES);
     createEReference(idtFileEClass, IDT_FILE__CONSTANT);
     createEReference(idtFileEClass, IDT_FILE__TYPE);
+    createEAttribute(idtFileEClass, IDT_FILE__END_DEF);
 
     constantDefinitionBeginEClass = createEClass(CONSTANT_DEFINITION_BEGIN);
-    createEAttribute(constantDefinitionBeginEClass, CONSTANT_DEFINITION_BEGIN__ID);
+    createEAttribute(constantDefinitionBeginEClass, CONSTANT_DEFINITION_BEGIN__NAME);
   }
 
   /**
@@ -265,9 +276,10 @@ public class FractalIdtPackageImpl extends EPackageImpl implements FractalIdtPac
     initEReference(getIdtFile_Includes(), theFractalIDLPackage.getIncludeDirective(), null, "includes", null, 0, -1, IdtFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIdtFile_Constant(), theFractalIDLPackage.getConstantDefinition(), null, "constant", null, 0, -1, IdtFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIdtFile_Type(), theFractalIDLPackage.getTypeDefinition(), null, "type", null, 0, -1, IdtFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIdtFile_EndDef(), ecorePackage.getEString(), "endDef", null, 0, 1, IdtFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constantDefinitionBeginEClass, ConstantDefinitionBegin.class, "ConstantDefinitionBegin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getConstantDefinitionBegin_Id(), ecorePackage.getEString(), "id", null, 0, 1, ConstantDefinitionBegin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConstantDefinitionBegin_Name(), ecorePackage.getEString(), "name", null, 0, 1, ConstantDefinitionBegin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

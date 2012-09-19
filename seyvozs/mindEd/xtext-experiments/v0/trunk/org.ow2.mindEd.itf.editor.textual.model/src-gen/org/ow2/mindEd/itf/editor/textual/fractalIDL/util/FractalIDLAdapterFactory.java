@@ -155,6 +155,11 @@ public class FractalIDLAdapterFactory extends AdapterFactoryImpl
         return createDeclaratorAdapter();
       }
       @Override
+      public Adapter caseQualifiedPointerSpecification(QualifiedPointerSpecification object)
+      {
+        return createQualifiedPointerSpecificationAdapter();
+      }
+      @Override
       public Adapter caseDirectDeclarator(DirectDeclarator object)
       {
         return createDirectDeclaratorAdapter();
@@ -208,6 +213,16 @@ public class FractalIDLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAnnotationValuePair(AnnotationValuePair object)
       {
         return createAnnotationValuePairAdapter();
+      }
+      @Override
+      public Adapter caseAnnotationValue(AnnotationValue object)
+      {
+        return createAnnotationValueAdapter();
+      }
+      @Override
+      public Adapter caseArrayAnnotationValue(ArrayAnnotationValue object)
+      {
+        return createArrayAnnotationValueAdapter();
       }
       @Override
       public Adapter caseConstantExpression(ConstantExpression object)
@@ -532,6 +547,21 @@ public class FractalIDLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedPointerSpecification <em>Qualified Pointer Specification</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedPointerSpecification
+   * @generated
+   */
+  public Adapter createQualifiedPointerSpecificationAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator <em>Direct Declarator</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -692,6 +722,36 @@ public class FractalIDLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAnnotationValuePairAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValue <em>Annotation Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValue
+   * @generated
+   */
+  public Adapter createAnnotationValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ArrayAnnotationValue <em>Array Annotation Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.ArrayAnnotationValue
+   * @generated
+   */
+  public Adapter createArrayAnnotationValueAdapter()
   {
     return null;
   }

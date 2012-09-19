@@ -70,6 +70,8 @@ public class FractalFactoryImpl extends EFactoryImpl implements FractalFactory
       case FractalPackage.COMPOSITE_DEFINITION: return createCompositeDefinition();
       case FractalPackage.PRIMITIVE_DEFINITION: return createPrimitiveDefinition();
       case FractalPackage.TYPE_DEFINITION: return createTypeDefinition();
+      case FractalPackage.COMPOSITE_SUPER_TYPE_DEFINITION: return createCompositeSuperTypeDefinition();
+      case FractalPackage.PRIMITIVE_SUPER_TYPE_DEFINITION: return createPrimitiveSuperTypeDefinition();
       case FractalPackage.HOSTED_INTERFACE_DEFINITION: return createHostedInterfaceDefinition();
       case FractalPackage.PROVIDED_INTERFACE_DEFINITION: return createProvidedInterfaceDefinition();
       case FractalPackage.REQUIRED_INTERFACE_DEFINITION: return createRequiredInterfaceDefinition();
@@ -167,6 +169,28 @@ public class FractalFactoryImpl extends EFactoryImpl implements FractalFactory
   {
     TypeDefinitionImpl typeDefinition = new TypeDefinitionImpl();
     return typeDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CompositeSuperTypeDefinition createCompositeSuperTypeDefinition()
+  {
+    CompositeSuperTypeDefinitionImpl compositeSuperTypeDefinition = new CompositeSuperTypeDefinitionImpl();
+    return compositeSuperTypeDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PrimitiveSuperTypeDefinition createPrimitiveSuperTypeDefinition()
+  {
+    PrimitiveSuperTypeDefinitionImpl primitiveSuperTypeDefinition = new PrimitiveSuperTypeDefinitionImpl();
+    return primitiveSuperTypeDefinition;
   }
 
   /**

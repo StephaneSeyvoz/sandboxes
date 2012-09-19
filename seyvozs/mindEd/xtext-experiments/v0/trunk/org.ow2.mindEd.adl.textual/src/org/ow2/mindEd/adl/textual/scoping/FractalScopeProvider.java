@@ -5,27 +5,22 @@ package org.ow2.mindEd.adl.textual.scoping;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
-import org.eclipse.xtext.scoping.impl.MultimapBasedScope;
 import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import org.ow2.mindEd.adl.textual.fractal.BindingDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeElement;
+import org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.HostedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveElement;
+import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ProvidedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.RequiredInterfaceDefinition;
-import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
-import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
 import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TypeReference;
@@ -220,7 +215,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all required interfaces coming from Super Types
-				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes((TypeDefinition) sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			} else {
@@ -231,7 +226,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all provided interfaces coming from Super Types
-				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes((TypeDefinition) sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			}
@@ -248,7 +243,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all required interfaces coming from Super Types
-				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes((CompositeDefinition) sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			} else {
@@ -259,7 +254,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all provided interfaces coming from Super Types
-				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes((CompositeDefinition) sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			}
@@ -276,7 +271,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all required interfaces coming from Super Types
-				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes((PrimitiveDefinition) sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			} else {
@@ -287,7 +282,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all provided interfaces coming from Super Types
-				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(sourceComponentArchDef));
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes((PrimitiveDefinition) sourceComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			}
@@ -332,7 +327,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all provided interfaces coming from Super Types
-				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(targetComponentArchDef));
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes((TypeDefinition) targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			} else {
@@ -343,7 +338,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all required interfaces coming from Super Types
-				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(targetComponentArchDef));
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes((TypeDefinition) targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			}
@@ -360,7 +355,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all provided interfaces coming from Super Types
-				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(targetComponentArchDef));
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes((CompositeDefinition) targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			} else {
@@ -371,7 +366,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all required interfaces coming from Super Types
-				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(targetComponentArchDef));
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes((CompositeDefinition) targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			}
@@ -388,7 +383,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all provided interfaces coming from Super Types
-				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(targetComponentArchDef));
+				pvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes((PrimitiveDefinition) targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(pvdItfList);
 			} else {
@@ -399,7 +394,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 					}
 				}
 				// We also want all required interfaces coming from Super Types
-				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes(targetComponentArchDef));
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes((PrimitiveDefinition) targetComponentArchDef));
 				// Obtain and return a scope according to the computed list
 				return Scopes.scopeFor(reqItfList);
 			}
@@ -409,15 +404,57 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 		}
 	}
 
-	private EList<RequiredInterfaceDefinition> listAllRequiredInterfacesFromArchDefSuperTypes(ArchitectureDefinition archDef){
-		EList<ArchitectureDefinition> superTypes = archDef.getSuperTypes();
+	private EList<RequiredInterfaceDefinition> listAllRequiredInterfacesFromArchDefSuperTypes(TypeDefinition archDef){
+		EList<TypeDefinition> superTypes = archDef.getSuperTypes();
 
 		EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
 
-		for (ArchitectureDefinition currSuperArchDef : superTypes) {
+		for (TypeDefinition currSuperArchDef : superTypes) {
 			reqItfList.addAll(getAllArchDefRequiredInterfaces(currSuperArchDef));
 			// we need a recursion in all supertypes
 			listAllRequiredInterfacesFromArchDefSuperTypes(currSuperArchDef);
+		}
+
+		return reqItfList;
+	}
+	
+	private EList<RequiredInterfaceDefinition> listAllRequiredInterfacesFromArchDefSuperTypes(CompositeDefinition archDef){
+		EList<CompositeSuperTypeDefinition> superTypes = archDef.getSuperTypes();
+
+		EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
+
+		for (CompositeSuperTypeDefinition currSuperArchDef : superTypes) {
+			if (currSuperArchDef instanceof PrimitiveDefinition)
+				reqItfList.addAll(getAllArchDefRequiredInterfaces((CompositeDefinition) currSuperArchDef));
+			else if (currSuperArchDef instanceof TypeDefinition)
+				reqItfList.addAll(getAllArchDefRequiredInterfaces((TypeDefinition) currSuperArchDef));
+			
+			// we need a recursion in all supertypes
+			if (currSuperArchDef instanceof CompositeDefinition)
+				listAllRequiredInterfacesFromArchDefSuperTypes((CompositeDefinition) currSuperArchDef);
+			else if (currSuperArchDef instanceof TypeDefinition)
+				listAllRequiredInterfacesFromArchDefSuperTypes((TypeDefinition) currSuperArchDef);
+		}
+
+		return reqItfList;
+	}
+	
+	private EList<RequiredInterfaceDefinition> listAllRequiredInterfacesFromArchDefSuperTypes(PrimitiveDefinition archDef){
+		EList<PrimitiveSuperTypeDefinition> superTypes = archDef.getSuperTypes();
+
+		EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
+
+		for (PrimitiveSuperTypeDefinition currSuperArchDef : superTypes) {
+			if (currSuperArchDef instanceof PrimitiveDefinition)
+				reqItfList.addAll(getAllArchDefRequiredInterfaces((PrimitiveDefinition) currSuperArchDef));
+			else if (currSuperArchDef instanceof TypeDefinition)
+				reqItfList.addAll(getAllArchDefRequiredInterfaces((TypeDefinition) currSuperArchDef));
+			
+			// we need a recursion in all supertypes
+			if (currSuperArchDef instanceof PrimitiveDefinition)
+				listAllRequiredInterfacesFromArchDefSuperTypes((PrimitiveDefinition) currSuperArchDef);
+			else if (currSuperArchDef instanceof TypeDefinition)
+				listAllRequiredInterfacesFromArchDefSuperTypes((TypeDefinition) currSuperArchDef);
 		}
 
 		return reqItfList;
@@ -460,20 +497,62 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 		return reqItfList;
 	}
 
-	private EList<ProvidedInterfaceDefinition> listAllProvidedInterfacesFromArchDefSuperTypes(ArchitectureDefinition archDef){
-		EList<ArchitectureDefinition> superTypes = archDef.getSuperTypes();
+	private EList<ProvidedInterfaceDefinition> listAllProvidedInterfacesFromArchDefSuperTypes(TypeDefinition archDef){
+		EList<TypeDefinition> superTypes = archDef.getSuperTypes();
 
-		EList<ProvidedInterfaceDefinition> reqItfList = new BasicEList<ProvidedInterfaceDefinition>();
+		EList<ProvidedInterfaceDefinition> prvdItfList = new BasicEList<ProvidedInterfaceDefinition>();
 
-		for (ArchitectureDefinition currSuperArchDef : superTypes) {
-			reqItfList.addAll(getAllArchDefProvidedInterfaces(currSuperArchDef));
+		for (TypeDefinition currSuperArchDef : superTypes) {
+			prvdItfList.addAll(getAllArchDefProvidedInterfaces(currSuperArchDef));
 			// we need a recursion in all supertypes
 			listAllProvidedInterfacesFromArchDefSuperTypes(currSuperArchDef);
 		}
 
-		return reqItfList;
+		return prvdItfList;
 	}
 
+	private EList<ProvidedInterfaceDefinition> listAllProvidedInterfacesFromArchDefSuperTypes(CompositeDefinition archDef){
+		EList<CompositeSuperTypeDefinition> superTypes = archDef.getSuperTypes();
+
+		EList<ProvidedInterfaceDefinition> prvdItfList = new BasicEList<ProvidedInterfaceDefinition>();
+
+		for (CompositeSuperTypeDefinition currSuperArchDef : superTypes) {
+			if (currSuperArchDef instanceof PrimitiveDefinition)
+				prvdItfList.addAll(getAllArchDefProvidedInterfaces((CompositeDefinition) currSuperArchDef));
+			else if (currSuperArchDef instanceof TypeDefinition)
+				prvdItfList.addAll(getAllArchDefProvidedInterfaces((TypeDefinition) currSuperArchDef));
+			
+			// we need a recursion in all supertypes
+			if (currSuperArchDef instanceof CompositeDefinition)
+				listAllProvidedInterfacesFromArchDefSuperTypes((CompositeDefinition) currSuperArchDef);
+			else if (currSuperArchDef instanceof TypeDefinition)
+				listAllProvidedInterfacesFromArchDefSuperTypes((TypeDefinition) currSuperArchDef);
+		}
+
+		return prvdItfList;
+	}
+	
+	private EList<ProvidedInterfaceDefinition> listAllProvidedInterfacesFromArchDefSuperTypes(PrimitiveDefinition archDef){
+		EList<PrimitiveSuperTypeDefinition> superTypes = archDef.getSuperTypes();
+
+		EList<ProvidedInterfaceDefinition> prvdItfList = new BasicEList<ProvidedInterfaceDefinition>();
+
+		for (PrimitiveSuperTypeDefinition currSuperArchDef : superTypes) {
+			if (currSuperArchDef instanceof PrimitiveDefinition)
+				prvdItfList.addAll(getAllArchDefProvidedInterfaces((PrimitiveDefinition) currSuperArchDef));
+			else if (currSuperArchDef instanceof TypeDefinition)
+				prvdItfList.addAll(getAllArchDefProvidedInterfaces((TypeDefinition) currSuperArchDef));
+			
+			// we need a recursion in all supertypes
+			if (currSuperArchDef instanceof PrimitiveDefinition)
+				listAllProvidedInterfacesFromArchDefSuperTypes((PrimitiveDefinition) currSuperArchDef);
+			else if (currSuperArchDef instanceof TypeDefinition)
+				listAllProvidedInterfacesFromArchDefSuperTypes((TypeDefinition) currSuperArchDef);
+		}
+
+		return prvdItfList;
+	}
+	
 	private EList<ProvidedInterfaceDefinition> getAllArchDefProvidedInterfaces(ArchitectureDefinition archDef) {
 		EList<ProvidedInterfaceDefinition> reqItfList = new BasicEList<ProvidedInterfaceDefinition>();
 

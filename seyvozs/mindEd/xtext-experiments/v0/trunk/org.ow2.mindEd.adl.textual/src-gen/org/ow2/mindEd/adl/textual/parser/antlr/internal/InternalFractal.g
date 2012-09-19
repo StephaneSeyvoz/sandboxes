@@ -423,7 +423,7 @@ ruleCompositeDefinition returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getCompositeDefinitionAccess().getSuperTypesArchitectureDefinitionCrossReference_4_1_0()); 
+	        newCompositeNode(grammarAccess.getCompositeDefinitionAccess().getSuperTypesCompositeSuperTypeDefinitionCrossReference_4_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
@@ -445,7 +445,7 @@ ruleCompositeDefinition returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getCompositeDefinitionAccess().getSuperTypesArchitectureDefinitionCrossReference_4_2_1_0()); 
+	        newCompositeNode(grammarAccess.getCompositeDefinitionAccess().getSuperTypesCompositeSuperTypeDefinitionCrossReference_4_2_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
@@ -617,7 +617,7 @@ rulePrimitiveDefinition returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getPrimitiveDefinitionAccess().getSuperTypesArchitectureDefinitionCrossReference_4_1_0()); 
+	        newCompositeNode(grammarAccess.getPrimitiveDefinitionAccess().getSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
@@ -639,7 +639,7 @@ rulePrimitiveDefinition returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getPrimitiveDefinitionAccess().getSuperTypesArchitectureDefinitionCrossReference_4_2_1_0()); 
+	        newCompositeNode(grammarAccess.getPrimitiveDefinitionAccess().getSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_2_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
@@ -793,7 +793,7 @@ ruleTypeDefinition returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getTypeDefinitionAccess().getSuperTypesArchitectureDefinitionCrossReference_2_1_0()); 
+	        newCompositeNode(grammarAccess.getTypeDefinitionAccess().getSuperTypesTypeDefinitionCrossReference_2_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
@@ -815,7 +815,7 @@ ruleTypeDefinition returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getTypeDefinitionAccess().getSuperTypesArchitectureDefinitionCrossReference_2_2_1_0()); 
+	        newCompositeNode(grammarAccess.getTypeDefinitionAccess().getSuperTypesTypeDefinitionCrossReference_2_2_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
@@ -868,6 +868,10 @@ ruleTypeDefinition returns [EObject current=null]
     }
 )
 ;
+
+
+
+
 
 
 
@@ -2481,9 +2485,9 @@ ruleArgumentDefinition returns [EObject current=null]
     @after { leaveRule(); }:
 (((
 (
-		lv_argumentName_0_0=RULE_ID
+		lv_name_0_0=RULE_ID
 		{
-			newLeafNode(lv_argumentName_0_0, grammarAccess.getArgumentDefinitionAccess().getArgumentNameIDTerminalRuleCall_0_0_0()); 
+			newLeafNode(lv_name_0_0, grammarAccess.getArgumentDefinitionAccess().getNameIDTerminalRuleCall_0_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -2491,8 +2495,8 @@ ruleArgumentDefinition returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"argumentName",
-        		lv_argumentName_0_0, 
+       			"name",
+        		lv_name_0_0, 
         		"ID");
 	    }
 
@@ -3268,9 +3272,9 @@ ruleAnnotationElement returns [EObject current=null]
     @after { leaveRule(); }:
 (((
 (
-		lv_elementName_0_0=RULE_ID
+		lv_name_0_0=RULE_ID
 		{
-			newLeafNode(lv_elementName_0_0, grammarAccess.getAnnotationElementAccess().getElementNameIDTerminalRuleCall_0_0_0()); 
+			newLeafNode(lv_name_0_0, grammarAccess.getAnnotationElementAccess().getNameIDTerminalRuleCall_0_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -3278,8 +3282,8 @@ ruleAnnotationElement returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"elementName",
-        		lv_elementName_0_0, 
+       			"name",
+        		lv_name_0_0, 
         		"ID");
 	    }
 

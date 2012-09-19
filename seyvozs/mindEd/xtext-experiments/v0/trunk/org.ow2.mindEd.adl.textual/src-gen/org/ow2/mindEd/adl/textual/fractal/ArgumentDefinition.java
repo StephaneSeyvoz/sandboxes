@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition#getArgumentName <em>Argument Name</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition#getName <em>Name</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition#getArgumentValue <em>Argument Value</em>}</li>
  * </ul>
  * </p>
@@ -24,30 +24,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface ArgumentDefinition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Argument Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Argument Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Argument Name</em>' attribute.
-   * @see #setArgumentName(String)
-   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getArgumentDefinition_ArgumentName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getArgumentDefinition_Name()
    * @model
    * @generated
    */
-  String getArgumentName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition#getArgumentName <em>Argument Name</em>}' attribute.
+   * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Argument Name</em>' attribute.
-   * @see #getArgumentName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setArgumentName(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Argument Value</b></em>' attribute.

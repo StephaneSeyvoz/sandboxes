@@ -16,8 +16,10 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.AdditiveExpression;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.AndExpression;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.Annotation;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValue;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationValuePair;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.AnnotationsList;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.ArrayAnnotationValue;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.ArraySpecification;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.CastExpression;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.ConstantDefinition;
@@ -40,6 +42,7 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.OrExpression;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.Parameter;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.ParameterList;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.PrimaryExpression;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedPointerSpecification;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedTypeSpecification;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.ShiftExpression;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.StructMember;
@@ -77,6 +80,12 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 					return; 
 				}
 				else break;
+			case FractalIDLPackage.ANNOTATION_VALUE:
+				if(context == grammarAccess.getAnnotationValueRule()) {
+					sequence_AnnotationValue(context, (AnnotationValue) semanticObject); 
+					return; 
+				}
+				else break;
 			case FractalIDLPackage.ANNOTATION_VALUE_PAIR:
 				if(context == grammarAccess.getAnnotationValuePairRule()) {
 					sequence_AnnotationValuePair(context, (AnnotationValuePair) semanticObject); 
@@ -86,6 +95,12 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 			case FractalIDLPackage.ANNOTATIONS_LIST:
 				if(context == grammarAccess.getAnnotationsListRule()) {
 					sequence_AnnotationsList(context, (AnnotationsList) semanticObject); 
+					return; 
+				}
+				else break;
+			case FractalIDLPackage.ARRAY_ANNOTATION_VALUE:
+				if(context == grammarAccess.getArrayAnnotationValueRule()) {
+					sequence_ArrayAnnotationValue(context, (ArrayAnnotationValue) semanticObject); 
 					return; 
 				}
 				else break;
@@ -223,6 +238,12 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 					return; 
 				}
 				else break;
+			case FractalIDLPackage.QUALIFIED_POINTER_SPECIFICATION:
+				if(context == grammarAccess.getQualifiedPointerSpecificationRule()) {
+					sequence_QualifiedPointerSpecification(context, (QualifiedPointerSpecification) semanticObject); 
+					return; 
+				}
+				else break;
 			case FractalIDLPackage.QUALIFIED_TYPE_SPECIFICATION:
 				if(context == grammarAccess.getQualifiedTypeSpecificationRule()) {
 					sequence_QualifiedTypeSpecification(context, (QualifiedTypeSpecification) semanticObject); 
@@ -317,6 +338,22 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
+	 *     (
+	 *         value=signedINT | 
+	 *         value='null' | 
+	 *         value=BOOLEAN | 
+	 *         value=QualifiedName | 
+	 *         value=STRING | 
+	 *         arrayValue=ArrayAnnotationValue
+	 *     )
+	 */
+	protected void sequence_AnnotationValue(EObject context, AnnotationValue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=QualifiedName (annotationParametersList+=AnnotationValuePair annotationParametersList+=AnnotationValuePair*)?)
 	 */
 	protected void sequence_Annotation(EObject context, Annotation semanticObject) {
@@ -329,6 +366,15 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     (annotations+=Annotation annotations+=Annotation*)
 	 */
 	protected void sequence_AnnotationsList(EObject context, AnnotationsList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (values+=AnnotationValue values+=AnnotationValue*)
+	 */
+	protected void sequence_ArrayAnnotationValue(EObject context, ArrayAnnotationValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -362,7 +408,7 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (pointer+=PointerSpecification* dc=DirectDeclarator)
+	 *     (pointer+=QualifiedPointerSpecification* dc=DirectDeclarator)
 	 */
 	protected void sequence_Declarator(EObject context, Declarator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -380,7 +426,7 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (name=ID array+=ArraySpecification*)
+	 *     ((name=ID | dec=Declarator) array+=ArraySpecification*)
 	 */
 	protected void sequence_DirectDeclarator(EObject context, DirectDeclarator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -473,7 +519,7 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     (
 	 *         annotationsList=AnnotationsList? 
 	 *         qualifiedTypeSpec=QualifiedTypeSpecification 
-	 *         pointerSpecification+=PointerSpecification* 
+	 *         pointerSpecification+=QualifiedPointerSpecification* 
 	 *         name=ID 
 	 *         ParameterList=ParameterList?
 	 *     )
@@ -532,6 +578,15 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getPrimaryExpressionAccess().getLiteralLiteralParserRuleCall_0_0(), semanticObject.getLiteral());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (typeQualifiers+=TypeQualifier*)
+	 */
+	protected void sequence_QualifiedPointerSpecification(EObject context, QualifiedPointerSpecification semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

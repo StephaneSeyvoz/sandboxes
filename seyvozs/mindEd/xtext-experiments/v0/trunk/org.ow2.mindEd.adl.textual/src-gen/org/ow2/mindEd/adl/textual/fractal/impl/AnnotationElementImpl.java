@@ -22,7 +22,7 @@ import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.AnnotationElementImpl#getElementName <em>Element Name</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.AnnotationElementImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.AnnotationElementImpl#getElementValue <em>Element Value</em>}</li>
  * </ul>
  * </p>
@@ -32,24 +32,24 @@ import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
 public class AnnotationElementImpl extends MinimalEObjectImpl.Container implements AnnotationElement
 {
   /**
-   * The default value of the '{@link #getElementName() <em>Element Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElementName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ELEMENT_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getElementName() <em>Element Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElementName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String elementName = ELEMENT_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getElementValue() <em>Element Value</em>}' containment reference.
@@ -87,9 +87,9 @@ public class AnnotationElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getElementName()
+  public String getName()
   {
-    return elementName;
+    return name;
   }
 
   /**
@@ -97,12 +97,12 @@ public class AnnotationElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setElementName(String newElementName)
+  public void setName(String newName)
   {
-    String oldElementName = elementName;
-    elementName = newElementName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.ANNOTATION_ELEMENT__ELEMENT_NAME, oldElementName, elementName));
+      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.ANNOTATION_ELEMENT__NAME, oldName, name));
   }
 
   /**
@@ -179,8 +179,8 @@ public class AnnotationElementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FractalPackage.ANNOTATION_ELEMENT__ELEMENT_NAME:
-        return getElementName();
+      case FractalPackage.ANNOTATION_ELEMENT__NAME:
+        return getName();
       case FractalPackage.ANNOTATION_ELEMENT__ELEMENT_VALUE:
         return getElementValue();
     }
@@ -197,8 +197,8 @@ public class AnnotationElementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FractalPackage.ANNOTATION_ELEMENT__ELEMENT_NAME:
-        setElementName((String)newValue);
+      case FractalPackage.ANNOTATION_ELEMENT__NAME:
+        setName((String)newValue);
         return;
       case FractalPackage.ANNOTATION_ELEMENT__ELEMENT_VALUE:
         setElementValue((ElementValue)newValue);
@@ -217,8 +217,8 @@ public class AnnotationElementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FractalPackage.ANNOTATION_ELEMENT__ELEMENT_NAME:
-        setElementName(ELEMENT_NAME_EDEFAULT);
+      case FractalPackage.ANNOTATION_ELEMENT__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case FractalPackage.ANNOTATION_ELEMENT__ELEMENT_VALUE:
         setElementValue((ElementValue)null);
@@ -237,8 +237,8 @@ public class AnnotationElementImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case FractalPackage.ANNOTATION_ELEMENT__ELEMENT_NAME:
-        return ELEMENT_NAME_EDEFAULT == null ? elementName != null : !ELEMENT_NAME_EDEFAULT.equals(elementName);
+      case FractalPackage.ANNOTATION_ELEMENT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case FractalPackage.ANNOTATION_ELEMENT__ELEMENT_VALUE:
         return elementValue != null;
     }
@@ -256,8 +256,8 @@ public class AnnotationElementImpl extends MinimalEObjectImpl.Container implemen
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (elementName: ");
-    result.append(elementName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

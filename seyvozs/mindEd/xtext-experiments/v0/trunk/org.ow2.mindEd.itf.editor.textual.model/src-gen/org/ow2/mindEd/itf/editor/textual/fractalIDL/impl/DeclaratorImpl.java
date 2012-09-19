@@ -15,11 +15,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarator;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedPointerSpecification;
 
 /**
  * <!-- begin-user-doc -->
@@ -38,14 +40,14 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
 public class DeclaratorImpl extends MinimalEObjectImpl.Container implements Declarator
 {
   /**
-   * The cached value of the '{@link #getPointer() <em>Pointer</em>}' attribute list.
+   * The cached value of the '{@link #getPointer() <em>Pointer</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPointer()
    * @generated
    * @ordered
    */
-  protected EList<String> pointer;
+  protected EList<QualifiedPointerSpecification> pointer;
 
   /**
    * The cached value of the '{@link #getDc() <em>Dc</em>}' containment reference.
@@ -83,11 +85,11 @@ public class DeclaratorImpl extends MinimalEObjectImpl.Container implements Decl
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getPointer()
+  public EList<QualifiedPointerSpecification> getPointer()
   {
     if (pointer == null)
     {
-      pointer = new EDataTypeEList<String>(String.class, this, FractalIDLPackage.DECLARATOR__POINTER);
+      pointer = new EObjectContainmentEList<QualifiedPointerSpecification>(QualifiedPointerSpecification.class, this, FractalIDLPackage.DECLARATOR__POINTER);
     }
     return pointer;
   }
@@ -150,6 +152,8 @@ public class DeclaratorImpl extends MinimalEObjectImpl.Container implements Decl
   {
     switch (featureID)
     {
+      case FractalIDLPackage.DECLARATOR__POINTER:
+        return ((InternalEList<?>)getPointer()).basicRemove(otherEnd, msgs);
       case FractalIDLPackage.DECLARATOR__DC:
         return basicSetDc(null, msgs);
     }
@@ -187,7 +191,7 @@ public class DeclaratorImpl extends MinimalEObjectImpl.Container implements Decl
     {
       case FractalIDLPackage.DECLARATOR__POINTER:
         getPointer().clear();
-        getPointer().addAll((Collection<? extends String>)newValue);
+        getPointer().addAll((Collection<? extends QualifiedPointerSpecification>)newValue);
         return;
       case FractalIDLPackage.DECLARATOR__DC:
         setDc((DirectDeclarator)newValue);
@@ -232,23 +236,6 @@ public class DeclaratorImpl extends MinimalEObjectImpl.Container implements Decl
         return dc != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (pointer: ");
-    result.append(pointer);
-    result.append(')');
-    return result.toString();
   }
 
 } //DeclaratorImpl

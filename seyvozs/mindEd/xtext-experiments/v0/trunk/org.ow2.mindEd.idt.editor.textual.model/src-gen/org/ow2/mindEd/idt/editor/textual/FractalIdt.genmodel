@@ -15,9 +15,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FractalIdt.ecore#//IdtFile/includes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FractalIdt.ecore#//IdtFile/constant"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FractalIdt.ecore#//IdtFile/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FractalIdt.ecore#//IdtFile/endDef"/>
     </genClasses>
     <genClasses ecoreClass="FractalIdt.ecore#//ConstantDefinitionBegin">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FractalIdt.ecore#//ConstantDefinitionBegin/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FractalIdt.ecore#//ConstantDefinitionBegin/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

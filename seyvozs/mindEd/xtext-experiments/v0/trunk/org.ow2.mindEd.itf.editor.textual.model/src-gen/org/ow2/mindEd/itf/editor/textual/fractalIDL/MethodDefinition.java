@@ -81,20 +81,20 @@ public interface MethodDefinition extends EObject
   void setQualifiedTypeSpec(QualifiedTypeSpecification value);
 
   /**
-   * Returns the value of the '<em><b>Pointer Specification</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Pointer Specification</b></em>' containment reference list.
+   * The list contents are of type {@link org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedPointerSpecification}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Pointer Specification</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Pointer Specification</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Pointer Specification</em>' attribute list.
+   * @return the value of the '<em>Pointer Specification</em>' containment reference list.
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage#getMethodDefinition_PointerSpecification()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getPointerSpecification();
+  EList<QualifiedPointerSpecification> getPointerSpecification();
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

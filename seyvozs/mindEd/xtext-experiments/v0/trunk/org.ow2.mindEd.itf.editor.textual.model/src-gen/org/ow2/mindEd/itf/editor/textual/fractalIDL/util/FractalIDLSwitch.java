@@ -201,6 +201,13 @@ public class FractalIDLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FractalIDLPackage.QUALIFIED_POINTER_SPECIFICATION:
+      {
+        QualifiedPointerSpecification qualifiedPointerSpecification = (QualifiedPointerSpecification)theEObject;
+        T result = caseQualifiedPointerSpecification(qualifiedPointerSpecification);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FractalIDLPackage.DIRECT_DECLARATOR:
       {
         DirectDeclarator directDeclarator = (DirectDeclarator)theEObject;
@@ -275,6 +282,20 @@ public class FractalIDLSwitch<T> extends Switch<T>
       {
         AnnotationValuePair annotationValuePair = (AnnotationValuePair)theEObject;
         T result = caseAnnotationValuePair(annotationValuePair);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FractalIDLPackage.ANNOTATION_VALUE:
+      {
+        AnnotationValue annotationValue = (AnnotationValue)theEObject;
+        T result = caseAnnotationValue(annotationValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FractalIDLPackage.ARRAY_ANNOTATION_VALUE:
+      {
+        ArrayAnnotationValue arrayAnnotationValue = (ArrayAnnotationValue)theEObject;
+        T result = caseArrayAnnotationValue(arrayAnnotationValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -626,6 +647,22 @@ public class FractalIDLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Qualified Pointer Specification</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Qualified Pointer Specification</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseQualifiedPointerSpecification(QualifiedPointerSpecification object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Direct Declarator</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -797,6 +834,38 @@ public class FractalIDLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAnnotationValuePair(AnnotationValuePair object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Annotation Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Annotation Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAnnotationValue(AnnotationValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Array Annotation Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Array Annotation Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArrayAnnotationValue(ArrayAnnotationValue object)
   {
     return null;
   }

@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.TypeDefinition#getSuperTypes <em>Super Types</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.TypeDefinition#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
@@ -20,8 +21,24 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface TypeDefinition extends ArchitectureDefinition
+public interface TypeDefinition extends ArchitectureDefinition, CompositeSuperTypeDefinition, PrimitiveSuperTypeDefinition
 {
+  /**
+   * Returns the value of the '<em><b>Super Types</b></em>' reference list.
+   * The list contents are of type {@link org.ow2.mindEd.adl.textual.fractal.TypeDefinition}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Super Types</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Super Types</em>' reference list.
+   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getTypeDefinition_SuperTypes()
+   * @model
+   * @generated
+   */
+  EList<TypeDefinition> getSuperTypes();
+
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
    * The list contents are of type {@link org.ow2.mindEd.adl.textual.fractal.HostedInterfaceDefinition}.

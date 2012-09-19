@@ -40,7 +40,9 @@ CompositeDefinition:
 	'composite' name = QualifiedName
 	('<' (templateSpecifiers+=TemplateSpecifier (',' templateSpecifiers+=TemplateSpecifier)*) '>')? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
 	(compositeFormalArgumentsList = FormalArgumentsList)? // (arg1, arg2, ...)
-	('extends' superTypes += [ArchitectureDefinition | QualifiedName] (',' superTypes += [ArchitectureDefinition | QualifiedName])*)? '{'
+	(	'extends' superTypes += ([CompositeSuperTypeDefinition | QualifiedName])
+			(',' superTypes += ([CompositeSuperTypeDefinition | QualifiedName]))*)?
+	'{'
 		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition | SubComponentDefinition | BindingDefinition)*
 	'}'
 ;
@@ -49,17 +51,28 @@ PrimitiveDefinition:
 	(abstract ?= 'abstract')?
 	'primitive' name = QualifiedName
 	(compositeFormalArgumentsList = FormalArgumentsList)?
-	('extends' superTypes += [ArchitectureDefinition | QualifiedName] (',' superTypes += [ArchitectureDefinition | QualifiedName])*)? '{'
+	('extends' superTypes += ([PrimitiveSuperTypeDefinition | QualifiedName])
+		(',' superTypes += ([PrimitiveSuperTypeDefinition | QualifiedName]))*
+	)? '{'
 		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)*
 	'}'
 ;
 
 TypeDefinition:
 	'type' name = QualifiedName
-	('extends' superTypes += [ArchitectureDefinition | QualifiedName] (',' superTypes += [ArchitectureDefinition | QualifiedName])*)? '{'
+	('extends' superTypes += [TypeDefinition | QualifiedName] (',' superTypes += [TypeDefinition | QualifiedName])*)? '{'
 		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition)*
 	'}'
 ;
+
+CompositeSuperTypeDefinition:
+	CompositeDefinition | TypeDefinition
+;
+
+PrimitiveSuperTypeDefinition:
+	PrimitiveDefinition | TypeDefinition
+;
+
 
 HostedInterfaceDefinition:
 	ProvidedInterfaceDefinition | RequiredInterfaceDefinition
@@ -175,7 +188,7 @@ TemplateDefinition :
 ;
 
 ArgumentDefinition :
-	(argumentName = ID '=')? argumentValue = Value
+	(name = ID '=')? argumentValue = Value
 ;
 
 AttributeDefinition :
@@ -219,7 +232,7 @@ Annotation :
 //	'Override' | 'Singleton' | 'LDFlags' | 'CFlags' | QualifiedName;
 
 AnnotationElement :
-	(elementName=ID '=')? elementValue=ElementValue
+	(name=ID '=')? elementValue=ElementValue
 ;
 
 ElementValue :

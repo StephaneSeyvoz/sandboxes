@@ -99,6 +99,7 @@ public class FractalSwitch<T> extends Switch<T>
         CompositeDefinition compositeDefinition = (CompositeDefinition)theEObject;
         T result = caseCompositeDefinition(compositeDefinition);
         if (result == null) result = caseArchitectureDefinition(compositeDefinition);
+        if (result == null) result = caseCompositeSuperTypeDefinition(compositeDefinition);
         if (result == null) result = caseTypeReference(compositeDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -108,6 +109,7 @@ public class FractalSwitch<T> extends Switch<T>
         PrimitiveDefinition primitiveDefinition = (PrimitiveDefinition)theEObject;
         T result = casePrimitiveDefinition(primitiveDefinition);
         if (result == null) result = caseArchitectureDefinition(primitiveDefinition);
+        if (result == null) result = casePrimitiveSuperTypeDefinition(primitiveDefinition);
         if (result == null) result = caseTypeReference(primitiveDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -117,7 +119,23 @@ public class FractalSwitch<T> extends Switch<T>
         TypeDefinition typeDefinition = (TypeDefinition)theEObject;
         T result = caseTypeDefinition(typeDefinition);
         if (result == null) result = caseArchitectureDefinition(typeDefinition);
+        if (result == null) result = caseCompositeSuperTypeDefinition(typeDefinition);
+        if (result == null) result = casePrimitiveSuperTypeDefinition(typeDefinition);
         if (result == null) result = caseTypeReference(typeDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FractalPackage.COMPOSITE_SUPER_TYPE_DEFINITION:
+      {
+        CompositeSuperTypeDefinition compositeSuperTypeDefinition = (CompositeSuperTypeDefinition)theEObject;
+        T result = caseCompositeSuperTypeDefinition(compositeSuperTypeDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FractalPackage.PRIMITIVE_SUPER_TYPE_DEFINITION:
+      {
+        PrimitiveSuperTypeDefinition primitiveSuperTypeDefinition = (PrimitiveSuperTypeDefinition)theEObject;
+        T result = casePrimitiveSuperTypeDefinition(primitiveSuperTypeDefinition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -442,6 +460,38 @@ public class FractalSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTypeDefinition(TypeDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Composite Super Type Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Composite Super Type Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCompositeSuperTypeDefinition(CompositeSuperTypeDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Primitive Super Type Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Primitive Super Type Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrimitiveSuperTypeDefinition(PrimitiveSuperTypeDefinition object)
   {
     return null;
   }

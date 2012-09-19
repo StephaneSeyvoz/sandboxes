@@ -4,26 +4,28 @@ package org.ow2.mindEd.adl.textual.fractal.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
+import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Architecture Definition</b></em>'.
+ * An implementation of the model object '<em><b>Primitive Super Type Definition</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ArchitectureDefinitionImpl extends TypeReferenceImpl implements ArchitectureDefinition
+public class PrimitiveSuperTypeDefinitionImpl extends MinimalEObjectImpl.Container implements PrimitiveSuperTypeDefinition
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ArchitectureDefinitionImpl()
+  protected PrimitiveSuperTypeDefinitionImpl()
   {
     super();
   }
@@ -36,7 +38,7 @@ public class ArchitectureDefinitionImpl extends TypeReferenceImpl implements Arc
   @Override
   protected EClass eStaticClass()
   {
-    return FractalPackage.Literals.ARCHITECTURE_DEFINITION;
+    return FractalPackage.Literals.PRIMITIVE_SUPER_TYPE_DEFINITION;
   }
 
-} //ArchitectureDefinitionImpl
+} //PrimitiveSuperTypeDefinitionImpl

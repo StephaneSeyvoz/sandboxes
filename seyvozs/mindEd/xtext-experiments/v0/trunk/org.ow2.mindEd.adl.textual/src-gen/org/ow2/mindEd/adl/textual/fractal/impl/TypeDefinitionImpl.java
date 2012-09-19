@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
@@ -25,6 +26,7 @@ import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.TypeDefinitionImpl#getSuperTypes <em>Super Types</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.TypeDefinitionImpl#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
@@ -33,6 +35,16 @@ import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
  */
 public class TypeDefinitionImpl extends ArchitectureDefinitionImpl implements TypeDefinition
 {
+  /**
+   * The cached value of the '{@link #getSuperTypes() <em>Super Types</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSuperTypes()
+   * @generated
+   * @ordered
+   */
+  protected EList<TypeDefinition> superTypes;
+
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -62,6 +74,20 @@ public class TypeDefinitionImpl extends ArchitectureDefinitionImpl implements Ty
   protected EClass eStaticClass()
   {
     return FractalPackage.Literals.TYPE_DEFINITION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<TypeDefinition> getSuperTypes()
+  {
+    if (superTypes == null)
+    {
+      superTypes = new EObjectResolvingEList<TypeDefinition>(TypeDefinition.class, this, FractalPackage.TYPE_DEFINITION__SUPER_TYPES);
+    }
+    return superTypes;
   }
 
   /**
@@ -104,6 +130,8 @@ public class TypeDefinitionImpl extends ArchitectureDefinitionImpl implements Ty
   {
     switch (featureID)
     {
+      case FractalPackage.TYPE_DEFINITION__SUPER_TYPES:
+        return getSuperTypes();
       case FractalPackage.TYPE_DEFINITION__ELEMENTS:
         return getElements();
     }
@@ -121,6 +149,10 @@ public class TypeDefinitionImpl extends ArchitectureDefinitionImpl implements Ty
   {
     switch (featureID)
     {
+      case FractalPackage.TYPE_DEFINITION__SUPER_TYPES:
+        getSuperTypes().clear();
+        getSuperTypes().addAll((Collection<? extends TypeDefinition>)newValue);
+        return;
       case FractalPackage.TYPE_DEFINITION__ELEMENTS:
         getElements().clear();
         getElements().addAll((Collection<? extends HostedInterfaceDefinition>)newValue);
@@ -139,6 +171,9 @@ public class TypeDefinitionImpl extends ArchitectureDefinitionImpl implements Ty
   {
     switch (featureID)
     {
+      case FractalPackage.TYPE_DEFINITION__SUPER_TYPES:
+        getSuperTypes().clear();
+        return;
       case FractalPackage.TYPE_DEFINITION__ELEMENTS:
         getElements().clear();
         return;
@@ -156,6 +191,8 @@ public class TypeDefinitionImpl extends ArchitectureDefinitionImpl implements Ty
   {
     switch (featureID)
     {
+      case FractalPackage.TYPE_DEFINITION__SUPER_TYPES:
+        return superTypes != null && !superTypes.isEmpty();
       case FractalPackage.TYPE_DEFINITION__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }

@@ -608,23 +608,23 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Declarator");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cPointerAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cPointerPointerSpecificationParserRuleCall_0_0 = (RuleCall)cPointerAssignment_0.eContents().get(0);
+		private final RuleCall cPointerQualifiedPointerSpecificationParserRuleCall_0_0 = (RuleCall)cPointerAssignment_0.eContents().get(0);
 		private final Assignment cDcAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cDcDirectDeclaratorParserRuleCall_1_0 = (RuleCall)cDcAssignment_1.eContents().get(0);
 		
 		//Declarator:
 		//
-		//	pointer+=PointerSpecification* dc=DirectDeclarator;
+		//	pointer+=QualifiedPointerSpecification* dc=DirectDeclarator;
 		public ParserRule getRule() { return rule; }
 
-		//pointer+=PointerSpecification* dc=DirectDeclarator
+		//pointer+=QualifiedPointerSpecification* dc=DirectDeclarator
 		public Group getGroup() { return cGroup; }
 
-		//pointer+=PointerSpecification*
+		//pointer+=QualifiedPointerSpecification*
 		public Assignment getPointerAssignment_0() { return cPointerAssignment_0; }
 
-		//PointerSpecification
-		public RuleCall getPointerPointerSpecificationParserRuleCall_0_0() { return cPointerPointerSpecificationParserRuleCall_0_0; }
+		//QualifiedPointerSpecification
+		public RuleCall getPointerQualifiedPointerSpecificationParserRuleCall_0_0() { return cPointerQualifiedPointerSpecificationParserRuleCall_0_0; }
 
 		//dc=DirectDeclarator
 		public Assignment getDcAssignment_1() { return cDcAssignment_1; }
@@ -633,44 +633,87 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getDcDirectDeclaratorParserRuleCall_1_0() { return cDcDirectDeclaratorParserRuleCall_1_0; }
 	}
 
-	public class PointerSpecificationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PointerSpecification");
-		private final Keyword cAsteriskKeyword = (Keyword)rule.eContents().get(1);
+	public class QualifiedPointerSpecificationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "QualifiedPointerSpecification");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cQualifiedPointerSpecificationAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cAsteriskKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTypeQualifiersAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeQualifiersTypeQualifierEnumRuleCall_2_0 = (RuleCall)cTypeQualifiersAssignment_2.eContents().get(0);
 		
 		////AbstractDeclarator:
 		// //  pointer=PointerSpecification
 		// //  dc=AbstractDirectDeclarator?
 		// //;
-		// PointerSpecification:
+		// // * -> const/volatile
 		//
-		//	"*";
+		//
+		//QualifiedPointerSpecification:
+		//
+		//	{QualifiedPointerSpecification} "*" typeQualifiers+=TypeQualifier*;
 		public ParserRule getRule() { return rule; }
 
+		//{QualifiedPointerSpecification} "*" typeQualifiers+=TypeQualifier*
+		public Group getGroup() { return cGroup; }
+
+		//{QualifiedPointerSpecification}
+		public Action getQualifiedPointerSpecificationAction_0() { return cQualifiedPointerSpecificationAction_0; }
+
 		//"*"
-		public Keyword getAsteriskKeyword() { return cAsteriskKeyword; }
+		public Keyword getAsteriskKeyword_1() { return cAsteriskKeyword_1; }
+
+		//typeQualifiers+=TypeQualifier*
+		public Assignment getTypeQualifiersAssignment_2() { return cTypeQualifiersAssignment_2; }
+
+		//TypeQualifier
+		public RuleCall getTypeQualifiersTypeQualifierEnumRuleCall_2_0() { return cTypeQualifiersTypeQualifierEnumRuleCall_2_0; }
 	}
 
 	public class DirectDeclaratorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DirectDeclarator");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0_0 = (RuleCall)cNameAssignment_0_0.eContents().get(0);
+		private final Group cGroup_0_1 = (Group)cAlternatives_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_0_1_0 = (Keyword)cGroup_0_1.eContents().get(0);
+		private final Assignment cDecAssignment_0_1_1 = (Assignment)cGroup_0_1.eContents().get(1);
+		private final RuleCall cDecDeclaratorParserRuleCall_0_1_1_0 = (RuleCall)cDecAssignment_0_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_0_1_2 = (Keyword)cGroup_0_1.eContents().get(2);
 		private final Assignment cArrayAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cArrayArraySpecificationParserRuleCall_1_0 = (RuleCall)cArrayAssignment_1.eContents().get(0);
 		
 		//DirectDeclarator:
 		//
-		//	name=ID array+=ArraySpecification*;
+		//	(name=ID | "(" dec=Declarator ")") array+=ArraySpecification*;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID array+=ArraySpecification*
+		//(name=ID | "(" dec=Declarator ")") array+=ArraySpecification*
 		public Group getGroup() { return cGroup; }
 
+		//name=ID | "(" dec=Declarator ")"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		public Assignment getNameAssignment_0_0() { return cNameAssignment_0_0; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_0_0() { return cNameIDTerminalRuleCall_0_0_0; }
+
+		//"(" dec=Declarator ")"
+		public Group getGroup_0_1() { return cGroup_0_1; }
+
+		//"("
+		public Keyword getLeftParenthesisKeyword_0_1_0() { return cLeftParenthesisKeyword_0_1_0; }
+
+		//dec=Declarator
+		public Assignment getDecAssignment_0_1_1() { return cDecAssignment_0_1_1; }
+
+		//Declarator
+		public RuleCall getDecDeclaratorParserRuleCall_0_1_1_0() { return cDecDeclaratorParserRuleCall_0_1_1_0; }
+
+		//")"
+		public Keyword getRightParenthesisKeyword_0_1_2() { return cRightParenthesisKeyword_0_1_2; }
 
 		//array+=ArraySpecification*
 		public Assignment getArrayAssignment_1() { return cArrayAssignment_1; }
@@ -878,7 +921,7 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cQualifiedTypeSpecAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cQualifiedTypeSpecQualifiedTypeSpecificationParserRuleCall_1_0 = (RuleCall)cQualifiedTypeSpecAssignment_1.eContents().get(0);
 		private final Assignment cPointerSpecificationAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPointerSpecificationPointerSpecificationParserRuleCall_2_0 = (RuleCall)cPointerSpecificationAssignment_2.eContents().get(0);
+		private final RuleCall cPointerSpecificationQualifiedPointerSpecificationParserRuleCall_2_0 = (RuleCall)cPointerSpecificationAssignment_2.eContents().get(0);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
@@ -897,12 +940,16 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//	annotationsList=AnnotationsList? qualifiedTypeSpec=QualifiedTypeSpecification
 		//
-		//	pointerSpecification+=PointerSpecification* name=ID ("(" "void"? ")" | "(" ParameterList=ParameterList ")") ";";
+		//	pointerSpecification+=QualifiedPointerSpecification* name=ID ("(" "void"? ")" | "(" ParameterList=ParameterList ")")
+		//
+		//	";";
 		public ParserRule getRule() { return rule; }
 
 		//annotationsList=AnnotationsList? qualifiedTypeSpec=QualifiedTypeSpecification
 		//
-		//pointerSpecification+=PointerSpecification* name=ID ("(" "void"? ")" | "(" ParameterList=ParameterList ")") ";"
+		//pointerSpecification+=QualifiedPointerSpecification* name=ID ("(" "void"? ")" | "(" ParameterList=ParameterList ")")
+		//
+		//";"
 		public Group getGroup() { return cGroup; }
 
 		//annotationsList=AnnotationsList?
@@ -917,11 +964,11 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedTypeSpecification
 		public RuleCall getQualifiedTypeSpecQualifiedTypeSpecificationParserRuleCall_1_0() { return cQualifiedTypeSpecQualifiedTypeSpecificationParserRuleCall_1_0; }
 
-		//pointerSpecification+=PointerSpecification*
+		//pointerSpecification+=QualifiedPointerSpecification*
 		public Assignment getPointerSpecificationAssignment_2() { return cPointerSpecificationAssignment_2; }
 
-		//PointerSpecification
-		public RuleCall getPointerSpecificationPointerSpecificationParserRuleCall_2_0() { return cPointerSpecificationPointerSpecificationParserRuleCall_2_0; }
+		//QualifiedPointerSpecification
+		public RuleCall getPointerSpecificationQualifiedPointerSpecificationParserRuleCall_2_0() { return cPointerSpecificationQualifiedPointerSpecificationParserRuleCall_2_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
@@ -1232,30 +1279,95 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 	public class AnnotationValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AnnotationValue");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSignedINTParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Keyword cNullKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final RuleCall cBOOLEANTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cQualifiedNameParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final Assignment cValueAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final Alternatives cValueAlternatives_0_0 = (Alternatives)cValueAssignment_0.eContents().get(0);
+		private final RuleCall cValueSignedINTParserRuleCall_0_0_0 = (RuleCall)cValueAlternatives_0_0.eContents().get(0);
+		private final Keyword cValueNullKeyword_0_0_1 = (Keyword)cValueAlternatives_0_0.eContents().get(1);
+		private final RuleCall cValueBOOLEANTerminalRuleCall_0_0_2 = (RuleCall)cValueAlternatives_0_0.eContents().get(2);
+		private final RuleCall cValueQualifiedNameParserRuleCall_0_0_3 = (RuleCall)cValueAlternatives_0_0.eContents().get(3);
+		private final RuleCall cValueSTRINGTerminalRuleCall_0_0_4 = (RuleCall)cValueAlternatives_0_0.eContents().get(4);
+		private final Assignment cArrayValueAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cArrayValueArrayAnnotationValueParserRuleCall_1_0 = (RuleCall)cArrayValueAssignment_1.eContents().get(0);
 		
 		//AnnotationValue:
 		//
-		//	signedINT | "null" | BOOLEAN | QualifiedName;
+		//	value=(signedINT | "null" | BOOLEAN | QualifiedName | STRING) | arrayValue=ArrayAnnotationValue;
 		public ParserRule getRule() { return rule; }
 
-		//signedINT | "null" | BOOLEAN | QualifiedName
+		//value=(signedINT | "null" | BOOLEAN | QualifiedName | STRING) | arrayValue=ArrayAnnotationValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//value=(signedINT | "null" | BOOLEAN | QualifiedName | STRING)
+		public Assignment getValueAssignment_0() { return cValueAssignment_0; }
+
+		//signedINT | "null" | BOOLEAN | QualifiedName | STRING
+		public Alternatives getValueAlternatives_0_0() { return cValueAlternatives_0_0; }
+
 		//signedINT
-		public RuleCall getSignedINTParserRuleCall_0() { return cSignedINTParserRuleCall_0; }
+		public RuleCall getValueSignedINTParserRuleCall_0_0_0() { return cValueSignedINTParserRuleCall_0_0_0; }
 
 		//"null"
-		public Keyword getNullKeyword_1() { return cNullKeyword_1; }
+		public Keyword getValueNullKeyword_0_0_1() { return cValueNullKeyword_0_0_1; }
 
 		//BOOLEAN
-		public RuleCall getBOOLEANTerminalRuleCall_2() { return cBOOLEANTerminalRuleCall_2; }
+		public RuleCall getValueBOOLEANTerminalRuleCall_0_0_2() { return cValueBOOLEANTerminalRuleCall_0_0_2; }
 
 		//QualifiedName
-		public RuleCall getQualifiedNameParserRuleCall_3() { return cQualifiedNameParserRuleCall_3; }
+		public RuleCall getValueQualifiedNameParserRuleCall_0_0_3() { return cValueQualifiedNameParserRuleCall_0_0_3; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_0_0_4() { return cValueSTRINGTerminalRuleCall_0_0_4; }
+
+		//arrayValue=ArrayAnnotationValue
+		public Assignment getArrayValueAssignment_1() { return cArrayValueAssignment_1; }
+
+		//ArrayAnnotationValue
+		public RuleCall getArrayValueArrayAnnotationValueParserRuleCall_1_0() { return cArrayValueArrayAnnotationValueParserRuleCall_1_0; }
+	}
+
+	public class ArrayAnnotationValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArrayAnnotationValue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValuesAnnotationValueParserRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cValuesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cValuesAnnotationValueParserRuleCall_2_1_0 = (RuleCall)cValuesAssignment_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//ArrayAnnotationValue:
+		//
+		//	"{" values+=AnnotationValue ("," values+=AnnotationValue)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"{" values+=AnnotationValue ("," values+=AnnotationValue)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+
+		//values+=AnnotationValue
+		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+
+		//AnnotationValue
+		public RuleCall getValuesAnnotationValueParserRuleCall_1_0() { return cValuesAnnotationValueParserRuleCall_1_0; }
+
+		//("," values+=AnnotationValue)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//values+=AnnotationValue
+		public Assignment getValuesAssignment_2_1() { return cValuesAssignment_2_1; }
+
+		//AnnotationValue
+		public RuleCall getValuesAnnotationValueParserRuleCall_2_1_0() { return cValuesAnnotationValueParserRuleCall_2_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
 	public class SignedINTElements extends AbstractParserRuleElementFinder {
@@ -2126,7 +2238,7 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 	private EnumMemberElements pEnumMember;
 	private DeclaratorsElements pDeclarators;
 	private DeclaratorElements pDeclarator;
-	private PointerSpecificationElements pPointerSpecification;
+	private QualifiedPointerSpecificationElements pQualifiedPointerSpecification;
 	private DirectDeclaratorElements pDirectDeclarator;
 	private ArraySpecificationElements pArraySpecification;
 	private QualifiedNameElements pQualifiedName;
@@ -2142,6 +2254,7 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 	private AnnotationElements pAnnotation;
 	private AnnotationValuePairElements pAnnotationValuePair;
 	private AnnotationValueElements pAnnotationValue;
+	private ArrayAnnotationValueElements pArrayAnnotationValue;
 	private TerminalRule tBOOLEAN;
 	private SignedINTElements pSignedINT;
 	private ConstantExpressionElements pConstantExpression;
@@ -2414,7 +2527,7 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Declarator:
 	//
-	//	pointer+=PointerSpecification* dc=DirectDeclarator;
+	//	pointer+=QualifiedPointerSpecification* dc=DirectDeclarator;
 	public DeclaratorElements getDeclaratorAccess() {
 		return (pDeclarator != null) ? pDeclarator : (pDeclarator = new DeclaratorElements());
 	}
@@ -2427,20 +2540,23 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 	// //  pointer=PointerSpecification
 	// //  dc=AbstractDirectDeclarator?
 	// //;
-	// PointerSpecification:
+	// // * -> const/volatile
 	//
-	//	"*";
-	public PointerSpecificationElements getPointerSpecificationAccess() {
-		return (pPointerSpecification != null) ? pPointerSpecification : (pPointerSpecification = new PointerSpecificationElements());
+	//
+	//QualifiedPointerSpecification:
+	//
+	//	{QualifiedPointerSpecification} "*" typeQualifiers+=TypeQualifier*;
+	public QualifiedPointerSpecificationElements getQualifiedPointerSpecificationAccess() {
+		return (pQualifiedPointerSpecification != null) ? pQualifiedPointerSpecification : (pQualifiedPointerSpecification = new QualifiedPointerSpecificationElements());
 	}
 	
-	public ParserRule getPointerSpecificationRule() {
-		return getPointerSpecificationAccess().getRule();
+	public ParserRule getQualifiedPointerSpecificationRule() {
+		return getQualifiedPointerSpecificationAccess().getRule();
 	}
 
 	//DirectDeclarator:
 	//
-	//	name=ID array+=ArraySpecification*;
+	//	(name=ID | "(" dec=Declarator ")") array+=ArraySpecification*;
 	public DirectDeclaratorElements getDirectDeclaratorAccess() {
 		return (pDirectDeclarator != null) ? pDirectDeclarator : (pDirectDeclarator = new DirectDeclaratorElements());
 	}
@@ -2506,7 +2622,9 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	annotationsList=AnnotationsList? qualifiedTypeSpec=QualifiedTypeSpecification
 	//
-	//	pointerSpecification+=PointerSpecification* name=ID ("(" "void"? ")" | "(" ParameterList=ParameterList ")") ";";
+	//	pointerSpecification+=QualifiedPointerSpecification* name=ID ("(" "void"? ")" | "(" ParameterList=ParameterList ")")
+	//
+	//	";";
 	public MethodDefinitionElements getMethodDefinitionAccess() {
 		return (pMethodDefinition != null) ? pMethodDefinition : (pMethodDefinition = new MethodDefinitionElements());
 	}
@@ -2606,13 +2724,24 @@ public class FractalItfGrammarAccess extends AbstractGrammarElementFinder {
 
 	//AnnotationValue:
 	//
-	//	signedINT | "null" | BOOLEAN | QualifiedName;
+	//	value=(signedINT | "null" | BOOLEAN | QualifiedName | STRING) | arrayValue=ArrayAnnotationValue;
 	public AnnotationValueElements getAnnotationValueAccess() {
 		return (pAnnotationValue != null) ? pAnnotationValue : (pAnnotationValue = new AnnotationValueElements());
 	}
 	
 	public ParserRule getAnnotationValueRule() {
 		return getAnnotationValueAccess().getRule();
+	}
+
+	//ArrayAnnotationValue:
+	//
+	//	"{" values+=AnnotationValue ("," values+=AnnotationValue)* "}";
+	public ArrayAnnotationValueElements getArrayAnnotationValueAccess() {
+		return (pArrayAnnotationValue != null) ? pArrayAnnotationValue : (pArrayAnnotationValue = new ArrayAnnotationValueElements());
+	}
+	
+	public ParserRule getArrayAnnotationValueRule() {
+		return getArrayAnnotationValueAccess().getRule();
 	}
 
 	//terminal BOOLEAN:

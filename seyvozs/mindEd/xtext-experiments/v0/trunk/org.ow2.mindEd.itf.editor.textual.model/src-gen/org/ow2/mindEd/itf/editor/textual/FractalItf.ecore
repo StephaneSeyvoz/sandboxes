@@ -98,13 +98,19 @@
         eType="#//Declarator" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Declarator">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pointer" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pointer" upperBound="-1"
+        eType="#//QualifiedPointerSpecification" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dc" eType="#//DirectDeclarator"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QualifiedPointerSpecification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeQualifiers" unique="false"
+        upperBound="-1" eType="#//TypeQualifier"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DirectDeclarator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dec" eType="#//Declarator"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="array" upperBound="-1"
         eType="#//ArraySpecification" containment="true"/>
   </eClassifiers>
@@ -131,8 +137,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="qualifiedTypeSpec" eType="#//QualifiedTypeSpecification"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pointerSpecification" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pointerSpecification" upperBound="-1"
+        eType="#//QualifiedPointerSpecification" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ParameterList" eType="#//ParameterList"
         containment="true"/>
@@ -172,7 +178,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnnotationValuePair">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//AnnotationValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnnotationValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arrayValue" eType="#//ArrayAnnotationValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayAnnotationValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+        eType="#//AnnotationValue" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstantExpression" eSuperTypes="#//PrimaryExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="LogicalOrExpression" eSuperTypes="#//ConstantExpression">

@@ -15,12 +15,14 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.ow2.mindEd.adl.textual.fractal.FormalArgumentsList;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveElement;
+import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +33,7 @@ import org.ow2.mindEd.adl.textual.fractal.PrimitiveElement;
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.PrimitiveDefinitionImpl#isAbstract <em>Abstract</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.PrimitiveDefinitionImpl#getCompositeFormalArgumentsList <em>Composite Formal Arguments List</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.PrimitiveDefinitionImpl#getSuperTypes <em>Super Types</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.PrimitiveDefinitionImpl#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
@@ -68,6 +71,16 @@ public class PrimitiveDefinitionImpl extends ArchitectureDefinitionImpl implemen
    * @ordered
    */
   protected FormalArgumentsList compositeFormalArgumentsList;
+
+  /**
+   * The cached value of the '{@link #getSuperTypes() <em>Super Types</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSuperTypes()
+   * @generated
+   * @ordered
+   */
+  protected EList<PrimitiveSuperTypeDefinition> superTypes;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -176,6 +189,20 @@ public class PrimitiveDefinitionImpl extends ArchitectureDefinitionImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<PrimitiveSuperTypeDefinition> getSuperTypes()
+  {
+    if (superTypes == null)
+    {
+      superTypes = new EObjectResolvingEList<PrimitiveSuperTypeDefinition>(PrimitiveSuperTypeDefinition.class, this, FractalPackage.PRIMITIVE_DEFINITION__SUPER_TYPES);
+    }
+    return superTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<PrimitiveElement> getElements()
   {
     if (elements == null)
@@ -217,6 +244,8 @@ public class PrimitiveDefinitionImpl extends ArchitectureDefinitionImpl implemen
         return isAbstract();
       case FractalPackage.PRIMITIVE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         return getCompositeFormalArgumentsList();
+      case FractalPackage.PRIMITIVE_DEFINITION__SUPER_TYPES:
+        return getSuperTypes();
       case FractalPackage.PRIMITIVE_DEFINITION__ELEMENTS:
         return getElements();
     }
@@ -239,6 +268,10 @@ public class PrimitiveDefinitionImpl extends ArchitectureDefinitionImpl implemen
         return;
       case FractalPackage.PRIMITIVE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         setCompositeFormalArgumentsList((FormalArgumentsList)newValue);
+        return;
+      case FractalPackage.PRIMITIVE_DEFINITION__SUPER_TYPES:
+        getSuperTypes().clear();
+        getSuperTypes().addAll((Collection<? extends PrimitiveSuperTypeDefinition>)newValue);
         return;
       case FractalPackage.PRIMITIVE_DEFINITION__ELEMENTS:
         getElements().clear();
@@ -264,6 +297,9 @@ public class PrimitiveDefinitionImpl extends ArchitectureDefinitionImpl implemen
       case FractalPackage.PRIMITIVE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         setCompositeFormalArgumentsList((FormalArgumentsList)null);
         return;
+      case FractalPackage.PRIMITIVE_DEFINITION__SUPER_TYPES:
+        getSuperTypes().clear();
+        return;
       case FractalPackage.PRIMITIVE_DEFINITION__ELEMENTS:
         getElements().clear();
         return;
@@ -285,6 +321,8 @@ public class PrimitiveDefinitionImpl extends ArchitectureDefinitionImpl implemen
         return abstract_ != ABSTRACT_EDEFAULT;
       case FractalPackage.PRIMITIVE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         return compositeFormalArgumentsList != null;
+      case FractalPackage.PRIMITIVE_DEFINITION__SUPER_TYPES:
+        return superTypes != null && !superTypes.isEmpty();
       case FractalPackage.PRIMITIVE_DEFINITION__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }

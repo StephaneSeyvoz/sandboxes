@@ -105,6 +105,16 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
         return createTypeDefinitionAdapter();
       }
       @Override
+      public Adapter caseCompositeSuperTypeDefinition(CompositeSuperTypeDefinition object)
+      {
+        return createCompositeSuperTypeDefinitionAdapter();
+      }
+      @Override
+      public Adapter casePrimitiveSuperTypeDefinition(PrimitiveSuperTypeDefinition object)
+      {
+        return createPrimitiveSuperTypeDefinitionAdapter();
+      }
+      @Override
       public Adapter caseHostedInterfaceDefinition(HostedInterfaceDefinition object)
       {
         return createHostedInterfaceDefinitionAdapter();
@@ -352,6 +362,36 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTypeDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition <em>Composite Super Type Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition
+   * @generated
+   */
+  public Adapter createCompositeSuperTypeDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition <em>Primitive Super Type Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition
+   * @generated
+   */
+  public Adapter createPrimitiveSuperTypeDefinitionAdapter()
   {
     return null;
   }

@@ -81,6 +81,7 @@ public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFac
       case FractalIDLPackage.ENUM_MEMBER: return createEnumMember();
       case FractalIDLPackage.DECLARATORS: return createDeclarators();
       case FractalIDLPackage.DECLARATOR: return createDeclarator();
+      case FractalIDLPackage.QUALIFIED_POINTER_SPECIFICATION: return createQualifiedPointerSpecification();
       case FractalIDLPackage.DIRECT_DECLARATOR: return createDirectDeclarator();
       case FractalIDLPackage.ARRAY_SPECIFICATION: return createArraySpecification();
       case FractalIDLPackage.CONSTANT_DEFINITION: return createConstantDefinition();
@@ -92,6 +93,8 @@ public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFac
       case FractalIDLPackage.ANNOTATIONS_LIST: return createAnnotationsList();
       case FractalIDLPackage.ANNOTATION: return createAnnotation();
       case FractalIDLPackage.ANNOTATION_VALUE_PAIR: return createAnnotationValuePair();
+      case FractalIDLPackage.ANNOTATION_VALUE: return createAnnotationValue();
+      case FractalIDLPackage.ARRAY_ANNOTATION_VALUE: return createArrayAnnotationValue();
       case FractalIDLPackage.CONSTANT_EXPRESSION: return createConstantExpression();
       case FractalIDLPackage.LOGICAL_OR_EXPRESSION: return createLogicalOrExpression();
       case FractalIDLPackage.LOGICAL_AND_EXPRESSION: return createLogicalAndExpression();
@@ -332,6 +335,17 @@ public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFac
    * <!-- end-user-doc -->
    * @generated
    */
+  public QualifiedPointerSpecification createQualifiedPointerSpecification()
+  {
+    QualifiedPointerSpecificationImpl qualifiedPointerSpecification = new QualifiedPointerSpecificationImpl();
+    return qualifiedPointerSpecification;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public DirectDeclarator createDirectDeclarator()
   {
     DirectDeclaratorImpl directDeclarator = new DirectDeclaratorImpl();
@@ -446,6 +460,28 @@ public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFac
   {
     AnnotationValuePairImpl annotationValuePair = new AnnotationValuePairImpl();
     return annotationValuePair;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AnnotationValue createAnnotationValue()
+  {
+    AnnotationValueImpl annotationValue = new AnnotationValueImpl();
+    return annotationValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArrayAnnotationValue createArrayAnnotationValue()
+  {
+    ArrayAnnotationValueImpl arrayAnnotationValue = new ArrayAnnotationValueImpl();
+    return arrayAnnotationValue;
   }
 
   /**

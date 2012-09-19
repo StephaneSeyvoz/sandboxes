@@ -192,13 +192,13 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cExtendsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cSuperTypesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cSuperTypesArchitectureDefinitionCrossReference_4_1_0 = (CrossReference)cSuperTypesAssignment_4_1.eContents().get(0);
-		private final RuleCall cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cSuperTypesArchitectureDefinitionCrossReference_4_1_0.eContents().get(1);
+		private final CrossReference cSuperTypesCompositeSuperTypeDefinitionCrossReference_4_1_0 = (CrossReference)cSuperTypesAssignment_4_1.eContents().get(0);
+		private final RuleCall cSuperTypesCompositeSuperTypeDefinitionQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cSuperTypesCompositeSuperTypeDefinitionCrossReference_4_1_0.eContents().get(1);
 		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
 		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
 		private final Assignment cSuperTypesAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
-		private final CrossReference cSuperTypesArchitectureDefinitionCrossReference_4_2_1_0 = (CrossReference)cSuperTypesAssignment_4_2_1.eContents().get(0);
-		private final RuleCall cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_2_1_0_1 = (RuleCall)cSuperTypesArchitectureDefinitionCrossReference_4_2_1_0.eContents().get(1);
+		private final CrossReference cSuperTypesCompositeSuperTypeDefinitionCrossReference_4_2_1_0 = (CrossReference)cSuperTypesAssignment_4_2_1.eContents().get(0);
+		private final RuleCall cSuperTypesCompositeSuperTypeDefinitionQualifiedNameParserRuleCall_4_2_1_0_1 = (RuleCall)cSuperTypesCompositeSuperTypeDefinitionCrossReference_4_2_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cElementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final Alternatives cElementsAlternatives_6_0 = (Alternatives)cElementsAssignment_6.eContents().get(0);
@@ -216,9 +216,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//	compositeFormalArgumentsList=FormalArgumentsList? // (arg1, arg2, ...)
 		//
-		//	("extends" superTypes+=[ArchitectureDefinition|QualifiedName] (","
+		//	("extends" superTypes+=[CompositeSuperTypeDefinition|QualifiedName] (","
 		//
-		//	superTypes+=[ArchitectureDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
+		//	superTypes+=[CompositeSuperTypeDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
 		//
 		//	RequiredInterfaceDefinition | SubComponentDefinition | BindingDefinition)* "}";
 		public ParserRule getRule() { return rule; }
@@ -229,9 +229,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//compositeFormalArgumentsList=FormalArgumentsList? // (arg1, arg2, ...)
 		//
-		//("extends" superTypes+=[ArchitectureDefinition|QualifiedName] (","
+		//("extends" superTypes+=[CompositeSuperTypeDefinition|QualifiedName] (","
 		//
-		//superTypes+=[ArchitectureDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
+		//superTypes+=[CompositeSuperTypeDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
 		//
 		//RequiredInterfaceDefinition | SubComponentDefinition | BindingDefinition)* "}"
 		public Group getGroup() { return cGroup; }
@@ -281,37 +281,37 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//FormalArgumentsList
 		public RuleCall getCompositeFormalArgumentsListFormalArgumentsListParserRuleCall_3_0() { return cCompositeFormalArgumentsListFormalArgumentsListParserRuleCall_3_0; }
 
-		//("extends" superTypes+=[ArchitectureDefinition|QualifiedName] (","
+		//("extends" superTypes+=[CompositeSuperTypeDefinition|QualifiedName] (","
 		//
-		//superTypes+=[ArchitectureDefinition|QualifiedName])*)?
+		//superTypes+=[CompositeSuperTypeDefinition|QualifiedName])*)?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"extends"
 		public Keyword getExtendsKeyword_4_0() { return cExtendsKeyword_4_0; }
 
-		//superTypes+=[ArchitectureDefinition|QualifiedName]
+		//superTypes+=[CompositeSuperTypeDefinition|QualifiedName]
 		public Assignment getSuperTypesAssignment_4_1() { return cSuperTypesAssignment_4_1; }
 
-		//[ArchitectureDefinition|QualifiedName]
-		public CrossReference getSuperTypesArchitectureDefinitionCrossReference_4_1_0() { return cSuperTypesArchitectureDefinitionCrossReference_4_1_0; }
+		//[CompositeSuperTypeDefinition|QualifiedName]
+		public CrossReference getSuperTypesCompositeSuperTypeDefinitionCrossReference_4_1_0() { return cSuperTypesCompositeSuperTypeDefinitionCrossReference_4_1_0; }
 
 		//QualifiedName
-		public RuleCall getSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_1_0_1() { return cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_1_0_1; }
+		public RuleCall getSuperTypesCompositeSuperTypeDefinitionQualifiedNameParserRuleCall_4_1_0_1() { return cSuperTypesCompositeSuperTypeDefinitionQualifiedNameParserRuleCall_4_1_0_1; }
 
-		//("," superTypes+=[ArchitectureDefinition|QualifiedName])*
+		//("," superTypes+=[CompositeSuperTypeDefinition|QualifiedName])*
 		public Group getGroup_4_2() { return cGroup_4_2; }
 
 		//","
 		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
 
-		//superTypes+=[ArchitectureDefinition|QualifiedName]
+		//superTypes+=[CompositeSuperTypeDefinition|QualifiedName]
 		public Assignment getSuperTypesAssignment_4_2_1() { return cSuperTypesAssignment_4_2_1; }
 
-		//[ArchitectureDefinition|QualifiedName]
-		public CrossReference getSuperTypesArchitectureDefinitionCrossReference_4_2_1_0() { return cSuperTypesArchitectureDefinitionCrossReference_4_2_1_0; }
+		//[CompositeSuperTypeDefinition|QualifiedName]
+		public CrossReference getSuperTypesCompositeSuperTypeDefinitionCrossReference_4_2_1_0() { return cSuperTypesCompositeSuperTypeDefinitionCrossReference_4_2_1_0; }
 
 		//QualifiedName
-		public RuleCall getSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_2_1_0_1() { return cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_2_1_0_1; }
+		public RuleCall getSuperTypesCompositeSuperTypeDefinitionQualifiedNameParserRuleCall_4_2_1_0_1() { return cSuperTypesCompositeSuperTypeDefinitionQualifiedNameParserRuleCall_4_2_1_0_1; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
@@ -351,13 +351,13 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cExtendsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cSuperTypesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cSuperTypesArchitectureDefinitionCrossReference_4_1_0 = (CrossReference)cSuperTypesAssignment_4_1.eContents().get(0);
-		private final RuleCall cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cSuperTypesArchitectureDefinitionCrossReference_4_1_0.eContents().get(1);
+		private final CrossReference cSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_1_0 = (CrossReference)cSuperTypesAssignment_4_1.eContents().get(0);
+		private final RuleCall cSuperTypesPrimitiveSuperTypeDefinitionQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_1_0.eContents().get(1);
 		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
 		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
 		private final Assignment cSuperTypesAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
-		private final CrossReference cSuperTypesArchitectureDefinitionCrossReference_4_2_1_0 = (CrossReference)cSuperTypesAssignment_4_2_1.eContents().get(0);
-		private final RuleCall cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_2_1_0_1 = (RuleCall)cSuperTypesArchitectureDefinitionCrossReference_4_2_1_0.eContents().get(1);
+		private final CrossReference cSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_2_1_0 = (CrossReference)cSuperTypesAssignment_4_2_1.eContents().get(0);
+		private final RuleCall cSuperTypesPrimitiveSuperTypeDefinitionQualifiedNameParserRuleCall_4_2_1_0_1 = (RuleCall)cSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_2_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cElementsAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final Alternatives cElementsAlternatives_6_0 = (Alternatives)cElementsAssignment_6.eContents().get(0);
@@ -372,20 +372,20 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//	abstract?="abstract"? "primitive" name=QualifiedName compositeFormalArgumentsList=FormalArgumentsList? ("extends"
 		//
-		//	superTypes+=[ArchitectureDefinition|QualifiedName] ("," superTypes+=[ArchitectureDefinition|QualifiedName])*)? "{"
+		//	superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName] (","
 		//
-		//	elements+=(ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition
+		//	superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
 		//
-		//	| DataDefinition)* "}";
+		//	RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)* "}";
 		public ParserRule getRule() { return rule; }
 
 		//abstract?="abstract"? "primitive" name=QualifiedName compositeFormalArgumentsList=FormalArgumentsList? ("extends"
 		//
-		//superTypes+=[ArchitectureDefinition|QualifiedName] ("," superTypes+=[ArchitectureDefinition|QualifiedName])*)? "{"
+		//superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName] (","
 		//
-		//elements+=(ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition
+		//superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
 		//
-		//| DataDefinition)* "}"
+		//RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)* "}"
 		public Group getGroup() { return cGroup; }
 
 		//abstract?="abstract"?
@@ -409,37 +409,37 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//FormalArgumentsList
 		public RuleCall getCompositeFormalArgumentsListFormalArgumentsListParserRuleCall_3_0() { return cCompositeFormalArgumentsListFormalArgumentsListParserRuleCall_3_0; }
 
-		//("extends" superTypes+=[ArchitectureDefinition|QualifiedName] (","
+		//("extends" superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName] (","
 		//
-		//superTypes+=[ArchitectureDefinition|QualifiedName])*)?
+		//superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName])*)?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"extends"
 		public Keyword getExtendsKeyword_4_0() { return cExtendsKeyword_4_0; }
 
-		//superTypes+=[ArchitectureDefinition|QualifiedName]
+		//superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName]
 		public Assignment getSuperTypesAssignment_4_1() { return cSuperTypesAssignment_4_1; }
 
-		//[ArchitectureDefinition|QualifiedName]
-		public CrossReference getSuperTypesArchitectureDefinitionCrossReference_4_1_0() { return cSuperTypesArchitectureDefinitionCrossReference_4_1_0; }
+		//[PrimitiveSuperTypeDefinition|QualifiedName]
+		public CrossReference getSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_1_0() { return cSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_1_0; }
 
 		//QualifiedName
-		public RuleCall getSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_1_0_1() { return cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_1_0_1; }
+		public RuleCall getSuperTypesPrimitiveSuperTypeDefinitionQualifiedNameParserRuleCall_4_1_0_1() { return cSuperTypesPrimitiveSuperTypeDefinitionQualifiedNameParserRuleCall_4_1_0_1; }
 
-		//("," superTypes+=[ArchitectureDefinition|QualifiedName])*
+		//("," superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName])*
 		public Group getGroup_4_2() { return cGroup_4_2; }
 
 		//","
 		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
 
-		//superTypes+=[ArchitectureDefinition|QualifiedName]
+		//superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName]
 		public Assignment getSuperTypesAssignment_4_2_1() { return cSuperTypesAssignment_4_2_1; }
 
-		//[ArchitectureDefinition|QualifiedName]
-		public CrossReference getSuperTypesArchitectureDefinitionCrossReference_4_2_1_0() { return cSuperTypesArchitectureDefinitionCrossReference_4_2_1_0; }
+		//[PrimitiveSuperTypeDefinition|QualifiedName]
+		public CrossReference getSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_2_1_0() { return cSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_2_1_0; }
 
 		//QualifiedName
-		public RuleCall getSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_2_1_0_1() { return cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_4_2_1_0_1; }
+		public RuleCall getSuperTypesPrimitiveSuperTypeDefinitionQualifiedNameParserRuleCall_4_2_1_0_1() { return cSuperTypesPrimitiveSuperTypeDefinitionQualifiedNameParserRuleCall_4_2_1_0_1; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
@@ -482,13 +482,13 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cExtendsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cSuperTypesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final CrossReference cSuperTypesArchitectureDefinitionCrossReference_2_1_0 = (CrossReference)cSuperTypesAssignment_2_1.eContents().get(0);
-		private final RuleCall cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cSuperTypesArchitectureDefinitionCrossReference_2_1_0.eContents().get(1);
+		private final CrossReference cSuperTypesTypeDefinitionCrossReference_2_1_0 = (CrossReference)cSuperTypesAssignment_2_1.eContents().get(0);
+		private final RuleCall cSuperTypesTypeDefinitionQualifiedNameParserRuleCall_2_1_0_1 = (RuleCall)cSuperTypesTypeDefinitionCrossReference_2_1_0.eContents().get(1);
 		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
 		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cSuperTypesAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final CrossReference cSuperTypesArchitectureDefinitionCrossReference_2_2_1_0 = (CrossReference)cSuperTypesAssignment_2_2_1.eContents().get(0);
-		private final RuleCall cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_2_2_1_0_1 = (RuleCall)cSuperTypesArchitectureDefinitionCrossReference_2_2_1_0.eContents().get(1);
+		private final CrossReference cSuperTypesTypeDefinitionCrossReference_2_2_1_0 = (CrossReference)cSuperTypesAssignment_2_2_1.eContents().get(0);
+		private final RuleCall cSuperTypesTypeDefinitionQualifiedNameParserRuleCall_2_2_1_0_1 = (RuleCall)cSuperTypesTypeDefinitionCrossReference_2_2_1_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final Alternatives cElementsAlternatives_4_0 = (Alternatives)cElementsAssignment_4.eContents().get(0);
@@ -498,16 +498,16 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//TypeDefinition:
 		//
-		//	"type" name=QualifiedName ("extends" superTypes+=[ArchitectureDefinition|QualifiedName] (","
+		//	"type" name=QualifiedName ("extends" superTypes+=[TypeDefinition|QualifiedName] (","
 		//
-		//	superTypes+=[ArchitectureDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
+		//	superTypes+=[TypeDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
 		//
 		//	RequiredInterfaceDefinition)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"type" name=QualifiedName ("extends" superTypes+=[ArchitectureDefinition|QualifiedName] (","
+		//"type" name=QualifiedName ("extends" superTypes+=[TypeDefinition|QualifiedName] (","
 		//
-		//superTypes+=[ArchitectureDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
+		//superTypes+=[TypeDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
 		//
 		//RequiredInterfaceDefinition)* "}"
 		public Group getGroup() { return cGroup; }
@@ -521,37 +521,35 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
 
-		//("extends" superTypes+=[ArchitectureDefinition|QualifiedName] (","
-		//
-		//superTypes+=[ArchitectureDefinition|QualifiedName])*)?
+		//("extends" superTypes+=[TypeDefinition|QualifiedName] ("," superTypes+=[TypeDefinition|QualifiedName])*)?
 		public Group getGroup_2() { return cGroup_2; }
 
 		//"extends"
 		public Keyword getExtendsKeyword_2_0() { return cExtendsKeyword_2_0; }
 
-		//superTypes+=[ArchitectureDefinition|QualifiedName]
+		//superTypes+=[TypeDefinition|QualifiedName]
 		public Assignment getSuperTypesAssignment_2_1() { return cSuperTypesAssignment_2_1; }
 
-		//[ArchitectureDefinition|QualifiedName]
-		public CrossReference getSuperTypesArchitectureDefinitionCrossReference_2_1_0() { return cSuperTypesArchitectureDefinitionCrossReference_2_1_0; }
+		//[TypeDefinition|QualifiedName]
+		public CrossReference getSuperTypesTypeDefinitionCrossReference_2_1_0() { return cSuperTypesTypeDefinitionCrossReference_2_1_0; }
 
 		//QualifiedName
-		public RuleCall getSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_2_1_0_1() { return cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_2_1_0_1; }
+		public RuleCall getSuperTypesTypeDefinitionQualifiedNameParserRuleCall_2_1_0_1() { return cSuperTypesTypeDefinitionQualifiedNameParserRuleCall_2_1_0_1; }
 
-		//("," superTypes+=[ArchitectureDefinition|QualifiedName])*
+		//("," superTypes+=[TypeDefinition|QualifiedName])*
 		public Group getGroup_2_2() { return cGroup_2_2; }
 
 		//","
 		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
 
-		//superTypes+=[ArchitectureDefinition|QualifiedName]
+		//superTypes+=[TypeDefinition|QualifiedName]
 		public Assignment getSuperTypesAssignment_2_2_1() { return cSuperTypesAssignment_2_2_1; }
 
-		//[ArchitectureDefinition|QualifiedName]
-		public CrossReference getSuperTypesArchitectureDefinitionCrossReference_2_2_1_0() { return cSuperTypesArchitectureDefinitionCrossReference_2_2_1_0; }
+		//[TypeDefinition|QualifiedName]
+		public CrossReference getSuperTypesTypeDefinitionCrossReference_2_2_1_0() { return cSuperTypesTypeDefinitionCrossReference_2_2_1_0; }
 
 		//QualifiedName
-		public RuleCall getSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_2_2_1_0_1() { return cSuperTypesArchitectureDefinitionQualifiedNameParserRuleCall_2_2_1_0_1; }
+		public RuleCall getSuperTypesTypeDefinitionQualifiedNameParserRuleCall_2_2_1_0_1() { return cSuperTypesTypeDefinitionQualifiedNameParserRuleCall_2_2_1_0_1; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
@@ -570,6 +568,48 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+
+	public class CompositeSuperTypeDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CompositeSuperTypeDefinition");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cCompositeDefinitionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTypeDefinitionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//CompositeSuperTypeDefinition:
+		//
+		//	CompositeDefinition | TypeDefinition;
+		public ParserRule getRule() { return rule; }
+
+		//CompositeDefinition | TypeDefinition
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//CompositeDefinition
+		public RuleCall getCompositeDefinitionParserRuleCall_0() { return cCompositeDefinitionParserRuleCall_0; }
+
+		//TypeDefinition
+		public RuleCall getTypeDefinitionParserRuleCall_1() { return cTypeDefinitionParserRuleCall_1; }
+	}
+
+	public class PrimitiveSuperTypeDefinitionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PrimitiveSuperTypeDefinition");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cPrimitiveDefinitionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cTypeDefinitionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//PrimitiveSuperTypeDefinition:
+		//
+		//	PrimitiveDefinition | TypeDefinition;
+		public ParserRule getRule() { return rule; }
+
+		//PrimitiveDefinition | TypeDefinition
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//PrimitiveDefinition
+		public RuleCall getPrimitiveDefinitionParserRuleCall_0() { return cPrimitiveDefinitionParserRuleCall_0; }
+
+		//TypeDefinition
+		public RuleCall getTypeDefinitionParserRuleCall_1() { return cTypeDefinitionParserRuleCall_1; }
 	}
 
 	public class HostedInterfaceDefinitionElements extends AbstractParserRuleElementFinder {
@@ -1634,28 +1674,28 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArgumentDefinition");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
-		private final Assignment cArgumentNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cArgumentNameIDTerminalRuleCall_0_0_0 = (RuleCall)cArgumentNameAssignment_0_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0_0 = (RuleCall)cNameAssignment_0_0.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Assignment cArgumentValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cArgumentValueValueParserRuleCall_1_0 = (RuleCall)cArgumentValueAssignment_1.eContents().get(0);
 		
 		//ArgumentDefinition:
 		//
-		//	(argumentName=ID "=")? argumentValue=Value;
+		//	(name=ID "=")? argumentValue=Value;
 		public ParserRule getRule() { return rule; }
 
-		//(argumentName=ID "=")? argumentValue=Value
+		//(name=ID "=")? argumentValue=Value
 		public Group getGroup() { return cGroup; }
 
-		//(argumentName=ID "=")?
+		//(name=ID "=")?
 		public Group getGroup_0() { return cGroup_0; }
 
-		//argumentName=ID
-		public Assignment getArgumentNameAssignment_0_0() { return cArgumentNameAssignment_0_0; }
+		//name=ID
+		public Assignment getNameAssignment_0_0() { return cNameAssignment_0_0; }
 
 		//ID
-		public RuleCall getArgumentNameIDTerminalRuleCall_0_0_0() { return cArgumentNameIDTerminalRuleCall_0_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_0_0() { return cNameIDTerminalRuleCall_0_0_0; }
 
 		//"="
 		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
@@ -2109,8 +2149,8 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AnnotationElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
-		private final Assignment cElementNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
-		private final RuleCall cElementNameIDTerminalRuleCall_0_0_0 = (RuleCall)cElementNameAssignment_0_0.eContents().get(0);
+		private final Assignment cNameAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0_0 = (RuleCall)cNameAssignment_0_0.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Assignment cElementValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cElementValueElementValueParserRuleCall_1_0 = (RuleCall)cElementValueAssignment_1.eContents().get(0);
@@ -2123,20 +2163,20 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//AnnotationElement:
 		//
-		//	(elementName=ID "=")? elementValue=ElementValue;
+		//	(name=ID "=")? elementValue=ElementValue;
 		public ParserRule getRule() { return rule; }
 
-		//(elementName=ID "=")? elementValue=ElementValue
+		//(name=ID "=")? elementValue=ElementValue
 		public Group getGroup() { return cGroup; }
 
-		//(elementName=ID "=")?
+		//(name=ID "=")?
 		public Group getGroup_0() { return cGroup_0; }
 
-		//elementName=ID
-		public Assignment getElementNameAssignment_0_0() { return cElementNameAssignment_0_0; }
+		//name=ID
+		public Assignment getNameAssignment_0_0() { return cNameAssignment_0_0; }
 
 		//ID
-		public RuleCall getElementNameIDTerminalRuleCall_0_0_0() { return cElementNameIDTerminalRuleCall_0_0_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_0_0() { return cNameIDTerminalRuleCall_0_0_0; }
 
 		//"="
 		public Keyword getEqualsSignKeyword_0_1() { return cEqualsSignKeyword_0_1; }
@@ -2264,6 +2304,8 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 	private CompositeDefinitionElements pCompositeDefinition;
 	private PrimitiveDefinitionElements pPrimitiveDefinition;
 	private TypeDefinitionElements pTypeDefinition;
+	private CompositeSuperTypeDefinitionElements pCompositeSuperTypeDefinition;
+	private PrimitiveSuperTypeDefinitionElements pPrimitiveSuperTypeDefinition;
 	private HostedInterfaceDefinitionElements pHostedInterfaceDefinition;
 	private ProvidedInterfaceDefinitionElements pProvidedInterfaceDefinition;
 	private RequiredInterfaceDefinitionElements pRequiredInterfaceDefinition;
@@ -2413,9 +2455,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	compositeFormalArgumentsList=FormalArgumentsList? // (arg1, arg2, ...)
 	//
-	//	("extends" superTypes+=[ArchitectureDefinition|QualifiedName] (","
+	//	("extends" superTypes+=[CompositeSuperTypeDefinition|QualifiedName] (","
 	//
-	//	superTypes+=[ArchitectureDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
+	//	superTypes+=[CompositeSuperTypeDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
 	//
 	//	RequiredInterfaceDefinition | SubComponentDefinition | BindingDefinition)* "}";
 	public CompositeDefinitionElements getCompositeDefinitionAccess() {
@@ -2430,11 +2472,11 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	abstract?="abstract"? "primitive" name=QualifiedName compositeFormalArgumentsList=FormalArgumentsList? ("extends"
 	//
-	//	superTypes+=[ArchitectureDefinition|QualifiedName] ("," superTypes+=[ArchitectureDefinition|QualifiedName])*)? "{"
+	//	superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName] (","
 	//
-	//	elements+=(ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition
+	//	superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
 	//
-	//	| DataDefinition)* "}";
+	//	RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)* "}";
 	public PrimitiveDefinitionElements getPrimitiveDefinitionAccess() {
 		return (pPrimitiveDefinition != null) ? pPrimitiveDefinition : (pPrimitiveDefinition = new PrimitiveDefinitionElements());
 	}
@@ -2445,9 +2487,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 	//TypeDefinition:
 	//
-	//	"type" name=QualifiedName ("extends" superTypes+=[ArchitectureDefinition|QualifiedName] (","
+	//	"type" name=QualifiedName ("extends" superTypes+=[TypeDefinition|QualifiedName] (","
 	//
-	//	superTypes+=[ArchitectureDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
+	//	superTypes+=[TypeDefinition|QualifiedName])*)? "{" elements+=(ProvidedInterfaceDefinition |
 	//
 	//	RequiredInterfaceDefinition)* "}";
 	public TypeDefinitionElements getTypeDefinitionAccess() {
@@ -2456,6 +2498,28 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getTypeDefinitionRule() {
 		return getTypeDefinitionAccess().getRule();
+	}
+
+	//CompositeSuperTypeDefinition:
+	//
+	//	CompositeDefinition | TypeDefinition;
+	public CompositeSuperTypeDefinitionElements getCompositeSuperTypeDefinitionAccess() {
+		return (pCompositeSuperTypeDefinition != null) ? pCompositeSuperTypeDefinition : (pCompositeSuperTypeDefinition = new CompositeSuperTypeDefinitionElements());
+	}
+	
+	public ParserRule getCompositeSuperTypeDefinitionRule() {
+		return getCompositeSuperTypeDefinitionAccess().getRule();
+	}
+
+	//PrimitiveSuperTypeDefinition:
+	//
+	//	PrimitiveDefinition | TypeDefinition;
+	public PrimitiveSuperTypeDefinitionElements getPrimitiveSuperTypeDefinitionAccess() {
+		return (pPrimitiveSuperTypeDefinition != null) ? pPrimitiveSuperTypeDefinition : (pPrimitiveSuperTypeDefinition = new PrimitiveSuperTypeDefinitionElements());
+	}
+	
+	public ParserRule getPrimitiveSuperTypeDefinitionRule() {
+		return getPrimitiveSuperTypeDefinitionAccess().getRule();
 	}
 
 	//HostedInterfaceDefinition:
@@ -2726,7 +2790,7 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ArgumentDefinition:
 	//
-	//	(argumentName=ID "=")? argumentValue=Value;
+	//	(name=ID "=")? argumentValue=Value;
 	public ArgumentDefinitionElements getArgumentDefinitionAccess() {
 		return (pArgumentDefinition != null) ? pArgumentDefinition : (pArgumentDefinition = new ArgumentDefinitionElements());
 	}
@@ -2855,7 +2919,7 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//AnnotationElement:
 	//
-	//	(elementName=ID "=")? elementValue=ElementValue;
+	//	(name=ID "=")? elementValue=ElementValue;
 	public AnnotationElementElements getAnnotationElementAccess() {
 		return (pAnnotationElement != null) ? pAnnotationElement : (pAnnotationElement = new AnnotationElementElements());
 	}

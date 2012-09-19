@@ -112,13 +112,22 @@ public interface FractalIdtPackage extends EPackage
   int IDT_FILE__TYPE = 4;
 
   /**
+   * The feature id for the '<em><b>End Def</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDT_FILE__END_DEF = 5;
+
+  /**
    * The number of structural features of the '<em>Idt File</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IDT_FILE_FEATURE_COUNT = 5;
+  int IDT_FILE_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.idt.editor.textual.fractalIdt.impl.ConstantDefinitionBeginImpl <em>Constant Definition Begin</em>}' class.
@@ -131,13 +140,13 @@ public interface FractalIdtPackage extends EPackage
   int CONSTANT_DEFINITION_BEGIN = 1;
 
   /**
-   * The feature id for the '<em><b>Id</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTANT_DEFINITION_BEGIN__ID = 0;
+  int CONSTANT_DEFINITION_BEGIN__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Constant Definition Begin</em>' class.
@@ -215,6 +224,17 @@ public interface FractalIdtPackage extends EPackage
   EReference getIdtFile_Type();
 
   /**
+   * Returns the meta object for the attribute '{@link org.ow2.mindEd.idt.editor.textual.fractalIdt.IdtFile#getEndDef <em>End Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>End Def</em>'.
+   * @see org.ow2.mindEd.idt.editor.textual.fractalIdt.IdtFile#getEndDef()
+   * @see #getIdtFile()
+   * @generated
+   */
+  EAttribute getIdtFile_EndDef();
+
+  /**
    * Returns the meta object for class '{@link org.ow2.mindEd.idt.editor.textual.fractalIdt.ConstantDefinitionBegin <em>Constant Definition Begin</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -225,15 +245,15 @@ public interface FractalIdtPackage extends EPackage
   EClass getConstantDefinitionBegin();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ow2.mindEd.idt.editor.textual.fractalIdt.ConstantDefinitionBegin#getId <em>Id</em>}'.
+   * Returns the meta object for the attribute '{@link org.ow2.mindEd.idt.editor.textual.fractalIdt.ConstantDefinitionBegin#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Id</em>'.
-   * @see org.ow2.mindEd.idt.editor.textual.fractalIdt.ConstantDefinitionBegin#getId()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.ow2.mindEd.idt.editor.textual.fractalIdt.ConstantDefinitionBegin#getName()
    * @see #getConstantDefinitionBegin()
    * @generated
    */
-  EAttribute getConstantDefinitionBegin_Id();
+  EAttribute getConstantDefinitionBegin_Name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -309,6 +329,14 @@ public interface FractalIdtPackage extends EPackage
     EReference IDT_FILE__TYPE = eINSTANCE.getIdtFile_Type();
 
     /**
+     * The meta object literal for the '<em><b>End Def</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IDT_FILE__END_DEF = eINSTANCE.getIdtFile_EndDef();
+
+    /**
      * The meta object literal for the '{@link org.ow2.mindEd.idt.editor.textual.fractalIdt.impl.ConstantDefinitionBeginImpl <em>Constant Definition Begin</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -319,12 +347,12 @@ public interface FractalIdtPackage extends EPackage
     EClass CONSTANT_DEFINITION_BEGIN = eINSTANCE.getConstantDefinitionBegin();
 
     /**
-     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CONSTANT_DEFINITION_BEGIN__ID = eINSTANCE.getConstantDefinitionBegin_Id();
+    EAttribute CONSTANT_DEFINITION_BEGIN__NAME = eINSTANCE.getConstantDefinitionBegin_Name();
 
   }
 

@@ -100,6 +100,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case FractalPackage.COMPOSITE_DEFINITION:
 				if(context == grammarAccess.getArchitectureDefinitionRule() ||
 				   context == grammarAccess.getCompositeDefinitionRule() ||
+				   context == grammarAccess.getCompositeSuperTypeDefinitionRule() ||
 				   context == grammarAccess.getTypeReferenceRule()) {
 					sequence_CompositeDefinition(context, (CompositeDefinition) semanticObject); 
 					return; 
@@ -168,6 +169,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case FractalPackage.PRIMITIVE_DEFINITION:
 				if(context == grammarAccess.getArchitectureDefinitionRule() ||
 				   context == grammarAccess.getPrimitiveDefinitionRule() ||
+				   context == grammarAccess.getPrimitiveSuperTypeDefinitionRule() ||
 				   context == grammarAccess.getTypeReferenceRule()) {
 					sequence_PrimitiveDefinition(context, (PrimitiveDefinition) semanticObject); 
 					return; 
@@ -230,6 +232,8 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 				else break;
 			case FractalPackage.TYPE_DEFINITION:
 				if(context == grammarAccess.getArchitectureDefinitionRule() ||
+				   context == grammarAccess.getCompositeSuperTypeDefinitionRule() ||
+				   context == grammarAccess.getPrimitiveSuperTypeDefinitionRule() ||
 				   context == grammarAccess.getTypeDefinitionRule() ||
 				   context == grammarAccess.getTypeReferenceRule()) {
 					sequence_TypeDefinition(context, (TypeDefinition) semanticObject); 
@@ -251,7 +255,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (elementName=ID? elementValue=ElementValue)
+	 *     (name=ID? elementValue=ElementValue)
 	 */
 	protected void sequence_AnnotationElement(EObject context, AnnotationElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -281,7 +285,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (argumentName=ID? argumentValue=Value)
+	 *     (name=ID? argumentValue=Value)
 	 */
 	protected void sequence_ArgumentDefinition(EObject context, ArgumentDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -320,7 +324,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=QualifiedName 
 	 *         (templateSpecifiers+=TemplateSpecifier templateSpecifiers+=TemplateSpecifier*)? 
 	 *         compositeFormalArgumentsList=FormalArgumentsList? 
-	 *         (superTypes+=[ArchitectureDefinition|QualifiedName] superTypes+=[ArchitectureDefinition|QualifiedName]*)? 
+	 *         (superTypes+=[CompositeSuperTypeDefinition|QualifiedName] superTypes+=[CompositeSuperTypeDefinition|QualifiedName]*)? 
 	 *         (elements+=ProvidedInterfaceDefinition | elements+=RequiredInterfaceDefinition | elements+=SubComponentDefinition | elements+=BindingDefinition)*
 	 *     )
 	 */
@@ -437,7 +441,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         abstract?='abstract'? 
 	 *         name=QualifiedName 
 	 *         compositeFormalArgumentsList=FormalArgumentsList? 
-	 *         (superTypes+=[ArchitectureDefinition|QualifiedName] superTypes+=[ArchitectureDefinition|QualifiedName]*)? 
+	 *         (superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName] superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName]*)? 
 	 *         (
 	 *             elements+=ProvidedInterfaceDefinition | 
 	 *             elements+=RequiredInterfaceDefinition | 
@@ -555,7 +559,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         name=QualifiedName 
-	 *         (superTypes+=[ArchitectureDefinition|QualifiedName] superTypes+=[ArchitectureDefinition|QualifiedName]*)? 
+	 *         (superTypes+=[TypeDefinition|QualifiedName] superTypes+=[TypeDefinition|QualifiedName]*)? 
 	 *         (elements+=ProvidedInterfaceDefinition | elements+=RequiredInterfaceDefinition)*
 	 *     )
 	 */

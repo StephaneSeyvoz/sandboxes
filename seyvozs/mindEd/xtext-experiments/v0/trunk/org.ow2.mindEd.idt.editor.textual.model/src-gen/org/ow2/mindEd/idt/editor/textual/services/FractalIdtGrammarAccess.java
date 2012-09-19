@@ -33,18 +33,19 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cConstantConstantDefinitionParserRuleCall_3_0_0 = (RuleCall)cConstantAssignment_3_0.eContents().get(0);
 		private final Assignment cTypeAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
 		private final RuleCall cTypeTypeDefinitionParserRuleCall_3_1_0 = (RuleCall)cTypeAssignment_3_1.eContents().get(0);
-		private final Keyword cEndifKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cEndDefAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cEndDefConstantDefinitionEndParserRuleCall_4_0 = (RuleCall)cEndDefAssignment_4.eContents().get(0);
 		
 		//IdtFile:
 		//
 		//	begindef=ConstantDefinitionBegin def=ConstantDefinition includes+=IncludeDirective* (constant+=ConstantDefinition |
 		//
-		//	type+=TypeDefinition)* "#endif";
+		//	type+=TypeDefinition)* endDef=ConstantDefinitionEnd;
 		public ParserRule getRule() { return rule; }
 
 		//begindef=ConstantDefinitionBegin def=ConstantDefinition includes+=IncludeDirective* (constant+=ConstantDefinition |
 		//
-		//type+=TypeDefinition)* "#endif"
+		//type+=TypeDefinition)* endDef=ConstantDefinitionEnd
 		public Group getGroup() { return cGroup; }
 
 		//begindef=ConstantDefinitionBegin
@@ -80,38 +81,55 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 		//TypeDefinition
 		public RuleCall getTypeTypeDefinitionParserRuleCall_3_1_0() { return cTypeTypeDefinitionParserRuleCall_3_1_0; }
 
-		//"#endif"
-		public Keyword getEndifKeyword_4() { return cEndifKeyword_4; }
+		//endDef=ConstantDefinitionEnd
+		public Assignment getEndDefAssignment_4() { return cEndDefAssignment_4; }
+
+		//ConstantDefinitionEnd
+		public RuleCall getEndDefConstantDefinitionEndParserRuleCall_4_0() { return cEndDefConstantDefinitionEndParserRuleCall_4_0; }
 	}
 
 	public class ConstantDefinitionBeginElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstantDefinitionBegin");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cIfndefKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cIdAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cIdIDTerminalRuleCall_1_0 = (RuleCall)cIdAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//ConstantDefinitionBegin:
 		//
-		//	"#ifndef" id=ID;
+		//	"#ifndef" name=ID;
 		public ParserRule getRule() { return rule; }
 
-		//"#ifndef" id=ID
+		//"#ifndef" name=ID
 		public Group getGroup() { return cGroup; }
 
 		//"#ifndef"
 		public Keyword getIfndefKeyword_0() { return cIfndefKeyword_0; }
 
-		//id=ID
-		public Assignment getIdAssignment_1() { return cIdAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//ID
-		public RuleCall getIdIDTerminalRuleCall_1_0() { return cIdIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+	}
+
+	public class ConstantDefinitionEndElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstantDefinitionEnd");
+		private final Keyword cEndifKeyword = (Keyword)rule.eContents().get(1);
+		
+		//ConstantDefinitionEnd:
+		//
+		//	"#endif";
+		public ParserRule getRule() { return rule; }
+
+		//"#endif"
+		public Keyword getEndifKeyword() { return cEndifKeyword; }
 	}
 	
 	
 	private IdtFileElements pIdtFile;
 	private ConstantDefinitionBeginElements pConstantDefinitionBegin;
+	private ConstantDefinitionEndElements pConstantDefinitionEnd;
 	
 	private final Grammar grammar;
 
@@ -155,7 +173,7 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	begindef=ConstantDefinitionBegin def=ConstantDefinition includes+=IncludeDirective* (constant+=ConstantDefinition |
 	//
-	//	type+=TypeDefinition)* "#endif";
+	//	type+=TypeDefinition)* endDef=ConstantDefinitionEnd;
 	public IdtFileElements getIdtFileAccess() {
 		return (pIdtFile != null) ? pIdtFile : (pIdtFile = new IdtFileElements());
 	}
@@ -166,7 +184,7 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ConstantDefinitionBegin:
 	//
-	//	"#ifndef" id=ID;
+	//	"#ifndef" name=ID;
 	public ConstantDefinitionBeginElements getConstantDefinitionBeginAccess() {
 		return (pConstantDefinitionBegin != null) ? pConstantDefinitionBegin : (pConstantDefinitionBegin = new ConstantDefinitionBeginElements());
 	}
@@ -175,9 +193,22 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 		return getConstantDefinitionBeginAccess().getRule();
 	}
 
+	//ConstantDefinitionEnd:
+	//
+	//	"#endif";
+	public ConstantDefinitionEndElements getConstantDefinitionEndAccess() {
+		return (pConstantDefinitionEnd != null) ? pConstantDefinitionEnd : (pConstantDefinitionEnd = new ConstantDefinitionEndElements());
+	}
+	
+	public ParserRule getConstantDefinitionEndRule() {
+		return getConstantDefinitionEndAccess().getRule();
+	}
+
 	//ItfFile:
 	//
-	//	includes+=IncludeDirective* (constant+=ConstantDefinition | type+=TypeDefinition)* interface=InterfaceDefinition ";";
+	//	includes+=IncludeDirective* (constant+=ConstantDefinition | type+=TypeDefinition)* interface=InterfaceDefinition
+	//
+	//	";"?;
 	public FractalItfGrammarAccess.ItfFileElements getItfFileAccess() {
 		return gaFractalItf.getItfFileAccess();
 	}
@@ -384,7 +415,7 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Declarator:
 	//
-	//	pointer=PointerSpecification dc=DirectDeclarator;
+	//	pointer+=QualifiedPointerSpecification* dc=DirectDeclarator;
 	public FractalItfGrammarAccess.DeclaratorElements getDeclaratorAccess() {
 		return gaFractalItf.getDeclaratorAccess();
 	}
@@ -397,20 +428,23 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 	// //  pointer=PointerSpecification
 	// //  dc=AbstractDirectDeclarator?
 	// //;
-	// PointerSpecification:
+	// // * -> const/volatile
 	//
-	//	"*";
-	public FractalItfGrammarAccess.PointerSpecificationElements getPointerSpecificationAccess() {
-		return gaFractalItf.getPointerSpecificationAccess();
+	//
+	//QualifiedPointerSpecification:
+	//
+	//	{QualifiedPointerSpecification} "*" typeQualifiers+=TypeQualifier*;
+	public FractalItfGrammarAccess.QualifiedPointerSpecificationElements getQualifiedPointerSpecificationAccess() {
+		return gaFractalItf.getQualifiedPointerSpecificationAccess();
 	}
 	
-	public ParserRule getPointerSpecificationRule() {
-		return getPointerSpecificationAccess().getRule();
+	public ParserRule getQualifiedPointerSpecificationRule() {
+		return getQualifiedPointerSpecificationAccess().getRule();
 	}
 
 	//DirectDeclarator:
 	//
-	//	name=ID array+=ArraySpecification*;
+	//	(name=ID | "(" dec=Declarator ")") array+=ArraySpecification*;
 	public FractalItfGrammarAccess.DirectDeclaratorElements getDirectDeclaratorAccess() {
 		return gaFractalItf.getDirectDeclaratorAccess();
 	}
@@ -476,7 +510,9 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	annotationsList=AnnotationsList? qualifiedTypeSpec=QualifiedTypeSpecification
 	//
-	//	pointerSpecification=PointerSpecification name=ID ("(" "void"? ")" | "(" ParameterList=ParameterList ")") ";";
+	//	pointerSpecification+=QualifiedPointerSpecification* name=ID ("(" "void"? ")" | "(" ParameterList=ParameterList ")")
+	//
+	//	";";
 	public FractalItfGrammarAccess.MethodDefinitionElements getMethodDefinitionAccess() {
 		return gaFractalItf.getMethodDefinitionAccess();
 	}
@@ -576,13 +612,24 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 
 	//AnnotationValue:
 	//
-	//	signedINT | "null" | BOOLEAN | QualifiedName;
+	//	value=(signedINT | "null" | BOOLEAN | QualifiedName | STRING) | arrayValue=ArrayAnnotationValue;
 	public FractalItfGrammarAccess.AnnotationValueElements getAnnotationValueAccess() {
 		return gaFractalItf.getAnnotationValueAccess();
 	}
 	
 	public ParserRule getAnnotationValueRule() {
 		return getAnnotationValueAccess().getRule();
+	}
+
+	//ArrayAnnotationValue:
+	//
+	//	"{" values+=AnnotationValue ("," values+=AnnotationValue)* "}";
+	public FractalItfGrammarAccess.ArrayAnnotationValueElements getArrayAnnotationValueAccess() {
+		return gaFractalItf.getArrayAnnotationValueAccess();
+	}
+	
+	public ParserRule getArrayAnnotationValueRule() {
+		return getArrayAnnotationValueAccess().getRule();
 	}
 
 	//terminal BOOLEAN:
