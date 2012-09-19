@@ -234,8 +234,10 @@ public class CDTUtil {
 						
 						// get the IProject runtime
 						IFolder eclipseRuntimeFolder = currProject.getProject().getFolder("runtime");
-
-						if (eclipseRuntimeFolder.exists())
+						
+						// Only redefine the folder link destination if it's a link
+						// otherwise we would crush possibly hand-made local (not linked) runtimes.
+						if (eclipseRuntimeFolder.exists() && eclipseRuntimeFolder.isLinked())
 							eclipseRuntimeFolder.createLink(new Path(mindRuntimeFile.getAbsolutePath()), IResource.REPLACE, monitor);
 					}
 				}
