@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.cdt.core.CProjectNature;
@@ -50,6 +51,7 @@ import org.ow2.mindEd.ide.core.MindIdeCore;
 import org.ow2.mindEd.ide.core.MindModelManager;
 import org.ow2.mindEd.ide.core.MindNature;
 import org.ow2.mindEd.ide.core.template.TemplateMake;
+import org.ow2.mindEd.ide.model.MindProject;
 
 public class CDTUtil {
 
@@ -166,7 +168,7 @@ public class CDTUtil {
 		private final String mindcLocation;
 
 		private ChangeMindcLocation(String mindcLocation) {
-			super("change the MINDC Location : create variable MIND_ROOT in CDT");
+			super("Change the MINDC Location: create variable MIND_ROOT in CDT");
 			this.mindcLocation = mindcLocation;
 		}
 
@@ -187,7 +189,7 @@ public class CDTUtil {
 				usersupplier.setWorkspaceEnvironment(wsEnv);
 				MindIdeCore.rebuidAll();
 				if (MindModelImpl.TRACING)
-					System.out.println("DONE CHANGE MIND_ROOT to "
+					System.out.println("DONE CHANGING MIND_ROOT to "
 							+ mindcLocation);
 
 			} catch (WriteAccessException e) {
@@ -200,6 +202,60 @@ public class CDTUtil {
 		@Override
 		public boolean belongsTo(Object family) {
 			return FamilyJobCST.FAMILY_ALL == family || FamilyJobCST.FAMILY_CHANGE_MINDC_LOCATION == family;
+		}
+	}
+	
+	private static final class ChangeMindcRuntimeLocation extends Job {
+		private final String mindcRuntimeLocation;
+
+		private ChangeMindcRuntimeLocation(String mindcRuntimeLocation) {
+			super("Change the runtime folders location in every concerned project");
+			this.mindcRuntimeLocation = mindcRuntimeLocation;
+		}
+
+		@Override
+		protected IStatus run(IProgressMonitor monitor) {
+			try {
+				if (MindModelImpl.TRACING)
+					System.out.println("CHANGE RUNTIME FOLDERS LINK DESTINATION to "
+							+ mindcRuntimeLocation);
+				
+				List<MindProject> allMindProjects = MindIdeCore.getModel().getAllProject();
+				for (MindProject currProject : allMindProjects) {
+					if (mindcRuntimeLocation == null) {
+						MindActivator.log(new Status(Status.ERROR, MindActivator.ID, "\"Runtime\" linked folder could not be created, set mindc location in preference"));
+					} else {
+						// is a "folder" but File is the Java way :)
+						File mindRuntimeFile = new File(mindcRuntimeLocation);
+						if (!mindRuntimeFile.exists()) {
+							MindActivator.log(new Status(Status.ERROR, MindActivator.ID, "Mindc location subfolder \"Runtime\" doesn't exist !"));
+							continue;
+						}
+						
+						// get the IProject runtime
+						IFolder eclipseRuntimeFolder = currProject.getProject().getFolder("runtime");
+
+						if (eclipseRuntimeFolder.exists())
+							eclipseRuntimeFolder.createLink(new Path(mindRuntimeFile.getAbsolutePath()), IResource.REPLACE, monitor);
+					}
+				}
+				
+				// Why not
+				MindIdeCore.rebuidAll();
+				if (MindModelImpl.TRACING)
+					System.out.println("DONE CHANGING RUNTIME FOLDERS LINK DESTINATION to "
+							+ mindcRuntimeLocation);
+			} catch (CoreException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return Status.OK_STATUS;
+		}
+
+
+		@Override
+		public boolean belongsTo(Object family) {
+			return FamilyJobCST.FAMILY_ALL == family || FamilyJobCST.FAMILY_CHANGE_MINDC_RUNTIME_LOCATION == family;
 		}
 	}
 
@@ -223,9 +279,15 @@ public class CDTUtil {
 	}
 
 	public static void changeMINDCLocation(final String mindcLocation) {
-		Job r = new ChangeMindcLocation(mindcLocation);
-		r.setRule(ResourcesPlugin.getWorkspace().getRoot());
-		r.schedule();
+		// Changing MIND_ROOT in the environment
+		Job rMindc = new ChangeMindcLocation(mindcLocation);
+		rMindc.setRule(ResourcesPlugin.getWorkspace().getRoot());
+		rMindc.schedule();
+		
+		// Changing runtime linked folders destination
+		Job rRuntime = new ChangeMindcRuntimeLocation(mindcLocation + File.separator + "runtime");
+		rRuntime.setRule(ResourcesPlugin.getWorkspace().getRoot());
+		rRuntime.schedule();
 	}
 
 	public static String getMINDCLocation() {
