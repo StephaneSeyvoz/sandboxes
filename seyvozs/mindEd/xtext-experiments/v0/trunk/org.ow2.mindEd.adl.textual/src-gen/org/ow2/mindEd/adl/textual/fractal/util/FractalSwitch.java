@@ -125,6 +125,20 @@ public class FractalSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case FractalPackage.COMPOSITE_SUPER_TYPE:
+      {
+        CompositeSuperType compositeSuperType = (CompositeSuperType)theEObject;
+        T result = caseCompositeSuperType(compositeSuperType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FractalPackage.PRIMITIVE_SUPER_TYPE:
+      {
+        PrimitiveSuperType primitiveSuperType = (PrimitiveSuperType)theEObject;
+        T result = casePrimitiveSuperType(primitiveSuperType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case FractalPackage.COMPOSITE_SUPER_TYPE_DEFINITION:
       {
         CompositeSuperTypeDefinition compositeSuperTypeDefinition = (CompositeSuperTypeDefinition)theEObject;
@@ -460,6 +474,38 @@ public class FractalSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTypeDefinition(TypeDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Composite Super Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Composite Super Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCompositeSuperType(CompositeSuperType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Primitive Super Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Primitive Super Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePrimitiveSuperType(PrimitiveSuperType object)
   {
     return null;
   }

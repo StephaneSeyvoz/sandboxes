@@ -110,7 +110,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getTypeReference()
    * @generated
    */
-  int TYPE_REFERENCE = 11;
+  int TYPE_REFERENCE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -233,7 +233,7 @@ public interface FractalPackage extends EPackage
   int COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST = ARCHITECTURE_DEFINITION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Super Types</b></em>' reference list.
+   * The feature id for the '<em><b>Super Types</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -297,7 +297,7 @@ public interface FractalPackage extends EPackage
   int PRIMITIVE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST = ARCHITECTURE_DEFINITION_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Super Types</b></em>' reference list.
+   * The feature id for the '<em><b>Super Types</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -370,6 +370,80 @@ public interface FractalPackage extends EPackage
   int TYPE_DEFINITION_FEATURE_COUNT = ARCHITECTURE_DEFINITION_FEATURE_COUNT + 2;
 
   /**
+   * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeSuperTypeImpl <em>Composite Super Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.ow2.mindEd.adl.textual.fractal.impl.CompositeSuperTypeImpl
+   * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getCompositeSuperType()
+   * @generated
+   */
+  int COMPOSITE_SUPER_TYPE = 6;
+
+  /**
+   * The feature id for the '<em><b>Target Arch Def</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_SUPER_TYPE__TARGET_ARCH_DEF = 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST = 1;
+
+  /**
+   * The number of structural features of the '<em>Composite Super Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_SUPER_TYPE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.PrimitiveSuperTypeImpl <em>Primitive Super Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.ow2.mindEd.adl.textual.fractal.impl.PrimitiveSuperTypeImpl
+   * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getPrimitiveSuperType()
+   * @generated
+   */
+  int PRIMITIVE_SUPER_TYPE = 7;
+
+  /**
+   * The feature id for the '<em><b>Target Arch Def</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMITIVE_SUPER_TYPE__TARGET_ARCH_DEF = 0;
+
+  /**
+   * The feature id for the '<em><b>Arguments List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMITIVE_SUPER_TYPE__ARGUMENTS_LIST = 1;
+
+  /**
+   * The number of structural features of the '<em>Primitive Super Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRIMITIVE_SUPER_TYPE_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeSuperTypeDefinitionImpl <em>Composite Super Type Definition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -377,7 +451,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getCompositeSuperTypeDefinition()
    * @generated
    */
-  int COMPOSITE_SUPER_TYPE_DEFINITION = 6;
+  int COMPOSITE_SUPER_TYPE_DEFINITION = 8;
 
   /**
    * The number of structural features of the '<em>Composite Super Type Definition</em>' class.
@@ -396,7 +470,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getPrimitiveSuperTypeDefinition()
    * @generated
    */
-  int PRIMITIVE_SUPER_TYPE_DEFINITION = 7;
+  int PRIMITIVE_SUPER_TYPE_DEFINITION = 9;
 
   /**
    * The number of structural features of the '<em>Primitive Super Type Definition</em>' class.
@@ -415,7 +489,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getElement()
    * @generated
    */
-  int ELEMENT = 16;
+  int ELEMENT = 18;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -443,7 +517,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getHostedInterfaceDefinition()
    * @generated
    */
-  int HOSTED_INTERFACE_DEFINITION = 8;
+  int HOSTED_INTERFACE_DEFINITION = 10;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -516,7 +590,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getProvidedInterfaceDefinition()
    * @generated
    */
-  int PROVIDED_INTERFACE_DEFINITION = 9;
+  int PROVIDED_INTERFACE_DEFINITION = 11;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -589,7 +663,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getRequiredInterfaceDefinition()
    * @generated
    */
-  int REQUIRED_INTERFACE_DEFINITION = 10;
+  int REQUIRED_INTERFACE_DEFINITION = 12;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -671,7 +745,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getCompositeElement()
    * @generated
    */
-  int COMPOSITE_ELEMENT = 17;
+  int COMPOSITE_ELEMENT = 19;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -699,7 +773,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getSubComponentDefinition()
    * @generated
    */
-  int SUB_COMPONENT_DEFINITION = 12;
+  int SUB_COMPONENT_DEFINITION = 14;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -772,7 +846,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getSubComponentBody()
    * @generated
    */
-  int SUB_COMPONENT_BODY = 13;
+  int SUB_COMPONENT_BODY = 15;
 
   /**
    * The feature id for the '<em><b>Anonymous</b></em>' attribute.
@@ -800,7 +874,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getSubComponentCompositeBody()
    * @generated
    */
-  int SUB_COMPONENT_COMPOSITE_BODY = 14;
+  int SUB_COMPONENT_COMPOSITE_BODY = 16;
 
   /**
    * The feature id for the '<em><b>Anonymous</b></em>' attribute.
@@ -837,7 +911,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getSubComponentPrimitiveBody()
    * @generated
    */
-  int SUB_COMPONENT_PRIMITIVE_BODY = 15;
+  int SUB_COMPONENT_PRIMITIVE_BODY = 17;
 
   /**
    * The feature id for the '<em><b>Anonymous</b></em>' attribute.
@@ -874,7 +948,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getPrimitiveElement()
    * @generated
    */
-  int PRIMITIVE_ELEMENT = 18;
+  int PRIMITIVE_ELEMENT = 20;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -902,7 +976,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getBindingDefinition()
    * @generated
    */
-  int BINDING_DEFINITION = 19;
+  int BINDING_DEFINITION = 21;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -1002,7 +1076,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getFormalArgument()
    * @generated
    */
-  int FORMAL_ARGUMENT = 20;
+  int FORMAL_ARGUMENT = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1030,7 +1104,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getFormalArgumentsList()
    * @generated
    */
-  int FORMAL_ARGUMENTS_LIST = 21;
+  int FORMAL_ARGUMENTS_LIST = 23;
 
   /**
    * The feature id for the '<em><b>Formal Arguments</b></em>' containment reference list.
@@ -1058,7 +1132,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getTemplateSpecifier()
    * @generated
    */
-  int TEMPLATE_SPECIFIER = 22;
+  int TEMPLATE_SPECIFIER = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1095,7 +1169,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getTemplateDefinition()
    * @generated
    */
-  int TEMPLATE_DEFINITION = 23;
+  int TEMPLATE_DEFINITION = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -1141,7 +1215,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getArgumentDefinition()
    * @generated
    */
-  int ARGUMENT_DEFINITION = 24;
+  int ARGUMENT_DEFINITION = 26;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1178,7 +1252,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getAttributeDefinition()
    * @generated
    */
-  int ATTRIBUTE_DEFINITION = 25;
+  int ATTRIBUTE_DEFINITION = 27;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -1233,7 +1307,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getImplementationDefinition()
    * @generated
    */
-  int IMPLEMENTATION_DEFINITION = 26;
+  int IMPLEMENTATION_DEFINITION = 28;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -1279,7 +1353,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getDataDefinition()
    * @generated
    */
-  int DATA_DEFINITION = 27;
+  int DATA_DEFINITION = 29;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -1325,7 +1399,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getFileC()
    * @generated
    */
-  int FILE_C = 28;
+  int FILE_C = 30;
 
   /**
    * The feature id for the '<em><b>Directory</b></em>' attribute.
@@ -1362,7 +1436,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getInlineCodeC()
    * @generated
    */
-  int INLINE_CODE_C = 29;
+  int INLINE_CODE_C = 31;
 
   /**
    * The feature id for the '<em><b>Code C</b></em>' attribute.
@@ -1390,7 +1464,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getAnnotationsList()
    * @generated
    */
-  int ANNOTATIONS_LIST = 30;
+  int ANNOTATIONS_LIST = 32;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1418,7 +1492,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getElementValue()
    * @generated
    */
-  int ELEMENT_VALUE = 33;
+  int ELEMENT_VALUE = 35;
 
   /**
    * The number of structural features of the '<em>Element Value</em>' class.
@@ -1437,7 +1511,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getAnnotation()
    * @generated
    */
-  int ANNOTATION = 31;
+  int ANNOTATION = 33;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1474,7 +1548,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getAnnotationElement()
    * @generated
    */
-  int ANNOTATION_ELEMENT = 32;
+  int ANNOTATION_ELEMENT = 34;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1511,7 +1585,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getElementValueArrayInitializer()
    * @generated
    */
-  int ELEMENT_VALUE_ARRAY_INITIALIZER = 34;
+  int ELEMENT_VALUE_ARRAY_INITIALIZER = 36;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1539,7 +1613,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getConstantValue()
    * @generated
    */
-  int CONSTANT_VALUE = 35;
+  int CONSTANT_VALUE = 37;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1678,10 +1752,10 @@ public interface FractalPackage extends EPackage
   EReference getCompositeDefinition_CompositeFormalArgumentsList();
 
   /**
-   * Returns the meta object for the reference list '{@link org.ow2.mindEd.adl.textual.fractal.CompositeDefinition#getSuperTypes <em>Super Types</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.adl.textual.fractal.CompositeDefinition#getSuperTypes <em>Super Types</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Super Types</em>'.
+   * @return the meta object for the containment reference list '<em>Super Types</em>'.
    * @see org.ow2.mindEd.adl.textual.fractal.CompositeDefinition#getSuperTypes()
    * @see #getCompositeDefinition()
    * @generated
@@ -1732,10 +1806,10 @@ public interface FractalPackage extends EPackage
   EReference getPrimitiveDefinition_CompositeFormalArgumentsList();
 
   /**
-   * Returns the meta object for the reference list '{@link org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition#getSuperTypes <em>Super Types</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition#getSuperTypes <em>Super Types</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Super Types</em>'.
+   * @return the meta object for the containment reference list '<em>Super Types</em>'.
    * @see org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition#getSuperTypes()
    * @see #getPrimitiveDefinition()
    * @generated
@@ -1784,6 +1858,70 @@ public interface FractalPackage extends EPackage
    * @generated
    */
   EReference getTypeDefinition_Elements();
+
+  /**
+   * Returns the meta object for class '{@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperType <em>Composite Super Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Composite Super Type</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.CompositeSuperType
+   * @generated
+   */
+  EClass getCompositeSuperType();
+
+  /**
+   * Returns the meta object for the reference '{@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperType#getTargetArchDef <em>Target Arch Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target Arch Def</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.CompositeSuperType#getTargetArchDef()
+   * @see #getCompositeSuperType()
+   * @generated
+   */
+  EReference getCompositeSuperType_TargetArchDef();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperType#getArgumentsList <em>Arguments List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Arguments List</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.CompositeSuperType#getArgumentsList()
+   * @see #getCompositeSuperType()
+   * @generated
+   */
+  EReference getCompositeSuperType_ArgumentsList();
+
+  /**
+   * Returns the meta object for class '{@link org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType <em>Primitive Super Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Primitive Super Type</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType
+   * @generated
+   */
+  EClass getPrimitiveSuperType();
+
+  /**
+   * Returns the meta object for the reference '{@link org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType#getTargetArchDef <em>Target Arch Def</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target Arch Def</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType#getTargetArchDef()
+   * @see #getPrimitiveSuperType()
+   * @generated
+   */
+  EReference getPrimitiveSuperType_TargetArchDef();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType#getArgumentsList <em>Arguments List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Arguments List</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType#getArgumentsList()
+   * @see #getPrimitiveSuperType()
+   * @generated
+   */
+  EReference getPrimitiveSuperType_ArgumentsList();
 
   /**
    * Returns the meta object for class '{@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition <em>Composite Super Type Definition</em>}'.
@@ -2744,7 +2882,7 @@ public interface FractalPackage extends EPackage
     EReference COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST = eINSTANCE.getCompositeDefinition_CompositeFormalArgumentsList();
 
     /**
-     * The meta object literal for the '<em><b>Super Types</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Super Types</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2786,7 +2924,7 @@ public interface FractalPackage extends EPackage
     EReference PRIMITIVE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST = eINSTANCE.getPrimitiveDefinition_CompositeFormalArgumentsList();
 
     /**
-     * The meta object literal for the '<em><b>Super Types</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Super Types</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -2826,6 +2964,58 @@ public interface FractalPackage extends EPackage
      * @generated
      */
     EReference TYPE_DEFINITION__ELEMENTS = eINSTANCE.getTypeDefinition_Elements();
+
+    /**
+     * The meta object literal for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeSuperTypeImpl <em>Composite Super Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.ow2.mindEd.adl.textual.fractal.impl.CompositeSuperTypeImpl
+     * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getCompositeSuperType()
+     * @generated
+     */
+    EClass COMPOSITE_SUPER_TYPE = eINSTANCE.getCompositeSuperType();
+
+    /**
+     * The meta object literal for the '<em><b>Target Arch Def</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPOSITE_SUPER_TYPE__TARGET_ARCH_DEF = eINSTANCE.getCompositeSuperType_TargetArchDef();
+
+    /**
+     * The meta object literal for the '<em><b>Arguments List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST = eINSTANCE.getCompositeSuperType_ArgumentsList();
+
+    /**
+     * The meta object literal for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.PrimitiveSuperTypeImpl <em>Primitive Super Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.ow2.mindEd.adl.textual.fractal.impl.PrimitiveSuperTypeImpl
+     * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getPrimitiveSuperType()
+     * @generated
+     */
+    EClass PRIMITIVE_SUPER_TYPE = eINSTANCE.getPrimitiveSuperType();
+
+    /**
+     * The meta object literal for the '<em><b>Target Arch Def</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMITIVE_SUPER_TYPE__TARGET_ARCH_DEF = eINSTANCE.getPrimitiveSuperType_TargetArchDef();
+
+    /**
+     * The meta object literal for the '<em><b>Arguments List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRIMITIVE_SUPER_TYPE__ARGUMENTS_LIST = eINSTANCE.getPrimitiveSuperType_ArgumentsList();
 
     /**
      * The meta object literal for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeSuperTypeDefinitionImpl <em>Composite Super Type Definition</em>}' class.

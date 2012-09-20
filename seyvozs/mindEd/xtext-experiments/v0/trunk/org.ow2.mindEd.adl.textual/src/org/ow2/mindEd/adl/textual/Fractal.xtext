@@ -40,9 +40,9 @@ CompositeDefinition:
 	'composite' name = QualifiedName
 	('<' (templateSpecifiers+=TemplateSpecifier (',' templateSpecifiers+=TemplateSpecifier)*) '>')? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
 	(compositeFormalArgumentsList = FormalArgumentsList)? // (arg1, arg2, ...)
-	(	'extends' superTypes += ([CompositeSuperTypeDefinition | QualifiedName])
-			(',' superTypes += ([CompositeSuperTypeDefinition | QualifiedName]))*)?
-	'{'
+	(	'extends' superTypes += CompositeSuperType
+			(',' superTypes += CompositeSuperType)*
+	)? '{'
 		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition | SubComponentDefinition | BindingDefinition)*
 	'}'
 ;
@@ -51,8 +51,8 @@ PrimitiveDefinition:
 	(abstract ?= 'abstract')?
 	'primitive' name = QualifiedName
 	(compositeFormalArgumentsList = FormalArgumentsList)?
-	('extends' superTypes += ([PrimitiveSuperTypeDefinition | QualifiedName])
-		(',' superTypes += ([PrimitiveSuperTypeDefinition | QualifiedName]))*
+	('extends' superTypes += PrimitiveSuperType
+		(',' superTypes += PrimitiveSuperType)*
 	)? '{'
 		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)*
 	'}'
@@ -63,6 +63,16 @@ TypeDefinition:
 	('extends' superTypes += [TypeDefinition | QualifiedName] (',' superTypes += [TypeDefinition | QualifiedName])*)? '{'
 		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition)*
 	'}'
+;
+
+CompositeSuperType:
+	targetArchDef = [CompositeSuperTypeDefinition | QualifiedName]
+	('(' argumentsList+=ArgumentDefinition (',' argumentsList+=ArgumentDefinition)* ')')?
+;
+
+PrimitiveSuperType:
+	targetArchDef = [PrimitiveSuperTypeDefinition | QualifiedName]
+	('(' argumentsList+=ArgumentDefinition (',' argumentsList+=ArgumentDefinition)* ')')?
 ;
 
 CompositeSuperTypeDefinition:
@@ -100,7 +110,7 @@ TypeReference:
 SubComponentDefinition:
 	(annotationsList=AnnotationsList)?
 	'contains'
-	(type = [TypeReference | QualifiedName])?
+	((type = [TypeReference | QualifiedName])?)
 	('<' templatesList+=TemplateDefinition (',' templatesList+=TemplateDefinition)* '>')?
 	('(' argumentsList+=ArgumentDefinition (',' argumentsList+=ArgumentDefinition)* ')')?
 	'as'

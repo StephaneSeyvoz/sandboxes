@@ -77,6 +77,24 @@ public interface FractalFactory extends EFactory
   TypeDefinition createTypeDefinition();
 
   /**
+   * Returns a new object of class '<em>Composite Super Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Composite Super Type</em>'.
+   * @generated
+   */
+  CompositeSuperType createCompositeSuperType();
+
+  /**
+   * Returns a new object of class '<em>Primitive Super Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Primitive Super Type</em>'.
+   * @generated
+   */
+  PrimitiveSuperType createPrimitiveSuperType();
+
+  /**
    * Returns a new object of class '<em>Composite Super Type Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

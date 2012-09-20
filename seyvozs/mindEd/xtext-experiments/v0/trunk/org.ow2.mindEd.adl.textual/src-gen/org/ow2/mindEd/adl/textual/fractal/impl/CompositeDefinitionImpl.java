@@ -15,12 +15,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.ow2.mindEd.adl.textual.fractal.CompositeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeElement;
-import org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition;
+import org.ow2.mindEd.adl.textual.fractal.CompositeSuperType;
 import org.ow2.mindEd.adl.textual.fractal.FormalArgumentsList;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
@@ -64,14 +63,14 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
   protected FormalArgumentsList compositeFormalArgumentsList;
 
   /**
-   * The cached value of the '{@link #getSuperTypes() <em>Super Types</em>}' reference list.
+   * The cached value of the '{@link #getSuperTypes() <em>Super Types</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSuperTypes()
    * @generated
    * @ordered
    */
-  protected EList<CompositeSuperTypeDefinition> superTypes;
+  protected EList<CompositeSuperType> superTypes;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -171,11 +170,11 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<CompositeSuperTypeDefinition> getSuperTypes()
+  public EList<CompositeSuperType> getSuperTypes()
   {
     if (superTypes == null)
     {
-      superTypes = new EObjectResolvingEList<CompositeSuperTypeDefinition>(CompositeSuperTypeDefinition.class, this, FractalPackage.COMPOSITE_DEFINITION__SUPER_TYPES);
+      superTypes = new EObjectContainmentEList<CompositeSuperType>(CompositeSuperType.class, this, FractalPackage.COMPOSITE_DEFINITION__SUPER_TYPES);
     }
     return superTypes;
   }
@@ -208,6 +207,8 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
         return ((InternalEList<?>)getTemplateSpecifiers()).basicRemove(otherEnd, msgs);
       case FractalPackage.COMPOSITE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         return basicSetCompositeFormalArgumentsList(null, msgs);
+      case FractalPackage.COMPOSITE_DEFINITION__SUPER_TYPES:
+        return ((InternalEList<?>)getSuperTypes()).basicRemove(otherEnd, msgs);
       case FractalPackage.COMPOSITE_DEFINITION__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -256,7 +257,7 @@ public class CompositeDefinitionImpl extends ArchitectureDefinitionImpl implemen
         return;
       case FractalPackage.COMPOSITE_DEFINITION__SUPER_TYPES:
         getSuperTypes().clear();
-        getSuperTypes().addAll((Collection<? extends CompositeSuperTypeDefinition>)newValue);
+        getSuperTypes().addAll((Collection<? extends CompositeSuperType>)newValue);
         return;
       case FractalPackage.COMPOSITE_DEFINITION__ELEMENTS:
         getElements().clear();

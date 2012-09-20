@@ -68,20 +68,20 @@ public interface CompositeDefinition extends ArchitectureDefinition, CompositeSu
   void setCompositeFormalArgumentsList(FormalArgumentsList value);
 
   /**
-   * Returns the value of the '<em><b>Super Types</b></em>' reference list.
-   * The list contents are of type {@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition}.
+   * Returns the value of the '<em><b>Super Types</b></em>' containment reference list.
+   * The list contents are of type {@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperType}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Super Types</em>' reference list isn't clear,
+   * If the meaning of the '<em>Super Types</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Super Types</em>' reference list.
+   * @return the value of the '<em>Super Types</em>' containment reference list.
    * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getCompositeDefinition_SuperTypes()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  EList<CompositeSuperTypeDefinition> getSuperTypes();
+  EList<CompositeSuperType> getSuperTypes();
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

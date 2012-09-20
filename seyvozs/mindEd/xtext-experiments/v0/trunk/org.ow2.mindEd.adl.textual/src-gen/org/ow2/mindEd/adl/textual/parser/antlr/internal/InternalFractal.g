@@ -415,17 +415,17 @@ ruleCompositeDefinition returns [EObject current=null]
 (
 (
 		{ 
-		  /* */ 
-		}
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getCompositeDefinitionRule());
-	        }
-        }
-		{ 
-	        newCompositeNode(grammarAccess.getCompositeDefinitionAccess().getSuperTypesCompositeSuperTypeDefinitionCrossReference_4_1_0()); 
+	        newCompositeNode(grammarAccess.getCompositeDefinitionAccess().getSuperTypesCompositeSuperTypeParserRuleCall_4_1_0()); 
 	    }
-		ruleQualifiedName		{ 
+		lv_superTypes_9_0=ruleCompositeSuperType		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCompositeDefinitionRule());
+	        }
+       		add(
+       			$current, 
+       			"superTypes",
+        		lv_superTypes_9_0, 
+        		"CompositeSuperType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -437,17 +437,17 @@ ruleCompositeDefinition returns [EObject current=null]
 (
 (
 		{ 
-		  /* */ 
-		}
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getCompositeDefinitionRule());
-	        }
-        }
-		{ 
-	        newCompositeNode(grammarAccess.getCompositeDefinitionAccess().getSuperTypesCompositeSuperTypeDefinitionCrossReference_4_2_1_0()); 
+	        newCompositeNode(grammarAccess.getCompositeDefinitionAccess().getSuperTypesCompositeSuperTypeParserRuleCall_4_2_1_0()); 
 	    }
-		ruleQualifiedName		{ 
+		lv_superTypes_11_0=ruleCompositeSuperType		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCompositeDefinitionRule());
+	        }
+       		add(
+       			$current, 
+       			"superTypes",
+        		lv_superTypes_11_0, 
+        		"CompositeSuperType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -609,17 +609,17 @@ rulePrimitiveDefinition returns [EObject current=null]
 (
 (
 		{ 
-		  /* */ 
-		}
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getPrimitiveDefinitionRule());
-	        }
-        }
-		{ 
-	        newCompositeNode(grammarAccess.getPrimitiveDefinitionAccess().getSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_1_0()); 
+	        newCompositeNode(grammarAccess.getPrimitiveDefinitionAccess().getSuperTypesPrimitiveSuperTypeParserRuleCall_4_1_0()); 
 	    }
-		ruleQualifiedName		{ 
+		lv_superTypes_5_0=rulePrimitiveSuperType		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPrimitiveDefinitionRule());
+	        }
+       		add(
+       			$current, 
+       			"superTypes",
+        		lv_superTypes_5_0, 
+        		"PrimitiveSuperType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -631,17 +631,17 @@ rulePrimitiveDefinition returns [EObject current=null]
 (
 (
 		{ 
-		  /* */ 
-		}
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getPrimitiveDefinitionRule());
-	        }
-        }
-		{ 
-	        newCompositeNode(grammarAccess.getPrimitiveDefinitionAccess().getSuperTypesPrimitiveSuperTypeDefinitionCrossReference_4_2_1_0()); 
+	        newCompositeNode(grammarAccess.getPrimitiveDefinitionAccess().getSuperTypesPrimitiveSuperTypeParserRuleCall_4_2_1_0()); 
 	    }
-		ruleQualifiedName		{ 
+		lv_superTypes_7_0=rulePrimitiveSuperType		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPrimitiveDefinitionRule());
+	        }
+       		add(
+       			$current, 
+       			"superTypes",
+        		lv_superTypes_7_0, 
+        		"PrimitiveSuperType");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -867,6 +867,180 @@ ruleTypeDefinition returns [EObject current=null]
     	newLeafNode(otherlv_8, grammarAccess.getTypeDefinitionAccess().getRightCurlyBracketKeyword_5());
     }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleCompositeSuperType
+entryRuleCompositeSuperType returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCompositeSuperTypeRule()); }
+	 iv_ruleCompositeSuperType=ruleCompositeSuperType 
+	 { $current=$iv_ruleCompositeSuperType.current; } 
+	 EOF 
+;
+
+// Rule CompositeSuperType
+ruleCompositeSuperType returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+		  /* */ 
+		}
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getCompositeSuperTypeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getCompositeSuperTypeAccess().getTargetArchDefCompositeSuperTypeDefinitionCrossReference_0_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_1='(' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getCompositeSuperTypeAccess().getLeftParenthesisKeyword_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCompositeSuperTypeAccess().getArgumentsListArgumentDefinitionParserRuleCall_1_1_0()); 
+	    }
+		lv_argumentsList_2_0=ruleArgumentDefinition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCompositeSuperTypeRule());
+	        }
+       		add(
+       			$current, 
+       			"argumentsList",
+        		lv_argumentsList_2_0, 
+        		"ArgumentDefinition");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_3=',' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getCompositeSuperTypeAccess().getCommaKeyword_1_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getCompositeSuperTypeAccess().getArgumentsListArgumentDefinitionParserRuleCall_1_2_1_0()); 
+	    }
+		lv_argumentsList_4_0=ruleArgumentDefinition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getCompositeSuperTypeRule());
+	        }
+       		add(
+       			$current, 
+       			"argumentsList",
+        		lv_argumentsList_4_0, 
+        		"ArgumentDefinition");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_5=')' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getCompositeSuperTypeAccess().getRightParenthesisKeyword_1_3());
+    }
+)?)
+;
+
+
+
+
+
+// Entry rule entryRulePrimitiveSuperType
+entryRulePrimitiveSuperType returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPrimitiveSuperTypeRule()); }
+	 iv_rulePrimitiveSuperType=rulePrimitiveSuperType 
+	 { $current=$iv_rulePrimitiveSuperType.current; } 
+	 EOF 
+;
+
+// Rule PrimitiveSuperType
+rulePrimitiveSuperType returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		{ 
+		  /* */ 
+		}
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getPrimitiveSuperTypeRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getPrimitiveSuperTypeAccess().getTargetArchDefPrimitiveSuperTypeDefinitionCrossReference_0_0()); 
+	    }
+		ruleQualifiedName		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_1='(' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getPrimitiveSuperTypeAccess().getLeftParenthesisKeyword_1_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPrimitiveSuperTypeAccess().getArgumentsListArgumentDefinitionParserRuleCall_1_1_0()); 
+	    }
+		lv_argumentsList_2_0=ruleArgumentDefinition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPrimitiveSuperTypeRule());
+	        }
+       		add(
+       			$current, 
+       			"argumentsList",
+        		lv_argumentsList_2_0, 
+        		"ArgumentDefinition");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_3=',' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getPrimitiveSuperTypeAccess().getCommaKeyword_1_2_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPrimitiveSuperTypeAccess().getArgumentsListArgumentDefinitionParserRuleCall_1_2_1_0()); 
+	    }
+		lv_argumentsList_4_0=ruleArgumentDefinition		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPrimitiveSuperTypeRule());
+	        }
+       		add(
+       			$current, 
+       			"argumentsList",
+        		lv_argumentsList_4_0, 
+        		"ArgumentDefinition");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_5=')' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getPrimitiveSuperTypeAccess().getRightParenthesisKeyword_1_3());
+    }
+)?)
 ;
 
 

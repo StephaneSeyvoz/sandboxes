@@ -21,8 +21,8 @@
         eType="#//TemplateSpecifier" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compositeFormalArgumentsList"
         eType="#//FormalArgumentsList" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="superTypes" unique="false"
-        upperBound="-1" eType="#//CompositeSuperTypeDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superTypes" upperBound="-1"
+        eType="#//CompositeSuperType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//CompositeElement" containment="true"/>
   </eClassifiers>
@@ -30,8 +30,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="compositeFormalArgumentsList"
         eType="#//FormalArgumentsList" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="superTypes" unique="false"
-        upperBound="-1" eType="#//PrimitiveSuperTypeDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superTypes" upperBound="-1"
+        eType="#//PrimitiveSuperType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//PrimitiveElement" containment="true"/>
   </eClassifiers>
@@ -40,6 +40,16 @@
         upperBound="-1" eType="#//TypeDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//HostedInterfaceDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeSuperType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetArchDef" eType="#//CompositeSuperTypeDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentsList" upperBound="-1"
+        eType="#//ArgumentDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveSuperType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetArchDef" eType="#//PrimitiveSuperTypeDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argumentsList" upperBound="-1"
+        eType="#//ArgumentDefinition" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeSuperTypeDefinition"/>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveSuperTypeDefinition"/>

@@ -70,6 +70,8 @@ public class FractalFactoryImpl extends EFactoryImpl implements FractalFactory
       case FractalPackage.COMPOSITE_DEFINITION: return createCompositeDefinition();
       case FractalPackage.PRIMITIVE_DEFINITION: return createPrimitiveDefinition();
       case FractalPackage.TYPE_DEFINITION: return createTypeDefinition();
+      case FractalPackage.COMPOSITE_SUPER_TYPE: return createCompositeSuperType();
+      case FractalPackage.PRIMITIVE_SUPER_TYPE: return createPrimitiveSuperType();
       case FractalPackage.COMPOSITE_SUPER_TYPE_DEFINITION: return createCompositeSuperTypeDefinition();
       case FractalPackage.PRIMITIVE_SUPER_TYPE_DEFINITION: return createPrimitiveSuperTypeDefinition();
       case FractalPackage.HOSTED_INTERFACE_DEFINITION: return createHostedInterfaceDefinition();
@@ -169,6 +171,28 @@ public class FractalFactoryImpl extends EFactoryImpl implements FractalFactory
   {
     TypeDefinitionImpl typeDefinition = new TypeDefinitionImpl();
     return typeDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CompositeSuperType createCompositeSuperType()
+  {
+    CompositeSuperTypeImpl compositeSuperType = new CompositeSuperTypeImpl();
+    return compositeSuperType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PrimitiveSuperType createPrimitiveSuperType()
+  {
+    PrimitiveSuperTypeImpl primitiveSuperType = new PrimitiveSuperTypeImpl();
+    return primitiveSuperType;
   }
 
   /**

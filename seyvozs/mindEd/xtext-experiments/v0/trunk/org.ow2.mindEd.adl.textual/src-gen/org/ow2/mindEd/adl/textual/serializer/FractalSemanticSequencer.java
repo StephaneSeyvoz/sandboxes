@@ -21,6 +21,7 @@ import org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.AttributeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.BindingDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeDefinition;
+import org.ow2.mindEd.adl.textual.fractal.CompositeSuperType;
 import org.ow2.mindEd.adl.textual.fractal.ConstantValue;
 import org.ow2.mindEd.adl.textual.fractal.DataDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ElementValueArrayInitializer;
@@ -32,6 +33,7 @@ import org.ow2.mindEd.adl.textual.fractal.ImplementationDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ImportDefinition;
 import org.ow2.mindEd.adl.textual.fractal.InlineCodeC;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition;
+import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType;
 import org.ow2.mindEd.adl.textual.fractal.ProvidedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.RequiredInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentCompositeBody;
@@ -106,6 +108,12 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
+			case FractalPackage.COMPOSITE_SUPER_TYPE:
+				if(context == grammarAccess.getCompositeSuperTypeRule()) {
+					sequence_CompositeSuperType(context, (CompositeSuperType) semanticObject); 
+					return; 
+				}
+				else break;
 			case FractalPackage.CONSTANT_VALUE:
 				if(context == grammarAccess.getConstantValueRule() ||
 				   context == grammarAccess.getElementValueRule()) {
@@ -172,6 +180,12 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 				   context == grammarAccess.getPrimitiveSuperTypeDefinitionRule() ||
 				   context == grammarAccess.getTypeReferenceRule()) {
 					sequence_PrimitiveDefinition(context, (PrimitiveDefinition) semanticObject); 
+					return; 
+				}
+				else break;
+			case FractalPackage.PRIMITIVE_SUPER_TYPE:
+				if(context == grammarAccess.getPrimitiveSuperTypeRule()) {
+					sequence_PrimitiveSuperType(context, (PrimitiveSuperType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -324,11 +338,20 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=QualifiedName 
 	 *         (templateSpecifiers+=TemplateSpecifier templateSpecifiers+=TemplateSpecifier*)? 
 	 *         compositeFormalArgumentsList=FormalArgumentsList? 
-	 *         (superTypes+=[CompositeSuperTypeDefinition|QualifiedName] superTypes+=[CompositeSuperTypeDefinition|QualifiedName]*)? 
+	 *         (superTypes+=CompositeSuperType superTypes+=CompositeSuperType*)? 
 	 *         (elements+=ProvidedInterfaceDefinition | elements+=RequiredInterfaceDefinition | elements+=SubComponentDefinition | elements+=BindingDefinition)*
 	 *     )
 	 */
 	protected void sequence_CompositeDefinition(EObject context, CompositeDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (targetArchDef=[CompositeSuperTypeDefinition|QualifiedName] (argumentsList+=ArgumentDefinition argumentsList+=ArgumentDefinition*)?)
+	 */
+	protected void sequence_CompositeSuperType(EObject context, CompositeSuperType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -441,7 +464,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         abstract?='abstract'? 
 	 *         name=QualifiedName 
 	 *         compositeFormalArgumentsList=FormalArgumentsList? 
-	 *         (superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName] superTypes+=[PrimitiveSuperTypeDefinition|QualifiedName]*)? 
+	 *         (superTypes+=PrimitiveSuperType superTypes+=PrimitiveSuperType*)? 
 	 *         (
 	 *             elements+=ProvidedInterfaceDefinition | 
 	 *             elements+=RequiredInterfaceDefinition | 
@@ -452,6 +475,15 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 */
 	protected void sequence_PrimitiveDefinition(EObject context, PrimitiveDefinition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (targetArchDef=[PrimitiveSuperTypeDefinition|QualifiedName] (argumentsList+=ArgumentDefinition argumentsList+=ArgumentDefinition*)?)
+	 */
+	protected void sequence_PrimitiveSuperType(EObject context, PrimitiveSuperType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -19,6 +19,7 @@ import org.ow2.mindEd.adl.textual.fractal.AttributeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.BindingDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeElement;
+import org.ow2.mindEd.adl.textual.fractal.CompositeSuperType;
 import org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ConstantValue;
 import org.ow2.mindEd.adl.textual.fractal.DataDefinition;
@@ -36,6 +37,7 @@ import org.ow2.mindEd.adl.textual.fractal.ImportDefinition;
 import org.ow2.mindEd.adl.textual.fractal.InlineCodeC;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveElement;
+import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ProvidedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.RequiredInterfaceDefinition;
@@ -99,6 +101,20 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * @generated
    */
   private EClass typeDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass compositeSuperTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass primitiveSuperTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -584,6 +600,66 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
   public EReference getTypeDefinition_Elements()
   {
     return (EReference)typeDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCompositeSuperType()
+  {
+    return compositeSuperTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCompositeSuperType_TargetArchDef()
+  {
+    return (EReference)compositeSuperTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCompositeSuperType_ArgumentsList()
+  {
+    return (EReference)compositeSuperTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPrimitiveSuperType()
+  {
+    return primitiveSuperTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPrimitiveSuperType_TargetArchDef()
+  {
+    return (EReference)primitiveSuperTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPrimitiveSuperType_ArgumentsList()
+  {
+    return (EReference)primitiveSuperTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1433,6 +1509,14 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     createEReference(typeDefinitionEClass, TYPE_DEFINITION__SUPER_TYPES);
     createEReference(typeDefinitionEClass, TYPE_DEFINITION__ELEMENTS);
 
+    compositeSuperTypeEClass = createEClass(COMPOSITE_SUPER_TYPE);
+    createEReference(compositeSuperTypeEClass, COMPOSITE_SUPER_TYPE__TARGET_ARCH_DEF);
+    createEReference(compositeSuperTypeEClass, COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST);
+
+    primitiveSuperTypeEClass = createEClass(PRIMITIVE_SUPER_TYPE);
+    createEReference(primitiveSuperTypeEClass, PRIMITIVE_SUPER_TYPE__TARGET_ARCH_DEF);
+    createEReference(primitiveSuperTypeEClass, PRIMITIVE_SUPER_TYPE__ARGUMENTS_LIST);
+
     compositeSuperTypeDefinitionEClass = createEClass(COMPOSITE_SUPER_TYPE_DEFINITION);
 
     primitiveSuperTypeDefinitionEClass = createEClass(PRIMITIVE_SUPER_TYPE_DEFINITION);
@@ -1617,18 +1701,26 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     initEClass(compositeDefinitionEClass, CompositeDefinition.class, "CompositeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCompositeDefinition_TemplateSpecifiers(), this.getTemplateSpecifier(), null, "templateSpecifiers", null, 0, -1, CompositeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCompositeDefinition_CompositeFormalArgumentsList(), this.getFormalArgumentsList(), null, "compositeFormalArgumentsList", null, 0, 1, CompositeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCompositeDefinition_SuperTypes(), this.getCompositeSuperTypeDefinition(), null, "superTypes", null, 0, -1, CompositeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCompositeDefinition_SuperTypes(), this.getCompositeSuperType(), null, "superTypes", null, 0, -1, CompositeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCompositeDefinition_Elements(), this.getCompositeElement(), null, "elements", null, 0, -1, CompositeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(primitiveDefinitionEClass, PrimitiveDefinition.class, "PrimitiveDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPrimitiveDefinition_Abstract(), ecorePackage.getEBoolean(), "abstract", null, 0, 1, PrimitiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPrimitiveDefinition_CompositeFormalArgumentsList(), this.getFormalArgumentsList(), null, "compositeFormalArgumentsList", null, 0, 1, PrimitiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPrimitiveDefinition_SuperTypes(), this.getPrimitiveSuperTypeDefinition(), null, "superTypes", null, 0, -1, PrimitiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPrimitiveDefinition_SuperTypes(), this.getPrimitiveSuperType(), null, "superTypes", null, 0, -1, PrimitiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPrimitiveDefinition_Elements(), this.getPrimitiveElement(), null, "elements", null, 0, -1, PrimitiveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeDefinitionEClass, TypeDefinition.class, "TypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTypeDefinition_SuperTypes(), this.getTypeDefinition(), null, "superTypes", null, 0, -1, TypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeDefinition_Elements(), this.getHostedInterfaceDefinition(), null, "elements", null, 0, -1, TypeDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(compositeSuperTypeEClass, CompositeSuperType.class, "CompositeSuperType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCompositeSuperType_TargetArchDef(), this.getCompositeSuperTypeDefinition(), null, "targetArchDef", null, 0, 1, CompositeSuperType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCompositeSuperType_ArgumentsList(), this.getArgumentDefinition(), null, "argumentsList", null, 0, -1, CompositeSuperType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(primitiveSuperTypeEClass, PrimitiveSuperType.class, "PrimitiveSuperType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPrimitiveSuperType_TargetArchDef(), this.getPrimitiveSuperTypeDefinition(), null, "targetArchDef", null, 0, 1, PrimitiveSuperType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPrimitiveSuperType_ArgumentsList(), this.getArgumentDefinition(), null, "argumentsList", null, 0, -1, PrimitiveSuperType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(compositeSuperTypeDefinitionEClass, CompositeSuperTypeDefinition.class, "CompositeSuperTypeDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

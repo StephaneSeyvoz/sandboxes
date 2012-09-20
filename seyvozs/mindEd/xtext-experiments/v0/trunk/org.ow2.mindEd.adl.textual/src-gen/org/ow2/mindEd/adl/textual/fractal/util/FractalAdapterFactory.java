@@ -105,6 +105,16 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
         return createTypeDefinitionAdapter();
       }
       @Override
+      public Adapter caseCompositeSuperType(CompositeSuperType object)
+      {
+        return createCompositeSuperTypeAdapter();
+      }
+      @Override
+      public Adapter casePrimitiveSuperType(PrimitiveSuperType object)
+      {
+        return createPrimitiveSuperTypeAdapter();
+      }
+      @Override
       public Adapter caseCompositeSuperTypeDefinition(CompositeSuperTypeDefinition object)
       {
         return createCompositeSuperTypeDefinitionAdapter();
@@ -362,6 +372,36 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTypeDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperType <em>Composite Super Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ow2.mindEd.adl.textual.fractal.CompositeSuperType
+   * @generated
+   */
+  public Adapter createCompositeSuperTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType <em>Primitive Super Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType
+   * @generated
+   */
+  public Adapter createPrimitiveSuperTypeAdapter()
   {
     return null;
   }

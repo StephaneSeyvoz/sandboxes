@@ -15,14 +15,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.ow2.mindEd.adl.textual.fractal.FormalArgumentsList;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveElement;
-import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition;
+import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,14 +72,14 @@ public class PrimitiveDefinitionImpl extends ArchitectureDefinitionImpl implemen
   protected FormalArgumentsList compositeFormalArgumentsList;
 
   /**
-   * The cached value of the '{@link #getSuperTypes() <em>Super Types</em>}' reference list.
+   * The cached value of the '{@link #getSuperTypes() <em>Super Types</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSuperTypes()
    * @generated
    * @ordered
    */
-  protected EList<PrimitiveSuperTypeDefinition> superTypes;
+  protected EList<PrimitiveSuperType> superTypes;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -189,11 +188,11 @@ public class PrimitiveDefinitionImpl extends ArchitectureDefinitionImpl implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<PrimitiveSuperTypeDefinition> getSuperTypes()
+  public EList<PrimitiveSuperType> getSuperTypes()
   {
     if (superTypes == null)
     {
-      superTypes = new EObjectResolvingEList<PrimitiveSuperTypeDefinition>(PrimitiveSuperTypeDefinition.class, this, FractalPackage.PRIMITIVE_DEFINITION__SUPER_TYPES);
+      superTypes = new EObjectContainmentEList<PrimitiveSuperType>(PrimitiveSuperType.class, this, FractalPackage.PRIMITIVE_DEFINITION__SUPER_TYPES);
     }
     return superTypes;
   }
@@ -224,6 +223,8 @@ public class PrimitiveDefinitionImpl extends ArchitectureDefinitionImpl implemen
     {
       case FractalPackage.PRIMITIVE_DEFINITION__COMPOSITE_FORMAL_ARGUMENTS_LIST:
         return basicSetCompositeFormalArgumentsList(null, msgs);
+      case FractalPackage.PRIMITIVE_DEFINITION__SUPER_TYPES:
+        return ((InternalEList<?>)getSuperTypes()).basicRemove(otherEnd, msgs);
       case FractalPackage.PRIMITIVE_DEFINITION__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -271,7 +272,7 @@ public class PrimitiveDefinitionImpl extends ArchitectureDefinitionImpl implemen
         return;
       case FractalPackage.PRIMITIVE_DEFINITION__SUPER_TYPES:
         getSuperTypes().clear();
-        getSuperTypes().addAll((Collection<? extends PrimitiveSuperTypeDefinition>)newValue);
+        getSuperTypes().addAll((Collection<? extends PrimitiveSuperType>)newValue);
         return;
       case FractalPackage.PRIMITIVE_DEFINITION__ELEMENTS:
         getElements().clear();

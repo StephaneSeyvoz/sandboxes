@@ -7,20 +7,25 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
+import org.eclipse.xtext.scoping.impl.MultimapBasedScope;
 import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import org.ow2.mindEd.adl.textual.fractal.BindingDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeElement;
+import org.ow2.mindEd.adl.textual.fractal.CompositeSuperType;
 import org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.HostedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveElement;
+import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ProvidedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.RequiredInterfaceDefinition;
+import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
 import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TypeReference;
@@ -35,7 +40,7 @@ import org.ow2.mindEd.adl.textual.fractal.TypeReference;
 public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 
 
-	// VERY seful debug method
+	// VERY useful debug method
 //	@Override
 //	public IScope getScope(EObject context, EReference reference){
 //		System.out.println(
@@ -45,155 +50,239 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 //				);
 //		return super.getScope(context, reference);
 //	}
-	
+
+//	/**
+//	 * Handle sub-components from supertypes resolution
+//	 */
+//	public IScope scope_BindingDefinition_sourceParent(BindingDefinition bindingDef, EReference ref) {
+//		// Get the default resolved scope
+//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(bindingDef, ref).getAllElements();
+//
+//		// Create a new scope for sub-component definitions in the super types hierarchy
+//		// first get the parent composite of our BindingDefinition
+//		EObject container = bindingDef.eContainer();
+//		while (!(container instanceof CompositeDefinition))
+//			container = container.eContainer();
+//		Scopes.scopeFor(listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) container));
+//
+//		// composite scope made of the default scope + our supertypes scope
+//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptions, false);
+//	}
+//
+//	/*
+//	 * Basically the same as scope_BindingDefinition_sourceParent: should be factorized
+//	 */
+//	public IScope scope_BindingDefinition_targetParent(BindingDefinition bindingDef, EReference ref) {
+//		// Get the default resolved scope
+//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(bindingDef, ref).getAllElements();
+//
+//		// Create a new scope for sub-component definitions in the super types hierarchy
+//		// first get the parent composite of our BindingDefinition
+//		EObject container = bindingDef.eContainer();
+//		while (!(container instanceof CompositeDefinition))
+//			container = container.eContainer();
+//		Scopes.scopeFor(listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) container));
+//
+//		// composite scope made of the default scope + our supertypes scope
+//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptions, false);
+//	}
+//	
+//	/*
+//	 * Fallback case
+//	 */
+//	public IScope scope_BindingDefinition_sourceParent(CompositeDefinition hostCompositeDef, EReference ref) {
+//		// Get the default resolved scope
+//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(hostCompositeDef, ref).getAllElements();
+//
+//		// Create a new scope for sub-component definitions in the super types hierarchy
+//		// first get the parent composite of our BindingDefinition
+//		Scopes.scopeFor(listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) hostCompositeDef));
+//
+//		// composite scope made of the default scope + our supertypes scope
+//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptions, false);
+//	}
+
+//	private EList<SubComponentDefinition> listAllSubComponentsFromCompositeSuperTypes(CompositeDefinition archDef){
+//		EList<CompositeSuperType> superTypes = archDef.getSuperTypes();
+//
+//		EList<SubComponentDefinition> subCompDefList = new BasicEList<SubComponentDefinition>();
+//
+//		for (CompositeSuperType currSuperArchDef : superTypes) {
+//			// Could also be a TypeDefinition but then... no sub-component -> useless
+//			if (currSuperArchDef.getTargetArchDef() instanceof CompositeDefinition) {
+//				subCompDefList.addAll(getAllSubComponentDefinitions((CompositeDefinition) currSuperArchDef.getTargetArchDef()));
+//				// we need a recursion in all supertypes
+//				listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) currSuperArchDef.getTargetArchDef());
+//			}
+//		}
+//
+//		return subCompDefList;
+//	}
+
+//	private EList<SubComponentDefinition> getAllSubComponentDefinitions(CompositeDefinition compositeDef) {
+//		EList<SubComponentDefinition> subCompDefList = new BasicEList<SubComponentDefinition>();
+//
+//		// Get all the elements
+//		EList<CompositeElement> elements = compositeDef.getElements();
+//		// Then filter for RequiredInterfaceDefinition(s)
+//
+//		for (EObject currentEObject : elements) {
+//			if (currentEObject instanceof SubComponentDefinition) {
+//				subCompDefList.add((SubComponentDefinition) currentEObject);
+//			}
+//		}
+//
+//		return subCompDefList;
+//	}
+
 	/**
 	 * Here we need to handle local templates:
 	 * composite TemplatedType<LocalTemplate conformsto AbstractType> { ... contains LocalTemplate as template; ...}
 	 * Where LocalTemplateName has to be recognized as a valid candidate for SubComponentDefinition.
 	 * 
 	 */
-//	public IScope scope_SubComponentDefinition_type(final SubComponentDefinition subCompDef, final EReference ref) {
-//		EObject container = subCompDef.eContainer();
-//		// Find the parent host definition
-//		while (!(container instanceof CompositeDefinition))
-//			container = container.eContainer();
-//		CompositeDefinition hostCompositeDef = (CompositeDefinition) container;
-//		EList<TemplateSpecifier> templateSpecifiers = hostCompositeDef.getTemplateSpecifiers();
-//
-//		// Get the default resolved scope
-//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(subCompDef, ref).getAllElements();
-//		
-//		/*
-//		 * Here we want to manage the first case seen in the comment ("LocalTemplate" example). 
-//		 */
-//		// TODO FIXME seems to always return... nothing
-//		IScope templateSpecifiersScope = Scopes.scopeFor(templateSpecifiers);
-//
-//		return MultimapBasedScope.createScope(templateSpecifiersScope, scopeElementsDescriptions, false);
-//	}
+	//	public IScope scope_SubComponentDefinition_type(final SubComponentDefinition subCompDef, final EReference ref) {
+	//		EObject container = subCompDef.eContainer();
+	//		// Find the parent host definition
+	//		while (!(container instanceof CompositeDefinition))
+	//			container = container.eContainer();
+	//		CompositeDefinition hostCompositeDef = (CompositeDefinition) container;
+	//		EList<TemplateSpecifier> templateSpecifiers = hostCompositeDef.getTemplateSpecifiers();
+	//
+	//		// Get the default resolved scope
+	//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(subCompDef, ref).getAllElements();
+	//		
+	//		/*
+	//		 * Here we want to manage the first case seen in the comment ("LocalTemplate" example). 
+	//		 */
+	//		// TODO FIXME seems to always return... nothing
+	//		IScope templateSpecifiersScope = Scopes.scopeFor(templateSpecifiers);
+	//
+	//		return MultimapBasedScope.createScope(templateSpecifiersScope, scopeElementsDescriptions, false);
+	//	}
 
-		// OLD TENTATIVE
-//	public IScope scope_SubComponentDefinition_type(final SubComponentDefinition subCompDef, final EReference ref) {
-//		EObject container = subCompDef.eContainer();
-//		// Find the parent host definition
-//		while (!(container instanceof CompositeDefinition))
-//			container = container.eContainer();
-//		CompositeDefinition hostCompositeDef = (CompositeDefinition) container;
-//		EList<TemplateSpecifier> templateSpecifiers = hostCompositeDef.getTemplateSpecifiers();
-//
-//		// Get the default resolved scope
-//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(subCompDef, ref).getAllElements();
-//
-//		// Should be EList of TypeReference
-//		EList<IEObjectDescription> scopeElementsDescriptionsToKeep = new BasicEList<IEObjectDescription>();
-//
-//		// Then filter the default scope to remove outer TemplateSpecifiers elements (not included in the local scope)  
-//		for (IEObjectDescription currentScopeElementDescription : scopeElementsDescriptions) {
-//			// SubComponentDefinition_type is typed TypeReference, sub-classes: TemplateSpecifier and ArchitectureDefinition
-//			TypeReference currentScopeElement = (TypeReference) currentScopeElementDescription.getEObjectOrProxy();
-//			if ((currentScopeElement instanceof TemplateSpecifier) && (!templateSpecifiers.contains(currentScopeElement)))
-//				continue;
-//			else
-//				scopeElementsDescriptionsToKeep.add(currentScopeElementDescription);
-//		}
-//
-//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptionsToKeep, false);
-//	}
-	
+	// OLD TENTATIVE
+	//	public IScope scope_SubComponentDefinition_type(final SubComponentDefinition subCompDef, final EReference ref) {
+	//		EObject container = subCompDef.eContainer();
+	//		// Find the parent host definition
+	//		while (!(container instanceof CompositeDefinition))
+	//			container = container.eContainer();
+	//		CompositeDefinition hostCompositeDef = (CompositeDefinition) container;
+	//		EList<TemplateSpecifier> templateSpecifiers = hostCompositeDef.getTemplateSpecifiers();
+	//
+	//		// Get the default resolved scope
+	//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(subCompDef, ref).getAllElements();
+	//
+	//		// Should be EList of TypeReference
+	//		EList<IEObjectDescription> scopeElementsDescriptionsToKeep = new BasicEList<IEObjectDescription>();
+	//
+	//		// Then filter the default scope to remove outer TemplateSpecifiers elements (not included in the local scope)  
+	//		for (IEObjectDescription currentScopeElementDescription : scopeElementsDescriptions) {
+	//			// SubComponentDefinition_type is typed TypeReference, sub-classes: TemplateSpecifier and ArchitectureDefinition
+	//			TypeReference currentScopeElement = (TypeReference) currentScopeElementDescription.getEObjectOrProxy();
+	//			if ((currentScopeElement instanceof TemplateSpecifier) && (!templateSpecifiers.contains(currentScopeElement)))
+	//				continue;
+	//			else
+	//				scopeElementsDescriptionsToKeep.add(currentScopeElementDescription);
+	//		}
+	//
+	//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptionsToKeep, false);
+	//	}
+
 	/*
 	 * And also in other components:
 	 * composite AnotherComp { ... contains TemplatedType<RealConcreteType> ... }
 	 * In this case we need to check/filter RealConcreteType to see if it's compatible with "AbstractType".
 	 */
-//	public IScope scope_SubComponentDefinition_templatesList(final SubComponentDefinition subCompDef, final EReference ref) {
-//		// Get the default resolved scope
-//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(subCompDef, ref).getAllElements();
-//		
-//		// Filter to keep types compatible with the destination template
-//		// TODO: determine how multiple elements in a list are handled, according to the order of template elements
-//		
-//		return Scopes.scopeFor(subCompDef.getTemplatesList());
-//	}
+	//	public IScope scope_SubComponentDefinition_templatesList(final SubComponentDefinition subCompDef, final EReference ref) {
+	//		// Get the default resolved scope
+	//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(subCompDef, ref).getAllElements();
+	//		
+	//		// Filter to keep types compatible with the destination template
+	//		// TODO: determine how multiple elements in a list are handled, according to the order of template elements
+	//		
+	//		return Scopes.scopeFor(subCompDef.getTemplatesList());
+	//	}
 
 	/*
 	 * Who are the possible TemplateDefinition-s at this place ?
 	 */
-//	public IScope scope_TemplateDefinition_typeReference(TemplateDefinition currentTemplateDef, EReference ref) {
-//		// Get the default resolved scope
-//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(currentTemplateDef, ref).getAllElements();
-//		
-//		// We want to get the list from the host SubComponentDefinition (eContainer), which is feature SubComponentDefinition_templatesList
-//		SubComponentDefinition hostSubCompDef = (SubComponentDefinition) currentTemplateDef.eContainer();
-//		EList<TemplateDefinition> hosttemplatesList = (EList<TemplateDefinition>) hostSubCompDef.getTemplatesList();
-//		int indexOfTemplateDefinition = hosttemplatesList.indexOf(currentTemplateDef);
-//		
-//		TypeReference hostType = hostSubCompDef.getType();
-//		if (! (hostType instanceof CompositeDefinition))
-//			return IScope.NULLSCOPE; // Error ! the SubComponent we are worrying about should be a Composite
-//		
-//		// else we have a CompositeDefinition...
-//		
-//		CompositeDefinition compositeHostType = (CompositeDefinition) hostType;
-//		EList<TemplateSpecifier> templateSpecifiers = compositeHostType.getTemplateSpecifiers();
-//		
-//		// Let's find the matching TemplateSpecifier in the host definition
-//		TemplateSpecifier accordingTemplateSpecifier = templateSpecifiers.get(indexOfTemplateDefinition);
-//		TypeDefinition accordingTemplateType = accordingTemplateSpecifier.getTypeReference();
-//		
-//		// Now filter the initial scopeElementsDescriptions proposed by Xtext to keep only compatible types
-//		
-//		// Should be EList of TypeReference
-//		EList<IEObjectDescription> scopeElementsDescriptionsToKeep = new BasicEList<IEObjectDescription>();
-//		
-//		ArchitectureDefinition currentArchDef;
-//		
-//		// Then filter the default scope to remove outer TemplateSpecifiers elements (not included in the local scope)  
-//		for (IEObjectDescription currentScopeElementDescription : scopeElementsDescriptions) {
-//			// SubComponentDefinition_type is typed TypeReference, sub-classes: TemplateSpecifier and ArchitectureDefinition
-//			TypeReference currentScopeElement = (TypeReference) currentScopeElementDescription.getEObjectOrProxy();
-//			if ((currentScopeElement instanceof TemplateSpecifier)) // TODO: not handled yet
-//				continue;
-//			else { // ArchitectureDefinition 
-//				currentArchDef = (ArchitectureDefinition) currentScopeElement;
-//				EList<ArchitectureDefinition> superTypes = currentArchDef.getSuperTypes();
-//				if ((superTypes != null) && superTypes.contains(accordingTemplateType)) // TODO: make it recursive: Not recursive yet
-//					scopeElementsDescriptionsToKeep.add(currentScopeElementDescription);
-//			}
-//		}
-//
-//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptionsToKeep, false);
-//	}
-	
+	//	public IScope scope_TemplateDefinition_typeReference(TemplateDefinition currentTemplateDef, EReference ref) {
+	//		// Get the default resolved scope
+	//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(currentTemplateDef, ref).getAllElements();
+	//		
+	//		// We want to get the list from the host SubComponentDefinition (eContainer), which is feature SubComponentDefinition_templatesList
+	//		SubComponentDefinition hostSubCompDef = (SubComponentDefinition) currentTemplateDef.eContainer();
+	//		EList<TemplateDefinition> hosttemplatesList = (EList<TemplateDefinition>) hostSubCompDef.getTemplatesList();
+	//		int indexOfTemplateDefinition = hosttemplatesList.indexOf(currentTemplateDef);
+	//		
+	//		TypeReference hostType = hostSubCompDef.getType();
+	//		if (! (hostType instanceof CompositeDefinition))
+	//			return IScope.NULLSCOPE; // Error ! the SubComponent we are worrying about should be a Composite
+	//		
+	//		// else we have a CompositeDefinition...
+	//		
+	//		CompositeDefinition compositeHostType = (CompositeDefinition) hostType;
+	//		EList<TemplateSpecifier> templateSpecifiers = compositeHostType.getTemplateSpecifiers();
+	//		
+	//		// Let's find the matching TemplateSpecifier in the host definition
+	//		TemplateSpecifier accordingTemplateSpecifier = templateSpecifiers.get(indexOfTemplateDefinition);
+	//		TypeDefinition accordingTemplateType = accordingTemplateSpecifier.getTypeReference();
+	//		
+	//		// Now filter the initial scopeElementsDescriptions proposed by Xtext to keep only compatible types
+	//		
+	//		// Should be EList of TypeReference
+	//		EList<IEObjectDescription> scopeElementsDescriptionsToKeep = new BasicEList<IEObjectDescription>();
+	//		
+	//		ArchitectureDefinition currentArchDef;
+	//		
+	//		// Then filter the default scope to remove outer TemplateSpecifiers elements (not included in the local scope)  
+	//		for (IEObjectDescription currentScopeElementDescription : scopeElementsDescriptions) {
+	//			// SubComponentDefinition_type is typed TypeReference, sub-classes: TemplateSpecifier and ArchitectureDefinition
+	//			TypeReference currentScopeElement = (TypeReference) currentScopeElementDescription.getEObjectOrProxy();
+	//			if ((currentScopeElement instanceof TemplateSpecifier)) // TODO: not handled yet
+	//				continue;
+	//			else { // ArchitectureDefinition 
+	//				currentArchDef = (ArchitectureDefinition) currentScopeElement;
+	//				EList<ArchitectureDefinition> superTypes = currentArchDef.getSuperTypes();
+	//				if ((superTypes != null) && superTypes.contains(accordingTemplateType)) // TODO: make it recursive: Not recursive yet
+	//					scopeElementsDescriptionsToKeep.add(currentScopeElementDescription);
+	//			}
+	//		}
+	//
+	//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptionsToKeep, false);
+	//	}
+
 	/*
 	 * Here I guess the context (first argument) should have been TemplateDefinition...
 	 * but as it's included in a list, maybe it's a bit different.
 	 */
-//	public IScope scope_TemplateDefinition_typeReference(SubComponentDefinition ctx, EReference ref) {
-//		// Get the default resolved scope
-//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(ctx, ref).getAllElements();
-//		
-//		ref.eContainer();
-//		ref.eContainingFeature();
-//		
-//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptions, false);
-//	}
-	
+	//	public IScope scope_TemplateDefinition_typeReference(SubComponentDefinition ctx, EReference ref) {
+	//		// Get the default resolved scope
+	//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(ctx, ref).getAllElements();
+	//		
+	//		ref.eContainer();
+	//		ref.eContainingFeature();
+	//		
+	//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptions, false);
+	//	}
+
 	// Heaviest methods ever: will need further optimization, not sure how to improve templated ELists behavior.
 	public IScope scope_BindingDefinition_sourceInterface(final BindingDefinition bindingDef, final EReference ref) {
 
 		ArchitectureDefinition sourceComponentArchDef = null;
-
-		TypeReference currArchDefOrTemplate = bindingDef.getSourceParent().getType();
+		TypeReference currArchDefOrTemplate = null;
 
 		// If the source parent is a subcomponent
-		if (!bindingDef.isIsSrcParentThis())
+		if (!bindingDef.isIsSrcParentThis()) {
+			currArchDefOrTemplate = bindingDef.getSourceParent().getType();
 			if (currArchDefOrTemplate instanceof ArchitectureDefinition)
 				sourceComponentArchDef = (ArchitectureDefinition) currArchDefOrTemplate;
 			else if (currArchDefOrTemplate instanceof TemplateSpecifier)
 				sourceComponentArchDef = ((TemplateSpecifier) currArchDefOrTemplate).getTypeReference();
 			else // error case
 				return IScope.NULLSCOPE;
-		else  {
+		} else {
 			// if the source parent is "this"
 			EObject container = bindingDef.eContainer();
 			// Find the parent host definition
@@ -295,18 +384,18 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 	public IScope scope_BindingDefinition_targetInterface(final BindingDefinition bindingDef, final EReference ref) {
 
 		ArchitectureDefinition targetComponentArchDef = null;
-
-		TypeReference currArchDefOrTemplate = bindingDef.getTargetParent().getType();
+		TypeReference currArchDefOrTemplate = null;
 
 		// If the source parent isn't a sub-component but "this"
-		if (!bindingDef.isIsTgtParentThis())
+		if (!bindingDef.isIsTgtParentThis()) {
+			currArchDefOrTemplate = bindingDef.getTargetParent().getType();
 			if (currArchDefOrTemplate instanceof ArchitectureDefinition)
 				targetComponentArchDef = (ArchitectureDefinition) currArchDefOrTemplate;
 			else if (currArchDefOrTemplate instanceof TemplateSpecifier)
 				targetComponentArchDef = ((TemplateSpecifier) currArchDefOrTemplate).getTypeReference();
 			else // error case
 				return IScope.NULLSCOPE;
-		else  {
+		} else {
 			EObject container = bindingDef.eContainer();
 			// Find the parent host definition
 			while (!(container instanceof CompositeDefinition))
@@ -417,44 +506,46 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 
 		return reqItfList;
 	}
-	
+
 	private EList<RequiredInterfaceDefinition> listAllRequiredInterfacesFromArchDefSuperTypes(CompositeDefinition archDef){
-		EList<CompositeSuperTypeDefinition> superTypes = archDef.getSuperTypes();
+		EList<CompositeSuperType> superTypes = archDef.getSuperTypes();
 
 		EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
 
-		for (CompositeSuperTypeDefinition currSuperArchDef : superTypes) {
-			if (currSuperArchDef instanceof PrimitiveDefinition)
-				reqItfList.addAll(getAllArchDefRequiredInterfaces((CompositeDefinition) currSuperArchDef));
-			else if (currSuperArchDef instanceof TypeDefinition)
-				reqItfList.addAll(getAllArchDefRequiredInterfaces((TypeDefinition) currSuperArchDef));
-			
+		for (CompositeSuperType currSuperArchDef : superTypes) {
+			CompositeSuperTypeDefinition superType = currSuperArchDef.getTargetArchDef();
+			if (superType instanceof PrimitiveDefinition)
+				reqItfList.addAll(getAllArchDefRequiredInterfaces((CompositeDefinition) superType));
+			else if (superType instanceof TypeDefinition)
+				reqItfList.addAll(getAllArchDefRequiredInterfaces((TypeDefinition) superType));
+
 			// we need a recursion in all supertypes
-			if (currSuperArchDef instanceof CompositeDefinition)
-				listAllRequiredInterfacesFromArchDefSuperTypes((CompositeDefinition) currSuperArchDef);
-			else if (currSuperArchDef instanceof TypeDefinition)
-				listAllRequiredInterfacesFromArchDefSuperTypes((TypeDefinition) currSuperArchDef);
+			if (superType instanceof CompositeDefinition)
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes((CompositeDefinition) superType));
+			else if (superType instanceof TypeDefinition)
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes((TypeDefinition) superType));
 		}
 
 		return reqItfList;
 	}
-	
+
 	private EList<RequiredInterfaceDefinition> listAllRequiredInterfacesFromArchDefSuperTypes(PrimitiveDefinition archDef){
-		EList<PrimitiveSuperTypeDefinition> superTypes = archDef.getSuperTypes();
+		EList<PrimitiveSuperType> superTypes = archDef.getSuperTypes();
 
 		EList<RequiredInterfaceDefinition> reqItfList = new BasicEList<RequiredInterfaceDefinition>();
 
-		for (PrimitiveSuperTypeDefinition currSuperArchDef : superTypes) {
-			if (currSuperArchDef instanceof PrimitiveDefinition)
-				reqItfList.addAll(getAllArchDefRequiredInterfaces((PrimitiveDefinition) currSuperArchDef));
-			else if (currSuperArchDef instanceof TypeDefinition)
-				reqItfList.addAll(getAllArchDefRequiredInterfaces((TypeDefinition) currSuperArchDef));
-			
+		for (PrimitiveSuperType currSuperArchDef : superTypes) {
+			PrimitiveSuperTypeDefinition superType = currSuperArchDef.getTargetArchDef();
+			if (superType instanceof PrimitiveDefinition)
+				reqItfList.addAll(getAllArchDefRequiredInterfaces((PrimitiveDefinition) superType));
+			else if (superType instanceof TypeDefinition)
+				reqItfList.addAll(getAllArchDefRequiredInterfaces((TypeDefinition) superType));
+
 			// we need a recursion in all supertypes
-			if (currSuperArchDef instanceof PrimitiveDefinition)
-				listAllRequiredInterfacesFromArchDefSuperTypes((PrimitiveDefinition) currSuperArchDef);
-			else if (currSuperArchDef instanceof TypeDefinition)
-				listAllRequiredInterfacesFromArchDefSuperTypes((TypeDefinition) currSuperArchDef);
+			if (superType instanceof PrimitiveDefinition)
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes((PrimitiveDefinition) superType));
+			else if (superType instanceof TypeDefinition)
+				reqItfList.addAll(listAllRequiredInterfacesFromArchDefSuperTypes((TypeDefinition) superType));
 		}
 
 		return reqItfList;
@@ -505,54 +596,56 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 		for (TypeDefinition currSuperArchDef : superTypes) {
 			prvdItfList.addAll(getAllArchDefProvidedInterfaces(currSuperArchDef));
 			// we need a recursion in all supertypes
-			listAllProvidedInterfacesFromArchDefSuperTypes(currSuperArchDef);
+			prvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes(currSuperArchDef));
 		}
 
 		return prvdItfList;
 	}
 
 	private EList<ProvidedInterfaceDefinition> listAllProvidedInterfacesFromArchDefSuperTypes(CompositeDefinition archDef){
-		EList<CompositeSuperTypeDefinition> superTypes = archDef.getSuperTypes();
+		EList<CompositeSuperType> superTypes = archDef.getSuperTypes();
 
 		EList<ProvidedInterfaceDefinition> prvdItfList = new BasicEList<ProvidedInterfaceDefinition>();
 
-		for (CompositeSuperTypeDefinition currSuperArchDef : superTypes) {
-			if (currSuperArchDef instanceof PrimitiveDefinition)
-				prvdItfList.addAll(getAllArchDefProvidedInterfaces((CompositeDefinition) currSuperArchDef));
-			else if (currSuperArchDef instanceof TypeDefinition)
-				prvdItfList.addAll(getAllArchDefProvidedInterfaces((TypeDefinition) currSuperArchDef));
-			
+		for (CompositeSuperType currSuperArchDef : superTypes) {
+			CompositeSuperTypeDefinition superType = currSuperArchDef.getTargetArchDef();
+			if (superType instanceof PrimitiveDefinition)
+				prvdItfList.addAll(getAllArchDefProvidedInterfaces((CompositeDefinition) superType));
+			else if (superType instanceof TypeDefinition)
+				prvdItfList.addAll(getAllArchDefProvidedInterfaces((TypeDefinition) superType));
+
 			// we need a recursion in all supertypes
-			if (currSuperArchDef instanceof CompositeDefinition)
-				listAllProvidedInterfacesFromArchDefSuperTypes((CompositeDefinition) currSuperArchDef);
-			else if (currSuperArchDef instanceof TypeDefinition)
-				listAllProvidedInterfacesFromArchDefSuperTypes((TypeDefinition) currSuperArchDef);
+			if (superType instanceof CompositeDefinition)
+				prvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes((CompositeDefinition) superType));
+			else if (superType instanceof TypeDefinition)
+				prvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes((TypeDefinition) superType));
 		}
 
 		return prvdItfList;
 	}
-	
+
 	private EList<ProvidedInterfaceDefinition> listAllProvidedInterfacesFromArchDefSuperTypes(PrimitiveDefinition archDef){
-		EList<PrimitiveSuperTypeDefinition> superTypes = archDef.getSuperTypes();
+		EList<PrimitiveSuperType> superTypes = archDef.getSuperTypes();
 
 		EList<ProvidedInterfaceDefinition> prvdItfList = new BasicEList<ProvidedInterfaceDefinition>();
 
-		for (PrimitiveSuperTypeDefinition currSuperArchDef : superTypes) {
-			if (currSuperArchDef instanceof PrimitiveDefinition)
-				prvdItfList.addAll(getAllArchDefProvidedInterfaces((PrimitiveDefinition) currSuperArchDef));
-			else if (currSuperArchDef instanceof TypeDefinition)
-				prvdItfList.addAll(getAllArchDefProvidedInterfaces((TypeDefinition) currSuperArchDef));
-			
+		for (PrimitiveSuperType currSuperArchDef : superTypes) {
+			PrimitiveSuperTypeDefinition superType = currSuperArchDef.getTargetArchDef();
+			if (superType instanceof PrimitiveDefinition)
+				prvdItfList.addAll(getAllArchDefProvidedInterfaces((PrimitiveDefinition) superType));
+			else if (superType instanceof TypeDefinition)
+				prvdItfList.addAll(getAllArchDefProvidedInterfaces((TypeDefinition) superType));
+
 			// we need a recursion in all supertypes
-			if (currSuperArchDef instanceof PrimitiveDefinition)
-				listAllProvidedInterfacesFromArchDefSuperTypes((PrimitiveDefinition) currSuperArchDef);
-			else if (currSuperArchDef instanceof TypeDefinition)
-				listAllProvidedInterfacesFromArchDefSuperTypes((TypeDefinition) currSuperArchDef);
+			if (superType instanceof PrimitiveDefinition)
+				prvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes((PrimitiveDefinition) superType));
+			else if (superType instanceof TypeDefinition)
+				prvdItfList.addAll(listAllProvidedInterfacesFromArchDefSuperTypes((TypeDefinition) superType));
 		}
 
 		return prvdItfList;
 	}
-	
+
 	private EList<ProvidedInterfaceDefinition> getAllArchDefProvidedInterfaces(ArchitectureDefinition archDef) {
 		EList<ProvidedInterfaceDefinition> reqItfList = new BasicEList<ProvidedInterfaceDefinition>();
 
