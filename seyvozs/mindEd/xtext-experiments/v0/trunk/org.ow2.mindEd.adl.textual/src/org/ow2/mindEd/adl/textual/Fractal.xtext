@@ -110,7 +110,7 @@ TypeReference:
 SubComponentDefinition:
 	(annotationsList=AnnotationsList)?
 	'contains'
-	((type = [TypeReference | QualifiedName])?)
+	(type = [TypeReference | QualifiedName])?
 	('<' templatesList+=TemplateDefinition (',' templatesList+=TemplateDefinition)* '>')?
 	('(' argumentsList+=ArgumentDefinition (',' argumentsList+=ArgumentDefinition)* ')')?
 	'as'

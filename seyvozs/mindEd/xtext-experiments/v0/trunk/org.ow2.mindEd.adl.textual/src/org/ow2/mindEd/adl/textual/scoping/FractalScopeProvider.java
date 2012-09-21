@@ -7,7 +7,9 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.resource.IEObjectDescription;
+import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 import org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider;
@@ -18,6 +20,8 @@ import org.ow2.mindEd.adl.textual.fractal.CompositeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeElement;
 import org.ow2.mindEd.adl.textual.fractal.CompositeSuperType;
 import org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition;
+import org.ow2.mindEd.adl.textual.fractal.FractalFactory;
+import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
 import org.ow2.mindEd.adl.textual.fractal.HostedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveElement;
@@ -29,6 +33,8 @@ import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
 import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TypeReference;
+import org.ow2.mindEd.adl.textual.fractal.impl.RequiredInterfaceDefinitionImpl;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.InterfaceDefinition;
 
 /**
  * This class contains custom scoping description.
@@ -275,6 +281,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 
 		// If the source parent is a subcomponent
 		if (!bindingDef.isIsSrcParentThis()) {
+			// else it's a common "standard" component
 			currArchDefOrTemplate = bindingDef.getSourceParent().getType();
 			if (currArchDefOrTemplate instanceof ArchitectureDefinition)
 				sourceComponentArchDef = (ArchitectureDefinition) currArchDefOrTemplate;
