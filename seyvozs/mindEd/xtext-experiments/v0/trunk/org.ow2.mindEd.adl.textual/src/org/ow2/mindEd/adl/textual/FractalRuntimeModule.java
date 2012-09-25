@@ -3,6 +3,11 @@
  */
 package org.ow2.mindEd.adl.textual;
 
+import org.eclipse.xtext.linking.ILinker;
+import org.eclipse.xtext.linking.ILinkingService;
+import org.ow2.mindEd.adl.textual.linking.FractalLinker;
+import org.ow2.mindEd.adl.textual.linking.FractalLinkingService;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
@@ -23,4 +28,25 @@ public class FractalRuntimeModule extends org.ow2.mindEd.adl.textual.AbstractFra
 		binder.bind(org.eclipse.xtext.scoping.IScopeProvider.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.scoping.impl.AbstractDeclarativeScopeProvider.NAMED_DELEGATE)).to(org.ow2.mindEd.adl.textual.scoping.FractalImportedNamespaceAwareLocalScopeProvider.class);
 	}
 	
+//	/**
+//	 * Force overriding with our own LinkingService to enable Factory behavior
+//	 * 
+//	 * (non-Javadoc)
+//	 * @see org.eclipse.xtext.service.DefaultRuntimeModule#bindILinkingService()
+//	 */
+//	@Override
+//	public Class<? extends ILinkingService> bindILinkingService() {
+//		return FractalLinkingService.class;
+//	}
+//	
+//	/**
+//	 * Force overriding with our own LinkingService to enable Factory behavior
+//	 * 
+//	 * (non-Javadoc)
+//	 * @see org.eclipse.xtext.service.DefaultRuntimeModule#bindILinker()
+//	 */
+//	@Override
+//	public Class<? extends ILinker> bindILinker() {
+//		return FractalLinker.class;
+//	}
 }

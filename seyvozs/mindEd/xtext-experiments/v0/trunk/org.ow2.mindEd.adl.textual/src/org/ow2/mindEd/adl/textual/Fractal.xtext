@@ -154,6 +154,7 @@ PrimitiveElement :
 
 // The correct auto-completion scoping for Bindings is implemented in org.ow2.mindEd.adl.textual.scoping.FractalScopeProvider
 // This could be assimilated to filtering elements from the references pool to provide only pertinent ones.
+
 BindingDefinition :
 	(annotationsList=AnnotationsList)?
 	'binds'

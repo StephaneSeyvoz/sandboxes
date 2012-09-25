@@ -521,7 +521,7 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 
 		for (CompositeSuperType currSuperArchDef : superTypes) {
 			CompositeSuperTypeDefinition superType = currSuperArchDef.getTargetArchDef();
-			if (superType instanceof PrimitiveDefinition)
+			if (superType instanceof CompositeDefinition)
 				reqItfList.addAll(getAllArchDefRequiredInterfaces((CompositeDefinition) superType));
 			else if (superType instanceof TypeDefinition)
 				reqItfList.addAll(getAllArchDefRequiredInterfaces((TypeDefinition) superType));

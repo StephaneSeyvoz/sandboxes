@@ -124,7 +124,8 @@ InterfaceDefinition:
   'interface' ("unmanaged")?
   name=QualifiedName
   (":" fqn2=QualifiedName)?
-  '{' (methodDef+=MethodDefinition)* '}';
+  '{' (methodDef+=MethodDefinition)* '}'
+;
 
 MethodDefinition:
   (annotationsList=AnnotationsList)?

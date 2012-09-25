@@ -14,7 +14,6 @@ import org.ow2.mindEd.adl.textual.fractal.BindingDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeSuperType;
 import org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition;
-import org.ow2.mindEd.adl.textual.fractal.HostedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition;
