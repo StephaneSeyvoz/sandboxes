@@ -50,6 +50,7 @@ import org.ow2.mindEd.ide.core.MindActivator;
 import org.ow2.mindEd.ide.core.MindIdeCore;
 import org.ow2.mindEd.ide.core.MindModelManager;
 import org.ow2.mindEd.ide.core.MindNature;
+import org.ow2.mindEd.ide.core.mindc.MindcErrorParser;
 import org.ow2.mindEd.ide.core.template.TemplateMake;
 import org.ow2.mindEd.ide.model.MindProject;
 
@@ -204,7 +205,7 @@ public class CDTUtil {
 			return FamilyJobCST.FAMILY_ALL == family || FamilyJobCST.FAMILY_CHANGE_MINDC_LOCATION == family;
 		}
 	}
-	
+
 	private static final class ChangeMindcRuntimeLocation extends Job {
 		private final String mindcRuntimeLocation;
 
@@ -219,7 +220,7 @@ public class CDTUtil {
 				if (MindModelImpl.TRACING)
 					System.out.println("CHANGE RUNTIME FOLDERS LINK DESTINATION to "
 							+ mindcRuntimeLocation);
-				
+
 				List<MindProject> allMindProjects = MindIdeCore.getModel().getAllProject();
 				for (MindProject currProject : allMindProjects) {
 					if (mindcRuntimeLocation == null) {
@@ -231,17 +232,17 @@ public class CDTUtil {
 							MindActivator.log(new Status(Status.ERROR, MindActivator.ID, "Mindc location subfolder \"Runtime\" doesn't exist !"));
 							continue;
 						}
-						
+
 						// get the IProject runtime
 						IFolder eclipseRuntimeFolder = currProject.getProject().getFolder("runtime");
-						
+
 						// Only redefine the folder link destination if it's a link
 						// otherwise we would crush possibly hand-made local (not linked) runtimes.
 						if (eclipseRuntimeFolder.exists() && eclipseRuntimeFolder.isLinked())
 							eclipseRuntimeFolder.createLink(new Path(mindRuntimeFile.getAbsolutePath()), IResource.REPLACE, monitor);
 					}
 				}
-				
+
 				// Why not
 				MindIdeCore.rebuidAll();
 				if (MindModelImpl.TRACING)
@@ -285,7 +286,7 @@ public class CDTUtil {
 		Job rMindc = new ChangeMindcLocation(mindcLocation);
 		rMindc.setRule(ResourcesPlugin.getWorkspace().getRoot());
 		rMindc.schedule();
-		
+
 		// Changing runtime linked folders destination
 		Job rRuntime = new ChangeMindcRuntimeLocation(mindcLocation + File.separator + "runtime");
 		rRuntime.setRule(ResourcesPlugin.getWorkspace().getRoot());
@@ -403,7 +404,7 @@ public class CDTUtil {
 
 		// Create a source entries ArrayList
 		List<ICSourceEntry> sourceEntries = new ArrayList<ICSourceEntry>();
-		
+
 		// ADD the source entry 'src'
 		ICSourceEntry srcEntry = new CSourceEntry(newProject.getFolder("src"),
 				null, ICSettingEntry.VALUE_WORKSPACE_PATH);
@@ -415,15 +416,22 @@ public class CDTUtil {
 					null, ICSettingEntry.VALUE_WORKSPACE_PATH);
 			sourceEntries.add(runtimeEntry);
 		}
-		
+
 		// convert the List to good-sized typed array
 		config.setSourceEntries(sourceEntries.toArray(new ICSourceEntry[sourceEntries.size()]));
 		config.exportArtifactInfo();
-		
+
 		CConfigurationData data = config.getConfigurationData();
 		data.getBuildData();
 
 		des.createConfiguration(ManagedBuildManager.CFG_DATA_PROVIDER_ID, data);
+
+		// add the Mindc error parser to the project defaults
+		String[] defaultErrorParserListArray = config.getErrorParserList();
+		List<String> defaultErrorParserList = new ArrayList<String>(Arrays.asList(defaultErrorParserListArray));
+		// See plugin.xml extension MindcErrorParser (we're in project org.ow2.mindEd.ide)
+		defaultErrorParserList.add("org.ow2.mindEd.ide.MindcErrorParser");
+		config.setErrorParserList(defaultErrorParserList.toArray(new String[defaultErrorParserList.size()]));
 
 		// ADD CPL Macro settings
 		ICConfigurationDescription cfgDes = des.getConfigurationById(id);
