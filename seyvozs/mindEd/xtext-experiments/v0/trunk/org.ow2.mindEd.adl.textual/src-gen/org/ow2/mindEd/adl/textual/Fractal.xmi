@@ -619,7 +619,7 @@
           <elements xsi:type="xtext:Assignment" feature="typeReference" operator="=">
             <terminal xsi:type="xtext:CrossReference">
               <type metamodel="/0/@metamodelDeclarations.0">
-                <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//ArchitectureDefinition"/>
+                <classifier xsi:type="ecore:EClass" href="http://www.ow2.org/mindEd/adl/textual/Fractal#//TypeReference"/>
               </type>
               <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.32"/>
             </terminal>

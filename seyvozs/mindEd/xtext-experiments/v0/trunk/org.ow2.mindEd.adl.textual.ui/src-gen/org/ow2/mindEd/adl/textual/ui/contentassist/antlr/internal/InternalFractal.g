@@ -9343,12 +9343,12 @@ rule__TemplateDefinition__TypeReferenceAssignment_1_0
     }
 :
 (
-{ before(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceArchitectureDefinitionCrossReference_1_0_0()); }
+{ before(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceTypeReferenceCrossReference_1_0_0()); }
 (
-{ before(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_0_1()); }
-	ruleQualifiedName{ after(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_0_1()); }
+{ before(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceTypeReferenceQualifiedNameParserRuleCall_1_0_0_1()); }
+	ruleQualifiedName{ after(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceTypeReferenceQualifiedNameParserRuleCall_1_0_0_1()); }
 )
-{ after(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceArchitectureDefinitionCrossReference_1_0_0()); }
+{ after(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceTypeReferenceCrossReference_1_0_0()); }
 )
 
 ;

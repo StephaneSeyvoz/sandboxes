@@ -59,12 +59,12 @@ public interface TemplateDefinition extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type Reference</em>' reference.
-   * @see #setTypeReference(ArchitectureDefinition)
+   * @see #setTypeReference(TypeReference)
    * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getTemplateDefinition_TypeReference()
    * @model
    * @generated
    */
-  ArchitectureDefinition getTypeReference();
+  TypeReference getTypeReference();
 
   /**
    * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.TemplateDefinition#getTypeReference <em>Type Reference</em>}' reference.
@@ -74,7 +74,7 @@ public interface TemplateDefinition extends EObject
    * @see #getTypeReference()
    * @generated
    */
-  void setTypeReference(ArchitectureDefinition value);
+  void setTypeReference(TypeReference value);
 
   /**
    * Returns the value of the '<em><b>Any Type Reference</b></em>' attribute.

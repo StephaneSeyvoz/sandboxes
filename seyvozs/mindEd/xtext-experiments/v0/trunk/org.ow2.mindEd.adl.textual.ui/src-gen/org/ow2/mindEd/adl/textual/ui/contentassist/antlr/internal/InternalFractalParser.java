@@ -27195,13 +27195,13 @@ public class InternalFractalParser extends AbstractInternalContentAssistParser {
             // ../org.ow2.mindEd.adl.textual.ui/src-gen/org/ow2/mindEd/adl/textual/ui/contentassist/antlr/internal/InternalFractal.g:9346:1: ( ruleQualifiedName )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceArchitectureDefinitionCrossReference_1_0_0()); 
+               before(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceTypeReferenceCrossReference_1_0_0()); 
             }
             // ../org.ow2.mindEd.adl.textual.ui/src-gen/org/ow2/mindEd/adl/textual/ui/contentassist/antlr/internal/InternalFractal.g:9347:1: ( ruleQualifiedName )
             // ../org.ow2.mindEd.adl.textual.ui/src-gen/org/ow2/mindEd/adl/textual/ui/contentassist/antlr/internal/InternalFractal.g:9348:1: ruleQualifiedName
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_0_1()); 
+               before(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceTypeReferenceQualifiedNameParserRuleCall_1_0_0_1()); 
             }
             pushFollow(FOLLOW_ruleQualifiedName_in_rule__TemplateDefinition__TypeReferenceAssignment_1_018870);
             ruleQualifiedName();
@@ -27209,13 +27209,13 @@ public class InternalFractalParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceArchitectureDefinitionQualifiedNameParserRuleCall_1_0_0_1()); 
+               after(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceTypeReferenceQualifiedNameParserRuleCall_1_0_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceArchitectureDefinitionCrossReference_1_0_0()); 
+               after(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceTypeReferenceCrossReference_1_0_0()); 
             }
 
             }

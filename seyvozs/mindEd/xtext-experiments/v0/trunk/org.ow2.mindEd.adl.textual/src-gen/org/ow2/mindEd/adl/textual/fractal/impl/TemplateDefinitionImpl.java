@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
 import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
+import org.ow2.mindEd.adl.textual.fractal.TypeReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +51,7 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    * @ordered
    */
-  protected ArchitectureDefinition typeReference;
+  protected TypeReference typeReference;
 
   /**
    * The default value of the '{@link #isAnyTypeReference() <em>Any Type Reference</em>}' attribute.
@@ -147,12 +147,12 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public ArchitectureDefinition getTypeReference()
+  public TypeReference getTypeReference()
   {
     if (typeReference != null && typeReference.eIsProxy())
     {
       InternalEObject oldTypeReference = (InternalEObject)typeReference;
-      typeReference = (ArchitectureDefinition)eResolveProxy(oldTypeReference);
+      typeReference = (TypeReference)eResolveProxy(oldTypeReference);
       if (typeReference != oldTypeReference)
       {
         if (eNotificationRequired())
@@ -167,7 +167,7 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public ArchitectureDefinition basicGetTypeReference()
+  public TypeReference basicGetTypeReference()
   {
     return typeReference;
   }
@@ -177,9 +177,9 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTypeReference(ArchitectureDefinition newTypeReference)
+  public void setTypeReference(TypeReference newTypeReference)
   {
-    ArchitectureDefinition oldTypeReference = typeReference;
+    TypeReference oldTypeReference = typeReference;
     typeReference = newTypeReference;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.TEMPLATE_DEFINITION__TYPE_REFERENCE, oldTypeReference, typeReference));
@@ -259,7 +259,7 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
         setName((TemplateSpecifier)newValue);
         return;
       case FractalPackage.TEMPLATE_DEFINITION__TYPE_REFERENCE:
-        setTypeReference((ArchitectureDefinition)newValue);
+        setTypeReference((TypeReference)newValue);
         return;
       case FractalPackage.TEMPLATE_DEFINITION__ANY_TYPE_REFERENCE:
         setAnyTypeReference((Boolean)newValue);
@@ -282,7 +282,7 @@ public class TemplateDefinitionImpl extends MinimalEObjectImpl.Container impleme
         setName((TemplateSpecifier)null);
         return;
       case FractalPackage.TEMPLATE_DEFINITION__TYPE_REFERENCE:
-        setTypeReference((ArchitectureDefinition)null);
+        setTypeReference((TypeReference)null);
         return;
       case FractalPackage.TEMPLATE_DEFINITION__ANY_TYPE_REFERENCE:
         setAnyTypeReference(ANY_TYPE_REFERENCE_EDEFAULT);

@@ -6772,7 +6772,7 @@ public class InternalFractalParser extends AbstractInternalAntlrParser {
                     }
                     if ( state.backtracking==0 ) {
                        
-                      	        newCompositeNode(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceArchitectureDefinitionCrossReference_1_0_0()); 
+                      	        newCompositeNode(grammarAccess.getTemplateDefinitionAccess().getTypeReferenceTypeReferenceCrossReference_1_0_0()); 
                       	    
                     }
                     pushFollow(FOLLOW_ruleQualifiedName_in_ruleTemplateDefinition4958);

@@ -196,7 +196,7 @@ Value :
 	ID | signedINT | HexadecimalType | STRING | 'null';
 
 TemplateDefinition :
-	(name=TemplateSpecifier '=')? (typeReference = [ArchitectureDefinition | QualifiedName] | anyTypeReference ?= '?')
+	(name=TemplateSpecifier '=')? (typeReference = [TypeReference | QualifiedName] | anyTypeReference ?= '?')
 ;
 
 ArgumentDefinition :
