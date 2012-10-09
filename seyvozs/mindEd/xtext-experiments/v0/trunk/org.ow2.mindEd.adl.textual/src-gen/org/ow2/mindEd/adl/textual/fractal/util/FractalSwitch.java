@@ -201,29 +201,6 @@ public class FractalSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FractalPackage.SUB_COMPONENT_BODY:
-      {
-        SubComponentBody subComponentBody = (SubComponentBody)theEObject;
-        T result = caseSubComponentBody(subComponentBody);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FractalPackage.SUB_COMPONENT_COMPOSITE_BODY:
-      {
-        SubComponentCompositeBody subComponentCompositeBody = (SubComponentCompositeBody)theEObject;
-        T result = caseSubComponentCompositeBody(subComponentCompositeBody);
-        if (result == null) result = caseSubComponentBody(subComponentCompositeBody);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case FractalPackage.SUB_COMPONENT_PRIMITIVE_BODY:
-      {
-        SubComponentPrimitiveBody subComponentPrimitiveBody = (SubComponentPrimitiveBody)theEObject;
-        T result = caseSubComponentPrimitiveBody(subComponentPrimitiveBody);
-        if (result == null) result = caseSubComponentBody(subComponentPrimitiveBody);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case FractalPackage.ELEMENT:
       {
         Element element = (Element)theEObject;
@@ -618,54 +595,6 @@ public class FractalSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSubComponentDefinition(SubComponentDefinition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Component Body</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Component Body</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSubComponentBody(SubComponentBody object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Component Composite Body</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Component Composite Body</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSubComponentCompositeBody(SubComponentCompositeBody object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Component Primitive Body</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Component Primitive Body</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSubComponentPrimitiveBody(SubComponentPrimitiveBody object)
   {
     return null;
   }

@@ -208,9 +208,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CompositeDefinition:
 		//
-		//	"composite" name=QualifiedName ("<" (templateSpecifiers+=TemplateSpecifier (","
+		//	"composite" name=QualifiedName? // support anonymous definitions
 		//
-		//	templateSpecifiers+=TemplateSpecifier)*) ">")? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
+		//	("<" (templateSpecifiers+=TemplateSpecifier ("," templateSpecifiers+=TemplateSpecifier)*) ">")? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
 		//
 		//	compositeFormalArgumentsList=FormalArgumentsList? // (arg1, arg2, ...)
 		//
@@ -221,9 +221,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//	"}";
 		public ParserRule getRule() { return rule; }
 
-		//"composite" name=QualifiedName ("<" (templateSpecifiers+=TemplateSpecifier ("," templateSpecifiers+=TemplateSpecifier)*)
+		//"composite" name=QualifiedName? // support anonymous definitions
 		//
-		//">")? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
+		//("<" (templateSpecifiers+=TemplateSpecifier ("," templateSpecifiers+=TemplateSpecifier)*) ">")? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
 		//
 		//compositeFormalArgumentsList=FormalArgumentsList? // (arg1, arg2, ...)
 		//
@@ -237,7 +237,7 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//"composite"
 		public Keyword getCompositeKeyword_0() { return cCompositeKeyword_0; }
 
-		//name=QualifiedName
+		//name=QualifiedName?
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
 		//QualifiedName
@@ -358,18 +358,22 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PrimitiveDefinition:
 		//
-		//	abstract?="abstract"? "primitive" name=QualifiedName compositeFormalArgumentsList=FormalArgumentsList? ("extends"
+		//	abstract?="abstract"? "primitive" name=QualifiedName? // support anonymous definitions
 		//
-		//	superTypes+=PrimitiveSuperType ("," superTypes+=PrimitiveSuperType)*)? "{" elements+=(ProvidedInterfaceDefinition |
+		//	compositeFormalArgumentsList=FormalArgumentsList? ("extends" superTypes+=PrimitiveSuperType (","
 		//
-		//	RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)* "}";
+		//	superTypes+=PrimitiveSuperType)*)? "{" elements+=(ProvidedInterfaceDefinition | RequiredInterfaceDefinition |
+		//
+		//	ImplementationDefinition | AttributeDefinition | DataDefinition)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//abstract?="abstract"? "primitive" name=QualifiedName compositeFormalArgumentsList=FormalArgumentsList? ("extends"
+		//abstract?="abstract"? "primitive" name=QualifiedName? // support anonymous definitions
 		//
-		//superTypes+=PrimitiveSuperType ("," superTypes+=PrimitiveSuperType)*)? "{" elements+=(ProvidedInterfaceDefinition |
+		//compositeFormalArgumentsList=FormalArgumentsList? ("extends" superTypes+=PrimitiveSuperType (","
 		//
-		//RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)* "}"
+		//superTypes+=PrimitiveSuperType)*)? "{" elements+=(ProvidedInterfaceDefinition | RequiredInterfaceDefinition |
+		//
+		//ImplementationDefinition | AttributeDefinition | DataDefinition)* "}"
 		public Group getGroup() { return cGroup; }
 
 		//abstract?="abstract"?
@@ -381,7 +385,7 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//"primitive"
 		public Keyword getPrimitiveKeyword_1() { return cPrimitiveKeyword_1; }
 
-		//name=QualifiedName
+		//name=QualifiedName?
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//QualifiedName
@@ -974,9 +978,13 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAsKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cNameAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cNameIDTerminalRuleCall_6_0 = (RuleCall)cNameAssignment_6.eContents().get(0);
-		private final Assignment cBodyAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cBodySubComponentBodyParserRuleCall_7_0 = (RuleCall)cBodyAssignment_7.eContents().get(0);
-		private final Keyword cSemicolonKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cBodyAnnotationsListAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cBodyAnnotationsListAnnotationsListParserRuleCall_7_0 = (RuleCall)cBodyAnnotationsListAssignment_7.eContents().get(0);
+		private final Assignment cBodyAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final Alternatives cBodyAlternatives_8_0 = (Alternatives)cBodyAssignment_8.eContents().get(0);
+		private final RuleCall cBodyCompositeDefinitionParserRuleCall_8_0_0 = (RuleCall)cBodyAlternatives_8_0.eContents().get(0);
+		private final RuleCall cBodyPrimitiveDefinitionParserRuleCall_8_0_1 = (RuleCall)cBodyAlternatives_8_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//// Original: can do anything but needs lots of manual scoping/validation
 		//
@@ -986,16 +994,18 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//
 		//	templatesList+=TemplateDefinition ("," templatesList+=TemplateDefinition)* ">")? ("("
 		//
-		//	argumentsList+=ArgumentDefinition ("," argumentsList+=ArgumentDefinition)* ")")? "as" name=ID body=SubComponentBody?
+		//	argumentsList+=ArgumentDefinition ("," argumentsList+=ArgumentDefinition)* ")")? "as" name=ID
 		//
-		//	";";
+		//	bodyAnnotationsList=AnnotationsList? body=(CompositeDefinition | PrimitiveDefinition)? ";";
 		public ParserRule getRule() { return rule; }
 
 		//annotationsList=AnnotationsList? "contains" type=[TypeReference|QualifiedName]? ("<" templatesList+=TemplateDefinition
 		//
 		//("," templatesList+=TemplateDefinition)* ">")? ("(" argumentsList+=ArgumentDefinition (","
 		//
-		//argumentsList+=ArgumentDefinition)* ")")? "as" name=ID body=SubComponentBody? ";"
+		//argumentsList+=ArgumentDefinition)* ")")? "as" name=ID bodyAnnotationsList=AnnotationsList? body=(CompositeDefinition
+		//
+		//| PrimitiveDefinition)? ";"
 		public Group getGroup() { return cGroup; }
 
 		//annotationsList=AnnotationsList?
@@ -1079,185 +1089,26 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_6_0() { return cNameIDTerminalRuleCall_6_0; }
 
-		//body=SubComponentBody?
-		public Assignment getBodyAssignment_7() { return cBodyAssignment_7; }
+		//bodyAnnotationsList=AnnotationsList?
+		public Assignment getBodyAnnotationsListAssignment_7() { return cBodyAnnotationsListAssignment_7; }
 
-		//SubComponentBody
-		public RuleCall getBodySubComponentBodyParserRuleCall_7_0() { return cBodySubComponentBodyParserRuleCall_7_0; }
+		//AnnotationsList
+		public RuleCall getBodyAnnotationsListAnnotationsListParserRuleCall_7_0() { return cBodyAnnotationsListAnnotationsListParserRuleCall_7_0; }
+
+		//body=(CompositeDefinition | PrimitiveDefinition)?
+		public Assignment getBodyAssignment_8() { return cBodyAssignment_8; }
+
+		//CompositeDefinition | PrimitiveDefinition
+		public Alternatives getBodyAlternatives_8_0() { return cBodyAlternatives_8_0; }
+
+		//CompositeDefinition
+		public RuleCall getBodyCompositeDefinitionParserRuleCall_8_0_0() { return cBodyCompositeDefinitionParserRuleCall_8_0_0; }
+
+		//PrimitiveDefinition
+		public RuleCall getBodyPrimitiveDefinitionParserRuleCall_8_0_1() { return cBodyPrimitiveDefinitionParserRuleCall_8_0_1; }
 
 		//";"
-		public Keyword getSemicolonKeyword_8() { return cSemicolonKeyword_8; }
-	}
-
-	public class SubComponentBodyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SubComponentBody");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSubComponentCompositeBodyParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cSubComponentPrimitiveBodyParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//SubComponentBody:
-		//
-		//	SubComponentCompositeBody | SubComponentPrimitiveBody;
-		public ParserRule getRule() { return rule; }
-
-		//SubComponentCompositeBody | SubComponentPrimitiveBody
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//SubComponentCompositeBody
-		public RuleCall getSubComponentCompositeBodyParserRuleCall_0() { return cSubComponentCompositeBodyParserRuleCall_0; }
-
-		//SubComponentPrimitiveBody
-		public RuleCall getSubComponentPrimitiveBodyParserRuleCall_1() { return cSubComponentPrimitiveBodyParserRuleCall_1; }
-	}
-
-	public class SubComponentCompositeBodyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SubComponentCompositeBody");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cAnonymousAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cAnonymousCompositeKeyword_0_0 = (Keyword)cAnonymousAssignment_0.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Alternatives cElementsAlternatives_2_0 = (Alternatives)cElementsAssignment_2.eContents().get(0);
-		private final RuleCall cElementsSubComponentDefinitionParserRuleCall_2_0_0 = (RuleCall)cElementsAlternatives_2_0.eContents().get(0);
-		private final RuleCall cElementsProvidedInterfaceDefinitionParserRuleCall_2_0_1 = (RuleCall)cElementsAlternatives_2_0.eContents().get(1);
-		private final RuleCall cElementsRequiredInterfaceDefinitionParserRuleCall_2_0_2 = (RuleCall)cElementsAlternatives_2_0.eContents().get(2);
-		private final RuleCall cElementsBindingDefinitionParserRuleCall_2_0_3 = (RuleCall)cElementsAlternatives_2_0.eContents().get(3);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//SubComponentCompositeBody:
-		//
-		//	anonymous?= // true but the existence of this body in the SubComponentDefinition rule
-		//
-		//	"composite" // implies an anonymous component anyway
-		//
-		//	"{" elements+=(SubComponentDefinition | ProvidedInterfaceDefinition | RequiredInterfaceDefinition | BindingDefinition)*
-		//
-		//	"}";
-		public ParserRule getRule() { return rule; }
-
-		//anonymous?= // true but the existence of this body in the SubComponentDefinition rule
-		//
-		//"composite" // implies an anonymous component anyway
-		//
-		//"{" elements+=(SubComponentDefinition | ProvidedInterfaceDefinition | RequiredInterfaceDefinition | BindingDefinition)*
-		//
-		//"}"
-		public Group getGroup() { return cGroup; }
-
-		//anonymous?= // true but the existence of this body in the SubComponentDefinition rule
-		//
-		//"composite"
-		public Assignment getAnonymousAssignment_0() { return cAnonymousAssignment_0; }
-
-		//// true but the existence of this body in the SubComponentDefinition rule
-		//
-		//"composite"
-		public Keyword getAnonymousCompositeKeyword_0_0() { return cAnonymousCompositeKeyword_0_0; }
-
-		//// implies an anonymous component anyway
-		//
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-
-		//elements+=(SubComponentDefinition | ProvidedInterfaceDefinition | RequiredInterfaceDefinition | BindingDefinition)*
-		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
-
-		//SubComponentDefinition | ProvidedInterfaceDefinition | RequiredInterfaceDefinition | BindingDefinition
-		public Alternatives getElementsAlternatives_2_0() { return cElementsAlternatives_2_0; }
-
-		//SubComponentDefinition
-		public RuleCall getElementsSubComponentDefinitionParserRuleCall_2_0_0() { return cElementsSubComponentDefinitionParserRuleCall_2_0_0; }
-
-		//ProvidedInterfaceDefinition
-		public RuleCall getElementsProvidedInterfaceDefinitionParserRuleCall_2_0_1() { return cElementsProvidedInterfaceDefinitionParserRuleCall_2_0_1; }
-
-		//RequiredInterfaceDefinition
-		public RuleCall getElementsRequiredInterfaceDefinitionParserRuleCall_2_0_2() { return cElementsRequiredInterfaceDefinitionParserRuleCall_2_0_2; }
-
-		//BindingDefinition
-		public RuleCall getElementsBindingDefinitionParserRuleCall_2_0_3() { return cElementsBindingDefinitionParserRuleCall_2_0_3; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
-	}
-
-	public class SubComponentPrimitiveBodyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SubComponentPrimitiveBody");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cAnonymousAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final Keyword cAnonymousPrimitiveKeyword_0_0 = (Keyword)cAnonymousAssignment_0.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final Alternatives cElementsAlternatives_2_0 = (Alternatives)cElementsAssignment_2.eContents().get(0);
-		private final RuleCall cElementsProvidedInterfaceDefinitionParserRuleCall_2_0_0 = (RuleCall)cElementsAlternatives_2_0.eContents().get(0);
-		private final RuleCall cElementsRequiredInterfaceDefinitionParserRuleCall_2_0_1 = (RuleCall)cElementsAlternatives_2_0.eContents().get(1);
-		private final RuleCall cElementsImplementationDefinitionParserRuleCall_2_0_2 = (RuleCall)cElementsAlternatives_2_0.eContents().get(2);
-		private final RuleCall cElementsAttributeDefinitionParserRuleCall_2_0_3 = (RuleCall)cElementsAlternatives_2_0.eContents().get(3);
-		private final RuleCall cElementsDataDefinitionParserRuleCall_2_0_4 = (RuleCall)cElementsAlternatives_2_0.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		
-		//SubComponentPrimitiveBody:
-		//
-		//	anonymous?= // true but the existence of this body in the SubComponentDefinition rule
-		//
-		//	"primitive" // implies an anonymous component anyway
-		//
-		//	"{" elements+=(ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition |
-		//
-		//	AttributeDefinition | DataDefinition)* "}";
-		public ParserRule getRule() { return rule; }
-
-		//anonymous?= // true but the existence of this body in the SubComponentDefinition rule
-		//
-		//"primitive" // implies an anonymous component anyway
-		//
-		//"{" elements+=(ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition |
-		//
-		//AttributeDefinition | DataDefinition)* "}"
-		public Group getGroup() { return cGroup; }
-
-		//anonymous?= // true but the existence of this body in the SubComponentDefinition rule
-		//
-		//"primitive"
-		public Assignment getAnonymousAssignment_0() { return cAnonymousAssignment_0; }
-
-		//// true but the existence of this body in the SubComponentDefinition rule
-		//
-		//"primitive"
-		public Keyword getAnonymousPrimitiveKeyword_0_0() { return cAnonymousPrimitiveKeyword_0_0; }
-
-		//// implies an anonymous component anyway
-		//
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-
-		//elements+=(ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition |
-		//
-		//DataDefinition)*
-		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
-
-		//ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition |
-		//
-		//DataDefinition
-		public Alternatives getElementsAlternatives_2_0() { return cElementsAlternatives_2_0; }
-
-		//ProvidedInterfaceDefinition
-		public RuleCall getElementsProvidedInterfaceDefinitionParserRuleCall_2_0_0() { return cElementsProvidedInterfaceDefinitionParserRuleCall_2_0_0; }
-
-		//RequiredInterfaceDefinition
-		public RuleCall getElementsRequiredInterfaceDefinitionParserRuleCall_2_0_1() { return cElementsRequiredInterfaceDefinitionParserRuleCall_2_0_1; }
-
-		//ImplementationDefinition
-		public RuleCall getElementsImplementationDefinitionParserRuleCall_2_0_2() { return cElementsImplementationDefinitionParserRuleCall_2_0_2; }
-
-		//AttributeDefinition
-		public RuleCall getElementsAttributeDefinitionParserRuleCall_2_0_3() { return cElementsAttributeDefinitionParserRuleCall_2_0_3; }
-
-		//DataDefinition
-		public RuleCall getElementsDataDefinitionParserRuleCall_2_0_4() { return cElementsDataDefinitionParserRuleCall_2_0_4; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+		public Keyword getSemicolonKeyword_9() { return cSemicolonKeyword_9; }
 	}
 
 	public class ElementElements extends AbstractParserRuleElementFinder {
@@ -1267,6 +1118,44 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPrimitiveElementParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cHostedInterfaceDefinitionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
+		////SubComponentBody: 
+		//
+		////	SubComponentCompositeBody | SubComponentPrimitiveBody
+		//
+		////;
+		//
+		////
+		//
+		////SubComponentCompositeBody:
+		//
+		////	anonymous ?= 'composite'	// true but the existence of this body in the SubComponentDefinition rule
+		//
+		////								// implies an anonymous component anyway
+		//
+		////	'{'
+		//
+		////		elements += (SubComponentDefinition | ProvidedInterfaceDefinition | RequiredInterfaceDefinition | BindingDefinition)*
+		//
+		////	'}'
+		//
+		////;
+		//
+		////
+		//
+		////SubComponentPrimitiveBody:
+		//
+		////	anonymous?='primitive'		// true but the existence of this body in the SubComponentDefinition rule
+		//
+		////								// implies an anonymous component anyway
+		//
+		////	'{'
+		//
+		////		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)*
+		//
+		////	'}'
+		//
+		////;
+		//
 		//// Check if this rules is in accordance with the original grammar
 		//
 		//Element:
@@ -2423,9 +2312,6 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 	private RequiredInterfaceDefinitionElements pRequiredInterfaceDefinition;
 	private TypeReferenceElements pTypeReference;
 	private SubComponentDefinitionElements pSubComponentDefinition;
-	private SubComponentBodyElements pSubComponentBody;
-	private SubComponentCompositeBodyElements pSubComponentCompositeBody;
-	private SubComponentPrimitiveBodyElements pSubComponentPrimitiveBody;
 	private ElementElements pElement;
 	private CompositeElementElements pCompositeElement;
 	private PrimitiveElementElements pPrimitiveElement;
@@ -2561,9 +2447,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 	//CompositeDefinition:
 	//
-	//	"composite" name=QualifiedName ("<" (templateSpecifiers+=TemplateSpecifier (","
+	//	"composite" name=QualifiedName? // support anonymous definitions
 	//
-	//	templateSpecifiers+=TemplateSpecifier)*) ">")? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
+	//	("<" (templateSpecifiers+=TemplateSpecifier ("," templateSpecifiers+=TemplateSpecifier)*) ">")? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
 	//
 	//	compositeFormalArgumentsList=FormalArgumentsList? // (arg1, arg2, ...)
 	//
@@ -2582,11 +2468,13 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 	//PrimitiveDefinition:
 	//
-	//	abstract?="abstract"? "primitive" name=QualifiedName compositeFormalArgumentsList=FormalArgumentsList? ("extends"
+	//	abstract?="abstract"? "primitive" name=QualifiedName? // support anonymous definitions
 	//
-	//	superTypes+=PrimitiveSuperType ("," superTypes+=PrimitiveSuperType)*)? "{" elements+=(ProvidedInterfaceDefinition |
+	//	compositeFormalArgumentsList=FormalArgumentsList? ("extends" superTypes+=PrimitiveSuperType (","
 	//
-	//	RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)* "}";
+	//	superTypes+=PrimitiveSuperType)*)? "{" elements+=(ProvidedInterfaceDefinition | RequiredInterfaceDefinition |
+	//
+	//	ImplementationDefinition | AttributeDefinition | DataDefinition)* "}";
 	public PrimitiveDefinitionElements getPrimitiveDefinitionAccess() {
 		return (pPrimitiveDefinition != null) ? pPrimitiveDefinition : (pPrimitiveDefinition = new PrimitiveDefinitionElements());
 	}
@@ -2720,9 +2608,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 	//
 	//	templatesList+=TemplateDefinition ("," templatesList+=TemplateDefinition)* ">")? ("("
 	//
-	//	argumentsList+=ArgumentDefinition ("," argumentsList+=ArgumentDefinition)* ")")? "as" name=ID body=SubComponentBody?
+	//	argumentsList+=ArgumentDefinition ("," argumentsList+=ArgumentDefinition)* ")")? "as" name=ID
 	//
-	//	";";
+	//	bodyAnnotationsList=AnnotationsList? body=(CompositeDefinition | PrimitiveDefinition)? ";";
 	public SubComponentDefinitionElements getSubComponentDefinitionAccess() {
 		return (pSubComponentDefinition != null) ? pSubComponentDefinition : (pSubComponentDefinition = new SubComponentDefinitionElements());
 	}
@@ -2731,51 +2619,44 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		return getSubComponentDefinitionAccess().getRule();
 	}
 
-	//SubComponentBody:
+	////SubComponentBody: 
 	//
-	//	SubComponentCompositeBody | SubComponentPrimitiveBody;
-	public SubComponentBodyElements getSubComponentBodyAccess() {
-		return (pSubComponentBody != null) ? pSubComponentBody : (pSubComponentBody = new SubComponentBodyElements());
-	}
-	
-	public ParserRule getSubComponentBodyRule() {
-		return getSubComponentBodyAccess().getRule();
-	}
-
-	//SubComponentCompositeBody:
+	////	SubComponentCompositeBody | SubComponentPrimitiveBody
 	//
-	//	anonymous?= // true but the existence of this body in the SubComponentDefinition rule
+	////;
 	//
-	//	"composite" // implies an anonymous component anyway
+	////
 	//
-	//	"{" elements+=(SubComponentDefinition | ProvidedInterfaceDefinition | RequiredInterfaceDefinition | BindingDefinition)*
+	////SubComponentCompositeBody:
 	//
-	//	"}";
-	public SubComponentCompositeBodyElements getSubComponentCompositeBodyAccess() {
-		return (pSubComponentCompositeBody != null) ? pSubComponentCompositeBody : (pSubComponentCompositeBody = new SubComponentCompositeBodyElements());
-	}
-	
-	public ParserRule getSubComponentCompositeBodyRule() {
-		return getSubComponentCompositeBodyAccess().getRule();
-	}
-
-	//SubComponentPrimitiveBody:
+	////	anonymous ?= 'composite'	// true but the existence of this body in the SubComponentDefinition rule
 	//
-	//	anonymous?= // true but the existence of this body in the SubComponentDefinition rule
+	////								// implies an anonymous component anyway
 	//
-	//	"primitive" // implies an anonymous component anyway
+	////	'{'
 	//
-	//	"{" elements+=(ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition |
+	////		elements += (SubComponentDefinition | ProvidedInterfaceDefinition | RequiredInterfaceDefinition | BindingDefinition)*
 	//
-	//	AttributeDefinition | DataDefinition)* "}";
-	public SubComponentPrimitiveBodyElements getSubComponentPrimitiveBodyAccess() {
-		return (pSubComponentPrimitiveBody != null) ? pSubComponentPrimitiveBody : (pSubComponentPrimitiveBody = new SubComponentPrimitiveBodyElements());
-	}
-	
-	public ParserRule getSubComponentPrimitiveBodyRule() {
-		return getSubComponentPrimitiveBodyAccess().getRule();
-	}
-
+	////	'}'
+	//
+	////;
+	//
+	////
+	//
+	////SubComponentPrimitiveBody:
+	//
+	////	anonymous?='primitive'		// true but the existence of this body in the SubComponentDefinition rule
+	//
+	////								// implies an anonymous component anyway
+	//
+	////	'{'
+	//
+	////		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)*
+	//
+	////	'}'
+	//
+	////;
+	//
 	//// Check if this rules is in accordance with the original grammar
 	//
 	//Element:

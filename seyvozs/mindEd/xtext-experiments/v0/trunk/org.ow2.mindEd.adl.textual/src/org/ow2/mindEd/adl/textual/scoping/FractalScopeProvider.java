@@ -47,99 +47,99 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 
 
 	// VERY useful debug method
-//	@Override
-//	public IScope getScope(EObject context, EReference reference){
-//		System.out.println(
-//				"scope_" + reference.getEContainingClass().getName()
-//				+ "_" + reference.getName()
-//				+ "(" + context.eClass().getName() + ", ..)"
-//				);
-//		return super.getScope(context, reference);
-//	}
+	//	@Override
+	//	public IScope getScope(EObject context, EReference reference){
+	//		System.out.println(
+	//				"scope_" + reference.getEContainingClass().getName()
+	//				+ "_" + reference.getName()
+	//				+ "(" + context.eClass().getName() + ", ..)"
+	//				);
+	//		return super.getScope(context, reference);
+	//	}
 
-//	/**
-//	 * Handle sub-components from supertypes resolution
-//	 */
-//	public IScope scope_BindingDefinition_sourceParent(BindingDefinition bindingDef, EReference ref) {
-//		// Get the default resolved scope
-//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(bindingDef, ref).getAllElements();
-//
-//		// Create a new scope for sub-component definitions in the super types hierarchy
-//		// first get the parent composite of our BindingDefinition
-//		EObject container = bindingDef.eContainer();
-//		while (!(container instanceof CompositeDefinition))
-//			container = container.eContainer();
-//		Scopes.scopeFor(listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) container));
-//
-//		// composite scope made of the default scope + our supertypes scope
-//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptions, false);
-//	}
-//
-//	/*
-//	 * Basically the same as scope_BindingDefinition_sourceParent: should be factorized
-//	 */
-//	public IScope scope_BindingDefinition_targetParent(BindingDefinition bindingDef, EReference ref) {
-//		// Get the default resolved scope
-//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(bindingDef, ref).getAllElements();
-//
-//		// Create a new scope for sub-component definitions in the super types hierarchy
-//		// first get the parent composite of our BindingDefinition
-//		EObject container = bindingDef.eContainer();
-//		while (!(container instanceof CompositeDefinition))
-//			container = container.eContainer();
-//		Scopes.scopeFor(listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) container));
-//
-//		// composite scope made of the default scope + our supertypes scope
-//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptions, false);
-//	}
-//	
-//	/*
-//	 * Fallback case
-//	 */
-//	public IScope scope_BindingDefinition_sourceParent(CompositeDefinition hostCompositeDef, EReference ref) {
-//		// Get the default resolved scope
-//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(hostCompositeDef, ref).getAllElements();
-//
-//		// Create a new scope for sub-component definitions in the super types hierarchy
-//		// first get the parent composite of our BindingDefinition
-//		Scopes.scopeFor(listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) hostCompositeDef));
-//
-//		// composite scope made of the default scope + our supertypes scope
-//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptions, false);
-//	}
+	//	/**
+	//	 * Handle sub-components from supertypes resolution
+	//	 */
+	//	public IScope scope_BindingDefinition_sourceParent(BindingDefinition bindingDef, EReference ref) {
+	//		// Get the default resolved scope
+	//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(bindingDef, ref).getAllElements();
+	//
+	//		// Create a new scope for sub-component definitions in the super types hierarchy
+	//		// first get the parent composite of our BindingDefinition
+	//		EObject container = bindingDef.eContainer();
+	//		while (!(container instanceof CompositeDefinition))
+	//			container = container.eContainer();
+	//		Scopes.scopeFor(listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) container));
+	//
+	//		// composite scope made of the default scope + our supertypes scope
+	//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptions, false);
+	//	}
+	//
+	//	/*
+	//	 * Basically the same as scope_BindingDefinition_sourceParent: should be factorized
+	//	 */
+	//	public IScope scope_BindingDefinition_targetParent(BindingDefinition bindingDef, EReference ref) {
+	//		// Get the default resolved scope
+	//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(bindingDef, ref).getAllElements();
+	//
+	//		// Create a new scope for sub-component definitions in the super types hierarchy
+	//		// first get the parent composite of our BindingDefinition
+	//		EObject container = bindingDef.eContainer();
+	//		while (!(container instanceof CompositeDefinition))
+	//			container = container.eContainer();
+	//		Scopes.scopeFor(listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) container));
+	//
+	//		// composite scope made of the default scope + our supertypes scope
+	//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptions, false);
+	//	}
+	//	
+	//	/*
+	//	 * Fallback case
+	//	 */
+	//	public IScope scope_BindingDefinition_sourceParent(CompositeDefinition hostCompositeDef, EReference ref) {
+	//		// Get the default resolved scope
+	//		Iterable<IEObjectDescription> scopeElementsDescriptions = delegateGetScope(hostCompositeDef, ref).getAllElements();
+	//
+	//		// Create a new scope for sub-component definitions in the super types hierarchy
+	//		// first get the parent composite of our BindingDefinition
+	//		Scopes.scopeFor(listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) hostCompositeDef));
+	//
+	//		// composite scope made of the default scope + our supertypes scope
+	//		return MultimapBasedScope.createScope(IScope.NULLSCOPE, scopeElementsDescriptions, false);
+	//	}
 
-//	private EList<SubComponentDefinition> listAllSubComponentsFromCompositeSuperTypes(CompositeDefinition archDef){
-//		EList<CompositeSuperType> superTypes = archDef.getSuperTypes();
-//
-//		EList<SubComponentDefinition> subCompDefList = new BasicEList<SubComponentDefinition>();
-//
-//		for (CompositeSuperType currSuperArchDef : superTypes) {
-//			// Could also be a TypeDefinition but then... no sub-component -> useless
-//			if (currSuperArchDef.getTargetArchDef() instanceof CompositeDefinition) {
-//				subCompDefList.addAll(getAllSubComponentDefinitions((CompositeDefinition) currSuperArchDef.getTargetArchDef()));
-//				// we need a recursion in all supertypes
-//				listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) currSuperArchDef.getTargetArchDef());
-//			}
-//		}
-//
-//		return subCompDefList;
-//	}
+	//	private EList<SubComponentDefinition> listAllSubComponentsFromCompositeSuperTypes(CompositeDefinition archDef){
+	//		EList<CompositeSuperType> superTypes = archDef.getSuperTypes();
+	//
+	//		EList<SubComponentDefinition> subCompDefList = new BasicEList<SubComponentDefinition>();
+	//
+	//		for (CompositeSuperType currSuperArchDef : superTypes) {
+	//			// Could also be a TypeDefinition but then... no sub-component -> useless
+	//			if (currSuperArchDef.getTargetArchDef() instanceof CompositeDefinition) {
+	//				subCompDefList.addAll(getAllSubComponentDefinitions((CompositeDefinition) currSuperArchDef.getTargetArchDef()));
+	//				// we need a recursion in all supertypes
+	//				listAllSubComponentsFromCompositeSuperTypes((CompositeDefinition) currSuperArchDef.getTargetArchDef());
+	//			}
+	//		}
+	//
+	//		return subCompDefList;
+	//	}
 
-//	private EList<SubComponentDefinition> getAllSubComponentDefinitions(CompositeDefinition compositeDef) {
-//		EList<SubComponentDefinition> subCompDefList = new BasicEList<SubComponentDefinition>();
-//
-//		// Get all the elements
-//		EList<CompositeElement> elements = compositeDef.getElements();
-//		// Then filter for RequiredInterfaceDefinition(s)
-//
-//		for (EObject currentEObject : elements) {
-//			if (currentEObject instanceof SubComponentDefinition) {
-//				subCompDefList.add((SubComponentDefinition) currentEObject);
-//			}
-//		}
-//
-//		return subCompDefList;
-//	}
+	//	private EList<SubComponentDefinition> getAllSubComponentDefinitions(CompositeDefinition compositeDef) {
+	//		EList<SubComponentDefinition> subCompDefList = new BasicEList<SubComponentDefinition>();
+	//
+	//		// Get all the elements
+	//		EList<CompositeElement> elements = compositeDef.getElements();
+	//		// Then filter for RequiredInterfaceDefinition(s)
+	//
+	//		for (EObject currentEObject : elements) {
+	//			if (currentEObject instanceof SubComponentDefinition) {
+	//				subCompDefList.add((SubComponentDefinition) currentEObject);
+	//			}
+	//		}
+	//
+	//		return subCompDefList;
+	//	}
 
 	/**
 	 * Here we need to handle local templates:
@@ -283,12 +283,19 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 		if (!bindingDef.isIsSrcParentThis()) {
 			// else it's a common "standard" component
 			currArchDefOrTemplate = bindingDef.getSourceParent().getType();
-			if (currArchDefOrTemplate instanceof ArchitectureDefinition)
-				sourceComponentArchDef = (ArchitectureDefinition) currArchDefOrTemplate;
-			else if (currArchDefOrTemplate instanceof TemplateSpecifier)
-				sourceComponentArchDef = ((TemplateSpecifier) currArchDefOrTemplate).getTypeReference();
-			else // error case
-				return IScope.NULLSCOPE;
+
+			// handle anonymous component definitions
+			// see http://mind.ow2.org/mindc/mindc-user-guide.html#adl-anonym for more info
+			if (currArchDefOrTemplate == null)
+				sourceComponentArchDef = bindingDef.getSourceParent().getBody();
+			else {
+				if (currArchDefOrTemplate instanceof ArchitectureDefinition)
+					sourceComponentArchDef = (ArchitectureDefinition) currArchDefOrTemplate;
+				else if (currArchDefOrTemplate instanceof TemplateSpecifier)
+					sourceComponentArchDef = ((TemplateSpecifier) currArchDefOrTemplate).getTypeReference();
+				else // error case
+					return IScope.NULLSCOPE;
+			}
 		} else {
 			// if the source parent is "this"
 			EObject container = bindingDef.eContainer();
@@ -396,12 +403,20 @@ public class FractalScopeProvider extends AbstractDeclarativeScopeProvider {
 		// If the source parent isn't a sub-component but "this"
 		if (!bindingDef.isIsTgtParentThis()) {
 			currArchDefOrTemplate = bindingDef.getTargetParent().getType();
-			if (currArchDefOrTemplate instanceof ArchitectureDefinition)
-				targetComponentArchDef = (ArchitectureDefinition) currArchDefOrTemplate;
-			else if (currArchDefOrTemplate instanceof TemplateSpecifier)
-				targetComponentArchDef = ((TemplateSpecifier) currArchDefOrTemplate).getTypeReference();
-			else // error case
-				return IScope.NULLSCOPE;
+
+			// handle anonymous component definitions
+			// see http://mind.ow2.org/mindc/mindc-user-guide.html#adl-anonym for more info
+			if (currArchDefOrTemplate == null)
+				targetComponentArchDef = bindingDef.getTargetParent().getBody();
+			else {
+				// component definition is a standard one
+				if (currArchDefOrTemplate instanceof ArchitectureDefinition)
+					targetComponentArchDef = (ArchitectureDefinition) currArchDefOrTemplate;
+				else if (currArchDefOrTemplate instanceof TemplateSpecifier)
+					targetComponentArchDef = ((TemplateSpecifier) currArchDefOrTemplate).getTypeReference();
+				else // error case
+					return IScope.NULLSCOPE;
+			}
 		} else {
 			EObject container = bindingDef.eContainer();
 			// Find the parent host definition

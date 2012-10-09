@@ -158,33 +158,6 @@ public interface FractalFactory extends EFactory
   SubComponentDefinition createSubComponentDefinition();
 
   /**
-   * Returns a new object of class '<em>Sub Component Body</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Component Body</em>'.
-   * @generated
-   */
-  SubComponentBody createSubComponentBody();
-
-  /**
-   * Returns a new object of class '<em>Sub Component Composite Body</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Component Composite Body</em>'.
-   * @generated
-   */
-  SubComponentCompositeBody createSubComponentCompositeBody();
-
-  /**
-   * Returns a new object of class '<em>Sub Component Primitive Body</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Component Primitive Body</em>'.
-   * @generated
-   */
-  SubComponentPrimitiveBody createSubComponentPrimitiveBody();
-
-  /**
    * Returns a new object of class '<em>Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

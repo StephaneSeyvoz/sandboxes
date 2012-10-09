@@ -489,7 +489,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getElement()
    * @generated
    */
-  int ELEMENT = 18;
+  int ELEMENT = 15;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -745,7 +745,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getCompositeElement()
    * @generated
    */
-  int COMPOSITE_ELEMENT = 19;
+  int COMPOSITE_ELEMENT = 16;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -821,13 +821,22 @@ public interface FractalPackage extends EPackage
   int SUB_COMPONENT_DEFINITION__NAME = COMPOSITE_ELEMENT_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Body Annotations List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST = COMPOSITE_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_COMPONENT_DEFINITION__BODY = COMPOSITE_ELEMENT_FEATURE_COUNT + 4;
+  int SUB_COMPONENT_DEFINITION__BODY = COMPOSITE_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Sub Component Definition</em>' class.
@@ -836,109 +845,7 @@ public interface FractalPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_COMPONENT_DEFINITION_FEATURE_COUNT = COMPOSITE_ELEMENT_FEATURE_COUNT + 5;
-
-  /**
-   * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.SubComponentBodyImpl <em>Sub Component Body</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.ow2.mindEd.adl.textual.fractal.impl.SubComponentBodyImpl
-   * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getSubComponentBody()
-   * @generated
-   */
-  int SUB_COMPONENT_BODY = 15;
-
-  /**
-   * The feature id for the '<em><b>Anonymous</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_COMPONENT_BODY__ANONYMOUS = 0;
-
-  /**
-   * The number of structural features of the '<em>Sub Component Body</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_COMPONENT_BODY_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.SubComponentCompositeBodyImpl <em>Sub Component Composite Body</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.ow2.mindEd.adl.textual.fractal.impl.SubComponentCompositeBodyImpl
-   * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getSubComponentCompositeBody()
-   * @generated
-   */
-  int SUB_COMPONENT_COMPOSITE_BODY = 16;
-
-  /**
-   * The feature id for the '<em><b>Anonymous</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_COMPONENT_COMPOSITE_BODY__ANONYMOUS = SUB_COMPONENT_BODY__ANONYMOUS;
-
-  /**
-   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_COMPONENT_COMPOSITE_BODY__ELEMENTS = SUB_COMPONENT_BODY_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Sub Component Composite Body</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_COMPONENT_COMPOSITE_BODY_FEATURE_COUNT = SUB_COMPONENT_BODY_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.SubComponentPrimitiveBodyImpl <em>Sub Component Primitive Body</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.ow2.mindEd.adl.textual.fractal.impl.SubComponentPrimitiveBodyImpl
-   * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getSubComponentPrimitiveBody()
-   * @generated
-   */
-  int SUB_COMPONENT_PRIMITIVE_BODY = 17;
-
-  /**
-   * The feature id for the '<em><b>Anonymous</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_COMPONENT_PRIMITIVE_BODY__ANONYMOUS = SUB_COMPONENT_BODY__ANONYMOUS;
-
-  /**
-   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_COMPONENT_PRIMITIVE_BODY__ELEMENTS = SUB_COMPONENT_BODY_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Sub Component Primitive Body</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_COMPONENT_PRIMITIVE_BODY_FEATURE_COUNT = SUB_COMPONENT_BODY_FEATURE_COUNT + 1;
+  int SUB_COMPONENT_DEFINITION_FEATURE_COUNT = COMPOSITE_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.PrimitiveElementImpl <em>Primitive Element</em>}' class.
@@ -948,7 +855,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getPrimitiveElement()
    * @generated
    */
-  int PRIMITIVE_ELEMENT = 20;
+  int PRIMITIVE_ELEMENT = 17;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -976,7 +883,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getBindingDefinition()
    * @generated
    */
-  int BINDING_DEFINITION = 21;
+  int BINDING_DEFINITION = 18;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -1076,7 +983,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getFormalArgument()
    * @generated
    */
-  int FORMAL_ARGUMENT = 22;
+  int FORMAL_ARGUMENT = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1104,7 +1011,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getFormalArgumentsList()
    * @generated
    */
-  int FORMAL_ARGUMENTS_LIST = 23;
+  int FORMAL_ARGUMENTS_LIST = 20;
 
   /**
    * The feature id for the '<em><b>Formal Arguments</b></em>' containment reference list.
@@ -1132,7 +1039,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getTemplateSpecifier()
    * @generated
    */
-  int TEMPLATE_SPECIFIER = 24;
+  int TEMPLATE_SPECIFIER = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1169,7 +1076,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getTemplateDefinition()
    * @generated
    */
-  int TEMPLATE_DEFINITION = 25;
+  int TEMPLATE_DEFINITION = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' containment reference.
@@ -1215,7 +1122,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getArgumentDefinition()
    * @generated
    */
-  int ARGUMENT_DEFINITION = 26;
+  int ARGUMENT_DEFINITION = 23;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1252,7 +1159,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getAttributeDefinition()
    * @generated
    */
-  int ATTRIBUTE_DEFINITION = 27;
+  int ATTRIBUTE_DEFINITION = 24;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -1307,7 +1214,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getImplementationDefinition()
    * @generated
    */
-  int IMPLEMENTATION_DEFINITION = 28;
+  int IMPLEMENTATION_DEFINITION = 25;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -1353,7 +1260,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getDataDefinition()
    * @generated
    */
-  int DATA_DEFINITION = 29;
+  int DATA_DEFINITION = 26;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -1399,7 +1306,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getFileC()
    * @generated
    */
-  int FILE_C = 30;
+  int FILE_C = 27;
 
   /**
    * The feature id for the '<em><b>Directory</b></em>' attribute.
@@ -1436,7 +1343,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getInlineCodeC()
    * @generated
    */
-  int INLINE_CODE_C = 31;
+  int INLINE_CODE_C = 28;
 
   /**
    * The feature id for the '<em><b>Code C</b></em>' attribute.
@@ -1464,7 +1371,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getAnnotationsList()
    * @generated
    */
-  int ANNOTATIONS_LIST = 32;
+  int ANNOTATIONS_LIST = 29;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1492,7 +1399,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getElementValue()
    * @generated
    */
-  int ELEMENT_VALUE = 35;
+  int ELEMENT_VALUE = 32;
 
   /**
    * The number of structural features of the '<em>Element Value</em>' class.
@@ -1511,7 +1418,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getAnnotation()
    * @generated
    */
-  int ANNOTATION = 33;
+  int ANNOTATION = 30;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1548,7 +1455,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getAnnotationElement()
    * @generated
    */
-  int ANNOTATION_ELEMENT = 34;
+  int ANNOTATION_ELEMENT = 31;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1585,7 +1492,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getElementValueArrayInitializer()
    * @generated
    */
-  int ELEMENT_VALUE_ARRAY_INITIALIZER = 36;
+  int ELEMENT_VALUE_ARRAY_INITIALIZER = 33;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1613,7 +1520,7 @@ public interface FractalPackage extends EPackage
    * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getConstantValue()
    * @generated
    */
-  int CONSTANT_VALUE = 37;
+  int CONSTANT_VALUE = 34;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2115,6 +2022,17 @@ public interface FractalPackage extends EPackage
   EAttribute getSubComponentDefinition_Name();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition#getBodyAnnotationsList <em>Body Annotations List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Body Annotations List</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition#getBodyAnnotationsList()
+   * @see #getSubComponentDefinition()
+   * @generated
+   */
+  EReference getSubComponentDefinition_BodyAnnotationsList();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition#getBody <em>Body</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2124,69 +2042,6 @@ public interface FractalPackage extends EPackage
    * @generated
    */
   EReference getSubComponentDefinition_Body();
-
-  /**
-   * Returns the meta object for class '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentBody <em>Sub Component Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sub Component Body</em>'.
-   * @see org.ow2.mindEd.adl.textual.fractal.SubComponentBody
-   * @generated
-   */
-  EClass getSubComponentBody();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentBody#isAnonymous <em>Anonymous</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Anonymous</em>'.
-   * @see org.ow2.mindEd.adl.textual.fractal.SubComponentBody#isAnonymous()
-   * @see #getSubComponentBody()
-   * @generated
-   */
-  EAttribute getSubComponentBody_Anonymous();
-
-  /**
-   * Returns the meta object for class '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentCompositeBody <em>Sub Component Composite Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sub Component Composite Body</em>'.
-   * @see org.ow2.mindEd.adl.textual.fractal.SubComponentCompositeBody
-   * @generated
-   */
-  EClass getSubComponentCompositeBody();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentCompositeBody#getElements <em>Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elements</em>'.
-   * @see org.ow2.mindEd.adl.textual.fractal.SubComponentCompositeBody#getElements()
-   * @see #getSubComponentCompositeBody()
-   * @generated
-   */
-  EReference getSubComponentCompositeBody_Elements();
-
-  /**
-   * Returns the meta object for class '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentPrimitiveBody <em>Sub Component Primitive Body</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sub Component Primitive Body</em>'.
-   * @see org.ow2.mindEd.adl.textual.fractal.SubComponentPrimitiveBody
-   * @generated
-   */
-  EClass getSubComponentPrimitiveBody();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentPrimitiveBody#getElements <em>Elements</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Elements</em>'.
-   * @see org.ow2.mindEd.adl.textual.fractal.SubComponentPrimitiveBody#getElements()
-   * @see #getSubComponentPrimitiveBody()
-   * @generated
-   */
-  EReference getSubComponentPrimitiveBody_Elements();
 
   /**
    * Returns the meta object for class '{@link org.ow2.mindEd.adl.textual.fractal.Element <em>Element</em>}'.
@@ -3176,66 +3031,20 @@ public interface FractalPackage extends EPackage
     EAttribute SUB_COMPONENT_DEFINITION__NAME = eINSTANCE.getSubComponentDefinition_Name();
 
     /**
+     * The meta object literal for the '<em><b>Body Annotations List</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST = eINSTANCE.getSubComponentDefinition_BodyAnnotationsList();
+
+    /**
      * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference SUB_COMPONENT_DEFINITION__BODY = eINSTANCE.getSubComponentDefinition_Body();
-
-    /**
-     * The meta object literal for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.SubComponentBodyImpl <em>Sub Component Body</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.ow2.mindEd.adl.textual.fractal.impl.SubComponentBodyImpl
-     * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getSubComponentBody()
-     * @generated
-     */
-    EClass SUB_COMPONENT_BODY = eINSTANCE.getSubComponentBody();
-
-    /**
-     * The meta object literal for the '<em><b>Anonymous</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SUB_COMPONENT_BODY__ANONYMOUS = eINSTANCE.getSubComponentBody_Anonymous();
-
-    /**
-     * The meta object literal for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.SubComponentCompositeBodyImpl <em>Sub Component Composite Body</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.ow2.mindEd.adl.textual.fractal.impl.SubComponentCompositeBodyImpl
-     * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getSubComponentCompositeBody()
-     * @generated
-     */
-    EClass SUB_COMPONENT_COMPOSITE_BODY = eINSTANCE.getSubComponentCompositeBody();
-
-    /**
-     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SUB_COMPONENT_COMPOSITE_BODY__ELEMENTS = eINSTANCE.getSubComponentCompositeBody_Elements();
-
-    /**
-     * The meta object literal for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.SubComponentPrimitiveBodyImpl <em>Sub Component Primitive Body</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.ow2.mindEd.adl.textual.fractal.impl.SubComponentPrimitiveBodyImpl
-     * @see org.ow2.mindEd.adl.textual.fractal.impl.FractalPackageImpl#getSubComponentPrimitiveBody()
-     * @generated
-     */
-    EClass SUB_COMPONENT_PRIMITIVE_BODY = eINSTANCE.getSubComponentPrimitiveBody();
-
-    /**
-     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SUB_COMPONENT_PRIMITIVE_BODY__ELEMENTS = eINSTANCE.getSubComponentPrimitiveBody_Elements();
 
     /**
      * The meta object literal for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.ElementImpl <em>Element</em>}' class.

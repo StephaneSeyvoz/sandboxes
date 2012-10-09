@@ -150,21 +150,6 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
         return createSubComponentDefinitionAdapter();
       }
       @Override
-      public Adapter caseSubComponentBody(SubComponentBody object)
-      {
-        return createSubComponentBodyAdapter();
-      }
-      @Override
-      public Adapter caseSubComponentCompositeBody(SubComponentCompositeBody object)
-      {
-        return createSubComponentCompositeBodyAdapter();
-      }
-      @Override
-      public Adapter caseSubComponentPrimitiveBody(SubComponentPrimitiveBody object)
-      {
-        return createSubComponentPrimitiveBodyAdapter();
-      }
-      @Override
       public Adapter caseElement(Element object)
       {
         return createElementAdapter();
@@ -507,51 +492,6 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSubComponentDefinitionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentBody <em>Sub Component Body</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.ow2.mindEd.adl.textual.fractal.SubComponentBody
-   * @generated
-   */
-  public Adapter createSubComponentBodyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentCompositeBody <em>Sub Component Composite Body</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.ow2.mindEd.adl.textual.fractal.SubComponentCompositeBody
-   * @generated
-   */
-  public Adapter createSubComponentCompositeBodyAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentPrimitiveBody <em>Sub Component Primitive Body</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.ow2.mindEd.adl.textual.fractal.SubComponentPrimitiveBody
-   * @generated
-   */
-  public Adapter createSubComponentPrimitiveBodyAdapter()
   {
     return null;
   }

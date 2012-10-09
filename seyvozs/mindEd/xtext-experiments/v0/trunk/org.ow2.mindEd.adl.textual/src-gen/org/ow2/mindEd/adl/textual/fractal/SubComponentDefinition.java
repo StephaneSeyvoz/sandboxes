@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition#getTemplatesList <em>Templates List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition#getArgumentsList <em>Arguments List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition#getName <em>Name</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition#getBodyAnnotationsList <em>Body Annotations List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
@@ -111,6 +112,32 @@ public interface SubComponentDefinition extends CompositeElement
   void setName(String value);
 
   /**
+   * Returns the value of the '<em><b>Body Annotations List</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Body Annotations List</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Body Annotations List</em>' containment reference.
+   * @see #setBodyAnnotationsList(AnnotationsList)
+   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getSubComponentDefinition_BodyAnnotationsList()
+   * @model containment="true"
+   * @generated
+   */
+  AnnotationsList getBodyAnnotationsList();
+
+  /**
+   * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition#getBodyAnnotationsList <em>Body Annotations List</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Body Annotations List</em>' containment reference.
+   * @see #getBodyAnnotationsList()
+   * @generated
+   */
+  void setBodyAnnotationsList(AnnotationsList value);
+
+  /**
    * Returns the value of the '<em><b>Body</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -119,12 +146,12 @@ public interface SubComponentDefinition extends CompositeElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Body</em>' containment reference.
-   * @see #setBody(SubComponentBody)
+   * @see #setBody(ArchitectureDefinition)
    * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getSubComponentDefinition_Body()
    * @model containment="true"
    * @generated
    */
-  SubComponentBody getBody();
+  ArchitectureDefinition getBody();
 
   /**
    * Sets the value of the '{@link org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition#getBody <em>Body</em>}' containment reference.
@@ -134,6 +161,6 @@ public interface SubComponentDefinition extends CompositeElement
    * @see #getBody()
    * @generated
    */
-  void setBody(SubComponentBody value);
+  void setBody(ArchitectureDefinition value);
 
 } // SubComponentDefinition

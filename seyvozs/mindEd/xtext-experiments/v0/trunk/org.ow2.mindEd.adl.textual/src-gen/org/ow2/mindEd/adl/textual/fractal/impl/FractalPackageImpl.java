@@ -41,10 +41,7 @@ import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ProvidedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.RequiredInterfaceDefinition;
-import org.ow2.mindEd.adl.textual.fractal.SubComponentBody;
-import org.ow2.mindEd.adl.textual.fractal.SubComponentCompositeBody;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
-import org.ow2.mindEd.adl.textual.fractal.SubComponentPrimitiveBody;
 import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
 import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
@@ -164,27 +161,6 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * @generated
    */
   private EClass subComponentDefinitionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass subComponentBodyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass subComponentCompositeBodyEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass subComponentPrimitiveBodyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -847,7 +823,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSubComponentDefinition_Body()
+  public EReference getSubComponentDefinition_BodyAnnotationsList()
   {
     return (EReference)subComponentDefinitionEClass.getEStructuralFeatures().get(4);
   }
@@ -857,59 +833,9 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSubComponentBody()
+  public EReference getSubComponentDefinition_Body()
   {
-    return subComponentBodyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSubComponentBody_Anonymous()
-  {
-    return (EAttribute)subComponentBodyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSubComponentCompositeBody()
-  {
-    return subComponentCompositeBodyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSubComponentCompositeBody_Elements()
-  {
-    return (EReference)subComponentCompositeBodyEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSubComponentPrimitiveBody()
-  {
-    return subComponentPrimitiveBodyEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSubComponentPrimitiveBody_Elements()
-  {
-    return (EReference)subComponentPrimitiveBodyEClass.getEStructuralFeatures().get(0);
+    return (EReference)subComponentDefinitionEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1541,16 +1467,8 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     createEReference(subComponentDefinitionEClass, SUB_COMPONENT_DEFINITION__TEMPLATES_LIST);
     createEReference(subComponentDefinitionEClass, SUB_COMPONENT_DEFINITION__ARGUMENTS_LIST);
     createEAttribute(subComponentDefinitionEClass, SUB_COMPONENT_DEFINITION__NAME);
+    createEReference(subComponentDefinitionEClass, SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST);
     createEReference(subComponentDefinitionEClass, SUB_COMPONENT_DEFINITION__BODY);
-
-    subComponentBodyEClass = createEClass(SUB_COMPONENT_BODY);
-    createEAttribute(subComponentBodyEClass, SUB_COMPONENT_BODY__ANONYMOUS);
-
-    subComponentCompositeBodyEClass = createEClass(SUB_COMPONENT_COMPOSITE_BODY);
-    createEReference(subComponentCompositeBodyEClass, SUB_COMPONENT_COMPOSITE_BODY__ELEMENTS);
-
-    subComponentPrimitiveBodyEClass = createEClass(SUB_COMPONENT_PRIMITIVE_BODY);
-    createEReference(subComponentPrimitiveBodyEClass, SUB_COMPONENT_PRIMITIVE_BODY__ELEMENTS);
 
     elementEClass = createEClass(ELEMENT);
     createEReference(elementEClass, ELEMENT__ANNOTATIONS_LIST);
@@ -1673,8 +1591,6 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     providedInterfaceDefinitionEClass.getESuperTypes().add(this.getHostedInterfaceDefinition());
     requiredInterfaceDefinitionEClass.getESuperTypes().add(this.getHostedInterfaceDefinition());
     subComponentDefinitionEClass.getESuperTypes().add(this.getCompositeElement());
-    subComponentCompositeBodyEClass.getESuperTypes().add(this.getSubComponentBody());
-    subComponentPrimitiveBodyEClass.getESuperTypes().add(this.getSubComponentBody());
     compositeElementEClass.getESuperTypes().add(this.getElement());
     primitiveElementEClass.getESuperTypes().add(this.getElement());
     bindingDefinitionEClass.getESuperTypes().add(this.getCompositeElement());
@@ -1746,16 +1662,8 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
     initEReference(getSubComponentDefinition_TemplatesList(), this.getTemplateDefinition(), null, "templatesList", null, 0, -1, SubComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSubComponentDefinition_ArgumentsList(), this.getArgumentDefinition(), null, "argumentsList", null, 0, -1, SubComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSubComponentDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, SubComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSubComponentDefinition_Body(), this.getSubComponentBody(), null, "body", null, 0, 1, SubComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(subComponentBodyEClass, SubComponentBody.class, "SubComponentBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSubComponentBody_Anonymous(), ecorePackage.getEBoolean(), "anonymous", null, 0, 1, SubComponentBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(subComponentCompositeBodyEClass, SubComponentCompositeBody.class, "SubComponentCompositeBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSubComponentCompositeBody_Elements(), this.getCompositeElement(), null, "elements", null, 0, -1, SubComponentCompositeBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(subComponentPrimitiveBodyEClass, SubComponentPrimitiveBody.class, "SubComponentPrimitiveBody", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSubComponentPrimitiveBody_Elements(), this.getPrimitiveElement(), null, "elements", null, 0, -1, SubComponentPrimitiveBody.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubComponentDefinition_BodyAnnotationsList(), this.getAnnotationsList(), null, "bodyAnnotationsList", null, 0, 1, SubComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubComponentDefinition_Body(), this.getArchitectureDefinition(), null, "body", null, 0, 1, SubComponentDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getElement_AnnotationsList(), this.getAnnotationsList(), null, "annotationsList", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

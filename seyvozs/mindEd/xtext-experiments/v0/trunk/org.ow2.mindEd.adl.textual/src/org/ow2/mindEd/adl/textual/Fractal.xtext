@@ -37,7 +37,7 @@ QualifiedNameWithWildcard:
 ;
 
 CompositeDefinition:
-	'composite' name = QualifiedName
+	'composite' (name = QualifiedName)? // support anonymous definitions
 	('<' (templateSpecifiers+=TemplateSpecifier (',' templateSpecifiers+=TemplateSpecifier)*) '>')? // <ID conformsto TypeDefinition, ID2 conformsto TypeDef2, ...>
 	(compositeFormalArgumentsList = FormalArgumentsList)? // (arg1, arg2, ...)
 	(	'extends' superTypes += CompositeSuperType
@@ -49,7 +49,7 @@ CompositeDefinition:
 
 PrimitiveDefinition:
 	(abstract ?= 'abstract')?
-	'primitive' name = QualifiedName
+	'primitive' (name = QualifiedName)? // support anonymous definitions
 	(compositeFormalArgumentsList = FormalArgumentsList)?
 	('extends' superTypes += PrimitiveSuperType
 		(',' superTypes += PrimitiveSuperType)*
@@ -115,29 +115,30 @@ SubComponentDefinition:
 	('(' argumentsList+=ArgumentDefinition (',' argumentsList+=ArgumentDefinition)* ')')?
 	'as'
 	name = ID
-	(body = SubComponentBody)?
+	(bodyAnnotationsList=AnnotationsList)?
+	(body = (CompositeDefinition|PrimitiveDefinition))?
 	';'
 ;
 
-SubComponentBody: 
-	SubComponentCompositeBody | SubComponentPrimitiveBody
-;
-
-SubComponentCompositeBody:
-	anonymous ?= 'composite'	// true but the existence of this body in the SubComponentDefinition rule
-								// implies an anonymous component anyway
-	'{'
-		elements += (SubComponentDefinition | ProvidedInterfaceDefinition | RequiredInterfaceDefinition | BindingDefinition)*
-	'}'
-;
-
-SubComponentPrimitiveBody:
-	anonymous?='primitive'		// true but the existence of this body in the SubComponentDefinition rule
-								// implies an anonymous component anyway
-	'{'
-		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)*
-	'}'
-;
+//SubComponentBody: 
+//	SubComponentCompositeBody | SubComponentPrimitiveBody
+//;
+//
+//SubComponentCompositeBody:
+//	anonymous ?= 'composite'	// true but the existence of this body in the SubComponentDefinition rule
+//								// implies an anonymous component anyway
+//	'{'
+//		elements += (SubComponentDefinition | ProvidedInterfaceDefinition | RequiredInterfaceDefinition | BindingDefinition)*
+//	'}'
+//;
+//
+//SubComponentPrimitiveBody:
+//	anonymous?='primitive'		// true but the existence of this body in the SubComponentDefinition rule
+//								// implies an anonymous component anyway
+//	'{'
+//		elements += (ProvidedInterfaceDefinition | RequiredInterfaceDefinition | ImplementationDefinition | AttributeDefinition | DataDefinition)*
+//	'}'
+//;
 
 // Check if this rules is in accordance with the original grammar
 Element :

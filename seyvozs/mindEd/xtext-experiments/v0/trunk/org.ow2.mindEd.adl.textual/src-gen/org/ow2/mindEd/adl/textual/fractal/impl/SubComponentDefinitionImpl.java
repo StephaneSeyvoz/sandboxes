@@ -17,9 +17,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.ow2.mindEd.adl.textual.fractal.AnnotationsList;
+import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
-import org.ow2.mindEd.adl.textual.fractal.SubComponentBody;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TypeReference;
@@ -35,6 +36,7 @@ import org.ow2.mindEd.adl.textual.fractal.TypeReference;
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.SubComponentDefinitionImpl#getTemplatesList <em>Templates List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.SubComponentDefinitionImpl#getArgumentsList <em>Arguments List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.SubComponentDefinitionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.SubComponentDefinitionImpl#getBodyAnnotationsList <em>Body Annotations List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.SubComponentDefinitionImpl#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
@@ -94,6 +96,16 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getBodyAnnotationsList() <em>Body Annotations List</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBodyAnnotationsList()
+   * @generated
+   * @ordered
+   */
+  protected AnnotationsList bodyAnnotationsList;
+
+  /**
    * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -101,7 +113,7 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
    * @generated
    * @ordered
    */
-  protected SubComponentBody body;
+  protected ArchitectureDefinition body;
 
   /**
    * <!-- begin-user-doc -->
@@ -223,7 +235,55 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubComponentBody getBody()
+  public AnnotationsList getBodyAnnotationsList()
+  {
+    return bodyAnnotationsList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBodyAnnotationsList(AnnotationsList newBodyAnnotationsList, NotificationChain msgs)
+  {
+    AnnotationsList oldBodyAnnotationsList = bodyAnnotationsList;
+    bodyAnnotationsList = newBodyAnnotationsList;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FractalPackage.SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST, oldBodyAnnotationsList, newBodyAnnotationsList);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBodyAnnotationsList(AnnotationsList newBodyAnnotationsList)
+  {
+    if (newBodyAnnotationsList != bodyAnnotationsList)
+    {
+      NotificationChain msgs = null;
+      if (bodyAnnotationsList != null)
+        msgs = ((InternalEObject)bodyAnnotationsList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FractalPackage.SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST, null, msgs);
+      if (newBodyAnnotationsList != null)
+        msgs = ((InternalEObject)newBodyAnnotationsList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FractalPackage.SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST, null, msgs);
+      msgs = basicSetBodyAnnotationsList(newBodyAnnotationsList, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, FractalPackage.SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST, newBodyAnnotationsList, newBodyAnnotationsList));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ArchitectureDefinition getBody()
   {
     return body;
   }
@@ -233,9 +293,9 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetBody(SubComponentBody newBody, NotificationChain msgs)
+  public NotificationChain basicSetBody(ArchitectureDefinition newBody, NotificationChain msgs)
   {
-    SubComponentBody oldBody = body;
+    ArchitectureDefinition oldBody = body;
     body = newBody;
     if (eNotificationRequired())
     {
@@ -250,7 +310,7 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setBody(SubComponentBody newBody)
+  public void setBody(ArchitectureDefinition newBody)
   {
     if (newBody != body)
     {
@@ -280,6 +340,8 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
         return ((InternalEList<?>)getTemplatesList()).basicRemove(otherEnd, msgs);
       case FractalPackage.SUB_COMPONENT_DEFINITION__ARGUMENTS_LIST:
         return ((InternalEList<?>)getArgumentsList()).basicRemove(otherEnd, msgs);
+      case FractalPackage.SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST:
+        return basicSetBodyAnnotationsList(null, msgs);
       case FractalPackage.SUB_COMPONENT_DEFINITION__BODY:
         return basicSetBody(null, msgs);
     }
@@ -305,6 +367,8 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
         return getArgumentsList();
       case FractalPackage.SUB_COMPONENT_DEFINITION__NAME:
         return getName();
+      case FractalPackage.SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST:
+        return getBodyAnnotationsList();
       case FractalPackage.SUB_COMPONENT_DEFINITION__BODY:
         return getBody();
     }
@@ -336,8 +400,11 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
       case FractalPackage.SUB_COMPONENT_DEFINITION__NAME:
         setName((String)newValue);
         return;
+      case FractalPackage.SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST:
+        setBodyAnnotationsList((AnnotationsList)newValue);
+        return;
       case FractalPackage.SUB_COMPONENT_DEFINITION__BODY:
-        setBody((SubComponentBody)newValue);
+        setBody((ArchitectureDefinition)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -365,8 +432,11 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
       case FractalPackage.SUB_COMPONENT_DEFINITION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case FractalPackage.SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST:
+        setBodyAnnotationsList((AnnotationsList)null);
+        return;
       case FractalPackage.SUB_COMPONENT_DEFINITION__BODY:
-        setBody((SubComponentBody)null);
+        setBody((ArchitectureDefinition)null);
         return;
     }
     super.eUnset(featureID);
@@ -390,6 +460,8 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
         return argumentsList != null && !argumentsList.isEmpty();
       case FractalPackage.SUB_COMPONENT_DEFINITION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case FractalPackage.SUB_COMPONENT_DEFINITION__BODY_ANNOTATIONS_LIST:
+        return bodyAnnotationsList != null;
       case FractalPackage.SUB_COMPONENT_DEFINITION__BODY:
         return body != null;
     }

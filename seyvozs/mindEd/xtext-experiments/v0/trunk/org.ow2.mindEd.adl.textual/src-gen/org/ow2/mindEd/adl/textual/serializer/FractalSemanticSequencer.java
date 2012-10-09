@@ -36,9 +36,7 @@ import org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType;
 import org.ow2.mindEd.adl.textual.fractal.ProvidedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.RequiredInterfaceDefinition;
-import org.ow2.mindEd.adl.textual.fractal.SubComponentCompositeBody;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
-import org.ow2.mindEd.adl.textual.fractal.SubComponentPrimitiveBody;
 import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
 import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
@@ -209,25 +207,11 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
-			case FractalPackage.SUB_COMPONENT_COMPOSITE_BODY:
-				if(context == grammarAccess.getSubComponentBodyRule() ||
-				   context == grammarAccess.getSubComponentCompositeBodyRule()) {
-					sequence_SubComponentCompositeBody(context, (SubComponentCompositeBody) semanticObject); 
-					return; 
-				}
-				else break;
 			case FractalPackage.SUB_COMPONENT_DEFINITION:
 				if(context == grammarAccess.getCompositeElementRule() ||
 				   context == grammarAccess.getElementRule() ||
 				   context == grammarAccess.getSubComponentDefinitionRule()) {
 					sequence_SubComponentDefinition(context, (SubComponentDefinition) semanticObject); 
-					return; 
-				}
-				else break;
-			case FractalPackage.SUB_COMPONENT_PRIMITIVE_BODY:
-				if(context == grammarAccess.getSubComponentBodyRule() ||
-				   context == grammarAccess.getSubComponentPrimitiveBodyRule()) {
-					sequence_SubComponentPrimitiveBody(context, (SubComponentPrimitiveBody) semanticObject); 
 					return; 
 				}
 				else break;
@@ -335,7 +319,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Constraint:
 	 *     (
-	 *         name=QualifiedName 
+	 *         name=QualifiedName? 
 	 *         (templateSpecifiers+=TemplateSpecifier templateSpecifiers+=TemplateSpecifier*)? 
 	 *         compositeFormalArgumentsList=FormalArgumentsList? 
 	 *         (superTypes+=CompositeSuperType superTypes+=CompositeSuperType*)? 
@@ -462,7 +446,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         abstract?='abstract'? 
-	 *         name=QualifiedName 
+	 *         name=QualifiedName? 
 	 *         compositeFormalArgumentsList=FormalArgumentsList? 
 	 *         (superTypes+=PrimitiveSuperType superTypes+=PrimitiveSuperType*)? 
 	 *         (
@@ -516,45 +500,16 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Constraint:
 	 *     (
-	 *         anonymous?='composite' 
-	 *         (elements+=SubComponentDefinition | elements+=ProvidedInterfaceDefinition | elements+=RequiredInterfaceDefinition | elements+=BindingDefinition)*
-	 *     )
-	 */
-	protected void sequence_SubComponentCompositeBody(EObject context, SubComponentCompositeBody semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
 	 *         annotationsList=AnnotationsList? 
 	 *         type=[TypeReference|QualifiedName]? 
 	 *         (templatesList+=TemplateDefinition templatesList+=TemplateDefinition*)? 
 	 *         (argumentsList+=ArgumentDefinition argumentsList+=ArgumentDefinition*)? 
 	 *         name=ID 
-	 *         body=SubComponentBody?
+	 *         bodyAnnotationsList=AnnotationsList? 
+	 *         (body=CompositeDefinition | body=PrimitiveDefinition)?
 	 *     )
 	 */
 	protected void sequence_SubComponentDefinition(EObject context, SubComponentDefinition semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         anonymous?='primitive' 
-	 *         (
-	 *             elements+=ProvidedInterfaceDefinition | 
-	 *             elements+=RequiredInterfaceDefinition | 
-	 *             elements+=ImplementationDefinition | 
-	 *             elements+=AttributeDefinition | 
-	 *             elements+=DataDefinition
-	 *         )*
-	 *     )
-	 */
-	protected void sequence_SubComponentPrimitiveBody(EObject context, SubComponentPrimitiveBody semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

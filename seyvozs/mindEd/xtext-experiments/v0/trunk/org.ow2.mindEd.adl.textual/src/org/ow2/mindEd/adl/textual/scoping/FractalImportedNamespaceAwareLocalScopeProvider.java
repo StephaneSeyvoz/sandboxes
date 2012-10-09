@@ -17,6 +17,7 @@ import org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperTypeDefinition;
+import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
 
 import com.google.inject.Inject;
@@ -45,10 +46,15 @@ ImportedNamespaceAwareLocalScopeProvider {
 
 		List<ImportNormalizer> result = new ArrayList<ImportNormalizer>();
 		result.addAll(super.internalGetImportedNamespaceResolvers(context, ignoreCase));
-
-		if (context instanceof ArchitectureDefinition) {
+		
+		if ((context instanceof ArchitectureDefinition) && (((ArchitectureDefinition) context).getName() != null)) {
 			// Consider non-qualified names of a qualified-name ArchitectureDefinition (CompositeDefinition, Primitive, Type...)
 			// as resolvable in the same package (host.definition.package.*)
+
+			// The check for null is in the case of anonymous definitions (for sub-components)
+			// see http://mind.ow2.org/mindc/mindc-user-guide.html#adl-anonym for more info
+			
+			// Named definition
 			result.add(createImportedNamespaceResolver(
 					qualifiedNameConverter.toString(
 							getQualifiedNameProvider().getFullyQualifiedName(context).skipLast(1)) 
@@ -91,7 +97,7 @@ ImportedNamespaceAwareLocalScopeProvider {
 				superTypes.add((TypeDefinition) targetArchDef);
 			// else error
 		}
-		
+
 		return superTypes;
 	}
 

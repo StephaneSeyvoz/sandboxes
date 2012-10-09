@@ -62,16 +62,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//SubComponentDefinition/templatesList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//SubComponentDefinition/argumentsList"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Fractal.ecore#//SubComponentDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//SubComponentDefinition/bodyAnnotationsList"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//SubComponentDefinition/body"/>
-    </genClasses>
-    <genClasses ecoreClass="Fractal.ecore#//SubComponentBody">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Fractal.ecore#//SubComponentBody/anonymous"/>
-    </genClasses>
-    <genClasses ecoreClass="Fractal.ecore#//SubComponentCompositeBody">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//SubComponentCompositeBody/elements"/>
-    </genClasses>
-    <genClasses ecoreClass="Fractal.ecore#//SubComponentPrimitiveBody">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//SubComponentPrimitiveBody/elements"/>
     </genClasses>
     <genClasses ecoreClass="Fractal.ecore#//Element">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//Element/annotationsList"/>

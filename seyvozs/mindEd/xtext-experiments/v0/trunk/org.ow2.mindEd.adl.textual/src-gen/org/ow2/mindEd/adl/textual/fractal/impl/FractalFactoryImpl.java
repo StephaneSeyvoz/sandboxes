@@ -79,9 +79,6 @@ public class FractalFactoryImpl extends EFactoryImpl implements FractalFactory
       case FractalPackage.REQUIRED_INTERFACE_DEFINITION: return createRequiredInterfaceDefinition();
       case FractalPackage.TYPE_REFERENCE: return createTypeReference();
       case FractalPackage.SUB_COMPONENT_DEFINITION: return createSubComponentDefinition();
-      case FractalPackage.SUB_COMPONENT_BODY: return createSubComponentBody();
-      case FractalPackage.SUB_COMPONENT_COMPOSITE_BODY: return createSubComponentCompositeBody();
-      case FractalPackage.SUB_COMPONENT_PRIMITIVE_BODY: return createSubComponentPrimitiveBody();
       case FractalPackage.ELEMENT: return createElement();
       case FractalPackage.COMPOSITE_ELEMENT: return createCompositeElement();
       case FractalPackage.PRIMITIVE_ELEMENT: return createPrimitiveElement();
@@ -270,39 +267,6 @@ public class FractalFactoryImpl extends EFactoryImpl implements FractalFactory
   {
     SubComponentDefinitionImpl subComponentDefinition = new SubComponentDefinitionImpl();
     return subComponentDefinition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SubComponentBody createSubComponentBody()
-  {
-    SubComponentBodyImpl subComponentBody = new SubComponentBodyImpl();
-    return subComponentBody;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SubComponentCompositeBody createSubComponentCompositeBody()
-  {
-    SubComponentCompositeBodyImpl subComponentCompositeBody = new SubComponentCompositeBodyImpl();
-    return subComponentCompositeBody;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SubComponentPrimitiveBody createSubComponentPrimitiveBody()
-  {
-    SubComponentPrimitiveBodyImpl subComponentPrimitiveBody = new SubComponentPrimitiveBodyImpl();
-    return subComponentPrimitiveBody;
   }
 
   /**
