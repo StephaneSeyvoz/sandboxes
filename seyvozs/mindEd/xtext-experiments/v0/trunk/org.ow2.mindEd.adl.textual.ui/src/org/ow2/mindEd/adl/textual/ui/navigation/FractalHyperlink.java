@@ -89,29 +89,26 @@ public class FractalHyperlink extends HyperlinkHelper {
 					parentAdl = (ArchitectureDefinition) eObject;
 
 					MindProject adlHostProject = ModelToProjectUtil.INSTANCE.getMindProject(parentAdl.eResource().getURI());
-					URI hostProjectURI = URI.createPlatformResourceURI(adlHostProject.getProject().getFullPath().toString(), true);
 
+					String projectPath = adlHostProject.getProject().getFullPath().toString();
+					
 					// for all path entries, try to locate the C file
 					EList<MindPathEntry> path = adlHostProject.getMindpathentries();
 					URI cFileURI = null;
 					for (MindPathEntry currentPath : path)
 						if (currentPath.getEntryKind() == MindPathKind.SOURCE) {
-							// There should be a more elegant way
-							// TODO: fix this
-							URI pathURI = hostProjectURI.appendSegment(currentPath.getName().substring(currentPath.getName().lastIndexOf("/") + 1));;
-							if (!directory.equals("/")) {
-								// We remove the first / AND the last / (if it exists)
-								if (directory.endsWith("/"))
-									directory = directory.substring(1, directory.length() - 1);
-								else 
-									directory = directory.substring(1);
-								
-								cFileURI = pathURI.appendSegment(directory).appendSegment(fileName);
-							} else
-								cFileURI = pathURI.appendSegment(fileName);
 							
+							// let's use some defensive programming: it should always be false anyway, BUT... better check.
+							if (!currentPath.getName().startsWith("/" + adlHostProject.getName() + "/"))
+								continue;
+							
+							// path entries names are in such format: /project_name/currentPath, so we remove the first substring "/project_name", and keep "/currPath"
+							String shortCurrPath = currentPath.getName().substring(adlHostProject.getName().length() + 1);
+							cFileURI = URI.createPlatformResourceURI(projectPath + shortCurrPath + directory + fileName, true);
+							
+							// check file existence
 							file = ModelToProjectUtil.INSTANCE.getIFile(cFileURI);
-							if (file.exists()) // found !
+							if ((file != null) && file.exists()) // found !
 								break;
 						}
 				} else {
