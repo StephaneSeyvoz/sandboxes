@@ -280,13 +280,13 @@ public interface FractalIDLPackage extends EPackage
   int STRUCT_OR_UNION_SPECIFICATION__STRUCT = TYPE_DEFINITION_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRUCT_OR_UNION_SPECIFICATION__NAME = TYPE_DEFINITION_FEATURE_COUNT + 3;
+  int STRUCT_OR_UNION_SPECIFICATION__ID = TYPE_DEFINITION_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Struct Or Union Specification</em>' class.
@@ -335,13 +335,13 @@ public interface FractalIDLPackage extends EPackage
   int STRUCT_OR_UNION_DEFINITION__STRUCT = STRUCT_OR_UNION_SPECIFICATION__STRUCT;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRUCT_OR_UNION_DEFINITION__NAME = STRUCT_OR_UNION_SPECIFICATION__NAME;
+  int STRUCT_OR_UNION_DEFINITION__ID = STRUCT_OR_UNION_SPECIFICATION__ID;
 
   /**
    * The feature id for the '<em><b>Struct Member</b></em>' containment reference list.
@@ -399,13 +399,13 @@ public interface FractalIDLPackage extends EPackage
   int STRUCTOR_UNION_REFERENCE__STRUCT = STRUCT_OR_UNION_SPECIFICATION__STRUCT;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STRUCTOR_UNION_REFERENCE__NAME = STRUCT_OR_UNION_SPECIFICATION__NAME;
+  int STRUCTOR_UNION_REFERENCE__ID = STRUCT_OR_UNION_SPECIFICATION__ID;
 
   /**
    * The number of structural features of the '<em>Structor Union Reference</em>' class.
@@ -749,13 +749,22 @@ public interface FractalIDLPackage extends EPackage
   int DECLARATOR__DC = 1;
 
   /**
+   * The feature id for the '<em><b>Dec</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECLARATOR__DEC = 2;
+
+  /**
    * The number of structural features of the '<em>Declarator</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DECLARATOR_FEATURE_COUNT = 2;
+  int DECLARATOR_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.QualifiedPointerSpecificationImpl <em>Qualified Pointer Specification</em>}' class.
@@ -786,32 +795,23 @@ public interface FractalIDLPackage extends EPackage
   int QUALIFIED_POINTER_SPECIFICATION_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectDeclaratorImpl <em>Direct Declarator</em>}' class.
+   * The meta object id for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectNamedDeclaratorImpl <em>Direct Named Declarator</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectDeclaratorImpl
-   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getDirectDeclarator()
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectNamedDeclaratorImpl
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getDirectNamedDeclarator()
    * @generated
    */
-  int DIRECT_DECLARATOR = 17;
+  int DIRECT_NAMED_DECLARATOR = 17;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Id</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIRECT_DECLARATOR__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Dec</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIRECT_DECLARATOR__DEC = 1;
+  int DIRECT_NAMED_DECLARATOR__ID = 0;
 
   /**
    * The feature id for the '<em><b>Array</b></em>' containment reference list.
@@ -820,16 +820,44 @@ public interface FractalIDLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DIRECT_DECLARATOR__ARRAY = 2;
+  int DIRECT_NAMED_DECLARATOR__ARRAY = 1;
 
   /**
-   * The number of structural features of the '<em>Direct Declarator</em>' class.
+   * The number of structural features of the '<em>Direct Named Declarator</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DIRECT_DECLARATOR_FEATURE_COUNT = 3;
+  int DIRECT_NAMED_DECLARATOR_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectAnonymousDeclaratorImpl <em>Direct Anonymous Declarator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectAnonymousDeclaratorImpl
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getDirectAnonymousDeclarator()
+   * @generated
+   */
+  int DIRECT_ANONYMOUS_DECLARATOR = 18;
+
+  /**
+   * The feature id for the '<em><b>Array</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECT_ANONYMOUS_DECLARATOR__ARRAY = 0;
+
+  /**
+   * The number of structural features of the '<em>Direct Anonymous Declarator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DIRECT_ANONYMOUS_DECLARATOR_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.ArraySpecificationImpl <em>Array Specification</em>}' class.
@@ -839,7 +867,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getArraySpecification()
    * @generated
    */
-  int ARRAY_SPECIFICATION = 18;
+  int ARRAY_SPECIFICATION = 19;
 
   /**
    * The feature id for the '<em><b>Unspecified Size</b></em>' attribute.
@@ -876,7 +904,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getConstantDefinition()
    * @generated
    */
-  int CONSTANT_DEFINITION = 19;
+  int CONSTANT_DEFINITION = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -913,7 +941,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getInterfaceDefinition()
    * @generated
    */
-  int INTERFACE_DEFINITION = 20;
+  int INTERFACE_DEFINITION = 21;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -968,7 +996,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getMethodDefinition()
    * @generated
    */
-  int METHOD_DEFINITION = 21;
+  int METHOD_DEFINITION = 22;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -1032,16 +1060,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getParameterList()
    * @generated
    */
-  int PARAMETER_LIST = 22;
-
-  /**
-   * The feature id for the '<em><b>Param</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PARAMETER_LIST__PARAM = 0;
+  int PARAMETER_LIST = 23;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -1050,7 +1069,7 @@ public interface FractalIDLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAMETER_LIST__PARAMS = 1;
+  int PARAMETER_LIST__PARAMS = 0;
 
   /**
    * The number of structural features of the '<em>Parameter List</em>' class.
@@ -1059,7 +1078,7 @@ public interface FractalIDLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAMETER_LIST_FEATURE_COUNT = 2;
+  int PARAMETER_LIST_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1069,7 +1088,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 23;
+  int PARAMETER = 24;
 
   /**
    * The feature id for the '<em><b>Annotations List</b></em>' containment reference.
@@ -1124,7 +1143,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getIncludeDirective()
    * @generated
    */
-  int INCLUDE_DIRECTIVE = 24;
+  int INCLUDE_DIRECTIVE = 25;
 
   /**
    * The feature id for the '<em><b>Imported URI</b></em>' attribute.
@@ -1161,7 +1180,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getAnnotationsList()
    * @generated
    */
-  int ANNOTATIONS_LIST = 25;
+  int ANNOTATIONS_LIST = 26;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -1189,7 +1208,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getAnnotation()
    * @generated
    */
-  int ANNOTATION = 26;
+  int ANNOTATION = 27;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1226,7 +1245,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getAnnotationValuePair()
    * @generated
    */
-  int ANNOTATION_VALUE_PAIR = 27;
+  int ANNOTATION_VALUE_PAIR = 28;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1263,7 +1282,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getAnnotationValue()
    * @generated
    */
-  int ANNOTATION_VALUE = 28;
+  int ANNOTATION_VALUE = 29;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1300,7 +1319,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getArrayAnnotationValue()
    * @generated
    */
-  int ARRAY_ANNOTATION_VALUE = 29;
+  int ARRAY_ANNOTATION_VALUE = 30;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' containment reference list.
@@ -1328,7 +1347,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getPrimaryExpression()
    * @generated
    */
-  int PRIMARY_EXPRESSION = 41;
+  int PRIMARY_EXPRESSION = 42;
 
   /**
    * The feature id for the '<em><b>Literal</b></em>' attribute.
@@ -1356,7 +1375,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getConstantExpression()
    * @generated
    */
-  int CONSTANT_EXPRESSION = 30;
+  int CONSTANT_EXPRESSION = 31;
 
   /**
    * The feature id for the '<em><b>Literal</b></em>' attribute.
@@ -1384,7 +1403,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getLogicalOrExpression()
    * @generated
    */
-  int LOGICAL_OR_EXPRESSION = 31;
+  int LOGICAL_OR_EXPRESSION = 32;
 
   /**
    * The feature id for the '<em><b>Literal</b></em>' attribute.
@@ -1430,7 +1449,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getLogicalAndExpression()
    * @generated
    */
-  int LOGICAL_AND_EXPRESSION = 32;
+  int LOGICAL_AND_EXPRESSION = 33;
 
   /**
    * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
@@ -1467,7 +1486,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getOrExpression()
    * @generated
    */
-  int OR_EXPRESSION = 33;
+  int OR_EXPRESSION = 34;
 
   /**
    * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
@@ -1504,7 +1523,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getXorExpression()
    * @generated
    */
-  int XOR_EXPRESSION = 34;
+  int XOR_EXPRESSION = 35;
 
   /**
    * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
@@ -1541,7 +1560,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getAndExpression()
    * @generated
    */
-  int AND_EXPRESSION = 35;
+  int AND_EXPRESSION = 36;
 
   /**
    * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
@@ -1578,7 +1597,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getShiftExpression()
    * @generated
    */
-  int SHIFT_EXPRESSION = 36;
+  int SHIFT_EXPRESSION = 37;
 
   /**
    * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
@@ -1624,7 +1643,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getAdditiveExpression()
    * @generated
    */
-  int ADDITIVE_EXPRESSION = 37;
+  int ADDITIVE_EXPRESSION = 38;
 
   /**
    * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
@@ -1670,7 +1689,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getMulExpression()
    * @generated
    */
-  int MUL_EXPRESSION = 38;
+  int MUL_EXPRESSION = 39;
 
   /**
    * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
@@ -1716,7 +1735,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getCastExpression()
    * @generated
    */
-  int CAST_EXPRESSION = 39;
+  int CAST_EXPRESSION = 40;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1762,7 +1781,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getUnaryExpression()
    * @generated
    */
-  int UNARY_EXPRESSION = 40;
+  int UNARY_EXPRESSION = 41;
 
   /**
    * The feature id for the '<em><b>Unary Expr</b></em>' attribute.
@@ -1799,7 +1818,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getTypeQualifier()
    * @generated
    */
-  int TYPE_QUALIFIER = 42;
+  int TYPE_QUALIFIER = 43;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.TypeSpecifier <em>Type Specifier</em>}' enum.
@@ -1809,7 +1828,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getTypeSpecifier()
    * @generated
    */
-  int TYPE_SPECIFIER = 43;
+  int TYPE_SPECIFIER = 44;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ParameterQualifier <em>Parameter Qualifier</em>}' enum.
@@ -1819,7 +1838,7 @@ public interface FractalIDLPackage extends EPackage
    * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getParameterQualifier()
    * @generated
    */
-  int PARAMETER_QUALIFIER = 44;
+  int PARAMETER_QUALIFIER = 45;
 
 
   /**
@@ -2004,15 +2023,15 @@ public interface FractalIDLPackage extends EPackage
   EAttribute getStructOrUnionSpecification_Struct();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.StructOrUnionSpecification#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.StructOrUnionSpecification#getId <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.StructOrUnionSpecification#getName()
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.StructOrUnionSpecification#getId()
    * @see #getStructOrUnionSpecification()
    * @generated
    */
-  EAttribute getStructOrUnionSpecification_Name();
+  EAttribute getStructOrUnionSpecification_Id();
 
   /**
    * Returns the meta object for class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.StructOrUnionDefinition <em>Struct Or Union Definition</em>}'.
@@ -2269,6 +2288,17 @@ public interface FractalIDLPackage extends EPackage
   EReference getDeclarator_Dc();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarator#getDec <em>Dec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Dec</em>'.
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarator#getDec()
+   * @see #getDeclarator()
+   * @generated
+   */
+  EReference getDeclarator_Dec();
+
+  /**
    * Returns the meta object for class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.QualifiedPointerSpecification <em>Qualified Pointer Specification</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2290,47 +2320,57 @@ public interface FractalIDLPackage extends EPackage
   EAttribute getQualifiedPointerSpecification_TypeQualifiers();
 
   /**
-   * Returns the meta object for class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator <em>Direct Declarator</em>}'.
+   * Returns the meta object for class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectNamedDeclarator <em>Direct Named Declarator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Direct Declarator</em>'.
-   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator
+   * @return the meta object for class '<em>Direct Named Declarator</em>'.
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectNamedDeclarator
    * @generated
    */
-  EClass getDirectDeclarator();
+  EClass getDirectNamedDeclarator();
 
   /**
-   * Returns the meta object for the attribute '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectNamedDeclarator#getId <em>Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator#getName()
-   * @see #getDirectDeclarator()
+   * @return the meta object for the attribute '<em>Id</em>'.
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectNamedDeclarator#getId()
+   * @see #getDirectNamedDeclarator()
    * @generated
    */
-  EAttribute getDirectDeclarator_Name();
+  EAttribute getDirectNamedDeclarator_Id();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator#getDec <em>Dec</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Dec</em>'.
-   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator#getDec()
-   * @see #getDirectDeclarator()
-   * @generated
-   */
-  EReference getDirectDeclarator_Dec();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator#getArray <em>Array</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectNamedDeclarator#getArray <em>Array</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Array</em>'.
-   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator#getArray()
-   * @see #getDirectDeclarator()
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectNamedDeclarator#getArray()
+   * @see #getDirectNamedDeclarator()
    * @generated
    */
-  EReference getDirectDeclarator_Array();
+  EReference getDirectNamedDeclarator_Array();
+
+  /**
+   * Returns the meta object for class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectAnonymousDeclarator <em>Direct Anonymous Declarator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Direct Anonymous Declarator</em>'.
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectAnonymousDeclarator
+   * @generated
+   */
+  EClass getDirectAnonymousDeclarator();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectAnonymousDeclarator#getArray <em>Array</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Array</em>'.
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectAnonymousDeclarator#getArray()
+   * @see #getDirectAnonymousDeclarator()
+   * @generated
+   */
+  EReference getDirectAnonymousDeclarator_Array();
 
   /**
    * Returns the meta object for class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ArraySpecification <em>Array Specification</em>}'.
@@ -2524,17 +2564,6 @@ public interface FractalIDLPackage extends EPackage
    * @generated
    */
   EClass getParameterList();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ParameterList#getParam <em>Param</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Param</em>'.
-   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.ParameterList#getParam()
-   * @see #getParameterList()
-   * @generated
-   */
-  EReference getParameterList_Param();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.ParameterList#getParams <em>Params</em>}'.
@@ -3368,12 +3397,12 @@ public interface FractalIDLPackage extends EPackage
     EAttribute STRUCT_OR_UNION_SPECIFICATION__STRUCT = eINSTANCE.getStructOrUnionSpecification_Struct();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STRUCT_OR_UNION_SPECIFICATION__NAME = eINSTANCE.getStructOrUnionSpecification_Name();
+    EAttribute STRUCT_OR_UNION_SPECIFICATION__ID = eINSTANCE.getStructOrUnionSpecification_Id();
 
     /**
      * The meta object literal for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.StructOrUnionDefinitionImpl <em>Struct Or Union Definition</em>}' class.
@@ -3588,6 +3617,14 @@ public interface FractalIDLPackage extends EPackage
     EReference DECLARATOR__DC = eINSTANCE.getDeclarator_Dc();
 
     /**
+     * The meta object literal for the '<em><b>Dec</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DECLARATOR__DEC = eINSTANCE.getDeclarator_Dec();
+
+    /**
      * The meta object literal for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.QualifiedPointerSpecificationImpl <em>Qualified Pointer Specification</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3606,30 +3643,22 @@ public interface FractalIDLPackage extends EPackage
     EAttribute QUALIFIED_POINTER_SPECIFICATION__TYPE_QUALIFIERS = eINSTANCE.getQualifiedPointerSpecification_TypeQualifiers();
 
     /**
-     * The meta object literal for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectDeclaratorImpl <em>Direct Declarator</em>}' class.
+     * The meta object literal for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectNamedDeclaratorImpl <em>Direct Named Declarator</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectDeclaratorImpl
-     * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getDirectDeclarator()
+     * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectNamedDeclaratorImpl
+     * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getDirectNamedDeclarator()
      * @generated
      */
-    EClass DIRECT_DECLARATOR = eINSTANCE.getDirectDeclarator();
+    EClass DIRECT_NAMED_DECLARATOR = eINSTANCE.getDirectNamedDeclarator();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DIRECT_DECLARATOR__NAME = eINSTANCE.getDirectDeclarator_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Dec</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DIRECT_DECLARATOR__DEC = eINSTANCE.getDirectDeclarator_Dec();
+    EAttribute DIRECT_NAMED_DECLARATOR__ID = eINSTANCE.getDirectNamedDeclarator_Id();
 
     /**
      * The meta object literal for the '<em><b>Array</b></em>' containment reference list feature.
@@ -3637,7 +3666,25 @@ public interface FractalIDLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DIRECT_DECLARATOR__ARRAY = eINSTANCE.getDirectDeclarator_Array();
+    EReference DIRECT_NAMED_DECLARATOR__ARRAY = eINSTANCE.getDirectNamedDeclarator_Array();
+
+    /**
+     * The meta object literal for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectAnonymousDeclaratorImpl <em>Direct Anonymous Declarator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectAnonymousDeclaratorImpl
+     * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.FractalIDLPackageImpl#getDirectAnonymousDeclarator()
+     * @generated
+     */
+    EClass DIRECT_ANONYMOUS_DECLARATOR = eINSTANCE.getDirectAnonymousDeclarator();
+
+    /**
+     * The meta object literal for the '<em><b>Array</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DIRECT_ANONYMOUS_DECLARATOR__ARRAY = eINSTANCE.getDirectAnonymousDeclarator_Array();
 
     /**
      * The meta object literal for the '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.ArraySpecificationImpl <em>Array Specification</em>}' class.
@@ -3792,14 +3839,6 @@ public interface FractalIDLPackage extends EPackage
      * @generated
      */
     EClass PARAMETER_LIST = eINSTANCE.getParameterList();
-
-    /**
-     * The meta object literal for the '<em><b>Param</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PARAMETER_LIST__PARAM = eINSTANCE.getParameterList_Param();
 
     /**
      * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.

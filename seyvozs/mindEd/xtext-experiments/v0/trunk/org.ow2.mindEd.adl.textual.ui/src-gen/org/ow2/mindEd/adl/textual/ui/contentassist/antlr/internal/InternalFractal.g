@@ -1945,6 +1945,12 @@ rule__ConstantFormat__Alternatives
 { after(grammarAccess.getConstantFormatAccess().getSTRINGTerminalRuleCall_1()); }
 )
 
+    |(
+{ before(grammarAccess.getConstantFormatAccess().getIDTerminalRuleCall_2()); }
+	RULE_ID
+{ after(grammarAccess.getConstantFormatAccess().getIDTerminalRuleCall_2()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);

@@ -3687,6 +3687,14 @@ ruleConstantFormat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRule
     { 
     newLeafNode(this_STRING_1, grammarAccess.getConstantFormatAccess().getSTRINGTerminalRuleCall_1()); 
     }
+
+    |    this_ID_2=RULE_ID    {
+		$current.merge(this_ID_2);
+    }
+
+    { 
+    newLeafNode(this_ID_2, grammarAccess.getConstantFormatAccess().getIDTerminalRuleCall_2()); 
+    }
 )
     ;
 

@@ -29,7 +29,7 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.TypeSpecifier;
  *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.StructOrUnionSpecificationImpl#getTypeDefName <em>Type Def Name</em>}</li>
  *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.StructOrUnionSpecificationImpl#getTypeSpecifier <em>Type Specifier</em>}</li>
  *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.StructOrUnionSpecificationImpl#getStruct <em>Struct</em>}</li>
- *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.StructOrUnionSpecificationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.StructOrUnionSpecificationImpl#getId <em>Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,24 +88,24 @@ public class StructOrUnionSpecificationImpl extends TypeDefinitionImpl implement
   protected String struct = STRUCT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getId() <em>Id</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getId()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String ID_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getId()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String id = ID_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -193,9 +193,9 @@ public class StructOrUnionSpecificationImpl extends TypeDefinitionImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getId()
   {
-    return name;
+    return id;
   }
 
   /**
@@ -203,12 +203,12 @@ public class StructOrUnionSpecificationImpl extends TypeDefinitionImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setId(String newId)
   {
-    String oldName = name;
-    name = newName;
+    String oldId = id;
+    id = newId;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__ID, oldId, id));
   }
 
   /**
@@ -227,8 +227,8 @@ public class StructOrUnionSpecificationImpl extends TypeDefinitionImpl implement
         return getTypeSpecifier();
       case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__STRUCT:
         return getStruct();
-      case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__NAME:
-        return getName();
+      case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__ID:
+        return getId();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -254,8 +254,8 @@ public class StructOrUnionSpecificationImpl extends TypeDefinitionImpl implement
       case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__STRUCT:
         setStruct((String)newValue);
         return;
-      case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__NAME:
-        setName((String)newValue);
+      case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__ID:
+        setId((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -280,8 +280,8 @@ public class StructOrUnionSpecificationImpl extends TypeDefinitionImpl implement
       case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__STRUCT:
         setStruct(STRUCT_EDEFAULT);
         return;
-      case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__NAME:
-        setName(NAME_EDEFAULT);
+      case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__ID:
+        setId(ID_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -303,8 +303,8 @@ public class StructOrUnionSpecificationImpl extends TypeDefinitionImpl implement
         return typeSpecifier != null && !typeSpecifier.isEmpty();
       case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__STRUCT:
         return STRUCT_EDEFAULT == null ? struct != null : !STRUCT_EDEFAULT.equals(struct);
-      case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case FractalIDLPackage.STRUCT_OR_UNION_SPECIFICATION__ID:
+        return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
     }
     return super.eIsSet(featureID);
   }
@@ -366,8 +366,8 @@ public class StructOrUnionSpecificationImpl extends TypeDefinitionImpl implement
     result.append(typeSpecifier);
     result.append(", struct: ");
     result.append(struct);
-    result.append(", name: ");
-    result.append(name);
+    result.append(", id: ");
+    result.append(id);
     result.append(')');
     return result.toString();
   }

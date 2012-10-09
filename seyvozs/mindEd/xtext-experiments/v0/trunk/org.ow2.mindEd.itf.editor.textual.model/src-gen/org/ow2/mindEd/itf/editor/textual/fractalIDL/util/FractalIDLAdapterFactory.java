@@ -160,9 +160,14 @@ public class FractalIDLAdapterFactory extends AdapterFactoryImpl
         return createQualifiedPointerSpecificationAdapter();
       }
       @Override
-      public Adapter caseDirectDeclarator(DirectDeclarator object)
+      public Adapter caseDirectNamedDeclarator(DirectNamedDeclarator object)
       {
-        return createDirectDeclaratorAdapter();
+        return createDirectNamedDeclaratorAdapter();
+      }
+      @Override
+      public Adapter caseDirectAnonymousDeclarator(DirectAnonymousDeclarator object)
+      {
+        return createDirectAnonymousDeclaratorAdapter();
       }
       @Override
       public Adapter caseArraySpecification(ArraySpecification object)
@@ -562,16 +567,31 @@ public class FractalIDLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator <em>Direct Declarator</em>}'.
+   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectNamedDeclarator <em>Direct Named Declarator</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectNamedDeclarator
    * @generated
    */
-  public Adapter createDirectDeclaratorAdapter()
+  public Adapter createDirectNamedDeclaratorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectAnonymousDeclarator <em>Direct Anonymous Declarator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectAnonymousDeclarator
+   * @generated
+   */
+  public Adapter createDirectAnonymousDeclaratorAdapter()
   {
     return null;
   }

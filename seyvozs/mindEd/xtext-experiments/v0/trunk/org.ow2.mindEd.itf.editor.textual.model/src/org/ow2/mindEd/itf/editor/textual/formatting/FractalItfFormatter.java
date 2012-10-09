@@ -119,7 +119,7 @@ public class FractalItfFormatter extends AbstractDeclarativeFormatter {
 	 */
 	protected void formatInclude(FractalItfGrammarAccess f, FormattingConfig c) {
 		c.setLinewrap().after(
-				f.getIncludeDirectiveAccess().getImportedURIAssignment_1_0());
+				f.getIncludeDirectiveAccess().getImportedURIAssignment_1_0_0());
 		c.setLinewrap().after(
 				f.getIncludeDirectiveAccess().getIncludeIDAssignment_1_1());
 	}

@@ -208,10 +208,17 @@ public class FractalIDLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FractalIDLPackage.DIRECT_DECLARATOR:
+      case FractalIDLPackage.DIRECT_NAMED_DECLARATOR:
       {
-        DirectDeclarator directDeclarator = (DirectDeclarator)theEObject;
-        T result = caseDirectDeclarator(directDeclarator);
+        DirectNamedDeclarator directNamedDeclarator = (DirectNamedDeclarator)theEObject;
+        T result = caseDirectNamedDeclarator(directNamedDeclarator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FractalIDLPackage.DIRECT_ANONYMOUS_DECLARATOR:
+      {
+        DirectAnonymousDeclarator directAnonymousDeclarator = (DirectAnonymousDeclarator)theEObject;
+        T result = caseDirectAnonymousDeclarator(directAnonymousDeclarator);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -663,17 +670,33 @@ public class FractalIDLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Direct Declarator</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Direct Named Declarator</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Direct Declarator</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Direct Named Declarator</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDirectDeclarator(DirectDeclarator object)
+  public T caseDirectNamedDeclarator(DirectNamedDeclarator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Direct Anonymous Declarator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Direct Anonymous Declarator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDirectAnonymousDeclarator(DirectAnonymousDeclarator object)
   {
     return null;
   }

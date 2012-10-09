@@ -6,20 +6,14 @@ import org.eclipse.cdt.core.errorparsers.RegexErrorPattern;
 
 public class MindcErrorParser extends RegexErrorParser {
 	
-	private static MindcErrorParser instance = null;
 	final int WARN=IMarkerGenerator.SEVERITY_WARNING;
 	
 	public MindcErrorParser() {
 		super();
 		
-		if (instance == null) instance = this;
-		
-		String pattern = "At (.*?):(\\d+).*?";
+		// '\' is escaped
+		String pattern = "At (.*?):(\\d+),(\\d+):";
 		addPattern(new RegexErrorPattern(pattern, "$1", "$2", null, null, WARN, true));
 	}
 
-	public static MindcErrorParser getInstance() {
-		return instance;
-	}
-	
 }

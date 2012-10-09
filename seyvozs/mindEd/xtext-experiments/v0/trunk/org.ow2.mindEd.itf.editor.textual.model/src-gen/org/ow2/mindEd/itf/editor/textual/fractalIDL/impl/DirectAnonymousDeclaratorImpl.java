@@ -16,41 +16,41 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.ArraySpecification;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectAnonymousDeclarator;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.FractalIDLPackage;
-import org.ow2.mindEd.itf.editor.textual.fractalIDL.Parameter;
-import org.ow2.mindEd.itf.editor.textual.fractalIDL.ParameterList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Parameter List</b></em>'.
+ * An implementation of the model object '<em><b>Direct Anonymous Declarator</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.ParameterListImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.DirectAnonymousDeclaratorImpl#getArray <em>Array</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ParameterListImpl extends MinimalEObjectImpl.Container implements ParameterList
+public class DirectAnonymousDeclaratorImpl extends MinimalEObjectImpl.Container implements DirectAnonymousDeclarator
 {
   /**
-   * The cached value of the '{@link #getParams() <em>Params</em>}' containment reference list.
+   * The cached value of the '{@link #getArray() <em>Array</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getParams()
+   * @see #getArray()
    * @generated
    * @ordered
    */
-  protected EList<Parameter> params;
+  protected EList<ArraySpecification> array;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ParameterListImpl()
+  protected DirectAnonymousDeclaratorImpl()
   {
     super();
   }
@@ -63,7 +63,7 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
   @Override
   protected EClass eStaticClass()
   {
-    return FractalIDLPackage.Literals.PARAMETER_LIST;
+    return FractalIDLPackage.Literals.DIRECT_ANONYMOUS_DECLARATOR;
   }
 
   /**
@@ -71,13 +71,13 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Parameter> getParams()
+  public EList<ArraySpecification> getArray()
   {
-    if (params == null)
+    if (array == null)
     {
-      params = new EObjectContainmentEList<Parameter>(Parameter.class, this, FractalIDLPackage.PARAMETER_LIST__PARAMS);
+      array = new EObjectContainmentEList<ArraySpecification>(ArraySpecification.class, this, FractalIDLPackage.DIRECT_ANONYMOUS_DECLARATOR__ARRAY);
     }
-    return params;
+    return array;
   }
 
   /**
@@ -90,8 +90,8 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case FractalIDLPackage.PARAMETER_LIST__PARAMS:
-        return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
+      case FractalIDLPackage.DIRECT_ANONYMOUS_DECLARATOR__ARRAY:
+        return ((InternalEList<?>)getArray()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case FractalIDLPackage.PARAMETER_LIST__PARAMS:
-        return getParams();
+      case FractalIDLPackage.DIRECT_ANONYMOUS_DECLARATOR__ARRAY:
+        return getArray();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case FractalIDLPackage.PARAMETER_LIST__PARAMS:
-        getParams().clear();
-        getParams().addAll((Collection<? extends Parameter>)newValue);
+      case FractalIDLPackage.DIRECT_ANONYMOUS_DECLARATOR__ARRAY:
+        getArray().clear();
+        getArray().addAll((Collection<? extends ArraySpecification>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case FractalIDLPackage.PARAMETER_LIST__PARAMS:
-        getParams().clear();
+      case FractalIDLPackage.DIRECT_ANONYMOUS_DECLARATOR__ARRAY:
+        getArray().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,10 +158,10 @@ public class ParameterListImpl extends MinimalEObjectImpl.Container implements P
   {
     switch (featureID)
     {
-      case FractalIDLPackage.PARAMETER_LIST__PARAMS:
-        return params != null && !params.isEmpty();
+      case FractalIDLPackage.DIRECT_ANONYMOUS_DECLARATOR__ARRAY:
+        return array != null && !array.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ParameterListImpl
+} //DirectAnonymousDeclaratorImpl

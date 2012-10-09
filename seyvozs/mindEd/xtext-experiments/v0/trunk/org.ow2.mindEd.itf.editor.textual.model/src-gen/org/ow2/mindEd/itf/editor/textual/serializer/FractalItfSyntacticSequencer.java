@@ -18,6 +18,7 @@ import org.ow2.mindEd.itf.editor.textual.services.FractalItfGrammarAccess;
 public class FractalItfSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected FractalItfGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_IncludeDirective___SolidusKeyword_1_0_1_0_STRINGTerminalRuleCall_1_0_1_1__a;
 	protected AbstractElementAlias match_InterfaceDefinition_UnmanagedKeyword_2_q;
 	protected AbstractElementAlias match_ItfFile_SemicolonKeyword_3_q;
 	protected AbstractElementAlias match_MethodDefinition_VoidKeyword_4_0_1_q;
@@ -26,6 +27,7 @@ public class FractalItfSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (FractalItfGrammarAccess) access;
+		match_IncludeDirective___SolidusKeyword_1_0_1_0_STRINGTerminalRuleCall_1_0_1_1__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getIncludeDirectiveAccess().getSolidusKeyword_1_0_1_0()), new TokenAlias(false, false, grammarAccess.getIncludeDirectiveAccess().getSTRINGTerminalRuleCall_1_0_1_1()));
 		match_InterfaceDefinition_UnmanagedKeyword_2_q = new TokenAlias(false, true, grammarAccess.getInterfaceDefinitionAccess().getUnmanagedKeyword_2());
 		match_ItfFile_SemicolonKeyword_3_q = new TokenAlias(false, true, grammarAccess.getItfFileAccess().getSemicolonKeyword_3());
 		match_MethodDefinition_VoidKeyword_4_0_1_q = new TokenAlias(false, true, grammarAccess.getMethodDefinitionAccess().getVoidKeyword_4_0_1());
@@ -34,9 +36,22 @@ public class FractalItfSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getSTRINGRule())
+			return getSTRINGToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * terminal STRING	: 
+	 * 			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+	 * 			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
+	 * 		;
+	 */
+	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\"";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -44,7 +59,9 @@ public class FractalItfSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_InterfaceDefinition_UnmanagedKeyword_2_q.equals(syntax))
+			if(match_IncludeDirective___SolidusKeyword_1_0_1_0_STRINGTerminalRuleCall_1_0_1_1__a.equals(syntax))
+				emit_IncludeDirective___SolidusKeyword_1_0_1_0_STRINGTerminalRuleCall_1_0_1_1__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_InterfaceDefinition_UnmanagedKeyword_2_q.equals(syntax))
 				emit_InterfaceDefinition_UnmanagedKeyword_2_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_ItfFile_SemicolonKeyword_3_q.equals(syntax))
 				emit_ItfFile_SemicolonKeyword_3_q(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -56,6 +73,14 @@ public class FractalItfSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * Syntax:
+	 *     ('/' STRING)*
+	 */
+	protected void emit_IncludeDirective___SolidusKeyword_1_0_1_0_STRINGTerminalRuleCall_1_0_1_1__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Syntax:
 	 *     'unmanaged'?

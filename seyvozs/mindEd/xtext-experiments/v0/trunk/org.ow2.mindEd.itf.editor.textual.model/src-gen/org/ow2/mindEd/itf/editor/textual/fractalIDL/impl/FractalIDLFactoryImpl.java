@@ -82,7 +82,8 @@ public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFac
       case FractalIDLPackage.DECLARATORS: return createDeclarators();
       case FractalIDLPackage.DECLARATOR: return createDeclarator();
       case FractalIDLPackage.QUALIFIED_POINTER_SPECIFICATION: return createQualifiedPointerSpecification();
-      case FractalIDLPackage.DIRECT_DECLARATOR: return createDirectDeclarator();
+      case FractalIDLPackage.DIRECT_NAMED_DECLARATOR: return createDirectNamedDeclarator();
+      case FractalIDLPackage.DIRECT_ANONYMOUS_DECLARATOR: return createDirectAnonymousDeclarator();
       case FractalIDLPackage.ARRAY_SPECIFICATION: return createArraySpecification();
       case FractalIDLPackage.CONSTANT_DEFINITION: return createConstantDefinition();
       case FractalIDLPackage.INTERFACE_DEFINITION: return createInterfaceDefinition();
@@ -346,10 +347,21 @@ public class FractalIDLFactoryImpl extends EFactoryImpl implements FractalIDLFac
    * <!-- end-user-doc -->
    * @generated
    */
-  public DirectDeclarator createDirectDeclarator()
+  public DirectNamedDeclarator createDirectNamedDeclarator()
   {
-    DirectDeclaratorImpl directDeclarator = new DirectDeclaratorImpl();
-    return directDeclarator;
+    DirectNamedDeclaratorImpl directNamedDeclarator = new DirectNamedDeclaratorImpl();
+    return directNamedDeclarator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DirectAnonymousDeclarator createDirectAnonymousDeclarator()
+  {
+    DirectAnonymousDeclaratorImpl directAnonymousDeclarator = new DirectAnonymousDeclaratorImpl();
+    return directAnonymousDeclarator;
   }
 
   /**

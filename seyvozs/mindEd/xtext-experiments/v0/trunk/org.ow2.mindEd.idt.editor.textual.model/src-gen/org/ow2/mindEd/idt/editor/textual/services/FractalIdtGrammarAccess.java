@@ -301,7 +301,7 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 
 	//StructOrUnionDefinition:
 	//
-	//	struct=StructOrUnion name=ID? "{" structMember+=StructMember* "}";
+	//	struct=StructOrUnion id=ID? "{" structMember+=StructMember* "}";
 	public FractalItfGrammarAccess.StructOrUnionDefinitionElements getStructOrUnionDefinitionAccess() {
 		return gaFractalItf.getStructOrUnionDefinitionAccess();
 	}
@@ -312,7 +312,7 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 
 	//StructorUnionReference:
 	//
-	//	struct=StructOrUnion name=ID;
+	//	struct=StructOrUnion id=ID;
 	public FractalItfGrammarAccess.StructorUnionReferenceElements getStructorUnionReferenceAccess() {
 		return gaFractalItf.getStructorUnionReferenceAccess();
 	}
@@ -415,7 +415,9 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 
 	//Declarator:
 	//
-	//	pointer+=QualifiedPointerSpecification* dc=DirectDeclarator;
+	//	pointer+=QualifiedPointerSpecification* (dc=DirectNamedDeclarator | dc=DirectAnonymousDeclarator | "(" dec=Declarator
+	//
+	//	")");
 	public FractalItfGrammarAccess.DeclaratorElements getDeclaratorAccess() {
 		return gaFractalItf.getDeclaratorAccess();
 	}
@@ -442,15 +444,26 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 		return getQualifiedPointerSpecificationAccess().getRule();
 	}
 
-	//DirectDeclarator:
+	//DirectNamedDeclarator:
 	//
-	//	(name=ID | "(" dec=Declarator ")") array+=ArraySpecification*;
-	public FractalItfGrammarAccess.DirectDeclaratorElements getDirectDeclaratorAccess() {
-		return gaFractalItf.getDirectDeclaratorAccess();
+	//	id=ID array+=ArraySpecification*;
+	public FractalItfGrammarAccess.DirectNamedDeclaratorElements getDirectNamedDeclaratorAccess() {
+		return gaFractalItf.getDirectNamedDeclaratorAccess();
 	}
 	
-	public ParserRule getDirectDeclaratorRule() {
-		return getDirectDeclaratorAccess().getRule();
+	public ParserRule getDirectNamedDeclaratorRule() {
+		return getDirectNamedDeclaratorAccess().getRule();
+	}
+
+	//DirectAnonymousDeclarator:
+	//
+	//	{DirectAnonymousDeclarator} array+=ArraySpecification*;
+	public FractalItfGrammarAccess.DirectAnonymousDeclaratorElements getDirectAnonymousDeclaratorAccess() {
+		return gaFractalItf.getDirectAnonymousDeclaratorAccess();
+	}
+	
+	public ParserRule getDirectAnonymousDeclaratorRule() {
+		return getDirectAnonymousDeclaratorAccess().getRule();
 	}
 
 	//// AbstractDirectDeclarator:
@@ -523,7 +536,7 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ParameterList:
 	//
-	//	param=Parameter ("," params+=Parameter)* ("," "...")?;
+	//	params+=Parameter ("," params+=Parameter)* ("," "...")?;
 	public FractalItfGrammarAccess.ParameterListElements getParameterListAccess() {
 		return gaFractalItf.getParameterListAccess();
 	}
@@ -559,7 +572,7 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 
 	//IncludeDirective:
 	//
-	//	"#include" (importedURI=STRING | includeID=INCLUDE_LIB);
+	//	"#include" (importedURI=STRING ("/" STRING)* | includeID=INCLUDE_LIB);
 	public FractalItfGrammarAccess.IncludeDirectiveElements getIncludeDirectiveAccess() {
 		return gaFractalItf.getIncludeDirectiveAccess();
 	}
@@ -570,7 +583,7 @@ public class FractalIdtGrammarAccess extends AbstractGrammarElementFinder {
 
 	//terminal INCLUDE_LIB:
 	//
-	//	"<" ID "." ID ">";
+	//	"<" (ID "/")* ID "." ID ">";
 	public TerminalRule getINCLUDE_LIBRule() {
 		return gaFractalItf.getINCLUDE_LIBRule();
 	} 

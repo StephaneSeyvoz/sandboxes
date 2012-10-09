@@ -25,7 +25,8 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.CastExpression;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.ConstantDefinition;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarator;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.Declarators;
-import org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectDeclarator;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectAnonymousDeclarator;
+import org.ow2.mindEd.itf.editor.textual.fractalIDL.DirectNamedDeclarator;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumDefinition;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumMember;
 import org.ow2.mindEd.itf.editor.textual.fractalIDL.EnumMemberList;
@@ -134,9 +135,15 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 					return; 
 				}
 				else break;
-			case FractalIDLPackage.DIRECT_DECLARATOR:
-				if(context == grammarAccess.getDirectDeclaratorRule()) {
-					sequence_DirectDeclarator(context, (DirectDeclarator) semanticObject); 
+			case FractalIDLPackage.DIRECT_ANONYMOUS_DECLARATOR:
+				if(context == grammarAccess.getDirectAnonymousDeclaratorRule()) {
+					sequence_DirectAnonymousDeclarator(context, (DirectAnonymousDeclarator) semanticObject); 
+					return; 
+				}
+				else break;
+			case FractalIDLPackage.DIRECT_NAMED_DECLARATOR:
+				if(context == grammarAccess.getDirectNamedDeclaratorRule()) {
+					sequence_DirectNamedDeclarator(context, (DirectNamedDeclarator) semanticObject); 
 					return; 
 				}
 				else break;
@@ -408,7 +415,7 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (pointer+=QualifiedPointerSpecification* dc=DirectDeclarator)
+	 *     (pointer+=QualifiedPointerSpecification* (dc=DirectNamedDeclarator | dc=DirectAnonymousDeclarator | dec=Declarator))
 	 */
 	protected void sequence_Declarator(EObject context, Declarator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -426,9 +433,18 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     ((name=ID | dec=Declarator) array+=ArraySpecification*)
+	 *     (array+=ArraySpecification*)
 	 */
-	protected void sequence_DirectDeclarator(EObject context, DirectDeclarator semanticObject) {
+	protected void sequence_DirectAnonymousDeclarator(EObject context, DirectAnonymousDeclarator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (id=ID array+=ArraySpecification*)
+	 */
+	protected void sequence_DirectNamedDeclarator(EObject context, DirectNamedDeclarator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -549,7 +565,7 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (param=Parameter params+=Parameter*)
+	 *     (params+=Parameter params+=Parameter*)
 	 */
 	protected void sequence_ParameterList(EObject context, ParameterList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -619,7 +635,7 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (struct=StructOrUnion name=ID? structMember+=StructMember*)
+	 *     (struct=StructOrUnion id=ID? structMember+=StructMember*)
 	 */
 	protected void sequence_StructOrUnionDefinition(EObject context, StructOrUnionDefinition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -628,7 +644,7 @@ public class FractalItfSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Constraint:
-	 *     (struct=StructOrUnion name=ID)
+	 *     (struct=StructOrUnion id=ID)
 	 */
 	protected void sequence_StructorUnionReference(EObject context, StructorUnionReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

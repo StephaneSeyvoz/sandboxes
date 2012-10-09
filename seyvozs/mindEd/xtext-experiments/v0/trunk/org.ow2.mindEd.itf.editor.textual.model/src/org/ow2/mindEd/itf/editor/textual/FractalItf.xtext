@@ -41,13 +41,13 @@ StructOrUnionSpecification:
 
 StructOrUnionDefinition:
   struct=StructOrUnion
-  (name=ID)?
+  (id=ID)?
   '{' (structMember+=StructMember)* '}'
 ;
 
 StructorUnionReference:
   struct=StructOrUnion
-  name=ID
+  id=ID
 ;
 
 StructOrUnion:
@@ -84,7 +84,7 @@ Declarators:
 
 Declarator:
   pointer+=QualifiedPointerSpecification*
-  dc=DirectDeclarator
+  (dc=DirectNamedDeclarator | dc=DirectAnonymousDeclarator | '(' dec=Declarator ')')
 ; 
 
 //AbstractDeclarator:
@@ -96,9 +96,13 @@ Declarator:
 QualifiedPointerSpecification:
   {QualifiedPointerSpecification} '*' typeQualifiers+=TypeQualifier*;
 
-DirectDeclarator:
-  (name=ID | '(' dec=Declarator ')')
+DirectNamedDeclarator:
+  id=ID
   array += ArraySpecification*
+;
+
+DirectAnonymousDeclarator:
+  {DirectAnonymousDeclarator} array += ArraySpecification*
 ; 
   
 // AbstractDirectDeclarator:
@@ -139,7 +143,7 @@ MethodDefinition:
 ;
 
 ParameterList:
-  param=Parameter (',' params+=Parameter)* (',' '...')?;
+  params+=Parameter (',' params+=Parameter)* (',' '...')?;
 
 Parameter:
   (annotationsList=AnnotationsList)?
@@ -151,10 +155,10 @@ enum ParameterQualifier:
 
 
 IncludeDirective:
-  '#include' (importedURI=STRING | includeID=INCLUDE_LIB);
+  '#include' (importedURI=STRING('/' STRING)* | includeID=INCLUDE_LIB);
 
 terminal INCLUDE_LIB:
-  '<' ID '.' ID '>';
+  '<' (ID '/')* ID '.' ID '>';
 
 AnnotationsList :
 	annotations+=Annotation (annotations+=Annotation)*;

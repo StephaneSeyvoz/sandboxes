@@ -2386,13 +2386,14 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cSTRINGTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//ConstantFormat:
 		//
-		//	INT | STRING;
+		//	INT | STRING | ID;
 		public ParserRule getRule() { return rule; }
 
-		//INT | STRING
+		//INT | STRING | ID
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//INT
@@ -2400,6 +2401,9 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getSTRINGTerminalRuleCall_1() { return cSTRINGTerminalRuleCall_1; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_2() { return cIDTerminalRuleCall_2; }
 	}
 	
 	
@@ -3095,7 +3099,7 @@ public class FractalGrammarAccess extends AbstractGrammarElementFinder {
 
 	//ConstantFormat:
 	//
-	//	INT | STRING;
+	//	INT | STRING | ID;
 	public ConstantFormatElements getConstantFormatAccess() {
 		return (pConstantFormat != null) ? pConstantFormat : (pConstantFormat = new ConstantFormatElements());
 	}

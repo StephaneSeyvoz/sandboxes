@@ -176,13 +176,22 @@ public interface FractalIDLFactory extends EFactory
   QualifiedPointerSpecification createQualifiedPointerSpecification();
 
   /**
-   * Returns a new object of class '<em>Direct Declarator</em>'.
+   * Returns a new object of class '<em>Direct Named Declarator</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Direct Declarator</em>'.
+   * @return a new object of class '<em>Direct Named Declarator</em>'.
    * @generated
    */
-  DirectDeclarator createDirectDeclarator();
+  DirectNamedDeclarator createDirectNamedDeclarator();
+
+  /**
+   * Returns a new object of class '<em>Direct Anonymous Declarator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Direct Anonymous Declarator</em>'.
+   * @generated
+   */
+  DirectAnonymousDeclarator createDirectAnonymousDeclarator();
 
   /**
    * Returns a new object of class '<em>Array Specification</em>'.

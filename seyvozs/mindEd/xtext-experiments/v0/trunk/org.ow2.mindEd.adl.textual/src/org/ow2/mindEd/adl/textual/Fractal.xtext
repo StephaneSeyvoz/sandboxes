@@ -256,7 +256,7 @@ ConstantValue :
 	value = ConstantFormat;
 
 ConstantFormat:
-INT|STRING;
+INT|STRING|ID;
 
 terminal CODE_C :
 	'{{' -> '}}';
