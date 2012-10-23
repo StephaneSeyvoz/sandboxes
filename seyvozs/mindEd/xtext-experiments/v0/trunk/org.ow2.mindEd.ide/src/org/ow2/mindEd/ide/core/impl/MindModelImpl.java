@@ -427,6 +427,17 @@ public class MindModelImpl implements MindModel {
 		}
 		return null;
 	}
+	
+	public MindItf getItf(MindProject mp, String packageName, String interfaceName) {
+		MindPackage p = getPackage(mp, packageName);
+		if (p == null) return null;
+		for (MindFile itf : p.getFiles()) {
+			if (itf instanceof MindItf && itf.getName().equalsIgnoreCase(interfaceName)) {
+				return (MindItf) itf;
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public MindAllRepo getMindRepository() {

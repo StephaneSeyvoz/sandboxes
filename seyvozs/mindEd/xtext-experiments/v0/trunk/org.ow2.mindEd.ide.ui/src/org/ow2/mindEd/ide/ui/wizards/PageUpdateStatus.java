@@ -1,6 +1,6 @@
 package org.ow2.mindEd.ide.ui.wizards;
 
-public interface PageUdapteStatus {
+public interface PageUpdateStatus {
 
 	void updateErrorStatus(String msg);
 
