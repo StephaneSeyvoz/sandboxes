@@ -22,6 +22,7 @@ import org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeSuperType;
 import org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
+import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +32,7 @@ import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeSuperTypeImpl#getTargetArchDef <em>Target Arch Def</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeSuperTypeImpl#getTemplatesList <em>Templates List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.impl.CompositeSuperTypeImpl#getArgumentsList <em>Arguments List</em>}</li>
  * </ul>
  * </p>
@@ -48,6 +50,16 @@ public class CompositeSuperTypeImpl extends MinimalEObjectImpl.Container impleme
    * @ordered
    */
   protected CompositeSuperTypeDefinition targetArchDef;
+
+  /**
+   * The cached value of the '{@link #getTemplatesList() <em>Templates List</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTemplatesList()
+   * @generated
+   * @ordered
+   */
+  protected EList<TemplateDefinition> templatesList;
 
   /**
    * The cached value of the '{@link #getArgumentsList() <em>Arguments List</em>}' containment reference list.
@@ -128,6 +140,20 @@ public class CompositeSuperTypeImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<TemplateDefinition> getTemplatesList()
+  {
+    if (templatesList == null)
+    {
+      templatesList = new EObjectContainmentEList<TemplateDefinition>(TemplateDefinition.class, this, FractalPackage.COMPOSITE_SUPER_TYPE__TEMPLATES_LIST);
+    }
+    return templatesList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<ArgumentDefinition> getArgumentsList()
   {
     if (argumentsList == null)
@@ -147,6 +173,8 @@ public class CompositeSuperTypeImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
+      case FractalPackage.COMPOSITE_SUPER_TYPE__TEMPLATES_LIST:
+        return ((InternalEList<?>)getTemplatesList()).basicRemove(otherEnd, msgs);
       case FractalPackage.COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST:
         return ((InternalEList<?>)getArgumentsList()).basicRemove(otherEnd, msgs);
     }
@@ -166,6 +194,8 @@ public class CompositeSuperTypeImpl extends MinimalEObjectImpl.Container impleme
       case FractalPackage.COMPOSITE_SUPER_TYPE__TARGET_ARCH_DEF:
         if (resolve) return getTargetArchDef();
         return basicGetTargetArchDef();
+      case FractalPackage.COMPOSITE_SUPER_TYPE__TEMPLATES_LIST:
+        return getTemplatesList();
       case FractalPackage.COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST:
         return getArgumentsList();
     }
@@ -185,6 +215,10 @@ public class CompositeSuperTypeImpl extends MinimalEObjectImpl.Container impleme
     {
       case FractalPackage.COMPOSITE_SUPER_TYPE__TARGET_ARCH_DEF:
         setTargetArchDef((CompositeSuperTypeDefinition)newValue);
+        return;
+      case FractalPackage.COMPOSITE_SUPER_TYPE__TEMPLATES_LIST:
+        getTemplatesList().clear();
+        getTemplatesList().addAll((Collection<? extends TemplateDefinition>)newValue);
         return;
       case FractalPackage.COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST:
         getArgumentsList().clear();
@@ -207,6 +241,9 @@ public class CompositeSuperTypeImpl extends MinimalEObjectImpl.Container impleme
       case FractalPackage.COMPOSITE_SUPER_TYPE__TARGET_ARCH_DEF:
         setTargetArchDef((CompositeSuperTypeDefinition)null);
         return;
+      case FractalPackage.COMPOSITE_SUPER_TYPE__TEMPLATES_LIST:
+        getTemplatesList().clear();
+        return;
       case FractalPackage.COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST:
         getArgumentsList().clear();
         return;
@@ -226,6 +263,8 @@ public class CompositeSuperTypeImpl extends MinimalEObjectImpl.Container impleme
     {
       case FractalPackage.COMPOSITE_SUPER_TYPE__TARGET_ARCH_DEF:
         return targetArchDef != null;
+      case FractalPackage.COMPOSITE_SUPER_TYPE__TEMPLATES_LIST:
+        return templatesList != null && !templatesList.isEmpty();
       case FractalPackage.COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST:
         return argumentsList != null && !argumentsList.isEmpty();
     }

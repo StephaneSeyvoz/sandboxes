@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperType#getTargetArchDef <em>Target Arch Def</em>}</li>
+ *   <li>{@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperType#getTemplatesList <em>Templates List</em>}</li>
  *   <li>{@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperType#getArgumentsList <em>Arguments List</em>}</li>
  * </ul>
  * </p>
@@ -50,6 +51,22 @@ public interface CompositeSuperType extends EObject
    * @generated
    */
   void setTargetArchDef(CompositeSuperTypeDefinition value);
+
+  /**
+   * Returns the value of the '<em><b>Templates List</b></em>' containment reference list.
+   * The list contents are of type {@link org.ow2.mindEd.adl.textual.fractal.TemplateDefinition}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Templates List</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Templates List</em>' containment reference list.
+   * @see org.ow2.mindEd.adl.textual.fractal.FractalPackage#getCompositeSuperType_TemplatesList()
+   * @model containment="true"
+   * @generated
+   */
+  EList<TemplateDefinition> getTemplatesList();
 
   /**
    * Returns the value of the '<em><b>Arguments List</b></em>' containment reference list.

@@ -603,9 +603,19 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCompositeSuperType_ArgumentsList()
+  public EReference getCompositeSuperType_TemplatesList()
   {
     return (EReference)compositeSuperTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCompositeSuperType_ArgumentsList()
+  {
+    return (EReference)compositeSuperTypeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1437,6 +1447,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
 
     compositeSuperTypeEClass = createEClass(COMPOSITE_SUPER_TYPE);
     createEReference(compositeSuperTypeEClass, COMPOSITE_SUPER_TYPE__TARGET_ARCH_DEF);
+    createEReference(compositeSuperTypeEClass, COMPOSITE_SUPER_TYPE__TEMPLATES_LIST);
     createEReference(compositeSuperTypeEClass, COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST);
 
     primitiveSuperTypeEClass = createEClass(PRIMITIVE_SUPER_TYPE);
@@ -1632,6 +1643,7 @@ public class FractalPackageImpl extends EPackageImpl implements FractalPackage
 
     initEClass(compositeSuperTypeEClass, CompositeSuperType.class, "CompositeSuperType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCompositeSuperType_TargetArchDef(), this.getCompositeSuperTypeDefinition(), null, "targetArchDef", null, 0, 1, CompositeSuperType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCompositeSuperType_TemplatesList(), this.getTemplateDefinition(), null, "templatesList", null, 0, -1, CompositeSuperType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCompositeSuperType_ArgumentsList(), this.getArgumentDefinition(), null, "argumentsList", null, 0, -1, CompositeSuperType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(primitiveSuperTypeEClass, PrimitiveSuperType.class, "PrimitiveSuperType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

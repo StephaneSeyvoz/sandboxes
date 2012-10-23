@@ -80,6 +80,8 @@ public class FractalParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCompositeSuperTypeAccess().getGroup(), "rule__CompositeSuperType__Group__0");
 					put(grammarAccess.getCompositeSuperTypeAccess().getGroup_1(), "rule__CompositeSuperType__Group_1__0");
 					put(grammarAccess.getCompositeSuperTypeAccess().getGroup_1_2(), "rule__CompositeSuperType__Group_1_2__0");
+					put(grammarAccess.getCompositeSuperTypeAccess().getGroup_2(), "rule__CompositeSuperType__Group_2__0");
+					put(grammarAccess.getCompositeSuperTypeAccess().getGroup_2_2(), "rule__CompositeSuperType__Group_2_2__0");
 					put(grammarAccess.getPrimitiveSuperTypeAccess().getGroup(), "rule__PrimitiveSuperType__Group__0");
 					put(grammarAccess.getPrimitiveSuperTypeAccess().getGroup_1(), "rule__PrimitiveSuperType__Group_1__0");
 					put(grammarAccess.getPrimitiveSuperTypeAccess().getGroup_1_2(), "rule__PrimitiveSuperType__Group_1_2__0");
@@ -147,8 +149,10 @@ public class FractalParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeDefinitionAccess().getSuperTypesAssignment_2_2_1(), "rule__TypeDefinition__SuperTypesAssignment_2_2_1");
 					put(grammarAccess.getTypeDefinitionAccess().getElementsAssignment_4(), "rule__TypeDefinition__ElementsAssignment_4");
 					put(grammarAccess.getCompositeSuperTypeAccess().getTargetArchDefAssignment_0(), "rule__CompositeSuperType__TargetArchDefAssignment_0");
-					put(grammarAccess.getCompositeSuperTypeAccess().getArgumentsListAssignment_1_1(), "rule__CompositeSuperType__ArgumentsListAssignment_1_1");
-					put(grammarAccess.getCompositeSuperTypeAccess().getArgumentsListAssignment_1_2_1(), "rule__CompositeSuperType__ArgumentsListAssignment_1_2_1");
+					put(grammarAccess.getCompositeSuperTypeAccess().getTemplatesListAssignment_1_1(), "rule__CompositeSuperType__TemplatesListAssignment_1_1");
+					put(grammarAccess.getCompositeSuperTypeAccess().getTemplatesListAssignment_1_2_1(), "rule__CompositeSuperType__TemplatesListAssignment_1_2_1");
+					put(grammarAccess.getCompositeSuperTypeAccess().getArgumentsListAssignment_2_1(), "rule__CompositeSuperType__ArgumentsListAssignment_2_1");
+					put(grammarAccess.getCompositeSuperTypeAccess().getArgumentsListAssignment_2_2_1(), "rule__CompositeSuperType__ArgumentsListAssignment_2_2_1");
 					put(grammarAccess.getPrimitiveSuperTypeAccess().getTargetArchDefAssignment_0(), "rule__PrimitiveSuperType__TargetArchDefAssignment_0");
 					put(grammarAccess.getPrimitiveSuperTypeAccess().getArgumentsListAssignment_1_1(), "rule__PrimitiveSuperType__ArgumentsListAssignment_1_1");
 					put(grammarAccess.getPrimitiveSuperTypeAccess().getArgumentsListAssignment_1_2_1(), "rule__PrimitiveSuperType__ArgumentsListAssignment_1_2_1");

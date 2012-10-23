@@ -389,13 +389,22 @@ public interface FractalPackage extends EPackage
   int COMPOSITE_SUPER_TYPE__TARGET_ARCH_DEF = 0;
 
   /**
+   * The feature id for the '<em><b>Templates List</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPOSITE_SUPER_TYPE__TEMPLATES_LIST = 1;
+
+  /**
    * The feature id for the '<em><b>Arguments List</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST = 1;
+  int COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST = 2;
 
   /**
    * The number of structural features of the '<em>Composite Super Type</em>' class.
@@ -404,7 +413,7 @@ public interface FractalPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPOSITE_SUPER_TYPE_FEATURE_COUNT = 2;
+  int COMPOSITE_SUPER_TYPE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.ow2.mindEd.adl.textual.fractal.impl.PrimitiveSuperTypeImpl <em>Primitive Super Type</em>}' class.
@@ -1788,6 +1797,17 @@ public interface FractalPackage extends EPackage
   EReference getCompositeSuperType_TargetArchDef();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperType#getTemplatesList <em>Templates List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Templates List</em>'.
+   * @see org.ow2.mindEd.adl.textual.fractal.CompositeSuperType#getTemplatesList()
+   * @see #getCompositeSuperType()
+   * @generated
+   */
+  EReference getCompositeSuperType_TemplatesList();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.ow2.mindEd.adl.textual.fractal.CompositeSuperType#getArgumentsList <em>Arguments List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2837,6 +2857,14 @@ public interface FractalPackage extends EPackage
      * @generated
      */
     EReference COMPOSITE_SUPER_TYPE__TARGET_ARCH_DEF = eINSTANCE.getCompositeSuperType_TargetArchDef();
+
+    /**
+     * The meta object literal for the '<em><b>Templates List</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPOSITE_SUPER_TYPE__TEMPLATES_LIST = eINSTANCE.getCompositeSuperType_TemplatesList();
 
     /**
      * The meta object literal for the '<em><b>Arguments List</b></em>' containment reference list feature.

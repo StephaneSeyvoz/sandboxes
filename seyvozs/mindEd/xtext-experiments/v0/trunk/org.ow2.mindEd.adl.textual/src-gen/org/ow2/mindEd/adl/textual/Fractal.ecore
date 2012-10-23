@@ -43,6 +43,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeSuperType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetArchDef" eType="#//CompositeSuperTypeDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templatesList" upperBound="-1"
+        eType="#//TemplateDefinition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="argumentsList" upperBound="-1"
         eType="#//ArgumentDefinition" containment="true"/>
   </eClassifiers>

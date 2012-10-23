@@ -333,7 +333,11 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (targetArchDef=[CompositeSuperTypeDefinition|QualifiedName] (argumentsList+=ArgumentDefinition argumentsList+=ArgumentDefinition*)?)
+	 *     (
+	 *         targetArchDef=[CompositeSuperTypeDefinition|QualifiedName] 
+	 *         (templatesList+=TemplateDefinition templatesList+=TemplateDefinition*)? 
+	 *         (argumentsList+=ArgumentDefinition argumentsList+=ArgumentDefinition*)?
+	 *     )
 	 */
 	protected void sequence_CompositeSuperType(EObject context, CompositeSuperType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
