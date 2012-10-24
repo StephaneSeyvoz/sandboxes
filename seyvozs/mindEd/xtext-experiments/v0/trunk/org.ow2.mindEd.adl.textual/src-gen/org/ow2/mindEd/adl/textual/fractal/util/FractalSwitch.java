@@ -255,10 +255,10 @@ public class FractalSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FractalPackage.TEMPLATE_DEFINITION:
+      case FractalPackage.TEMPLATE_REFERENCE:
       {
-        TemplateDefinition templateDefinition = (TemplateDefinition)theEObject;
-        T result = caseTemplateDefinition(templateDefinition);
+        TemplateReference templateReference = (TemplateReference)theEObject;
+        T result = caseTemplateReference(templateReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -712,17 +712,17 @@ public class FractalSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Template Definition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Template Reference</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Template Definition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Template Reference</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTemplateDefinition(TemplateDefinition object)
+  public T caseTemplateReference(TemplateReference object)
   {
     return null;
   }

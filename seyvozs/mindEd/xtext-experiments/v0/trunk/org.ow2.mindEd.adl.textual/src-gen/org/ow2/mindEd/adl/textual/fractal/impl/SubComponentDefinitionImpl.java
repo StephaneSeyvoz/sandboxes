@@ -22,7 +22,7 @@ import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
-import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
+import org.ow2.mindEd.adl.textual.fractal.TemplateReference;
 import org.ow2.mindEd.adl.textual.fractal.TypeReference;
 
 /**
@@ -63,7 +63,7 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
    * @generated
    * @ordered
    */
-  protected EList<TemplateDefinition> templatesList;
+  protected EList<TemplateReference> templatesList;
 
   /**
    * The cached value of the '{@link #getArgumentsList() <em>Arguments List</em>}' containment reference list.
@@ -184,11 +184,11 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TemplateDefinition> getTemplatesList()
+  public EList<TemplateReference> getTemplatesList()
   {
     if (templatesList == null)
     {
-      templatesList = new EObjectContainmentEList<TemplateDefinition>(TemplateDefinition.class, this, FractalPackage.SUB_COMPONENT_DEFINITION__TEMPLATES_LIST);
+      templatesList = new EObjectContainmentEList<TemplateReference>(TemplateReference.class, this, FractalPackage.SUB_COMPONENT_DEFINITION__TEMPLATES_LIST);
     }
     return templatesList;
   }
@@ -391,7 +391,7 @@ public class SubComponentDefinitionImpl extends CompositeElementImpl implements 
         return;
       case FractalPackage.SUB_COMPONENT_DEFINITION__TEMPLATES_LIST:
         getTemplatesList().clear();
-        getTemplatesList().addAll((Collection<? extends TemplateDefinition>)newValue);
+        getTemplatesList().addAll((Collection<? extends TemplateReference>)newValue);
         return;
       case FractalPackage.SUB_COMPONENT_DEFINITION__ARGUMENTS_LIST:
         getArgumentsList().clear();

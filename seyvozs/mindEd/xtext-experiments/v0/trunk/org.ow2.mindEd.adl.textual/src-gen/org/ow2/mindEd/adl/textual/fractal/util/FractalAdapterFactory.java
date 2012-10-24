@@ -185,9 +185,9 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
         return createTemplateSpecifierAdapter();
       }
       @Override
-      public Adapter caseTemplateDefinition(TemplateDefinition object)
+      public Adapter caseTemplateReference(TemplateReference object)
       {
-        return createTemplateDefinitionAdapter();
+        return createTemplateReferenceAdapter();
       }
       @Override
       public Adapter caseArgumentDefinition(ArgumentDefinition object)
@@ -602,16 +602,16 @@ public class FractalAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.TemplateDefinition <em>Template Definition</em>}'.
+   * Creates a new adapter for an object of class '{@link org.ow2.mindEd.adl.textual.fractal.TemplateReference <em>Template Reference</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.ow2.mindEd.adl.textual.fractal.TemplateDefinition
+   * @see org.ow2.mindEd.adl.textual.fractal.TemplateReference
    * @generated
    */
-  public Adapter createTemplateDefinitionAdapter()
+  public Adapter createTemplateReferenceAdapter()
   {
     return null;
   }

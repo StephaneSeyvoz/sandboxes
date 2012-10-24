@@ -67,7 +67,7 @@ TypeDefinition:
 
 CompositeSuperType:
 	targetArchDef = [CompositeSuperTypeDefinition | QualifiedName]
-	('<' templatesList+=TemplateDefinition (',' templatesList+=TemplateDefinition)* '>')?
+	('<' templatesList+=TemplateReference (',' templatesList+=TemplateReference)* '>')?
 	('(' argumentsList+=ArgumentDefinition (',' argumentsList+=ArgumentDefinition)* ')')?
 ;
 
@@ -112,7 +112,7 @@ SubComponentDefinition:
 	(annotationsList=AnnotationsList)?
 	'contains'
 	(type = [TypeReference | QualifiedName])?
-	('<' templatesList+=TemplateDefinition (',' templatesList+=TemplateDefinition)* '>')?
+	('<' templatesList+=TemplateReference (',' templatesList+=TemplateReference)* '>')?
 	('(' argumentsList+=ArgumentDefinition (',' argumentsList+=ArgumentDefinition)* ')')?
 	'as'
 	name = ID
@@ -196,8 +196,11 @@ HexadecimalType :
 Value :
 	ID | signedINT | HexadecimalType | STRING | 'null';
 
-TemplateDefinition :
+TemplateReference :
 	(name=TemplateSpecifier '=')? (typeReference = [TypeReference | QualifiedName] | anyTypeReference ?= '?')
+	// Our reference can itself be templated/parametered
+	('<' templatesList+=TemplateReference (',' templatesList+=TemplateReference)* '>')?
+	('(' argumentsList+=ArgumentDefinition (',' argumentsList+=ArgumentDefinition)* ')')?
 ;
 
 ArgumentDefinition :

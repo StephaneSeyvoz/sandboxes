@@ -54,7 +54,7 @@ public interface CompositeSuperType extends EObject
 
   /**
    * Returns the value of the '<em><b>Templates List</b></em>' containment reference list.
-   * The list contents are of type {@link org.ow2.mindEd.adl.textual.fractal.TemplateDefinition}.
+   * The list contents are of type {@link org.ow2.mindEd.adl.textual.fractal.TemplateReference}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Templates List</em>' containment reference list isn't clear,
@@ -66,7 +66,7 @@ public interface CompositeSuperType extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<TemplateDefinition> getTemplatesList();
+  EList<TemplateReference> getTemplatesList();
 
   /**
    * Returns the value of the '<em><b>Arguments List</b></em>' containment reference list.

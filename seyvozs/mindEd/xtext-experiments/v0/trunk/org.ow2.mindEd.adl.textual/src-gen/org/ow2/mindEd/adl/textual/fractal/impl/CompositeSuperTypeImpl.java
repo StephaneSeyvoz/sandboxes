@@ -22,7 +22,7 @@ import org.ow2.mindEd.adl.textual.fractal.ArgumentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeSuperType;
 import org.ow2.mindEd.adl.textual.fractal.CompositeSuperTypeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
-import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
+import org.ow2.mindEd.adl.textual.fractal.TemplateReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +59,7 @@ public class CompositeSuperTypeImpl extends MinimalEObjectImpl.Container impleme
    * @generated
    * @ordered
    */
-  protected EList<TemplateDefinition> templatesList;
+  protected EList<TemplateReference> templatesList;
 
   /**
    * The cached value of the '{@link #getArgumentsList() <em>Arguments List</em>}' containment reference list.
@@ -140,11 +140,11 @@ public class CompositeSuperTypeImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<TemplateDefinition> getTemplatesList()
+  public EList<TemplateReference> getTemplatesList()
   {
     if (templatesList == null)
     {
-      templatesList = new EObjectContainmentEList<TemplateDefinition>(TemplateDefinition.class, this, FractalPackage.COMPOSITE_SUPER_TYPE__TEMPLATES_LIST);
+      templatesList = new EObjectContainmentEList<TemplateReference>(TemplateReference.class, this, FractalPackage.COMPOSITE_SUPER_TYPE__TEMPLATES_LIST);
     }
     return templatesList;
   }
@@ -218,7 +218,7 @@ public class CompositeSuperTypeImpl extends MinimalEObjectImpl.Container impleme
         return;
       case FractalPackage.COMPOSITE_SUPER_TYPE__TEMPLATES_LIST:
         getTemplatesList().clear();
-        getTemplatesList().addAll((Collection<? extends TemplateDefinition>)newValue);
+        getTemplatesList().addAll((Collection<? extends TemplateReference>)newValue);
         return;
       case FractalPackage.COMPOSITE_SUPER_TYPE__ARGUMENTS_LIST:
         getArgumentsList().clear();

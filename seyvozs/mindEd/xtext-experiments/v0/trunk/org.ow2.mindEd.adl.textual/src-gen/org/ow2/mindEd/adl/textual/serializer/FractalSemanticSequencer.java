@@ -37,7 +37,7 @@ import org.ow2.mindEd.adl.textual.fractal.PrimitiveSuperType;
 import org.ow2.mindEd.adl.textual.fractal.ProvidedInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.RequiredInterfaceDefinition;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
-import org.ow2.mindEd.adl.textual.fractal.TemplateDefinition;
+import org.ow2.mindEd.adl.textual.fractal.TemplateReference;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
 import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
 import org.ow2.mindEd.adl.textual.services.FractalGrammarAccess;
@@ -215,9 +215,9 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
-			case FractalPackage.TEMPLATE_DEFINITION:
-				if(context == grammarAccess.getTemplateDefinitionRule()) {
-					sequence_TemplateDefinition(context, (TemplateDefinition) semanticObject); 
+			case FractalPackage.TEMPLATE_REFERENCE:
+				if(context == grammarAccess.getTemplateReferenceRule()) {
+					sequence_TemplateReference(context, (TemplateReference) semanticObject); 
 					return; 
 				}
 				else break;
@@ -335,7 +335,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         targetArchDef=[CompositeSuperTypeDefinition|QualifiedName] 
-	 *         (templatesList+=TemplateDefinition templatesList+=TemplateDefinition*)? 
+	 *         (templatesList+=TemplateReference templatesList+=TemplateReference*)? 
 	 *         (argumentsList+=ArgumentDefinition argumentsList+=ArgumentDefinition*)?
 	 *     )
 	 */
@@ -506,7 +506,7 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         annotationsList=AnnotationsList? 
 	 *         type=[TypeReference|QualifiedName]? 
-	 *         (templatesList+=TemplateDefinition templatesList+=TemplateDefinition*)? 
+	 *         (templatesList+=TemplateReference templatesList+=TemplateReference*)? 
 	 *         (argumentsList+=ArgumentDefinition argumentsList+=ArgumentDefinition*)? 
 	 *         name=ID 
 	 *         bodyAnnotationsList=AnnotationsList? 
@@ -520,9 +520,14 @@ public class FractalSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=TemplateSpecifier? (typeReference=[TypeReference|QualifiedName] | anyTypeReference?='?'))
+	 *     (
+	 *         name=TemplateSpecifier? 
+	 *         (typeReference=[TypeReference|QualifiedName] | anyTypeReference?='?') 
+	 *         (templatesList+=TemplateReference templatesList+=TemplateReference*)? 
+	 *         (argumentsList+=ArgumentDefinition argumentsList+=ArgumentDefinition*)?
+	 *     )
 	 */
-	protected void sequence_TemplateDefinition(EObject context, TemplateDefinition semanticObject) {
+	protected void sequence_TemplateReference(EObject context, TemplateReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -90,10 +90,12 @@
     <genClasses ecoreClass="Fractal.ecore#//TemplateSpecifier">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Fractal.ecore#//TemplateSpecifier/typeReference"/>
     </genClasses>
-    <genClasses ecoreClass="Fractal.ecore#//TemplateDefinition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//TemplateDefinition/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Fractal.ecore#//TemplateDefinition/typeReference"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Fractal.ecore#//TemplateDefinition/anyTypeReference"/>
+    <genClasses ecoreClass="Fractal.ecore#//TemplateReference">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//TemplateReference/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Fractal.ecore#//TemplateReference/typeReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Fractal.ecore#//TemplateReference/anyTypeReference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//TemplateReference/templatesList"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Fractal.ecore#//TemplateReference/argumentsList"/>
     </genClasses>
     <genClasses ecoreClass="Fractal.ecore#//ArgumentDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Fractal.ecore#//ArgumentDefinition/name"/>
