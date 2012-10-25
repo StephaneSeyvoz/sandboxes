@@ -23,6 +23,7 @@ import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.IResourceVisitor;
 import org.eclipse.core.resources.IWorkspace;
@@ -427,7 +428,7 @@ public class MindModelImpl implements MindModel {
 		}
 		return null;
 	}
-	
+
 	public MindItf getItf(MindProject mp, String packageName, String interfaceName) {
 		MindPackage p = getPackage(mp, packageName);
 		if (p == null) return null;
@@ -1196,12 +1197,12 @@ public class MindModelImpl implements MindModel {
 		// We need to compare sets to know what has been added or removed (diff)
 		Set<IPath> oldMindSourceEntriesKeySet = oldMindSourceEntries.keySet();
 		Set<IPath> newICSourceEntriesFullPathKeySet = new HashSet<IPath>();
-		
+
 		// We need the full path entries, not the objects themselves
 		for (ICSourceEntry newICSourceEntry : newICSourceEntries) {
 			newICSourceEntriesFullPathKeySet.add(newICSourceEntry.getFullPath());
 		}
-		
+
 		// First remove all the old entries still existing in newICSourceEntriesFullPathKeySet
 		// Note : Removing from a key from the keySet automatically removes the according
 		// value from our hosting oldMindSourceEntries map :
@@ -1211,14 +1212,14 @@ public class MindModelImpl implements MindModel {
 		for (MindPathEntry removableMPE : oldMindSourceEntries.values()) {
 			mindPathEntries.remove(removableMPE);
 		}
-		
+
 		// And we're finished with this Set, so let the environment free memory
 		newICSourceEntriesFullPathKeySet = null;
-		
+
 		// Now we've got to check what exists in newICSourceEntriesFullPathKeySet
 		// that doesn't exist in oldMindSourceEntriesKeySet, and add the corresponding
 		// elements to the Mind Path
-		
+
 		// Here we keep the original algorithm
 		for (ICSourceEntry newICSourceEntry : newICSourceEntries) {
 			if (oldMindSourceEntries.containsKey(newICSourceEntry.getFullPath()))
@@ -1291,9 +1292,35 @@ public class MindModelImpl implements MindModel {
 		mp.getResolvedMindPathEntries().clear();
 	}
 
+	private void removeProjectReference(IProject project, IProject referencedProject) {
+		try {
+			IProjectDescription projDesc = project.getDescription();
+			IProject[] existingReferences = projDesc.getReferencedProjects();
+			// create new list containing existing references
+			List<IProject> projectReferences = new ArrayList<IProject>(Arrays.asList(existingReferences));
+			
+			projectReferences.remove(referencedProject);
+
+			// set the new referenced project array (with conversion from arraylist)
+			projDesc.setReferencedProjects(projectReferences.toArray(new IProject[projectReferences.size()]));
+
+			// IProjectDescription Javadoc of the setReferencedProjects method says :
+			// "Users must call IProject.setDescription(IProjectDescription, int, IProgressMonitor) before changes made to this description take effect."
+			project.setDescription(projDesc, IProject.KEEP_HISTORY, null);
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	protected void unresolve(MindProjectImpl mindProject, MindPathEntry mpe) {
 		if (mpe.getEntryKind() == MindPathKind.APPLI) {
 			mindProject.changeMINDCOMP();
+		}
+		if ((mpe.getEntryKind() == MindPathKind.PROJECT) && (mpe.getResolvedBy() instanceof MindProject)) {
+			// remove Project Reference (to also impact XText ADL and IDL editors cross-references resolution)
+			// this is the action completing MindMPETreeViewer#createOrEditProjectReference
+			removeProjectReference(mindProject.getProject(), ((MindProject) mpe.getResolvedBy()).getProject());
 		}
 		mpe.setResolvedBy(null);
 		if (mpe.getEntryKind() == MindPathKind.SOURCE) {
