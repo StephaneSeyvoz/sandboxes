@@ -604,7 +604,11 @@ public class MindModelImpl implements MindModel {
 		}
 		MindProjectImpl mindProject = (MindProjectImpl) src.getProject();
 		if (mindProject == null) return;
-		mindProject.changeMINDCOMP();
+		
+		// Temporary desactivation
+		// TODO: Check under which conditions refreshing the MIND_TARGET Makefile variable
+		// is necessary (not on every file/package modification !)
+		//mindProject.changeMINDCOMP();
 	}
 
 	private void deleteAdlObject(MindFile f) {
@@ -1194,8 +1198,11 @@ public class MindModelImpl implements MindModel {
 			// now let's remember our 
 		}
 
+		// We want to work on a temporary copy for our diff
+		Map<IPath, MindPathEntry> oldMindSourceEntriesCopy = new HashMap<IPath, MindPathEntry>(oldMindSourceEntries);
+		
 		// We need to compare sets to know what has been added or removed (diff)
-		Set<IPath> oldMindSourceEntriesKeySet = oldMindSourceEntries.keySet();
+		Set<IPath> oldMindSourceEntriesCopyKeySet = oldMindSourceEntriesCopy.keySet();
 		Set<IPath> newICSourceEntriesFullPathKeySet = new HashSet<IPath>();
 
 		// We need the full path entries, not the objects themselves
@@ -1207,14 +1214,16 @@ public class MindModelImpl implements MindModel {
 		// Note : Removing from a key from the keySet automatically removes the according
 		// value from our hosting oldMindSourceEntries map :
 		// http://docs.oracle.com/javase/6/docs/api/java/util/Map.html#keySet()
-		oldMindSourceEntriesKeySet.removeAll(newICSourceEntriesFullPathKeySet);
+		oldMindSourceEntriesCopyKeySet.removeAll(newICSourceEntriesFullPathKeySet);
 		// The remaining entries are the ones to remove from the real MindPath
-		for (MindPathEntry removableMPE : oldMindSourceEntries.values()) {
+		for (MindPathEntry removableMPE : oldMindSourceEntriesCopy.values()) {
 			mindPathEntries.remove(removableMPE);
 		}
 
 		// And we're finished with this Set, so let the environment free memory
 		newICSourceEntriesFullPathKeySet = null;
+		oldMindSourceEntriesCopy = null;
+		oldMindSourceEntriesCopyKeySet = null;
 
 		// Now we've got to check what exists in newICSourceEntriesFullPathKeySet
 		// that doesn't exist in oldMindSourceEntriesKeySet, and add the corresponding
@@ -1222,6 +1231,8 @@ public class MindModelImpl implements MindModel {
 
 		// Here we keep the original algorithm
 		for (ICSourceEntry newICSourceEntry : newICSourceEntries) {
+			
+			// TODO: FIXME ! Here the list has already been reduced by the previous "removeAll" and does NOT contain all pairs anymore !!!
 			if (oldMindSourceEntries.containsKey(newICSourceEntry.getFullPath()))
 				// the entry is already known
 				continue;
