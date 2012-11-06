@@ -11,27 +11,24 @@ import org.ow2.mindEd.itf.editor.textual.fractalIDL.impl.ItfFileImpl;
 public class FractalItfJavaValidator extends AbstractFractalItfJavaValidator {
 
 	public final static String WRONG_NAME = "org.ow2.mindEd.itf.editor.textual.validation.wrong_name";
+	
+	@Check
+	public void checkItfSimpleName(InterfaceDefinition interfaceDefinition) {
 
-	// TODO: FIXME (crashes really often)
-//	@Check
-//	public void checkItfSimpleName(InterfaceDefinition interfaceDefinition) {
-//
-//		String simpleName = interfaceDefinition.getName();
-//		
-//		String expectedName = FractalItfJavaValidator.getExpectedInterfaceName(interfaceDefinition); 
-//				
-//		if (! simpleName.equals(expectedName)) {
-//			warning("interface should be named : " + expectedName,
-//					// SSZ: Quick and dirty fix, added "interfaceDefinition.eContainingFeature(),"
-//					interfaceDefinition.eContainingFeature(),
-//					FractalIDLPackage.INTERFACE_DEFINITION,
-//					FractalItfJavaValidator.WRONG_NAME);
-//		}
-//
-//	}	
+		String simpleName = interfaceDefinition.getName();
+		
+		String expectedName = FractalItfJavaValidator.getExpectedInterfaceName(interfaceDefinition); 
+				
+		if (! simpleName.equals(expectedName)) {
+			warning("interface should be named : " + expectedName,
+					FractalIDLPackage.Literals.INTERFACE_DEFINITION__NAME,
+					FractalIDLPackage.INTERFACE_DEFINITION,
+					FractalItfJavaValidator.WRONG_NAME);
+		}
+
+	}	
 	
 	// Utils
-	
 	public static String getExpectedInterfaceName(InterfaceDefinition interfaceDefinition){
 		
 		ItfFileImpl itfFile = (ItfFileImpl) interfaceDefinition.eContainer();

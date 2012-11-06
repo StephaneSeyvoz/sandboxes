@@ -15,7 +15,7 @@ public class TemplateITF
 
   public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
   protected final String TEXT_1 = NL + "interface ";
-  protected final String TEXT_2 = " {" + NL + "}";
+  protected final String TEXT_2 = " {" + NL + NL + "}";
   protected final String TEXT_3 = NL;
 
    public String generate(String qn)

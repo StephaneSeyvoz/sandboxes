@@ -1,8 +1,11 @@
 package org.ow2.mindEd.adl.textual.validation;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtext.validation.Check;
+import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeDefinition;
 import org.ow2.mindEd.adl.textual.fractal.CompositeElement;
 import org.ow2.mindEd.adl.textual.fractal.FractalPackage;
@@ -11,6 +14,8 @@ import org.ow2.mindEd.adl.textual.fractal.PrimitiveDefinition;
 import org.ow2.mindEd.adl.textual.fractal.PrimitiveElement;
 import org.ow2.mindEd.adl.textual.fractal.SubComponentDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TypeDefinition;
+import org.ow2.mindEd.adl.textual.fractal.impl.AdlDefinitionImpl;
+import org.ow2.mindEd.ide.core.ModelToProjectUtil;
 
 
 public class FractalJavaValidator extends AbstractFractalJavaValidator {
@@ -25,6 +30,34 @@ public class FractalJavaValidator extends AbstractFractalJavaValidator {
 	public static final String UNKNOWN_INTERFACE = "org.ow2.fractal.mind.xtext.validation.unknown_interface";
 	public static final String UNKNOWN_SOURCE_FILE = "org.ow2.fractal.mind.xtext.validation.unknown_source";
 
+	public final static String WRONG_NAME = "org.ow2.mindEd.adl.editor.textual.validation.wrong_name";
+	
+	@Check
+	public void checkAdlSimpleName(ArchitectureDefinition archDef) {
+
+		String simpleName = archDef.getName();
+		
+		String expectedName = FractalJavaValidator.getExpectedComponentName(archDef); 
+		
+		if (! simpleName.equals(expectedName)) {
+			warning("definition should be named : " + expectedName,
+					FractalPackage.Literals.TYPE_REFERENCE__NAME,
+					FractalPackage.ARCHITECTURE_DEFINITION,
+					FractalJavaValidator.WRONG_NAME);
+		}
+
+	}	
+	
+	// Utils
+	public static String getExpectedComponentName(ArchitectureDefinition archDef){
+		
+		AdlDefinitionImpl adlFile = (AdlDefinitionImpl) archDef.eContainer();
+		URI uri = adlFile.eDirectResource().getURI();
+		
+		String expectedName = ModelToProjectUtil.INSTANCE.getCurrentFQN(uri);
+		return expectedName;
+	}	
+	
 	@Check
 	public void checkSubComponentNameIsUnique(SubComponentDefinition subCompDef) {
 		CompositeDefinition parentCompositeDef = (CompositeDefinition) subCompDef.eContainer();
