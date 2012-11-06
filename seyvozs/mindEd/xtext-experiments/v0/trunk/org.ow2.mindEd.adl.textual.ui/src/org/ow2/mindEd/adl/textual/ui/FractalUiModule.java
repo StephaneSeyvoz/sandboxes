@@ -12,6 +12,7 @@ import org.eclipse.xtext.ui.editor.hyperlinking.IHyperlinkHelper;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.ow2.mindEd.adl.textual.ui.navigation.FractalHyperlink;
+import org.ow2.mindEd.adl.textual.ui.refactoring.FractalRenameStrategy;
 import org.ow2.mindEd.ide.ui.navigator.MindLabelProvider;
 
 import com.google.inject.Binder;
@@ -49,22 +50,31 @@ public class FractalUiModule extends org.ow2.mindEd.adl.textual.ui.AbstractFract
 		return LexicalHighlightingConfiguration.class;
 	}
 
-// Doesn't work since MindLabelProvider.getImage filters on Mind-specific types (legacy types dependency)
-// and our content is never recognized
-//	/**
-//	 * In the first version of MindEd the injection used to be implicit according to the
-//	 * http://www.eclipse.org/Xtext/documentation.html#labelProvider
-//	 * behavior as it found the label provider thanks to EMF (see the imported EPackage paragraph)
-//	 * Here with the newly generated EMF model (from xtext) we define the binding manually
-//	 * 
-//	 * The org.eclipse.ui.navigator (needed by MindLabelProvider) dependency was added accordingly
-//	 * in the Manifest.MF file. 
-//	 */
-//	@Override
-//	public void configureContentProposalLabelProvider(Binder binder) {
-//		binder.bind(ILabelProvider.class)
-//		.annotatedWith(ContentProposalLabelProvider.class)
-//		.to(MindLabelProvider.class);
-//	}
+	// Doesn't work since MindLabelProvider.getImage filters on Mind-specific types (legacy types dependency)
+	// and our content is never recognized
+	//	/**
+	//	 * In the first version of MindEd the injection used to be implicit according to the
+	//	 * http://www.eclipse.org/Xtext/documentation.html#labelProvider
+	//	 * behavior as it found the label provider thanks to EMF (see the imported EPackage paragraph)
+	//	 * Here with the newly generated EMF model (from xtext) we define the binding manually
+	//	 * 
+	//	 * The org.eclipse.ui.navigator (needed by MindLabelProvider) dependency was added accordingly
+	//	 * in the Manifest.MF file. 
+	//	 */
+	//	@Override
+	//	public void configureContentProposalLabelProvider(Binder binder) {
+	//		binder.bind(ILabelProvider.class)
+	//		.annotatedWith(ContentProposalLabelProvider.class)
+	//		.to(MindLabelProvider.class);
+	//	}
+
+	/**
+	 * register refactoring rename strategy
+	 * we want to be able to relocate a component according to its new package
+	 */
+	
+	public Class<? extends org.eclipse.xtext.ui.refactoring.IRenameStrategy> bindIRenameStrategy() {
+		return FractalRenameStrategy.class;
+	}
 
 }
