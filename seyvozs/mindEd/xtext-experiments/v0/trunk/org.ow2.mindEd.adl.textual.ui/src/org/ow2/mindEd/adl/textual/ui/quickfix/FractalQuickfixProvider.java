@@ -1,38 +1,25 @@
 
 package org.ow2.mindEd.adl.textual.ui.quickfix;
 
-import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider;
-
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-/*
-	import org.eclipse.xtext.parsetree.AbstractNode;
-	import org.eclipse.xtext.parsetree.CompositeNode;
-	import org.eclipse.xtext.parsetree.NodeUtil;
- */
-import org.eclipse.xtext.ui.editor.model.IXtextDocument;
-import org.eclipse.xtext.ui.editor.model.edit.IModification;
 import org.eclipse.xtext.ui.editor.model.edit.IModificationContext;
 import org.eclipse.xtext.ui.editor.model.edit.ISemanticModification;
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider;
 import org.eclipse.xtext.ui.editor.quickfix.Fix;
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor;
 import org.eclipse.xtext.validation.Issue;
-import org.ow2.mindEd.adl.textual.fractal.ArchitectureDefinition;
 import org.ow2.mindEd.adl.textual.fractal.FormalArgument;
 import org.ow2.mindEd.adl.textual.fractal.HostedInterfaceDefinition;
-import org.ow2.mindEd.adl.textual.fractal.ImplementationDefinition;
 import org.ow2.mindEd.adl.textual.fractal.ImportDefinition;
 import org.ow2.mindEd.adl.textual.fractal.TemplateSpecifier;
-import org.ow2.mindEd.adl.textual.fractal.impl.AdlDefinitionImpl;
-import org.ow2.mindEd.adl.textual.fractal.impl.ImplementationDefinitionImpl;
+import org.ow2.mindEd.adl.textual.fractal.impl.ArchitectureDefinitionImpl;
 import org.ow2.mindEd.adl.textual.validation.FractalJavaValidator;
-import org.ow2.mindEd.ide.core.MindIdeCore;
-import org.ow2.mindEd.ide.core.MindcErrorCodes;
-import org.ow2.mindEd.ide.core.ModelToProjectUtil;
-import org.ow2.mindEd.ide.model.MindPackage;
-import org.ow2.mindEd.itf.editor.textual.fractalIDL.InterfaceDefinition;
+/*
+	import org.eclipse.xtext.parsetree.AbstractNode;
+	import org.eclipse.xtext.parsetree.CompositeNode;
+	import org.eclipse.xtext.parsetree.NodeUtil;
+ */
 
 public class FractalQuickfixProvider extends DefaultQuickfixProvider {
 
@@ -59,6 +46,30 @@ public class FractalQuickfixProvider extends DefaultQuickfixProvider {
 		});
 	}
 
+	@Fix(FractalJavaValidator.WRONG_NAME)
+	public void renameDefinition(final Issue issue,
+			IssueResolutionAcceptor acceptor) {
+
+		acceptor.accept(
+				issue, 
+				"Rename", 
+				"Change definition name", 
+				null, 
+				new ISemanticModification() {
+					public void apply(EObject element,
+							IModificationContext context) throws Exception {
+						
+						if (element instanceof ArchitectureDefinitionImpl) {
+							
+							ArchitectureDefinitionImpl archDefImpl = (ArchitectureDefinitionImpl) element;							
+							String expectedName = FractalJavaValidator.getExpectedComponentName(archDefImpl);							
+							archDefImpl.setName(expectedName);
+						}
+						
+					}
+				});
+	}
+	
 	//	@Fix(MyJavaValidator.INVALID_NAME)
 	//	public void capitalizeName(final Issue issue, IssueResolutionAcceptor acceptor) {
 	//		acceptor.accept(issue, "Capitalize name", "Capitalize the name.", "upcase.png", new IModification() {
