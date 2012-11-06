@@ -19,6 +19,7 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.common.types
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib,
+ org.ow2.mindEd.ide.core;version="0.2.1",
  org.ow2.mindEd.itf.editor.textual,
  org.ow2.mindEd.itf.editor.textual.fractalIDL
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
